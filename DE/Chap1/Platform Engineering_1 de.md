@@ -46,7 +46,7 @@ Diese Plattformen werden oft als **interne Entwicklerplattformen** (**Internal D
 
 Diese Sichtweise mag detailliert erscheinen, aber der Begriff „Plattform“ selbst führt oft zu Verwirrung. Eine Cloud-Plattform ist doch auch eine Plattform, oder? Auch **Software as a Service** (**SaaS**) könnte als Plattform angesehen werden. Der Verweis auf eine Cloud-native Plattform oder IDP gibt die richtige Richtung vor und sorgt für Verständnis. Je nach Reifegrad Ihres Unternehmens ist es daher auch wichtig, diese Begriffe zu klären und ein gemeinsames Verständnis, eine gemeinsame Sprache und gemeinsames Wissen zu etablieren.
 
-Fallstudien und Erfolgsgeschichten zu Plattformen
+**Fallstudien und Erfolgsgeschichten zu Plattformen**
 
 Um die positiven Auswirkungen einer Plattform hervorzuheben, können wir uns drei völlig unterschiedliche Unternehmen und ihre Ergebnisse aus der Nutzung von IDPs ansehen. Alle diese Fälle konzentrieren sich in erster Linie auf Backstage als Entwicklerportal und Einstiegspunkt für die IDP.
 
@@ -72,7 +72,7 @@ Das letzte Unternehmen, das wir uns ansehen sollten, ist Toyota:
 
 All diese Zahlen sind im Kontext eines digital-nativen Unternehmens, eines Reise-Technologieunternehmens und eines der größten Automobilhersteller interessant. Jedes dieser Unternehmen kann einen klaren positiven Effekt vorweisen \[2\].
 
-Projekte versus Produkte
+**Projekte versus Produkte**
 
 Was die Organisation betrifft, so wird die Einführung neuer Lösungen in der Regel als Projekt durchgeführt. Irgendwann hat also jemand beschlossen, Geld in den Aufbau einer eigenen Plattform zu investieren. Dieser Ansatz steht vor einem grundlegenden Problem: der Frist. Projekte müssen innerhalb eines vorgegebenen Zeit- und Budgetrahmens ein Ziel erreichen. Wenn das Projekt keine Zeit oder kein Geld mehr hat, konzentriert es sich auf den Betrieb und die Wartung. Diese beiden Teile eines Lebenszyklus werden als separate Dinge behandelt, was zu einer Phase des Aufschwungs und des Niedergangs führt. Um dies etwas zu verdeutlichen: Während der Implementierungsphase gibt es hohe Investitionen, viel Kommunikation und große Begeisterung. Nach Ablauf der Frist wird das Projekt jedoch zu einem toten Objekt, das gewartet werden muss. DevOps hat dieses Verhalten nicht geändert, sondern lediglich neue Namen, neue Rollen und andere Prozesse eingeführt. Letztendlich werden jedoch Budget, Personal und Aufmerksamkeit auf das nächste Projekt verlagert, während nur ein Bruchteil des ursprünglichen Budgets übrig bleibt. Dies ist frustrierend für Ingenieure, die hart an der Umsetzung gearbeitet haben, und wird mit der Zeit auch für das Unternehmen frustrierend, wenn die Kosten für die reine Wartung weiter steigen. Dennoch könnten die Personen, die „ ” aufgebaut haben, das Unternehmen verlassen oder sich anderen Projekten anschließen. Diese kurzfristige Sichtweise auf die Implementierung von Systemen hat langsam viele gute Projekte und den Teamgeist zerstört. Noch wichtiger ist, dass sie zeigt, dass der geschäftliche Nutzen der Lösung nicht klar ist. Wenn eine Implementierung, wie z. B. eine Plattform, einen eindeutigen Mehrwert bieten kann, sollte es keinen Grund geben, die Aufmerksamkeit abzuwenden und ihr Ende herbeizuführen.
 
@@ -82,7 +82,7 @@ Schauen wir uns ein Beispiel an. Im laufenden Jahr (2024) hat die Europäische U
 
 Dies wird als Produktdenken bezeichnet, und es erscheint nur natürlich, dass sich Plattformen an die Anforderungen ihrer Umgebung anpassen.
 
-Plattform als Produkt
+**Plattform als Produkt**
 
 Plattformen als Produkt sind nutzerorientiert, hören auf die Anforderungen der Endnutzer und recherchieren diese aktiv, um ihre Dienste kontinuierlich zu verbessern. Ein Produkt ist sich auch seines Wertes bewusst. Ähnlich wie jede App auf Ihrem Mobiltelefon nutzt es seinen eigenen Wert, um die weitere Entwicklung und neue Funktionen zu finanzieren. Hier gibt es keine Fristen und keine Auslauftermine. Das Ziel ist einfach, mit jeder neuen Version besser zu werden. Das Ergebnis für ein Unternehmen ist ein Expertenteam, das aktiv an der zentralen Bereitstellung einer Plattform zur Wertschöpfung für Ihr Unternehmen arbeitet.
 
@@ -106,7 +106,7 @@ Derzeit gibt es drei verschiedene Arten von Plattformen als Produkte:
 
 In unserem Buch konzentrieren wir uns auf die produktorientierte Sichtweise der Architektur von IDPs.
 
-Benötigen Sie eine Plattform?
+**Benötigen Sie eine Plattform?**
 
 Wie bei jeder anderen komplexen Umgebung müssen wir uns zunächst fragen: Brauchen wir wirklich eine Plattform? Wissen wir, wofür wir sie nutzen werden?
 
@@ -132,13 +132,13 @@ Bevor Sie ein Plattformprodukt für Ihr Unternehmen definieren, sollten Sie alle
 
 Nachdem wir nun gelernt haben, wie wir den Zweck unserer Plattform definieren können, müssen wir die Frage diskutieren, ob wir diese zusätzliche Abstraktionsschicht wirklich brauchen.
 
-Brauchen wir noch eine weitere Abstraktionsschicht?
+**Brauchen wir noch eine weitere Abstraktionsschicht?**
 
 Fassen wir kurz zusammen, was wir bisher gesehen haben. Eine Plattform umschließt Ihre bestehende Infrastruktur und Ihre Umgebungen und legt eine Abstraktionsschicht darüber. Die Plattform erweitert sie um weitere Funktionen, sodass Ihre Entwicklungsteams sie automatisiert und selbstständig nutzen können.
 
 Aus technischer Sicht stellt dies die nächste Abstraktionsebene dar. Daher ist es nur richtig, diese neue Struktur, die wir darüber legen, zu diskutieren. Von unten nach oben sehen wir die Bare-Metal-Infrastruktur, gefolgt vom Hypervisor für die Virtualisierung; darüber liegen die Cloud-Anbieter. Einige fügen vielleicht Container, Kubernetes oder serverlose Komponenten hinzu – und nun fügen wir unsere Plattform hinzu. Das sind mindestens vier Schichten, von denen jede verspricht, die darunterliegende Schicht einfacher zu machen, und die durch eine schwer zu definierende Metaebene aus Skripten, **Infrastructure as Code** (**IaC**), Cloud-Bibliotheken und Automatisierung miteinander verbunden sind. Brauchen wir also wirklich diese weitere Schicht, oder nutzen wir sie nur, um uns mit dem Aufbau von Dingen zu beschäftigen?
 
-Entrümpeln Sie die Abstraktionsschichten
+**Entrümpeln Sie die Abstraktionsschichten**
 
 Es gibt keine einfache Antwort auf diese Frage, aber wenn Sie sich den Zweck jeder Ebene ansehen, können Sie vielleicht Ihr eigenes Verständnis davon erweitern.
 
@@ -156,7 +156,7 @@ Abbildung 1.3: Die mehrdimensionale Komplexität der Abstraktion und Vereinfachu
 
 Nun ist diese Zahl stark vereinfacht, wenn man bedenkt, dass es in jeder Dimension Hunderte und Tausende von Optionen gibt. Dennoch gibt sie einen ersten guten Anhaltspunkt: Wenn Sie eine Plattform benötigen, bauen Sie eine Hülle um diese Konstruktion herum und zähmen Sie ihre immense Komplexität, um ihre Leistungsfähigkeit zu nutzen.
 
-Die kognitive Belastung für Softwareentwickler und andere IT-Fachleute
+**Die kognitive Belastung für Softwareentwickler und andere IT-Fachleute**
 
 Um all diese Ebenen zu verwalten, müssen wir viele Tools kennen und einsetzen sowie verschiedene Prozesse befolgen. Es wird schwierig, sich auf die eigentliche Arbeit zu konzentrieren und Werte zu schaffen, wenn man viel Zeit für Dinge aufwenden muss, die unsere Arbeit eigentlich vereinfachen sollten. Dies wird als **kognitive Belastung** bezeichnet. Der Begriff, der ursprünglich von Daniel Bryant geprägt wurde, fasst die Arbeitsüberlastung und den mentalen Stress vieler Entwickler sowie anderer IT-Spezialisten zusammen. Die Verringerung der kognitiven Belastung bringt den Ingenieuren mehr Zufriedenheit und Freude, aber auch mehr Effektivität und Zuverlässigkeit. Die folgende Grafik vereinfacht die Perspektive auf das, was als Fachkraft über die verschiedenen Jahrzehnte hinweg zu bewältigen ist. In Zukunft müssen wir diese Belastung jedoch reduzieren. KI könnte neben neuen Konzepten für die Ausführung von Rechenprozessen und natürlich Plattformen ein Teil davon sein.
 
@@ -168,11 +168,11 @@ Letztendlich ist jede Organisation anders. Einige sind in den frühen 2000er Jah
 
 Die Komplexität, mit der wir konfrontiert sind, und der Druck, der auf den Ingenieuren lastet, müssen angegangen werden, da die IT mit der Zeit immer komplizierter wird. Im nächsten Abschnitt konzentrieren wir uns auf die Implementierung der richtigen Lösung für Entwickler, um diese schwierige Entwicklung zu überwinden, die sogar zu Burnout führen kann.
 
-Implementierung von entwickler- und produktorientierten Lösungen
+**Implementierung von entwickler- und produktorientierten Lösungen**
 
 In den nächsten Jahren werden wir eine Weiterentwicklung des Cloud Computing erleben. In diesem Zusammenhang werden Plattformen eine entscheidende Rolle spielen. Einerseits wird die Cloud allgegenwärtig sein und zu einer Abstraktion für die Infrastruktur werden. Dabei spielt es keine Rolle, ob dies in Form von Edge-Computing oder sehr spezialisierten Diensten oder Angeboten geschieht. Andererseits müssen wir uns, wie wir im vorigen Abschnitt gelernt haben, darauf konzentrieren, Umgebungen bereitzustellen, die Entwicklern und anderen Rollen die bestmögliche Erfahrung ermöglichen, damit diese sich auf die Wertschöpfung konzentrieren können. Die praktische Zusammenführung dieser Elemente ist der Schlüssel dafür, dass eine IT-Organisation mit dem Markt Schritt halten und gleichzeitig kontinuierlich Wert für Ihr Unternehmen schaffen kann.
 
-Die allgegenwärtige Cloud
+**Die allgegenwärtige Cloud**
 
 Die **allgegenwärtige Cloud** ist keine einzelne Lösung. Sie bündelt eine Vielzahl von Cloud-Computing-Funktionen, die einen transformativen Wandel durchlaufen, um Unternehmen und Innovationen maßgeblich voranzutreiben. Die wichtigsten Fortschritte konzentrieren sich auf die Integration von Cloud-Technologien überall, von privaten Rechenzentren über verteilte Rechnernetzwerke bis hin zum Edge. Die allgegenwärtige Cloud geht jedoch noch darüber hinaus. Sie folgt Konzepten zur Überbrückung physischer Lücken durch Sensoren, IoT-Komponenten, mobile Geräte und andere intelligente vernetzte Lösungen. Daher ist sie auch unter anderen Begriffen wie **Ubiquitous Computing**, **Ambient Intelligence** oder **Everywhere** bekannt.
 
@@ -199,7 +199,7 @@ Wichtiger Hinweis
 
 Die IT, wie wir sie heute kennen, befindet sich sowohl im sichtbaren als auch im unsichtbaren Bereich in einem tiefgreifenden Wandel. Mit jedem Schritt, den wir unternehmen, erhöhen wir ihre Komplexität und sehen uns gleichzeitig demografischem Druck und einem Mangel an Fachkräften gegenüber. Früher oder später werden die meisten Unternehmen eine eigene Plattform benötigen. Wenn sie keine haben, werden sie sie als Dienstleistung kaufen.
 
-Fokus auf Entwicklererfahrung
+**Fokus auf Entwicklererfahrung**
 
 Es ist nicht nachhaltig zu hoffen, dass jeder Entwickler in der Lage sein wird, die extrem breite Landschaft an Tools und Technologien abzudecken, ohne innerhalb weniger Jahre auszubrennen. Daher ist die Qualität der Benutzererfahrung entscheidend für die Akzeptanz und den Erfolg einer Plattform. Eine gut gestaltete Plattform ist intuitiv, leicht zu navigieren und entspricht den Erwartungen und Arbeitsabläufen der Entwickler. Die Verbesserung der Entwicklererfahrung umfasst die Optimierung von Interaktionen, die Minimierung von Reibungspunkten und die Bereitstellung einer visuell, technisch und funktional ansprechenden Umgebung. Dies verbessert nicht nur die Benutzerzufriedenheit, sondern steigert auch die Produktivität und das Engagement. Die Frage ist, wie dies erreicht werden kann.
 
@@ -217,7 +217,7 @@ Abbildung 1.7: Die drei Kernfunktionen von Backstage
 
 An dieser Stelle haben wir die Herausforderungen gesehen, die es zu lösen gilt, und einen ersten Blick auf den Lösungsraum geworfen. Das sollte uns ein Gefühl für die aktuellen Möglichkeiten vermitteln, bevor wir uns in den nächsten Kapiteln mit den Details befassen.
 
-Attribute von Plattformen
+**Attribute von Plattformen**
 
 Eine Plattform muss bestimmte Eigenschaften erfüllen und einige Kernkomponenten bereitstellen, die es uns ermöglichen, dem Endnutzer Funktionen zur Verfügung zu stellen. Bisher haben wir gelernt, wie komplex die Handhabung ist, welche Integrationen erforderlich sind und wie wichtig es ist, sich auf den Endnutzer zu konzentrieren und ihn in den Mittelpunkt zu stellen, um das bestmögliche Erlebnis und Produkt zu schaffen. All dies muss mit einem technischen, prozessualen oder methodischen Ansatz in Form von Eigenschaften einhergehen. Für die Entwicklung einer Idee für Ihre Plattform können wir Ihnen nur empfehlen, sich mit den Eigenschaften auseinanderzusetzen und dann die für Sie beste Lösung zu wählen, anstatt eine Lösung zu nehmen und deren Nützlichkeit für Ihren Fall zu konstruieren.
 
@@ -244,7 +244,7 @@ In „[,„](https://subscription.packtpub.com/book/cloud-and-networking/9781836
 
 Der Fokus auf die Entwicklerperspektive bedeutet, Einfluss auf die Organisation und damit auf die Menschen zu nehmen, die für sie arbeiten. Als Nächstes werden wir uns mit den soziotechnischen Aspekten befassen, die wir bei der Erstellung von Plattformen berücksichtigen müssen.
 
-Die soziotechnischen Aspekte verstehen
+**Die soziotechnischen Aspekte verstehen**
 
 Die Entwicklung einer erfolgreichen Plattform erfordert weit mehr als nur technisches Know-how. Sie erfordert ein tiefes Verständnis für die vielfältigen Bedürfnisse der Nutzer, die Förderung und Motivation zur Zusammenarbeit von Anfang an und die Schaffung einer offenen Umgebung, die eine plattformorientierte Kultur begünstigt. Diese soziotechnischen Aspekte der Plattformentwicklung sind entscheidende Perspektiven, die nicht nur die technischen Komponenten einer Plattform, sondern auch die menschlichen Elemente betonen – wie Einzelpersonen und Gruppen mit dem System interagieren und wie es ihre Arbeit und ihr Verhalten beeinflusst. Es ist wichtig, diesen oft unsichtbaren Teil der Plattformentwicklung zu verstehen. Er ist das Bindeglied, das die Relevanz technologisch robuster Systeme definiert und die tief integrierten täglichen Arbeitsabläufe und Verhaltensweisen der Nutzer bestimmt. Die Berücksichtigung dieser fast schon meta-artigen Ebene bedeutet eine Steigerung der Produktivität und eine Förderung der Akzeptanz durch hohe Zufriedenheit. Wir müssen uns bewusst sein, dass jede technische Entscheidung Konsequenzen hat, sowohl in technologischer Hinsicht als auch für den Menschen. Daher ist es wichtig, Plattformen zu entwickeln, die bei ihren Nutzern Anklang finden, eine Kultur der Zusammenarbeit fördern, Innovationen vorantreiben und einfach die tägliche Arbeit erleichtern. Durch die Konzentration auf diese soziotechnischen Aspekte können Plattformingenieure anpassungsfähigere, nachhaltigere und nutzerorientierte Systeme schaffen, die sich in einer sich ständig weiterentwickelnden Cloud-nativen Landschaft bewähren.
 
@@ -254,7 +254,7 @@ Abbildung 1.8: Soziotechnisches System, Trancossi et al.
 
 Wenn wir daran arbeiten, den besten Ansatz für die Implementierung einer Plattform zu finden, versuchen, die Bedürfnisse und Anforderungen herauszufinden, eine Community aufzubauen und für Offenheit zu werben, müssen wir uns bewusst sein, dass all dies von einem soziotechnischen System beeinflusst wird und innerhalb dieses Systems stattfindet. Manchmal werden wir vielleicht blockiert oder in eine andere Richtung gedrängt, oder es fällt uns schwer, Menschen zu motivieren. Das ist der richtige Zeitpunkt, um sich etwas Mühe zu geben, das Subsystem und die externen Systeme zu verstehen, die Sie beeinflussen.
 
-Verstehen Sie die Bedürfnisse der Nutzer beim Plattformdesign
+**Verstehen Sie die Bedürfnisse der Nutzer beim Plattformdesign**
 
 Ein Plattformdesign muss von Natur aus flexibel sein, um einem breiteren Spektrum von Interessengruppen als nur Entwicklern gerecht zu werden. Wir können es nicht oft genug sagen: Die Implementierung einer Plattform ist eine Entscheidung, die alle betrifft. Softwareentwickler, Produktverantwortliche, Geschäftsinteressenten und operative Teams haben alle einzigartige Anforderungen und Herausforderungen, die sie von der Plattform erwarten. Entwickler suchen möglicherweise nach einfachen Tools für die Bereitstellung und das Testen, während Endbenutzer intuitive Schnittstellen und nahtlose Interaktion benötigen. Geschäftliche Stakeholder hingegen konzentrieren sich wahrscheinlich in erster Linie auf **den Return on Investment** (**ROI**), Sicherheit, Governance, Compliance und Skalierbarkeit. Als Plattformingenieur und -architekt liegt es in Ihrer Verantwortung, diese Anforderungen zu identifizieren und sie während des gesamten Lebenszyklus der Plattform auszugleichen.
 
@@ -262,13 +262,13 @@ Der erste Schritt bei der benutzerorientierten Plattformgestaltung besteht also 
 
 Um relevant und effizient zu bleiben, müssen sich Plattformen weiterentwickeln. Denken Sie daran, dass Projekte sterben, wenn sie die Deadline erreichen; Produkte entwickeln sich mit jeder Veröffentlichung und jedem Nutzer-Feedback weiter. Die Einrichtung einer robusten Release-Dokumentation und von Feedback-Schleifen ist für diesen iterativen Verbesserungsprozess von entscheidender Bedeutung. Welcher Kanal für Ihr Unternehmen und Ihre Nutzer am besten geeignet ist, müssen Sie selbst entscheiden, aber es gibt viele Möglichkeiten, die über Umfragen und Interviews hinausgehen. Beispiele hierfür sind direkte Interaktionen über Kommunikationswerkzeuge, Benutzerforen, Support-Lösungen, sogar interne soziale Medien des Unternehmens oder in extremen Fällen eingebettete Feedback-Mechanismen innerhalb der Plattform selbst. Regelmäßige Updates und Upgrades, die sich an den tatsächlichen Benutzererfahrungen und Herausforderungen orientieren, stellen sicher, dass die Plattform den Benutzeranforderungen und Industriestandards entspricht und fördern so die Loyalität und das nachhaltige Engagement.
 
-Förderung und Verbesserung der Zusammenarbeit
+**Förderung und Verbesserung der Zusammenarbeit**
 
 Das Problem transparenter, offener Feedback-Schleifen ist, dass sie eine gut funktionierende Zusammenarbeit erfordern. Andernfalls wirken sie künstlich und in gewisser Weise wie der traditionelle Ansatz des Requirements Engineering. Als Plattformentwickler müssen wir diese klassischen Methoden in einen persönlicheren und einladenderen Ansatz verpacken. Effektive Zusammenarbeit ist der Grundstein jeder erfolgreichen Plattform. Durch die Integration der richtigen Kommunikationswerkzeuge, die Schaffung einer fantastischen Benutzererfahrung durch Anpassung und die Förderung funktionsübergreifender Teamarbeit können Plattformen mehr als nur Technologielösungen sein – sie können zu einem Ort der Zusammenarbeit zwischen verschiedenen Entwicklungsteams und zu einem Motor für Organisationen und Innovation werden.
 
 Um die Zusammenarbeit zu fördern, müssen Ihr Team und die Plattform offen und einladend sein. Reduzieren Sie alle Hindernisse für die Einarbeitung eines neuen Produktteams und bieten Sie ihnen unterschiedlich gestaltete Einstiegsmöglichkeiten. Es muss klar sein, wie und wo Ihr Team bei Fragen erreichbar ist. Dies ist in der Anfangsphase wichtig, wenn ein neues Endbenutzerteam zu Ihrer Plattform stößt. Beseitigen Sie jede implizite Erwartung, dass klar ist, wo und wie Ihr Team zu finden ist, da dies in der Regel nicht der Fall ist, insbesondere in größeren Organisationen. Dazu müssen Sie und Ihr Team neben internen öffentlichen Dokumentationen und Landing Pages auch zu Fürsprechern der Plattform werden. Sie müssen hinausgehen, mit anderen Teams zusammenarbeiten, ihnen zuhören, wenn sie über ihre Herausforderungen sprechen, und ihnen Ihre Lösungen zeigen. Wenn möglich, müssen Sie Ihre Organisation über neue Funktionen und Anwendungsfälle informieren und ihnen immer wieder zeigen, wie einfach der Einstieg ist.
 
-Eine offene, plattformorientierte Kultur pflegen
+**Eine offene, plattformorientierte Kultur pflegen**
 
 Die Förderung einer offenen und plattformorientierten Kultur ist vielleicht der schwierigste Teil. Dazu ist neben Ihrem Engagement auch die Zustimmung anderer Budgetverantwortlicher in Ihrem Unternehmen erforderlich. Die Förderung basiert auf Schulungen, Motivation (die durch Anreize gefördert werden kann) und der Einbindung Ihrer Community oder Benutzergruppe. All diese Aktivitäten gehen über Ihre Budgetverantwortung hinaus.
 
@@ -288,7 +288,7 @@ Letztendlich müssen wir all diese Ansätze kombinieren. Der beste Weg, dies zu 
 
 Ohne Menschen und ohne Respekt für ihre Bedürfnisse wird Ihre Plattform entweder schnell aufgegeben oder gar nicht erst Fuß fassen. Strategische Initiativen mit Schwerpunkt auf Schulungen, Anreizen und einer florierenden Community können eine offene, plattformorientierte Kultur beschleunigen. Um die Effektivität einer Plattform zu steigern, müssen Sie über die reine technische Bereitstellung hinausgehen. Dieser ganzheitliche Ansatz stellt sicher, dass die Plattform zu einem grundlegenden Bestandteil des Unternehmens wird und Innovation und Effizienz auf allen Ebenen und bei allen Beteiligten fördert, von Entwicklern und dem Betrieb bis hin zu Geschäfts- und Prozessverantwortlichen.
 
-Zusammenfassung
+**Zusammenfassung**
 
 In diesem ersten Kapitel haben wir die Rolle von Plattformen in der modernen Softwareentwicklung, insbesondere in Cloud-nativen Umgebungen, untersucht. Wir haben festgestellt, dass Plattformen nicht nur Infrastrukturkomponenten sind, sondern elementare Produkte, die eine strategische Planung und kontinuierliche Weiterentwicklung erfordern, um mit den sich wandelnden technologischen und geschäftlichen Anforderungen Schritt zu halten.
 
