@@ -20,8 +20,7 @@ In der Cloud-nativen Umgebung hat kaum ein anderes Thema in den letzten Jahren e
 Um diese Frage zu beantworten, sollten wir uns zunächst ansehen, was eine solche Plattform ausmacht. Eine Plattform ist die Kombination verschiedener Fähigkeiten, die erforderlich sind, um traditionelle und Cloud-native Umgebungen zu beherrschen, sodass sie den Endbenutzer bei der Entwicklung, Bereitstellung und dem Betrieb einer Anwendung unterstützt. Plattformen können ein Wegbereiter sein, um nicht-Cloud-native Infrastrukturen in wertvolle Ressourcen zu verwandeln. Die meisten Computing-Plattformen bieten heute jedoch eine Art API, mit der die Bereitstellung und Instrumentierung der verfügbaren Ressourcen automatisiert und die Grundlage einer Plattform geschaffen werden kann. Plattformen bieten Endbenutzern Konsistenz über alle Arten von Ressourcen hinweg und gewähren Zugriff auf ihre Funktionen über eine Self-Service-API, Vorlagen, CLI oder andere Lösungen. Das folgende Beispiel verdeutlicht auch, dass eine Plattform aus vielen Komponenten besteht:
 
 
-
-<img width="442" height="254" alt="image" src="https://github.com/user-attachments/assets/546795d0-27bb-4452-b85c-41bf856ff1eb" />
+<img width="1059" height="608" alt="image" src="https://github.com/user-attachments/assets/734d4133-b1fd-4230-972b-817798f1df61" />
 
 
 Abbildung 1.1: Beispiel für eine Plattform/IDP
