@@ -13,7 +13,7 @@ In diesem Kapitel behandeln wir die folgenden Hauptthemen:
 - Brauchen wir noch eine weitere Abstraktionsschicht?
 - Soziotechnische Aspekte
 
-Die Nachfrage nach Plattformen als Produkt
+**Die Nachfrage nach Plattformen als Produkt**
 
 In der Cloud-nativen Umgebung hat kaum ein anderes Thema in den letzten Jahren einen solchen Mythos aufgebaut wie der Begriff Plattform und die damit verbundene Rolle des Plattform-Ingenieurs. Wie bei der Einführung der ersten brauchbaren CI/CD-Pipelines führte dieser Goldrausch zu einer raschen Anpassung, oft ohne Sinn und Verstand. Jetzt, da wir im Tal des Wissens „ ” angekommen sind, können wir uns ausführlich mit der Frage beschäftigen: Brauchen Sie eine Plattform, und wenn ja, wie gestalten und implementieren Sie sie, damit sie auch in Zukunft Bestand hat?
 
@@ -23,7 +23,7 @@ Abbildung 1.1: Beispiel für eine Plattform/IDP
 
 Das Thema Plattform taucht in der Regel im Zusammenhang mit Cloud-Native auf, aber warum ist das so? Cloud-Native-Technologien ermöglichen es Unternehmen, skalierbare Anwendungen in öffentlichen, privaten und hybriden Clouds zu erstellen und auszuführen. Dieser Ansatz lässt sich am besten anhand von Funktionen wie Containern, standardisierter Servicebereitstellung, unveränderlicher Infrastruktur und deklarativen APIs veranschaulichen. Solche Funktionen realisieren lose gekoppelte System en, die widerstandsfähig, verwaltbar und beobachtbar sind. Diese ermöglichen es Entwicklern, mit minimalem Aufwand häufige Änderungen vorzunehmen. Kurz gesagt, eine Plattform ist ein Enabler für Cloud-Native-Computing und nutzt ihre Tools, um es zu instrumentalisieren.
 
-Unternehmen und Entwickler profitieren gleichermaßen von Plattformen
+**Unternehmen und Entwickler profitieren gleichermaßen von Plattformen**
 
 Die Erfahrung eines Softwareentwicklers auf einer Cloud-nativen Plattform unterscheidet sich von der Entwicklung von Software, die nativ auf einen Cloud-Anbieter ausgerichtet ist. Der Aufbau von Systemen, die sich auf einen **Cloud-Service-Provider** (**CSP**) konzentrieren, bindet Sie an die Logik dieses geschlossenen Ökosystems. Einen ähnlichen Effekt haben Sie sicherlich auch, wenn Sie auf Cloud-nativen Plattformen aufbauen, da diese oft Kubernetes-zentriert sind und die starke Vereinheitlichung der Integrationen in Richtung der Kubernetes-API nutzen. Der Haken dabei ist jedoch, dass Cloud-native Plattformen die gleiche Erfahrung bieten, ohne dass Sie die zugrunde liegende Infrastruktur erkennen. Da die meisten Unternehmen mindestens zwei bis drei Cloud- oder Cloud-ähnliche Dienstleister haben und bereits Schwierigkeiten bei der Anpassung dieser haben, ist eine Cloud-native Plattform ein Game Changer \[1\]. Die Entwicklung von Software auf einer Cloud-nativen Plattform verändert die Denkweise und die Architektur. Ohne diese Denkweise ist die Wahrscheinlichkeit eines Scheiterns jedoch hoch.
 
