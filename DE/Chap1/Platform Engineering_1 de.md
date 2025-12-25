@@ -19,6 +19,11 @@ In der Cloud-nativen Umgebung hat kaum ein anderes Thema in den letzten Jahren e
 
 Um diese Frage zu beantworten, sollten wir uns zunächst ansehen, was eine solche Plattform ausmacht. Eine Plattform ist die Kombination verschiedener Fähigkeiten, die erforderlich sind, um traditionelle und Cloud-native Umgebungen zu beherrschen, sodass sie den Endbenutzer bei der Entwicklung, Bereitstellung und dem Betrieb einer Anwendung unterstützt. Plattformen können ein Wegbereiter sein, um nicht-Cloud-native Infrastrukturen in wertvolle Ressourcen zu verwandeln. Die meisten Computing-Plattformen bieten heute jedoch eine Art API, mit der die Bereitstellung und Instrumentierung der verfügbaren Ressourcen automatisiert und die Grundlage einer Plattform geschaffen werden kann. Plattformen bieten Endbenutzern Konsistenz über alle Arten von Ressourcen hinweg und gewähren Zugriff auf ihre Funktionen über eine Self-Service-API, Vorlagen, CLI oder andere Lösungen. Das folgende Beispiel verdeutlicht auch, dass eine Plattform aus vielen Komponenten besteht:
 
+
+
+<img width="442" height="254" alt="image" src="https://github.com/user-attachments/assets/546795d0-27bb-4452-b85c-41bf856ff1eb" />
+
+
 Abbildung 1.1: Beispiel für eine Plattform/IDP
 
 Das Thema Plattform taucht in der Regel im Zusammenhang mit Cloud-Native auf, aber warum ist das so? Cloud-Native-Technologien ermöglichen es Unternehmen, skalierbare Anwendungen in öffentlichen, privaten und hybriden Clouds zu erstellen und auszuführen. Dieser Ansatz lässt sich am besten anhand von Funktionen wie Containern, standardisierter Servicebereitstellung, unveränderlicher Infrastruktur und deklarativen APIs veranschaulichen. Solche Funktionen realisieren lose gekoppelte System en, die widerstandsfähig, verwaltbar und beobachtbar sind. Diese ermöglichen es Entwicklern, mit minimalem Aufwand häufige Änderungen vorzunehmen. Kurz gesagt, eine Plattform ist ein Enabler für Cloud-Native-Computing und nutzt ihre Tools, um es zu instrumentalisieren.
@@ -32,6 +37,11 @@ Bei einer Plattform sind jedoch mehr Aspekte zu berücksichtigen als nur das ein
 Was bedeutet das für ein Unternehmen heute? Aufgrund des Mangels an IT-Fachkräften auf dem Markt, des rasanten Wandels in der IT und der Überlastung der Schulungsteams für Cloud-Technologien und -Anbieter bietet eine Plattform die richtigen Anknüpfungspunkte für Kompetenzen. Wir brauchen diese Trennlinien, um dem Trend entgegenzuwirken, mehrere Disziplinen in einer einzigen Rolle wie DevOps zusammenzufassen. Außerdem sind Plattformingenieure, die DevOps-Methoden anwenden, keine DevOps. Wir müssen diese Rolle aktiv davor schützen, die Fehler der DevOps-Rolle zu wiederholen, und ihre Definition klar definieren. Plattformingenieure integrieren die von Experten bereitgestellten Funktionen, vereinfachen deren Nutzung durch ihre Plattform für Entwickler und ermöglichen den Ingenieuren einen Self-Service. Allerdings muss kein Entwickler ein Experte in mehreren Bereichen wie Sicherheit, Beobachtbarkeit, Infrastrukturkonfiguration und Automatisierung usw. werden. Dies steht im Gegensatz zu einem gängigen Bild von DevOps, die Experten für alles werden müssen, was innerhalb ihres Silos für ihre Anwendung erforderlich ist, um sie am Leben zu erhalten. Wir werden DevOps in Zukunft für die fortgeschrittene Handhabung von Anwendungen benötigen, aber wir müssen ihnen auch das Leben erleichtern.
 
 Die Plattform bietet eine Integrationsschicht für die Bottom-up-Funktionen, die spezielle Kenntnisse erfordern, wie Sicherheit, Datenbanken oder sogar die Bereitstellung von VMs oder Bare-Metal-Servern, sowie für die Top-down-Nutzung durch Entwickler und DevOps. Wie in der folgenden Abbildung dargestellt, ist das Plattform-Engineering-Team für die Bereitstellung dieser Schicht verantwortlich.
+
+
+<img width="968" height="510" alt="image" src="https://github.com/user-attachments/assets/e4966dc3-638b-4d39-b099-aed2082494fe" />
+
+
 
 Abbildung 1.2: Fähigkeiten und Verantwortlichkeiten in einer plattformorientierten Organisation
 
@@ -152,6 +162,9 @@ Zu guter Letzt gibt es noch Systeme, die auf Containern, Kubernetes oder Serverl
 
 Um die Komplexität darzustellen, können wir uns ein dreidimensionales Objekt wie einen Würfel aus Würfeln vorstellen. Die folgende Abbildung zeigt die verschiedenen Service-Ebenen, die unterschiedliche Reifegrade der Abstraktion darstellen, und wie Ebene für Ebene zusammenkommen, um eine IT-Umgebung zu bilden.
 
+<img width="1028" height="534" alt="image" src="https://github.com/user-attachments/assets/569c863a-4f46-4176-bc75-18bbdbfbcc24" />
+
+
 Abbildung 1.3: Die mehrdimensionale Komplexität der Abstraktion und Vereinfachung in der Datenverarbeitung
 
 Nun ist diese Zahl stark vereinfacht, wenn man bedenkt, dass es in jeder Dimension Hunderte und Tausende von Optionen gibt. Dennoch gibt sie einen ersten guten Anhaltspunkt: Wenn Sie eine Plattform benötigen, bauen Sie eine Hülle um diese Konstruktion herum und zähmen Sie ihre immense Komplexität, um ihre Leistungsfähigkeit zu nutzen.
@@ -159,6 +172,8 @@ Nun ist diese Zahl stark vereinfacht, wenn man bedenkt, dass es in jeder Dimensi
 **Die kognitive Belastung für Softwareentwickler und andere IT-Fachleute**
 
 Um all diese Ebenen zu verwalten, müssen wir viele Tools kennen und einsetzen sowie verschiedene Prozesse befolgen. Es wird schwierig, sich auf die eigentliche Arbeit zu konzentrieren und Werte zu schaffen, wenn man viel Zeit für Dinge aufwenden muss, die unsere Arbeit eigentlich vereinfachen sollten. Dies wird als **kognitive Belastung** bezeichnet. Der Begriff, der ursprünglich von Daniel Bryant geprägt wurde, fasst die Arbeitsüberlastung und den mentalen Stress vieler Entwickler sowie anderer IT-Spezialisten zusammen. Die Verringerung der kognitiven Belastung bringt den Ingenieuren mehr Zufriedenheit und Freude, aber auch mehr Effektivität und Zuverlässigkeit. Die folgende Grafik vereinfacht die Perspektive auf das, was als Fachkraft über die verschiedenen Jahrzehnte hinweg zu bewältigen ist. In Zukunft müssen wir diese Belastung jedoch reduzieren. KI könnte neben neuen Konzepten für die Ausführung von Rechenprozessen und natürlich Plattformen ein Teil davon sein.
+
+<img width="972" height="489" alt="image" src="https://github.com/user-attachments/assets/3feca999-5a3d-45b9-b034-20dd76949d49" />
 
 Abbildung 1.4: Die erweiterte kognitive Belastung mit einer Prognose für eine ideale Zukunft
 
@@ -191,6 +206,8 @@ Erstens finden sich viele der Technologien, an denen wir bereits arbeiten, in di
 
 Zweitens müssen Unternehmen, um den maximalen Wert aus ihren Cloud-Investitionen zu ziehen, eine automatisierte operative Skalierung einführen, Cloud-native Plattform-Tools nutzen und eine effektive Governance implementieren. Diese Plattformen integrieren wichtige Dienste wie SaaS, **Platform as a Service** (**PaaS**) und IaaS, um umfassende Produktangebote mit modularen Funktionen zu schaffen. IT-Führungskräfte werden ermutigt, die Modularität dieser Plattformen zu nutzen, um angesichts schneller Marktveränderungen anpassungsfähig und agil zu bleiben. Stellen Sie sich die Komplexität solcher Umgebungen ohne eine Plattform vor, die diesen großen Bewegungsspielraum zähmt. Trotz dieser Komplexität müssen wir uns weiterhin auf die Produktperspektive konzentrieren, da es sonst schwierig sein wird, auch in Zukunft zuverlässige IT-Services und -Lösungen anzubieten.
 
+<img width="986" height="542" alt="image" src="https://github.com/user-attachments/assets/e73ef7ab-ce8a-4e43-866a-3e856db1b18e" />
+
 Abbildung 1.5: Cloud-Konzepte sind in einer allgegenwärtigen Cloud überall zu finden
 
 Wenn Sie sich das vorstehende Diagramm ansehen, finden Sie überall Elemente der allgegenwärtigen Cloud. Wir sollten diese Abbildung nicht so betrachten, als handele es sich um separate Elemente. Alles ist miteinander verbunden. Apps auf Smartphones kommunizieren mit Diensten in der Cloud oder in lokalen Hubs, Unternehmen verfügen über mehrere Netzwerke, die verschiedene Computing-Umgebungen miteinander verbinden, und wir haben hier völlig fortschrittlichere Konzepte wie **Web3** außer Acht gelassen.
@@ -207,11 +224,17 @@ Wir müssen berücksichtigen, dass jeder Entwickler bei der Gestaltung der Platt
 
 Ein Beispiel für einen solchen Kern ist Kratix. Die unter Apache 2.0 lizenzierte Open-Source-Plattform beschreibt sich selbst als „... Plattform-Framework für den Aufbau komponierbarer IDPs“. In der folgenden Abbildung sehen Sie, wie sich Kratix zwischen allen gängigen Tools, die wir heute verwenden, positioniert und einen einzigen Einstiegspunkt bietet.
 
+<img width="965" height="702" alt="image" src="https://github.com/user-attachments/assets/c48fc1be-6f63-4db0-91c2-c21df6f6c924" />
+
+
 Abbildung 1.6: Kratix-Übersicht als zentrale Integrationskomponente
 
 Kratix erreicht dies durch das Konzept der Promises, bei denen es sich technisch gesehen um ein YAML-Dokument handelt, das einen Vertrag zwischen der Plattform und den Benutzern definiert. Jedes Team muss einen komplexen Onboarding-Prozess durchlaufen, nicht wegen der Plattform selbst, sondern wegen anderer Abhängigkeiten wie CI/CD, Git-Repositorys und der Verknüpfung aller Komponenten. Mit Kratix Promises können Sie all diese Schritte kapseln oder mehrere Promises zu einer einzigen kombinieren.
 
 Kratix unterstützt nun die Vereinfachung der Plattformgrundlage für die Entwicklererfahrung, doch etwas fehlt noch. Die andere Seite der Medaille ist ein Entwicklerportal. Backstage ist ein Beispiel für eine von Spotify entwickelte Open-Source-Lösung mit Apache-2.0-Lizenz. Kratix und Backstage arbeiten gut zusammen und lassen sich nahtlos integrieren. Backstage ist ein Framework, mit dem GUIs deklarativ erstellt werden können, um Infrastruktur-Tools, Dienste und Dokumentation zu vereinheitlichen und so eine fantastische Entwicklererfahrung zu schaffen. Backstage verfügt über drei Kernfunktionen: die Dienstdefinition, den Backstage-Dienstkatalog und sein Plugin-System, über das Sie weitere Funktionen wie Dokumente aktivieren können.
+
+
+<img width="1000" height="606" alt="image" src="https://github.com/user-attachments/assets/881114d5-9fe7-49e3-866b-a4102965525a" />
 
 Abbildung 1.7: Die drei Kernfunktionen von Backstage
 
@@ -249,6 +272,9 @@ Der Fokus auf die Entwicklerperspektive bedeutet, Einfluss auf die Organisation 
 Die Entwicklung einer erfolgreichen Plattform erfordert weit mehr als nur technisches Know-how. Sie erfordert ein tiefes Verständnis für die vielfältigen Bedürfnisse der Nutzer, die Förderung und Motivation zur Zusammenarbeit von Anfang an und die Schaffung einer offenen Umgebung, die eine plattformorientierte Kultur begünstigt. Diese soziotechnischen Aspekte der Plattformentwicklung sind entscheidende Perspektiven, die nicht nur die technischen Komponenten einer Plattform, sondern auch die menschlichen Elemente betonen – wie Einzelpersonen und Gruppen mit dem System interagieren und wie es ihre Arbeit und ihr Verhalten beeinflusst. Es ist wichtig, diesen oft unsichtbaren Teil der Plattformentwicklung zu verstehen. Er ist das Bindeglied, das die Relevanz technologisch robuster Systeme definiert und die tief integrierten täglichen Arbeitsabläufe und Verhaltensweisen der Nutzer bestimmt. Die Berücksichtigung dieser fast schon meta-artigen Ebene bedeutet eine Steigerung der Produktivität und eine Förderung der Akzeptanz durch hohe Zufriedenheit. Wir müssen uns bewusst sein, dass jede technische Entscheidung Konsequenzen hat, sowohl in technologischer Hinsicht als auch für den Menschen. Daher ist es wichtig, Plattformen zu entwickeln, die bei ihren Nutzern Anklang finden, eine Kultur der Zusammenarbeit fördern, Innovationen vorantreiben und einfach die tägliche Arbeit erleichtern. Durch die Konzentration auf diese soziotechnischen Aspekte können Plattformingenieure anpassungsfähigere, nachhaltigere und nutzerorientierte Systeme schaffen, die sich in einer sich ständig weiterentwickelnden Cloud-nativen Landschaft bewähren.
 
 Wir müssen uns jedoch bewusst sein, dass wir innerhalb eines soziotechnischen Systems interagieren. Die Herausforderung besteht darin, dass wir in unserem beruflichen, persönlichen und privaten Umfeld ständig Reibungen und Optimierungen erleben. Das berufliche Umfeld repräsentiert das, was in Ihrem beruflichen Kontext geschieht. Das persönliche Umfeld ist eine „Ich“-zentrierte Perspektive, die die Erfahrungen mit allen teilt, die mit Ihnen in Kontakt stehen, sei es im beruflichen oder privaten Bereich. Das private Umfeld schließlich ist das, was andere einschätzen und beobachten können, also das, was hinter verschlossenen Türen geschieht, aber Auswirkungen auf Ihre Meinungen und Perspektiven haben kann. Diese ständigen Veränderungen und Anpassungen finden zwischen der Unternehmens- oder Projektstruktur, den Menschen, der Technologie und ihren Aufgaben statt. Dabei gibt es unterschiedliche Einflüsse und Motivationsfaktoren. Die folgende Darstellung soll diese kontinuierliche Bewegung veranschaulichen. Subsysteme und Systeme selbst haben ihre eigenen Regeln, Aktivitäten und Befugnisse.
+
+<img width="1026" height="645" alt="image" src="https://github.com/user-attachments/assets/fa5671f1-6f14-489f-9b38-dc6ef41d6950" />
+
 
 Abbildung 1.8: Soziotechnisches System, Trancossi et al.
 
