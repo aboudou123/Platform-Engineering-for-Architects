@@ -13,7 +13,7 @@ In diesem Kapitel behandeln wir die folgenden Hauptthemen:
 - Brauchen wir noch eine weitere Abstraktionsschicht?
 - Soziotechnische Aspekte
 
-**Die Nachfrage nach Plattformen als Produkt**
+# **Die Nachfrage nach Plattformen als Produkt**
 
 In der Cloud-nativen Umgebung hat kaum ein anderes Thema in den letzten Jahren einen solchen Mythos aufgebaut wie der Begriff Plattform und die damit verbundene Rolle des Plattform-Ingenieurs. Wie bei der Einführung der ersten brauchbaren CI/CD-Pipelines führte dieser Goldrausch zu einer raschen Anpassung, oft ohne Sinn und Verstand. Jetzt, da wir im Tal des Wissens „ ” angekommen sind, können wir uns ausführlich mit der Frage beschäftigen: Brauchen Sie eine Plattform, und wenn ja, wie gestalten und implementieren Sie sie, damit sie auch in Zukunft Bestand hat?
 
