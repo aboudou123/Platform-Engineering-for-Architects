@@ -1,4 +1,4 @@
-Plattformarchitektur verstehen, um eine Plattform als Produkt aufzubauen
+###Plattformarchitektur verstehen, um eine Plattform als Produkt aufzubauen###
 
 In diesem Kapitel werden Sie durch alle relevanten Grundlagen und Ansätze zur Erstellung Ihrer Plattformarchitektur geführt. Zunächst lernen Sie die Prinzipien kennen und erfahren, wie diese zu einem Leitfaden für Ihre Plattformstrategie werden. Dies hilft Ihnen, auf Kurs zu bleiben und sich auf das Wesentliche zu konzentrieren. Abschließend definieren wir den Zweck Ihrer Plattform.
 
