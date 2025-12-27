@@ -332,9 +332,8 @@ Im letzten Teil haben wir etwas über die soziotechnischen Aspekte und die offen
 
 Diese Lektionen sollten Sie motivieren, sich eingehender mit Plattformarchitekturen und deren Aufbau zu befassen, da sie die betriebliche Effizienz steigern und Innovation und Agilität innerhalb von Organisationen fördern. Durch die Verinnerlichung dieser Konzepte können Plattformingenieure und -architekten Lösungen entwerfen, die robust, benutzerorientiert und anpassungsfähig sind und gleichzeitig einen echten Mehrwert für ihre Organisationen bieten.
 
-Nachdem wir uns nun mit den menschlichen Aspekten befasst haben, werden wir im nächsten Kapitel entdecken, wie man die Prinzipien und den Zweck einer Plattform definiert, wie man die Plattformarchitektur definiert und wie man den Erfolg der Plattform misst.
+Nachdem wir uns nun mit den menschlichen Aspekten befasst haben, werden wir im nächsten Kapitel entdecken, wie man die Prinzipien und den Zweck einer Plattform definiert, wie man die Plattformarchitektur definiert und wie man den Erfolg der Plattform misst. weiter [Chap2](https://github.com/aboudou123/Platform-Engineering-for-Architects/edit/main/DE/Chap2/Platform%20Engineering_2%20de.md)
 
-[Weiter zu Kapitel 02]([(https://github.com/aboudou123/Platform-Engineering-for-Architects/edit/main/DE/Chap2/Platform%20Engineering_2%20de.md))]
 
 
 
