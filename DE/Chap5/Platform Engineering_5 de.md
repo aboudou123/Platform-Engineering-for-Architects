@@ -152,7 +152,7 @@ Sie können Vorlagen für Terraform, Ansible und CDK bereitstellen, die Ihre Ent
 
 Ein Tool, das im Cloud-Native-Bereich entstanden ist, um sowohl die Anwendungs- als auch die Infrastruktur-Orchestrierung abzudecken, ist das **CNCF-Projekt Crossplane** \[2\]. Es umfasst nicht nur viele verschiedene Anbieter für alle großen Cloud-Anbieter oder sogar Terraform, sondern auch Compositions. **Compositions** sind Vorlagen zum Erstellen mehrerer verwalteter Ressourcen als ein einziges Objekt. Auf diese Weise kann das Plattformteam solche Vorlagen für gängige Anwendungsarchitekturen definieren, und das Anwendungsteam kann diese Vorlage dann einfach verwenden, um die richtige Infrastruktur zu instanziieren und die Anwendung bereitzustellen.
 
-Einer unserer in [Kapitel 2](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/2) diskutierten Self-Service-Anwendungsfälle war die automatisierte Bereitstellung einer Leistungstestumgebung. Wir könnten eine Composition definieren, die für die Entwicklungsteams genauso einfach zu verwenden wäre wie die in diesem Beispiel gezeigte:
+Einer unserer in [Kapitel 2](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap2/Platform%20Engineering_2%20de.md) diskutierten Self-Service-Anwendungsfälle war die automatisierte Bereitstellung einer Leistungstestumgebung. Wir könnten eine Composition definieren, die für die Entwicklungsteams genauso einfach zu verwenden wäre wie die in diesem Beispiel gezeigte:
 
 apiVersion: composites.financialone.acme/v1alpha1
 
@@ -245,7 +245,7 @@ Sobald die CI den Quellcode erfolgreich kompiliert, Unit-Tests durchgeführt und
 - **Kennzeichnen Sie Ihre Images ordnungsgemäß und konsistent**: Images werden im Allgemeinen durch zwei Komponenten identifiziert: ihren Namen und ihr Tag (z. B. finoneacme/fund-transfer:2.34.3, wobei finoneacme/fund-transfer der Name und 2.34.3 das Tag ist). Wenn Sie ein Image erstellen, liegt es an Ihnen, es ordnungsgemäß zu kennzeichnen, aber Sie sollten dabei eine konsistente Richtlinie befolgen. In der Branche gibt es zwei gängige Methoden, um dies zu tun:
     - **Semantische Versionierung**: Eine gängige Methode ist die Verwendung einer Versionsnummer. Die **Semantic Versioning Specification** \[4\] bietet eine leicht verständliche Richtlinie mit einer dreiteiligen Versionsnummer: MAJOR.MINOR.PATCH. Jede Minor- oder Patch-Versionsnummer muss für eine abwärtskompatible Änderung stehen. In Kombination mit dem Versionsnamen „latest“, der standardmäßig auf die neueste verfügbare Version verweist, können Sie einen einfachen Zugriff auf ein bestimmtes Image (z. B. X.Y.Z) ermöglichen. Außerdem können Sie die neueste Patch-Version für eine bestimmte Minor-Version (z. B. X.Y) oder die neueste Minor- und Patch-Version für eine Major-Version (z. B. X) auswählen.
     - **Tagging mit Git-Commit-Hash**: Wenn Git-Commits einen CI-Build auslösen, ist es am besten, den Git-Commit-Hash direkt als Version zu verwenden, anstatt die semantische Versionierung zu verfolgen. Der Commit-Hash auf dem Image sagt uns auch sofort, welcher Quellcode-Commit für die Erstellung dieses Container-Images verantwortlich war. Für unser Image könnte dies bedeuten, dass es wie folgt getaggt ist: financeoneacme/fund-transfer:d85aaef.
-- **Scannen Sie Ihre Images auf bekannte Schwachstellen**: Images, die von Ihrer CI erstellt werden, müssen auf bekannte Schwachstellen gescannt werden. Dies kann als zusätzlicher Schritt in der CI erfolgen (z. B. Aufruf eines Scan-Tools vor dem Hochladen des Images in die Registry). Es kann auch von der Container-Registry selbst übernommen werden. Je nach verwendeter Registry kann das Image während des Uploads gescannt und bei gefundenen Schwachstellen blockiert oder unter Quarantäne gestellt werden. Dadurch werden bekannte Schwachstellen zum Zeitpunkt der Erstellung des Container-Images gestoppt. Beachten Sie, dass dies keine Schwachstellen stoppt, die zu einem späteren Zeitpunkt identifiziert werden, wie beispielsweise die bekannte log4j-Schwachstelle. Aus diesem Grund muss die Sicherheit über die statischen Prüfungen im CI-Prozess hinausgehen und während des gesamten Lebenszyklus eines Artefakts fortgesetzt werden. Dies wird in [Kapitel 7](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/7) näher erläutert, in dem wir uns eingehender mit der Entwicklung und dem Betrieb sicherer Produkte befassen.
+- **Scannen Sie Ihre Images auf bekannte Schwachstellen**: Images, die von Ihrer CI erstellt werden, müssen auf bekannte Schwachstellen gescannt werden. Dies kann als zusätzlicher Schritt in der CI erfolgen (z. B. Aufruf eines Scan-Tools vor dem Hochladen des Images in die Registry). Es kann auch von der Container-Registry selbst übernommen werden. Je nach verwendeter Registry kann das Image während des Uploads gescannt und bei gefundenen Schwachstellen blockiert oder unter Quarantäne gestellt werden. Dadurch werden bekannte Schwachstellen zum Zeitpunkt der Erstellung des Container-Images gestoppt. Beachten Sie, dass dies keine Schwachstellen stoppt, die zu einem späteren Zeitpunkt identifiziert werden, wie beispielsweise die bekannte log4j-Schwachstelle. Aus diesem Grund muss die Sicherheit über die statischen Prüfungen im CI-Prozess hinausgehen und während des gesamten Lebenszyklus eines Artefakts fortgesetzt werden. Dies wird in [Kapitel 7](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap7/Platform%20Engineering_8%20de.md) näher erläutert, in dem wir uns eingehender mit der Entwicklung und dem Betrieb sicherer Produkte befassen.
 
 Nachdem wir nun ein Container-Image in unsere Container-Registry hochgeladen haben, können wir es in einer Bereitstellungsdefinition verwenden.
 
@@ -253,7 +253,7 @@ Phase 2 – vom Container-Image zum mit Metadaten angereicherten Bereitstellungs
 
 Das Container-Image muss nun seinen Weg in eine Bereitstellungsdefinition finden. Bei Kubernetes benötigen wir eine Manifestdatei, die unsere Bereitstellungsdefinition definiert und die wir später auf unseren K8s-Cluster anwenden können.
 
-In [Kapitel 3](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/3) haben wir hervorgehoben, dass das Hinzufügen von Metadaten (Eigentumsverhältnisse, Beobachtbarkeitsstufe, Benachrichtigungen) zu unserer Bereitstellungsdatei für viele Self-Service-Anwendungsfälle von Vorteil ist, beispielsweise für den Anwendungsfall „Anfordern von Protokollen als Self-Service“. Neben unserem Quellcode müssen wir daher auch unsere Bereitstellungsdefinition versionskontrollieren und einen Mindestsatz an Metadaten durchsetzen. Dies ermöglicht unsere Plattform-Self-Service-Anwendungsfälle (z. B. wer welche Dienste zu welcher Anwendung bereitgestellt hat) sowie die Einhaltung allgemeiner Best Practices für die Infrastruktur (z. B. die Definition von Anforderungs- und Ressourcenlimits), wie Sie im folgenden Manifest sehen können:
+In [Kapitel 3](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap3/Platform%20Engineering_3%20de.md) haben wir hervorgehoben, dass das Hinzufügen von Metadaten (Eigentumsverhältnisse, Beobachtbarkeitsstufe, Benachrichtigungen) zu unserer Bereitstellungsdatei für viele Self-Service-Anwendungsfälle von Vorteil ist, beispielsweise für den Anwendungsfall „Anfordern von Protokollen als Self-Service“. Neben unserem Quellcode müssen wir daher auch unsere Bereitstellungsdefinition versionskontrollieren und einen Mindestsatz an Metadaten durchsetzen. Dies ermöglicht unsere Plattform-Self-Service-Anwendungsfälle (z. B. wer welche Dienste zu welcher Anwendung bereitgestellt hat) sowie die Einhaltung allgemeiner Best Practices für die Infrastruktur (z. B. die Definition von Anforderungs- und Ressourcenlimits), wie Sie im folgenden Manifest sehen können:
 
 mainfest.yaml (Kubernetes-Bereitstellung)
 
@@ -412,15 +412,15 @@ spec:
 
 &nbsp;   …
 
-KopierenErklären
+# KopierenErklären #
 
 Jetzt wissen wir, wie ein neues Image, das von CI erstellt wurde, in die Bereitstellungsdefinition in unseren jeweiligen Repositorys gelangt. Wir haben den GitOps-Operator bereits weiter oben in diesem Kapitel in einem Image gesehen. Jetzt ist es an der Zeit, uns damit zu befassen, was der GitOps-Operator tatsächlich tut, um unseren gewünschten Zustand aus Git auf unsere Zielcluster anzuwenden!
 
-Phase 3 – GitOps – Beibehaltung Ihres gewünschten Bereitstellungszustands
+# Phase 3 – GitOps – Beibehaltung Ihres gewünschten Bereitstellungszustands
 
 Nachdem wir nun alles als Code in Git haben, ist es an der Zeit, darüber zu sprechen, wie wir diese Konfiguration auf unsere Zielumgebungen anwenden können. Eine Möglichkeit besteht darin, dasselbe Push-Modell zu verwenden, das wir auch für CI verwenden. Wir könnten Delivery-Pipelines bei Änderungen in unserem Git-Repository auslösen und dann die neueste Version der Manifeste oder Helm-Charts auf die Zielumgebung anwenden. In diesem Kapitel konzentrieren wir uns jedoch auf das Pull-Modell, das von GitOps-Operatoren oder GitOps-Agenten wie Argo CD, Flux und einigen kommerziellen Angeboten implementiert wird.
 
-GitOps-Operatoren in Kürze – Git mit K8s synchronisieren
+# GitOps-Operatoren in Kürze – Git mit K8s synchronisieren
 
 GitOps-Operatoren gleichen kontinuierlich ab und stellen sicher, dass der in unseren Repositorys deklarierte gewünschte Zustand mit dem tatsächlichen Zustand in unseren Zielumgebungen übereinstimmt. Der Operator erkennt eine Nichtübereinstimmung, wenn der Zustand in Git nicht mit dem in der Zielumgebung übereinstimmt. Dies kann passieren, wenn die Git-Konfiguration geändert wurde (z. B. wenn ein neues Image verfügbar ist und eine Manifestaktualisierung verursacht). Es kann auch passieren, wenn jemand die Konfiguration in K8s ändert (z. B. durch eine manuelle Aktualisierung oder ein anderes Automatisierungstool). Das Folgende ist eine allgemeine Übersicht über die Rolle des GitOps-Operators:
 
@@ -428,7 +428,7 @@ Abbildung 5.4: Der GitOps-Operator synchronisiert den gewünschten Zustand in Gi
 
 Je nach GitOps-Operator-Tool gibt es unterschiedliche Konfigurationsoptionen für den Abgleichprozess. Es lohnt sich, die Dokumentation der beiden bekanntesten Tools im Cloud-Native-Ökosystem zu lesen: **Argo CD** \[9\] und **Flux** \[10\]. Machen Sie sich auch mit den Konfigurationselementen vertraut, da einige Tools das Konzept von Projekten und Anwendungen verwenden, während andere nur das Konzept einer Quelle kennen.
 
-Abstimmung verstehen – K8s mit Git synchronisieren
+# Abstimmung verstehen – K8s mit Git synchronisieren
 
 Im Wesentlichen ruft der GitOps-Operator den gewünschten Zustand für ein Projekt oder eine Anwendung aus einer Quelle (Git-Repository, einem Ordner im Git-Repository, dem OCI-Repository, S3-Buckets usw.) ab und vergleicht ihn mit dem aktuellen Zustand, der auf dem Ziel-K8s-Cluster ausgeführt wird. Die beiden Zustände können entweder synchron oder nicht synchron sein. Wenn der Zustand nicht synchron ist, gibt es für den GitOps-Operator verschiedene Optionen, um die Zustände zu synchronisieren, d. h. den aktuellen Zustand an den gewünschten Zustand anzupassen:
 
@@ -439,7 +439,7 @@ Im Wesentlichen ruft der GitOps-Operator den gewünschten Zustand für ein Proje
 
 Nachdem wir nun die Grundlagen der Synchronisierung kennen, wollen wir uns verschiedene GitOps-Operator-Bereitstellungsmuster ansehen!
 
-GitOps-Operator-Muster – Single, Hub and Spoke und Many-to-Many
+# GitOps-Operator-Muster – Single, Hub and Spoke und Many-to-Many
 
 Die einfachste Version – und wahrscheinlich das Modell, mit dem viele beginnen – ist der Monorepo-Ansatz mit GitOps-Operatoren, die in eine einzige Zielumgebung ziehen, wie wir in Abbildung 5.3 für beide Muster „ “ gesehen haben. Während das einzelne Ziel ein gängiges Muster ist, insbesondere wenn Sie mit GitOps beginnen, gibt es noch andere Muster, die wir kurz hervorheben möchten.
 
@@ -449,7 +449,7 @@ Abbildung 5.5: Hub-and-Spoke- und Many-to-Many-GitOps-Operator-Muster
 
 Nachdem wir nun die wichtigsten Phasen in GitOps besprochen haben, lassen Sie uns noch einmal zusammenfassen und einen kurzen Blick auf einige Best Practices werfen.
 
-GitOps-Best Practices
+## GitOps-Best Practices
 
 Diese Liste ist nicht vollständig, sollte Ihnen jedoch einen guten Ausgangspunkt für die Definition Ihres GitOps-Prozesses bieten:
 
@@ -488,7 +488,7 @@ Abbildung 5.6: Container-Registries – das Herzstück unserer Plattform
 
 Obwohl es viele detaillierte Informationen von verschiedenen Open-Source- und kommerziellen Registry-Anbietern gibt, möchten wir einen kurzen Überblick darüber geben, wie Registries in unsere Plattform-Engineering-Architektur passen, warum bestimmte Konzepte wichtig sind und wie wir Container-Registries unseren Endbenutzern am besten als benutzerfreundlichen Self-Service zur Verfügung stellen können!
 
-Vom Container zum Artefakt-Register
+## Vom Container zum Artefakt-Register
 
 Bevor wir uns mit dem Prozess befassen, möchten wir kurz darauf hinweisen, dass Container-Registries – obwohl der Name dies vermuten lässt – nicht auf Container-Images beschränkt sind. Die meisten Container-Registries unterstützen in der Regel den OCI \[11\]-Image-Standard. In den letzten Jahren wurden Container-Registries erweitert, um auch Nicht-Container-Artefakte wie Helm Charts, gezippte Versionen von Manifesten oder Kustomize-basierte Vorlagen zu unterstützen. Mit dieser Erweiterung ging auch eine Namensänderung für Artefakt-Registries einher, da diese Tools Artefakte im Allgemeinen und nicht nur Container-Images verwalten.
 
@@ -518,19 +518,19 @@ docker push $REGISTRY/financeoneacme/fund-transfer:1.2.3
 
 docker pull $REGISTRY/financeoneacme/fund-transfer:1.2.3
 
-KopierenErklären
+## KopierenErklären
 
 Beim Erstellen neuer Images im Rahmen des CI-Prozesses ist es wichtig, die Best Practices für Image-Labels und Metadaten zu befolgen. Die OCI hat daher auch eine Liste mit empfohlenen Anmerkungen \[12\] als Teil ihrer Image-Spezifikation, die verwendet werden sollten, wie z. B. erstellt, Autoren, URL und Dokumentation (alle mit dem Präfix org.opencontainers.image.).
 
 Neben einer API-Schnittstelle bieten Registries in der Regel auch eine **Benutzeroberfläche** (**UI**), die es einfacher macht, zu sehen, welche Images hochgeladen wurden, wie viel Speicherplatz sie belegen, und – je nach den Verwaltungsfunktionen der Registry – auch die Konfigurationsaspekte all dieser Funktionen bereitstellt (z. B. Erstellen von Projekten, Verwalten von Benutzern, Festlegen von Richtlinien, Konfigurieren von Webhooks usw.).
 
-Verwalten hochgeladener Artefakte
+## Verwalten hochgeladener Artefakte
 
 Registries verwalten Artefakte in der Regel in Projekten. Projekte können innerhalb der Registry privat oder öffentlich sein, was bedeutet, dass Artefakte in einem öffentlichen Projekt für jeden zugänglich sind, der auf die Registry zugreifen kann, während private Projekte nur für autorisierte Benutzer zugänglich sind. Damit kommen wir zur Benutzerverwaltung und Zugriffskontrolle, die auf Projektebene definiert werden kann und auch in Zugriffsprotokolle einfließen kann. Registries erstellen Protokolle für jeden Push und Pull, um einen guten Prüfpfad zu haben. CNCF Harbor ist eine sehr beliebte Container-Registry, die auch eine gute Dokumentation zu all diesen Funktionen bietet. Anstatt hier ins Detail zu gehen, empfehlen wir Ihnen, die öffentlich zugängliche Dokumentation \[13\] zu all diesen Funktionen zu lesen. Wichtig ist, dass Sie sich merken, wie Sie Ihre Images in Projekten organisieren und wem Sie Zugriff gewähren. Wenn Sie auch externen Dritten erlauben möchten, ihre Images in Ihre Registries zu übertragen, können Sie für sie spezielle Benutzer erstellen, die ihnen das Hochladen in die jeweiligen Containerprojekte ermöglichen!
 
-Sicherheitslücken-Scan
+## Sicherheitslücken-Scan
 
-[Kapitel 7](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/7) befasst sich ausführlicher mit dem Thema Sicherheit, aber es ist wichtig, an dieser Stelle zu erwähnen, dass eine zentrale Komponente wie ein Artefakt-Register, durch das jedes Artefakt laufen muss, ein idealer Ort für die statische Überprüfung auf Schwachstellen ist. Register bieten oft sofort einsatzbereite Scan-Funktionen oder ermöglichen die Integration zusätzlicher Tools, je nach Art des Artefakts. Diese Tools werden dann entweder beim Hochladen eines neuen Bildes aufgerufen, um die Bilder bei ihrer Ankunft zu scannen, oder nach einem Zeitplan, um sicherzustellen, dass die Bilder kontinuierlich gescannt und erneut gescannt werden.
+[Kapitel 7](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap7/Platform%20Engineering_8%20de.md) befasst sich ausführlicher mit dem Thema Sicherheit, aber es ist wichtig, an dieser Stelle zu erwähnen, dass eine zentrale Komponente wie ein Artefakt-Register, durch das jedes Artefakt laufen muss, ein idealer Ort für die statische Überprüfung auf Schwachstellen ist. Register bieten oft sofort einsatzbereite Scan-Funktionen oder ermöglichen die Integration zusätzlicher Tools, je nach Art des Artefakts. Diese Tools werden dann entweder beim Hochladen eines neuen Bildes aufgerufen, um die Bilder bei ihrer Ankunft zu scannen, oder nach einem Zeitplan, um sicherzustellen, dass die Bilder kontinuierlich gescannt und erneut gescannt werden.
 
 Abonnieren der Lebenszyklusereignisse eines Artefakts in der Registrierung
 
@@ -543,13 +543,13 @@ Ein Artefakt durchläuft in der Regel verschiedene Lebenszyklusphasen, vom erste
 
 Zur Information finden Sie hier die vollständige Liste der verfügbaren Lebenszyklusereignisse, die mit Webhooks verwendet werden können: Artefakt gelöscht, Artefakt abgerufen, Artefakt gepusht, Diagramm gelöscht, Diagramm heruntergeladen, Diagramm hochgeladen, Kontingent überschritten, Kontingent fast erschöpft, Replikation abgeschlossen, Scan fehlgeschlagen und Scan abgeschlossen.
 
-Aufbewahrung und Unveränderlichkeit
+## Aufbewahrung und Unveränderlichkeit
 
 Repositorys können sehr schnell wachsen – was zu hohen Speicherkosten führen kann, wenn Sie keine gute Bereinigungsstrategie haben. Aus diesem Grund ist es ratsam, alte Bilder, die nicht mehr benötigt werden, zu bereinigen. Einige Registries bieten daher vorgefertigte Aufbewahrungsrichtlinien, in denen Sie festlegen können, welche Bilder bestimmten Regeln entsprechen, die aufbewahrt werden sollen, und wie lange. Sobald Bilder aus der Aufbewahrungsfrist herausfallen, werden sie gelöscht.
 
 Ein weiterer Anwendungsfall ist, dass standardmäßig jeder ein neues Image mit demselben Image-Tag hochladen kann, wodurch die vorherige Image-Version ohne Tag bleibt. Um dies zu verhindern, bieten einige Registries Unveränderbarkeitsregeln, die verhindern, dass Tags aus bestehenden Images entfernt werden!
 
-Überwachung unserer Registries
+## Überwachung unserer Registries
 
 Da Registries das Herzstück unserer Plattform sind, müssen wir sicherstellen, dass sie einwandfrei funktionieren. Wenn Registries keine Push- oder Pull-Anfragen mehr verarbeiten, keine Schwachstellenprüfungen mehr durchführen und keine Replikationen an andere Registries oder Benachrichtigungen mehr versenden können, haben wir ein Problem! Das bedeutet, dass wichtige Updates nicht schnell genug in die Zielumgebungen gelangen. Dies könnte bedeuten, dass eine Sicherheitslücke – obwohl sie durch ein neues Image behoben wurde – nicht geschlossen werden kann, da das neue Image nicht an die infizierte Umgebung geliefert werden kann. Es kann auch bedeuten, dass wir neue Funktionen nicht zum versprochenen Zeitpunkt ausliefern können.
 
@@ -795,7 +795,7 @@ Im nächsten Abschnitt werden wir uns näher mit diesem Ansatz befassen, da er v
 
 Beobachtbarkeit von Artefakt-Lebenszyklusereignissen
 
-Die Grundlage für die ereignisgesteuerte Orchestrierung sind Lebenszyklusereignisse, wie sie in [Kapitel 3](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/3) beschrieben wurden. Dabei geht es darum, den gesamten Lebenszyklus eines Artefakts zu beobachten: vom ersten Git-Commit des Codes über das Erstellen und Pushen von Container-Images in eine Registry bis hin zur Freigabe in jeder Phase, bis das Artefakt aktualisiert oder außer Betrieb genommen wird, einschließlich aller Schritte dazwischen.
+Die Grundlage für die ereignisgesteuerte Orchestrierung sind Lebenszyklusereignisse, wie sie in [Kapitel 3](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap3/Platform%20Engineering_3%20de.md) beschrieben wurden. Dabei geht es darum, den gesamten Lebenszyklus eines Artefakts zu beobachten: vom ersten Git-Commit des Codes über das Erstellen und Pushen von Container-Images in eine Registry bis hin zur Freigabe in jeder Phase, bis das Artefakt aktualisiert oder außer Betrieb genommen wird, einschließlich aller Schritte dazwischen.
 
 Bisher haben wir in diesem Kapitel viele dieser Lebenszyklus-Schritte besprochen und auch hervorgehoben, wie einige dieser Lebenszyklusereignisse extrahiert werden können:
 
@@ -932,7 +932,7 @@ Wenn alle Ereignisse mit all ihren Metadaten und klar definierten Typen, die die
 
 Die Automatisierung von CI/CD und Betrieb führt in der Regel zu einer Vielzahl von angepassten Codes, die in allen Projekten, in die sie kopiert wurden, gepflegt werden müssen. In diesem Abschnitt haben wir gelernt, dass die Umstellung auf einen ereignisgesteuerten Ansatz für das Lebenszyklusmanagement von Artefakten viele der Komplexitätsprobleme lösen kann, die sonst in benutzerdefinierten Skripten oder fest codierten Tool-to-Tool-Integrationen verborgen sind.
 
-In [Kapitel 9](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/9) werden wir weitere Aspekte behandeln, wie wir durch die richtigen architektonischen Entscheidungen die technischen Schulden in allen unseren Plattformkomponenten reduzieren können.
+In [Kapitel 9](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap9/Platform%20Engineering_9%20de.md) werden wir weitere Aspekte behandeln, wie wir durch die richtigen architektonischen Entscheidungen die technischen Schulden in allen unseren Plattformkomponenten reduzieren können.
 
 IDPs – der Automatisierungs-Kraken in der Plattform
 
@@ -1006,7 +1006,7 @@ In diesem Kapitel haben wir viel über die zugrunde liegende Automatisierung und
 
 Wenn ein Unternehmen wächst, ist es wichtig, gute Prozesse und Best Practices durchzusetzen. Damit die Durchsetzung funktioniert, muss sie leicht zugänglich sein und sollte durchgängig als Self-Service verfügbar sein, um den Kreativitätsfluss der Ingenieure nicht zu beeinträchtigen.
 
-Dies bringt uns auch zum Thema des nächsten Kapitels. In [Kapitel 6](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/6) beschäftigen wir uns mit der Bedeutung von Self-Service-Funktionen, die wirklich auf die Bedürfnisse unserer Zielgruppe, nämlich unserer Entwickler, zugeschnitten sind. Wir werden diskutieren, wie wir die Best Practices dieser Golden Paths in unsere Plattform integrieren können, um die Arbeitsweise von Entwicklern erheblich zu verbessern.
+Dies bringt uns auch zum Thema des nächsten Kapitels. In [Kapitel 6](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap6/Platform%20Engineering_7%20de.md) beschäftigen wir uns mit der Bedeutung von Self-Service-Funktionen, die wirklich auf die Bedürfnisse unserer Zielgruppe, nämlich unserer Entwickler, zugeschnitten sind. Wir werden diskutieren, wie wir die Best Practices dieser Golden Paths in unsere Plattform integrieren können, um die Arbeitsweise von Entwicklern erheblich zu verbessern.
 
 Weiterführende Literatur
 
