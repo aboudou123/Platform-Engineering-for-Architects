@@ -1,3 +1,10 @@
+**Im Rahmen meiner Masterarbeit befasse ich mich mit dem Thema Plattform-Engineering in einem der führenden Robotikunternehmen Bayerns.
+Dieses GitHub-Repository dient der schrittweisen Dokumentation meiner Forschungsarbeit sowie der strukturierten Aufbereitung von Methoden, Ergebnissen und gewonnenen Erkenntnissen.
+
+Interessierte Leserinnen und Leser sind eingeladen, den Entstehungsprozess nachzuvollziehen. Konstruktive Anmerkungen, fachliche Hinweise und weiterführende Ideen sind ausdrücklich willkommen**
+
+
+
 # Plattform-Engineering und die Kunst, Plattformen zu entwickeln
 
 In diesem ersten Kapitel lernen wir, wie wir erkennen können, wann unser Unternehmen bereit ist, eine Plattform zu planen. Dazu klären wir, warum Plattformen zu einem so wichtigen Thema geworden sind, wie eine produktorientierte Denkweise dazu passt und anhand welcher Kriterien wir feststellen können, ob wir für eine Plattform bereit sind oder nicht. Wir lernen die Unterschiede zwischen Plattformen kennen und erfahren, welche Plattformtypen am häufigsten aufgebaut werden.
