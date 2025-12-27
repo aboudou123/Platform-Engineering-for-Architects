@@ -334,7 +334,7 @@ Diese Lektionen sollten Sie motivieren, sich eingehender mit Plattformarchitektu
 
 Nachdem wir uns nun mit den menschlichen Aspekten befasst haben, werden wir im nächsten Kapitel entdecken, wie man die Prinzipien und den Zweck einer Plattform definiert, wie man die Plattformarchitektur definiert und wie man den Erfolg der Plattform misst.
 
-[Weiter zu Kapitel 02]([docs/Kapitel_02.md](https://github.com/aboudou123/Platform-Engineering-for-Architects/edit/main/DE/Chap2/Platform%20Engineering_2%20de.md))
+[Weiter zu Kapitel 02]([(https://github.com/aboudou123/Platform-Engineering-for-Architects/edit/main/DE/Chap2/Platform%20Engineering_2%20de.md))]
 
 
 
