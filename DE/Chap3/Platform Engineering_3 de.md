@@ -1,4 +1,4 @@
-Die Grundlage für die Unterstützung von Plattformfunktionen schaffen
+### Die Grundlage für die Unterstützung von Plattformfunktionen schaffen ###
 
 Die Lösung von Problemen, die Nutzer haben, die Gestaltung einer guten Nutzer- und Entwicklererfahrung und die Vermeidung technischer Komplexität sind die grundlegenden Schritte zu erfolgreichen Produkten und erfolgreicher Plattformentwicklung.
 
@@ -6,7 +6,7 @@ In der Realität scheitern viele Projekte, weil diese grundlegenden Prinzipien v
 
 In diesem Kapitel gehen wir die obligatorischen Schritte und Prozesse durch, um eine solide Grundlage für eine Plattform zu definieren, die von einem ersten Satz von Funktionen zu wichtigen unternehmensunterstützenden Plattformfunktionen ausgebaut werden kann.
 
-Daher behandeln wir in diesem Kapitel die folgenden Hauptthemen:
+**Daher behandeln wir in diesem Kapitel die folgenden Hauptthemen**:
 
 - Finanzielles ACME – unser fiktives Unternehmen
 - Überwindung der Komplexität der Plattform durch die richtige Perspektive
