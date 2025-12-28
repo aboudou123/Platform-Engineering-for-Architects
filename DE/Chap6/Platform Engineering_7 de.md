@@ -4,10 +4,10 @@ Im letzten Teil stellen wir Ihnen die Tools zur Verfügung, mit denen Sie Ihre P
 
 Dieser Teil umfasst die folgenden Kapitel:
 
-- [Kapitel 7](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/7), Entwicklung sicherer und konformer Produkte
-- [Kapitel 8](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/8), Kostenmanagement und Best Practices
-- [Kapitel 9](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/9), Auswahl technischer Schulden, um Plattformen unzerstörbar zu machen
-- [Kapitel 10](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/10), Entwicklung von Plattformprodukten für die Zukunft
+- [Kapitel 7](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap6/Platform%20Engineering_7%20de.md), Entwicklung sicherer und konformer Produkte
+- [Kapitel 8](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap7/Platform%20Engineering_8%20de.md), Kostenmanagement und Best Practices
+- [Kapitel 9](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap9/Platform%20Engineering_9%20de.md), Auswahl technischer Schulden, um Plattformen unzerstörbar zu machen
+- [Kapitel 10](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap9/Platform%20Engineering_9%20de.md), Entwicklung von Plattformprodukten für die Zukunft
 
 Entwicklung sicherer und konformer Produkte
 
@@ -600,4 +600,4 @@ Zusammenfassend lässt sich sagen, dass Sicherheit und Compliance ein weites Fel
 
 Sicherheit und Flexibilität sind zwar keine natürlichen Partner, aber intelligente Implementierungen, die sich auf kritische Sicherheitsanforderungen konzentrieren, ohne die Innovation zu behindern, sind der Schlüssel, um den Entwicklern die Tools zur Verfügung zu stellen, die sie für ihren Erfolg benötigen, und ihnen den Schutz zu bieten, den sie für ihre Sicherheit benötigen.
 
-Denken Sie daran: Die Kosten eines Sicherheitsvorfalls können astronomisch hoch sein und sogar zu Insolvenz oder Gerichtsverfahren führen. Die Speicherung von Protokollen und andere Sicherheitsanforderungen können zwar Kosten verursachen, diese Kosten sind jedoch überschaubar und niemals höher als die Kosten, die durch die Nicht-Sicherung Ihrer Systeme entstehen. Weitere Informationen zur Verwaltung der Kosten Ihrer Plattform finden Sie in [Kapitel 8](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/8).
+Denken Sie daran: Die Kosten eines Sicherheitsvorfalls können astronomisch hoch sein und sogar zu Insolvenz oder Gerichtsverfahren führen. Die Speicherung von Protokollen und andere Sicherheitsanforderungen können zwar Kosten verursachen, diese Kosten sind jedoch überschaubar und niemals höher als die Kosten, die durch die Nicht-Sicherung Ihrer Systeme entstehen. Weitere Informationen zur Verwaltung der **Kosten** Ihrer Plattform finden Sie in [Kapitel 8](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap6/Platform%20Engineering_7%20de.md).
