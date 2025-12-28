@@ -1,4 +1,4 @@
-**Kostenmanagement und Best Practices**
+### Kostenmanagement und Best Practices ###
 
 Die Cloud-Migration hatte in den letzten Jahren für viele IT-Organisationen höchste Priorität und ist auch für die kommenden Jahre weiterhin eine strategisch relevante Ausrichtung. Der Betrieb und Besitz eines eigenen Rechenzentrums ist ebenfalls nach wie vor ein wertvoller Ansatz; das Design und die Kosten für die eigenen Rechenzentrumskapazitäten sind in der Regel besser durchdacht als bei der Cloud. In diesem Kapitel werden wir uns näher damit befassen und über die Notwendigkeit des Cloud-Kostenmanagements und der Optimierung nachdenken.
 
@@ -13,11 +13,11 @@ Insgesamt konzentrieren wir uns auf ein effektives Kostenmanagement und darauf, 
 - Betrachtung von Strategien zur Kostenoptimierung
 - Autoscaling, Cold Storage und andere Tricks zur Kostenoptimierung
 
-Die Kostenlandschaft verstehen – ist die Cloud der richtige Weg?
+# Die Kostenlandschaft verstehen – ist die Cloud der richtige Weg?#
 
 Das Kostenmanagement im Bereich Platform Engineering beginnt mit einem guten Verständnis der Kostentreiber innerhalb Ihrer Infrastruktur und der Frage, wie bestimmte Plattformkomponenten diese beeinflussen können. Kostentreiber sind auch Elemente, die sich direkt auf die Gesamtkosten Ihres Plattformbetriebs auswirken. Wenn Sie diese verstehen und später identifizieren, können Sie fundierte Entscheidungen treffen, um kostenorientierte und optimierte Plattformen bereitzustellen.
 
-Cloud oder keine Cloud – das ist hier die Frage
+**Cloud oder keine Cloud – das ist hier die Frage*
 
 In den letzten Jahren gab es fast keinen Weg an einer Cloud-Einführungsstrategie vorbei. In diesen Jahren stieß diese Entwicklung auf Widerstand von Unternehmen, die erfolgreich von der Cloud abgewandert sind und behaupten, dass ihre lokale Infrastruktur billiger, besser und alles ist, was sie brauchen. Dies wird als Repatriierung bezeichnet. Die Zahl derjenigen, die dies tun, ist nicht ganz klar und hängt stark davon ab, was darunter verstanden wird. Bekannt wurde dies durch HEY/Basecamp/37signals, deren CTO David Heinemeier Hansson erklärte, dass sie in den nächsten 5 Jahren über 7 Millionen Dollar einsparen würden, wenn sie nicht in der Cloud arbeiten würden. Ein völlig unsinniger Vergleich ihrer gekauften Server, die eine halbe Million Dollar gekostet haben, mit ihren wahnsinnigen jährlichen Cloud-Ausgaben von 1,9 Millionen Dollar macht die Rechnung komplett \[1\].
 
@@ -36,7 +36,7 @@ Sicher – Basecamp oder HEY sind nicht mit einem Unternehmen vergleichbar, oder
 
 Die Cloud hat oft einen großen Vorteil: Es gibt fast nichts, was Sie daran hindert, sofort loszulegen. Sie finden unzählige Vorlagen, Blaupausen und Beispiele. Und innerhalb kurzer Zeit sind Sie startklar und haben Ihre erste Umgebung als Plattform zur Verfügung.
 
-Wenn wir uns für die Cloud entscheiden, müssen wir ihre versteckten Kosten berücksichtigen
+**Wenn wir uns für die Cloud entscheiden, müssen wir ihre versteckten Kosten berücksichtigen**
 
 Da wir uns in diesem Buch in erster Linie auf die Cloud konzentrieren, gehen wir vorerst davon aus, dass diejenigen, die sich für Bare-Metal-Lösungen entscheiden, von Natur aus ein höheres Kostenbewusstsein und eine höhere Sensibilität haben.
 
