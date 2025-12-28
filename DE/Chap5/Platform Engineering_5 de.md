@@ -1006,7 +1006,7 @@ In diesem Kapitel haben wir viel über die zugrunde liegende Automatisierung und
 
 Wenn ein Unternehmen wächst, ist es wichtig, gute Prozesse und Best Practices durchzusetzen. Damit die Durchsetzung funktioniert, muss sie leicht zugänglich sein und sollte durchgängig als Self-Service verfügbar sein, um den Kreativitätsfluss der Ingenieure nicht zu beeinträchtigen.
 
-Dies bringt uns auch zum Thema des nächsten Kapitels. In [Kapitel 6](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap6/Platform%20Engineering_7%20de.md) beschäftigen wir uns mit der Bedeutung von Self-Service-Funktionen, die wirklich auf die Bedürfnisse unserer Zielgruppe, nämlich unserer Entwickler, zugeschnitten sind. Wir werden diskutieren, wie wir die Best Practices dieser Golden Paths in unsere Plattform integrieren können, um die Arbeitsweise von Entwicklern erheblich zu verbessern.
+Dies bringt uns auch zum Thema des nächsten Kapitels. In [Kapitel 6](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap6/Platform%20Engineering_7%20de.md) beschäftigen wir uns mit der Bedeutung von Self-Service-Funktionen, die wirklich auf die Bedürfnisse unserer Zielgruppe, nämlich unserer Entwickler, zugeschnitten sind. Wir werden diskutieren, wie wir die Best Practices dieser Golden Paths in unsere Plattform integrieren können, um die Arbeitsweise von Entwicklern erheblich zu verbessern.Weiter [Kapitel 6](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap6/Platform%20Engineering_7%20de.md)
 
 Weiterführende Literatur
 
