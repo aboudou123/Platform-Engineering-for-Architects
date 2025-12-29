@@ -1,4 +1,4 @@
-## Plattformarchitektur verstehen, um eine Plattform als Produkt aufzubauen ###
+# Plattformarchitektur verstehen, um eine Plattform als Produkt aufzubauen ###
 
 In diesem Kapitel werden Sie durch alle relevanten Grundlagen und Ansätze zur Erstellung Ihrer Plattformarchitektur geführt. Zunächst lernen Sie die Prinzipien kennen und erfahren, wie diese zu einem Leitfaden für Ihre Plattformstrategie werden. Dies hilft Ihnen, auf Kurs zu bleiben und sich auf das Wesentliche zu konzentrieren. Abschließend definieren wir den Zweck Ihrer Plattform.
 
@@ -14,11 +14,11 @@ In [Kapitel 2] lernen Sie Folgendes:
 - Verstehen von TVPs
 - Betrachten der relevanten KPIs, um die Akzeptanz transparent zu machen
 
-# Verständnis der Plattformprinzipien und Definition des Zwecks Ihrer Plattform und Ihres Teams
+### Verständnis der Plattformprinzipien und Definition des Zwecks Ihrer Plattform und Ihres Teams
 
 Sie benötigen zwei wesentliche Dinge, um die richtige Architektur für Ihre Plattform zu entwickeln und diese zu befolgen. Zunächst müssen Sie die Leitplanken definieren, die Ihnen die Richtung vorgeben, und die Schritte zur Entwicklung und zum Betrieb Ihrer **internen Entwicklungsplattform** (**IDP**) als Produkt v ieren. Zweitens müssen Sie verstehen, was Sie erreichen möchten. Damit ist nicht die Architektur gemeint, sondern die identifizierten und definierten Zwecke, die hinter Ihrer Plattform stehen.
 
-# Einführung von Prinzipien als Leitplanken für die Entscheidungsfindung
+### Einführung von Prinzipien als Leitplanken für die Entscheidungsfindung
 
 Prinzipien klingen vielleicht wie ein altmodischer Ansatz aus den vergessenen Zeiten der Unternehmensarchitekten und sehr starren Organisationen. In Zeiten, in denen alles agil wird, sind Prinzipien die Eckpfeiler für eine aktive Entscheidungsfindung. Sie helfen, Diskussionen zu verkürzen und sich auf die Bereitstellung der Plattform zu konzentrieren. Wie unterscheiden sich Prinzipien von Fähigkeiten oder Attributen? Die Fähigkeiten einer Plattform sind die Funktionen, die ein IDP bereitstellen oder anbieten kann. Stellen Sie sich vor, Sie benötigen Dateispeicherplatz, und mit der Spezifikation einer Ressourcendefinition, die Sie innerhalb Ihrer Plattform anwenden, stellt Ihnen das System einen S3-konformen Bucket zur Verfügung. Attribute sind eine Obermenge der bereitgestellten Fähigkeiten und werden aktiv oder passiv genutzt. Wenn Sie eine sichere Plattform definieren, ist dies das Attribut, das dann die Absicherung der Knoten, CVE-Scans (**Common Vulnerabilities and Exposures**) und Dinge wie Netzwerkverschlüsselung und strenge **rollenbasierte** Zugriffskontrollregeln (**RBAC**) kombinieren kann. Ein Prinzip hilft Ihnen bei der Entscheidung, WIE Sie diese Fähigkeiten und Attribute erreichen wollen. Daher werden Sie in der Regel auf zwei Arten von Prinzipien stoßen:
 
