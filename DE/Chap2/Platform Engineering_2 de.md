@@ -14,11 +14,11 @@ In [Kapitel 2] lernen Sie Folgendes:
 - Verstehen von TVPs
 - Betrachten der relevanten KPIs, um die Akzeptanz transparent zu machen
 
-Verständnis der Plattformprinzipien und Definition des Zwecks Ihrer Plattform und Ihres Teams
+## Verständnis der Plattformprinzipien und Definition des Zwecks Ihrer Plattform und Ihres Teams
 
 Sie benötigen zwei wesentliche Dinge, um die richtige Architektur für Ihre Plattform zu entwickeln und diese zu befolgen. Zunächst müssen Sie die Leitplanken definieren, die Ihnen die Richtung vorgeben, und die Schritte zur Entwicklung und zum Betrieb Ihrer **internen Entwicklungsplattform** (**IDP**) als Produkt v ieren. Zweitens müssen Sie verstehen, was Sie erreichen möchten. Damit ist nicht die Architektur gemeint, sondern die identifizierten und definierten Zwecke, die hinter Ihrer Plattform stehen.
 
-Einführung von Prinzipien als Leitplanken für die Entscheidungsfindung
+## Einführung von Prinzipien als Leitplanken für die Entscheidungsfindung
 
 Prinzipien klingen vielleicht wie ein altmodischer Ansatz aus den vergessenen Zeiten der Unternehmensarchitekten und sehr starren Organisationen. In Zeiten, in denen alles agil wird, sind Prinzipien die Eckpfeiler für eine aktive Entscheidungsfindung. Sie helfen, Diskussionen zu verkürzen und sich auf die Bereitstellung der Plattform zu konzentrieren. Wie unterscheiden sich Prinzipien von Fähigkeiten oder Attributen? Die Fähigkeiten einer Plattform sind die Funktionen, die ein IDP bereitstellen oder anbieten kann. Stellen Sie sich vor, Sie benötigen Dateispeicherplatz, und mit der Spezifikation einer Ressourcendefinition, die Sie innerhalb Ihrer Plattform anwenden, stellt Ihnen das System einen S3-konformen Bucket zur Verfügung. Attribute sind eine Obermenge der bereitgestellten Fähigkeiten und werden aktiv oder passiv genutzt. Wenn Sie eine sichere Plattform definieren, ist dies das Attribut, das dann die Absicherung der Knoten, CVE-Scans (**Common Vulnerabilities and Exposures**) und Dinge wie Netzwerkverschlüsselung und strenge **rollenbasierte** Zugriffskontrollregeln (**RBAC**) kombinieren kann. Ein Prinzip hilft Ihnen bei der Entscheidung, WIE Sie diese Fähigkeiten und Attribute erreichen wollen. Daher werden Sie in der Regel auf zwei Arten von Prinzipien stoßen:
 
@@ -36,7 +36,7 @@ Alle Daten sind für eine Organisation wertvoll. Sie sind eine messbare Ressourc
 
 Wenn Sie diese beiden Grundsätze berücksichtigen, werden Ihre Entscheidungen bei der Gestaltung der Architektur für Ihr Szenario in verschiedene Richtungen gehen. Sie werden feststellen, dass bestimmte Grundsätze so aussehen, als würden sie die offensichtlichen Erwartungen einer Abteilung beschreiben. Aber gehen Sie niemals von etwas aus oder erwarten Sie etwas implizit, wenn Sie sicher sein wollen, dass es so gemacht wird, wie Sie es wollen.
 
-Wichtiger Hinweis
+### Wichtiger Hinweis
 
 Definieren Sie explizite Regeln, Richtlinien und Rahmenbedingungen, wenn Sie bestimmte Erwartungen an das Ergebnis der Aktivitäten einer Person haben. Implizit wird vorausgesetzt, dass man Ihre Gedanken lesen kann und die gleiche Weltanschauung hat wie Sie.
 
@@ -53,7 +53,7 @@ Bevor wir Ihnen dabei helfen, Ihre eigenen Grundsätze zu definieren, möchten w
 
 Diese Prinzipien versuchen, verschiedene Sichtweisen und Detailebenen abzudecken. Welches für Sie das richtige ist, lässt sich schwer sagen. Scheuen Sie sich nicht, Formulierungen oder Prinzipien im Laufe der Zeit anzupassen, wenn Sie feststellen, dass sie nicht funktionieren.
 
-Produktdenken als Kernprinzip
+### Produktdenken als Kernprinzip
 
 Ihre internen Kunden sollten Ihre Plattform nutzen wollen. Sie sollten nicht dazu gezwungen werden.
 
@@ -65,11 +65,11 @@ Grundsätze können aus Ihren Unternehmenswerten, Kundenfeedback oder einem inte
 
 Ich habe zwei Schreibweisen gesehen, die sehr effizient sind, um ein Prinzip zu definieren und häufige Zitate und Anpassungen zu finden, und manchmal findet man sie in Slack-/Teams-Kanalbeschreibungen oder E-Mail-Fußzeilen.
 
-Befehl und Begründung
+### Befehl und Begründung
 
 Der Ansatz **„Befehl und Begründung“** funktioniert in der Regel gut für Organisationen mit stärkeren Hierarchien, in denen das Plattformteam möglicherweise gerade erst gebildet wurde oder in denen die gesamte Initiative mit Skepsis betrachtet wird. Dies erfordert eine strengere Ausrichtung für die Initialisierung. Ich bin jedoch der Meinung, dass diese Prinzipien im Laufe der Zeit überarbeitet werden sollten und die Beiträge des Plattform-Engineering-Teams und der Endnutzer gesammelt werden sollten.
 
-Hier ist eine Übersicht, wie man das schreiben kann:
+**Hier ist eine Übersicht, wie man das schreiben kann**:
 
 - **Titel**: Jeder Grundsatz hat so etwas wie einen Titel, der im Gedächtnis bleiben sollte.
 
