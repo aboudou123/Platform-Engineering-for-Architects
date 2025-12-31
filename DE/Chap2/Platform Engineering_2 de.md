@@ -128,29 +128,34 @@ Hier ist eine Zusammenfassung davon in der folgenden Liste:
 - Wenn Sie sich unsicher sind, beginnen Sie mit weniger und beziehen Sie die Endnutzer und die Plattformingenieure ein, um die nächsten Grundsätze zu identifizieren
 - Überprüfen Sie Ihre Prinzipien regelmäßig, um festzustellen, ob sie noch zu Ihrem Team passen, aber ändern Sie sie nicht alle paar Monate
 
-Entwickeln Sie den Zweck Ihrer Plattform als Produkt
+## Entwickeln Sie den Zweck Ihrer Plattform als Produkt
 
 Für einen erfolgreichen Start bei der Erstellung einer Plattform müssen wir deren Zweck und Ziel definieren und festlegen, wie wir das Plattform-Engineering-Team strukturieren oder umstrukturieren können. Dieser Schritt hilft Ihnen auch dabei, eine erste Iteration Ihrer zuvor definierten Grundsätze durchzuführen ( ). Reflektieren Sie Ihre eigene Wahrnehmung und hinterfragen Sie Ihre ursprüngliche Definition. Auf diese Weise lernen Sie, wie Sie zwei unterschiedliche Kräfte und widersprüchliche Ziele miteinander verbinden können.
 
 Es mag einfach erscheinen, mit einer Plattform als Produkt zu beginnen. Eine Änderung der Denkweise, Gespräche mit Kunden und die Bereitstellung einiger guter Funktionen sind alles, was Sie brauchen. Dies ist jedoch nur ein Teil der Geschichte. Wir möchten Ihnen bewusst machen, dass eine Cloud-native Plattform das Potenzial hat, zum Motor Ihrer Organisation für Softwareentwicklung, -bereitstellung und -betrieb zu werden. Daher stellen wir Ihnen verschiedene Konzepte vor, die Sie auch in anderen Organisationstheorien und -praktiken finden, wie Kanban, Lean Inception oder Team Topologies.
 
-Ihren eigenen Wert verstehen
+## Ihren eigenen Wert verstehen
 
 Wenn Menschen in einer Sache wirklich schlecht sind, dann ist es das Schätzen. Ohne Maßstab oder Bezugspunkte fällt es uns schwer, richtig zu schätzen. Angenommen, ich frage Sie, welchen Wert eine Plattform für Ihr Unternehmen hat. Sie könnten Argumente wie einen schnelleren Softwareentwicklungszyklus, weniger Betriebsaufwand und zufriedene Ingenieure, die die Rekrutierungskosten senken, anführen. Nichts davon ist falsch, aber nichts davon ist präzise. In geschäftlicher Hinsicht liegt der Wert einer Plattform als Produkt darin, dass sie die Markteinführungszeit verkürzt oder die Flexibilität bei den Verzögerungskosten optimiert. Mit anderen Worten: Je länger Sie brauchen, um einen Dienst auf den Markt zu bringen, desto weniger Wert schaffen Sie. Eine gute Plattform ermöglicht es Ihnen, diesen Wert zu optimieren, indem sie den Implementierungsteams ein hohes Maß an Flexibilität und Geschwindigkeit bietet.
 
 In der Theorie der **Verzögerungskosten** \[1\] wird davon ausgegangen, dass die Kapazitäten feststehen. Wenn Sie drei Projekte umsetzen möchten, müssen Sie entscheiden, mit welchem Sie beginnen. Jedes Projekt bringt einen anderen Wert mit sich. Wenn Sie mit allen drei gleichzeitig beginnen, geht die Annahme so weit, dass Sie alles zur gleichen Zeit fertigstellen, aber Sie sind nicht schneller oder langsamer, als wenn Sie sie nacheinander durchführen würden. Mit einem IDP, das Self-Service, ein hohes Maß an Automatisierung und Autonomie, Zuverlässigkeit usw. fördert, reduzieren Sie die Abhängigkeit von den verfügbaren Kapazitäten und ermöglichen die gleichzeitige Umsetzung mehrerer Projekte. Wenn man weiter darüber nachdenkt, ist das einer der Gründe, warum öffentliche Cloud-Anbieter so erfolgreich sind. Diese Vorteile werden jedoch mit steigender Komplexität und falschen Rollendefinitionen zu einem Hindernis.
 
+<img width="968" height="470" alt="image" src="https://github.com/user-attachments/assets/9a530a63-212c-4ae9-9eeb-aa60b216d7dd" />
+
+
 Abbildung 2.1: Kosten der Verzögerung ohne und mit einer Plattform
 
 Die vorstehende Abbildung zeigt den Unterschied zwischen der Umsetzung von Projekten ohne und mit einer Plattform. Auf der linken Seite sehen wir mindestens zwei Verzögerungen, was bedeutet, dass das zweite Projekt erst spät im Jahr oder Zeitraum einen Mehrwert liefert. Diese Verzögerung kann durch manuelle Prozesse, Abhängigkeiten von anderen Teams und Teammitgliedern oder verschiedene technische Schritte verursacht werden, die nicht miteinander integriert sind. Auf der rechten Seite führt ein gleichzeitiger Start der Projekte aufgrund einer sehr guten Plattform zu einer erheblichen Wertsteigerung. Beachten Sie, dass der Bereich unterhalb der Linien den Wert darstellt.
 
-Wichtiger Hinweis
+**Wichtiger Hinweis**
 
 Cloud-native Plattformen wie IDPs brechen mit der Theorie der Verzögerungskosten und ermöglichen eine schnelle und frühzeitige Wertschöpfung. Je besser die Plattform, desto geringer die Abhängigkeiten von Kapazitäten und desto effizienter können Teams ihre Produkte implementieren und betreiben, desto mehr Wert kann Ihr Unternehmen generieren.
 
-Vom System zur Plattform als Produkt
+## Vom System zur Plattform als Produkt
 
 Letztendlich ist ein Produkt nichts anderes als ein Objekt mit Dienstleistungen, die sich aus den Anforderungen Ihrer Kunden, Ihren Geschäftsinteressen, einer bestimmten Technologie und einer ganzheitlichen Benutzererfahrung zusammensetzen. Fehlt eines dieser Elemente, wird Ihr Produkt scheitern. In der Projektwelt gibt es drei Eckpfeiler, die ständig aufeinander einwirken: Zeit, Geld und Umfang. Dies wird als das **eiserne Dreieck** bezeichnet. Um ein Gleichgewicht zwischen diesen drei Faktoren zu finden, sind sorgfältige Anpassungen erforderlich. Da wir jedoch die Projektperspektive hinter uns lassen wollen, stellen wir Ihnen hier das eiserne Dreieck des Produkts vor. Es besteht aus Machbarkeit, Attraktivität und Rentabilität.
+
+<img width="967" height="889" alt="image" src="https://github.com/user-attachments/assets/cea0f0d1-623c-4f25-b6fa-5a5b41a17b33" />
 
 Abbildung 2.2: Das eiserne Dreieck der Produkte
 
@@ -162,11 +167,11 @@ Innerhalb dieses Gleichgewichts finden wir verschiedene Kräfte, die auf das Pro
 - Welche Technologie sollten wir verwenden?
 - Wie können wir daraus ein nachhaltiges Geschäft machen?
 
-Wir können nun diese Produktperspektive mit einer Plattformperspektive kombinieren.
+## Wir können nun diese Produktperspektive mit einer Plattformperspektive kombinieren.
 
 „Eine digitale Plattform ist eine Grundlage aus Self-Service-APIs, Tools, Services, Wissen und Support, die als überzeugendes internes Produkt zusammengestellt sind.“ So beschrieb sogar Bottcher einmal eine solche Plattform \[2\]. Darüber hinaus sagte er: „Autonome Delivery-Teams können die Plattform nutzen, um Produktfunktionen schneller und mit weniger Koordinationsaufwand bereitzustellen.“
 
-Plattformen und Produkte überschneiden sich stark. Beide erfüllen folgende Aufgaben:
+## Plattformen und Produkte überschneiden sich stark. Beide erfüllen folgende Aufgaben:
 
 - Sie müssen für ihre Nützlichkeit werben und sie an interne Teams vermarkten.
 - Sie sollten sorgfältig konzipiert und präzise sein.
@@ -179,11 +184,11 @@ Der Product Owner der Plattform kümmert sich um die Rentabilität, während der
 
 Ohne DevX ist ein Plattform-Engineering-Team unvollständig.
 
-Wichtiger Hinweis
+**Wichtiger Hinweis**
 
 Der Produktverantwortliche der Plattform kümmert sich um die Rentabilität. Die Plattformingenieure kümmern sich um die Machbarkeit. Der DevX kümmert sich um die Attraktivität. Diese Rollen bestimmen den Erfolg einer Plattform als Produkt.
 
-Stakeholder und ihr Einfluss auf Ihr Backlog
+## Stakeholder und ihr Einfluss auf Ihr Backlog
 
 Wenn man über Stakeholder und Kunden in einer internen Unternehmenswelt spricht, ergibt sich ein Bild von Personen mit vielen Interessen. Um sich auf das Wesentliche zu konzentrieren, empfehle ich Ihnen, sie in drei Gruppen einzuteilen:
 
@@ -197,15 +202,15 @@ Vor einiger Zeit wurden wir gebeten, die Plattform des Kunden zu stabilisieren. 
 
 Dieses Beispiel aus der Praxis zeigt, dass externe Einflüsse manchmal stärker sind als die eigene Motivation, aber zu einer höheren Akzeptanz und Akzeptanz im gesamten Unternehmen führen können.
 
-Wichtiger Hinweis
+**Wichtiger Hinweis**
 
 Letztendlich haben Sie eine Plattform als Produkt für Ihre Stakeholder, in erster Linie für die Nutzer, und nicht für sich selbst entwickelt.
 
-Conways Gesetz in Frage stellen
+**Conways Gesetz in Frage stellen*
 
 Organisationen, die Systeme entwerfen, sind darauf beschränkt, Designs zu produzieren, die Kopien der Kommunikationsstrukturen dieser Organisationen sind. (Melvin Conway, 1967.)
 
-KopieErklären
+## KopieErklären
 
 Ich glaube, dass einer der Hauptzwecke einer Plattform darin besteht, Dinge besser zu machen, als sie derzeit sind. Dazu müssen wir den Status quo einer Organisation in Frage stellen. Unternehmen reorganisieren sich kontinuierlich, tauschen Verantwortlichkeiten aus und passen ihre Strukturen an. Aber letztendlich bleibt die Organisation dieselbe. Das ist Conways Schuld – zumindest hat er seine Beobachtungen von Organisationen beschrieben. Plattformen sind dazu da, zu disruptieren und zu harmonisieren; einerseits nutzen sie die DevOps-Methoden, um Engpässe zu identifizieren und diese Strukturen zu disruptieren, und andererseits harmonisieren sie die Bemühungen der Spezialistenteams in einer einheitlichen Umgebung.
 
@@ -215,13 +220,15 @@ Daher benötigen Sie eine gute Definition des Zwecks Ihres Teams, um in stürmis
 
 Um all dies zusammenzufassen und für Ihr Team und die Nachwelt zu speichern, können Sie die Platform Engineering Purpose Canvas als Ausgangspunkt verwenden. Sie können die folgende Vorlage (https://miro.com/miroverse/platform-engineering-purpose-canvas-template/) verwenden oder selbst eine erstellen.
 
+<img width="1018" height="738" alt="image" src="https://github.com/user-attachments/assets/5ec7b6f1-f8a1-42f0-98e9-cc6a16aa8d41" />
+
 Abbildung 2.3: Platform Engineering Purpose Canvas \[3\] (Das Bild dient als visuelle Referenz; die Textinformationen sind nicht wesentlich.)
 
 Da wir uns auf die Konzeption und Erstellung einer Plattform als Produkt konzentrieren, werden wir nicht weiter auf die Details von Plattform-Engineering-Teams, deren Aufbau und die richtigen Change-Management-Ansätze eingehen. Es gibt andere Bücher und Methoden, die sich darauf konzentrieren. Wenn Sie sich auch für Teamentwicklung interessieren, empfehlen wir Ihnen daher, sich mit Team Topologies zu befassen \[4\].
 
 Mit Ihrem Plattformzweck ausgestattet, können wir uns der nächsten Herausforderung stellen, nämlich der schrittweisen Erstellung Ihrer Plattformarchitektur. Im nächsten Abschnitt erstellen wir eine Referenzarchitektur und andere Diagramme für Ihre Plattform als Produkt.
 
-Erkundung der Plattformarchitektur – Schichten, Komponenten und Meta-Abhängigkeiten
+## Erkundung der Plattformarchitektur – Schichten, Komponenten und Meta-Abhängigkeiten
 
 Die Navigation für Ihre Plattformreise wird durch die Referenzarchitektur definiert, an der Sie Ihre gesamte Implementierung ausrichten können. Architektur und insbesondere Architekturdiagramme sind nicht für die Ewigkeit gemacht. Sie sind ein Rahmen, ein Entwurf, an dem Sie sich orientieren müssen, aber sie können und sollten im Laufe der Zeit aufgrund der Entwicklung der jeweiligen Marktlösungen, egal ob Open Source oder Closed Source, geändert werden.
 
@@ -229,7 +236,7 @@ Um bestimmte Teile besser verständlich zu machen, müssen wir Ihnen einige Tool
 
 Die Erstellung einer Architektur sollte niemals nur eine Perspektive berücksichtigen. Wie bei jedem vorherigen Thema müssen wir die verschiedenen Blickwinkel berücksichtigen, aus denen die Beteiligten eine Plattform betrachten. Ich möchte Ihnen nicht die gesamte Palette der traditionellen Tools für das Enterprise-Architektur-Management zur Verfügung stellen, sondern Ihnen bestimmte relevante Visualisierungen und Tools vorstellen.
 
-Plattformkomponentenmodell
+## Plattformkomponentenmodell
 
 Stephan Schneider und Mike Gatto stellten 2023 die erste Version eines IDP-Referenzarchitekturmodells vor \[5\], das von der Community mehrfach überarbeitet wurde. Leider fehlen diesem Modell einige wichtige Perspektiven, entweder aufgrund der Benennung oder einfach weil eine sogenannte Ebene fehlt. Daher haben wir einen ganzheitlicheren Ansatz für das Modell entwickelt, der die folgenden Ebenen umfasst:
 
@@ -239,12 +246,14 @@ Stephan Schneider und Mike Gatto stellten 2023 die erste Version eines IDP-Refer
 - **Die Sicherheits- und Identitätsebene**: Diese Ebene umfasst Systeme zur Durchsetzung und Überwachung der Sicherheit, Lösungen für die Benutzer- und Kontenverwaltung sowie Tools für die Verwaltung von Geheimnissen und Zertifikaten.
 - **Die Ressourcenebene**: Dies ist ein Container für alle Rechenressourcen, die für eine Plattform genutzt werden können.
 - **Die Fähigkeitsebene**: Die Ebene innerhalb oder oberhalb der Plattform, wie z. B. Kubernetes, die Dienste für die Benutzer bereitstellt.
+  
+<img width="1033" height="700" alt="image" src="https://github.com/user-attachments/assets/38d4230e-1639-4210-a130-ce7b292f4bc0" />
 
 Abbildung 2.4: Referenzkomponenten einer Plattform
 
 Diese Sichtweise auf die Komponenten zeigt, dass eine Plattform definitiv mehr ist als ein einzelner Server, auf dem ich einfach eine Container-Orchestrierung oder ein Entwicklerportal installiere. Oftmals haben diese Komponenten mehrere Speicherorte. Dies ist eine Art Verbindung, die die relevanten Elemente miteinander verknüpft. Um beispielsweise die Sicherheit zu gewährleisten, finden wir relevante Elemente in der Ressourcenebene, um die Compliance einzuhalten und gehärtete Konfigurationen bereitzustellen, wie z. B. externe Systeme zum Sammeln und Analysieren von Daten, zusätzlich zur Funktionsebene innerhalb von Kubernetes, um Container zu scannen und Netzwerke zu schützen, aber auch in der CI/CD, um nur gehärtete Container bereitzustellen. Sie sehen, dass ein einzelnes Thema überall innerhalb einer Plattform angesiedelt sein kann.
 
-Kombinierbarkeit der Plattform
+## Kombinierbarkeit der Plattform
 
 Eine Plattform besteht aus vielen Teilen, die sich ständig weiterentwickeln. Parallel zu dieser Entwicklung können sich auch Ihre Benutzer und Ihr Unternehmen weiterentwickeln. Ein großes Problem, das wir häufig feststellen, ist die Zurückhaltung, bestimmte Teile einer Plattform zu ersetzen. Oft gibt es zwar Diskussionen über Prioritäten oder Budgets, aber das häufigste Problem ist, dass ein Austausch nicht einfach möglich ist. Manchmal liegt das daran, dass die Plattform und die Komponente alt sind und buchstäblich miteinander verschraubt sind, und manchmal liegt es daran, dass die Wahl der Technologie nicht gut war und eine Kette von Abhängigkeiten mit sich bringt, die schwer zu ersetzen sind. Aber es gibt noch einen dritten Grund: Sie zwingen Ihre eigene Vorgehensweise in das falsche Werkzeug.
 
@@ -263,11 +272,11 @@ Um zu beurteilen, ob eine Komponente für Ihre Plattform komponierbar ist, müss
 
 Jetzt wissen wir, worauf wir bei der Entwicklung der Plattform und der Auswahl der Plattformkomponenten achten müssen. Im nächsten Abschnitt erfahren Sie mehr über die Dinge zwischen diesen Komponenten, die die Plattform zusammenhalten.
 
-Abhängigkeiten und der versteckte Klebstoff
+## Abhängigkeiten und der versteckte Klebstoff
 
 Unabhängig davon, wie komponierbar die Plattformkomponenten sind, gibt es immer Abhängigkeiten und versteckte Verbindungen. Diese versteckten Verbindungen sind die Informationen, die zwischen den Komponenten fließen und dafür sorgen, dass sie aufeinander reagieren. Als Architekten ist es unsere Aufgabe, sicherzustellen, dass diese Informationen nicht widersprüchlich sind. Diese Informationen sind wichtig, werden aber oft nicht richtig verstanden.
 
-Verwalten und Handhaben von Abhängigkeiten
+## Verwalten und Handhaben von Abhängigkeiten
 
 Lassen Sie uns zunächst auf der Kombinierbarkeit aufbauen, indem wir die Abhängigkeiten zwischen den Komponenten visualisieren. Dazu können wir eine einfache Abhängigkeitsmatrix verwenden. Dieses Tool kann Ihnen helfen, Entscheidungen zu treffen und zukünftige Komponenten zu planen. Außerdem erfordert es einen gewissen Wartungsaufwand; viele Plattformen sind vom Wissen einzelner Ingenieure abhängig, und mit zunehmender Komplexität der Plattform wird auch die Dokumentation immer umfangreicher. Das Abbilden von Abhängigkeiten ist daher der kürzeste Weg zur Transparenz.
 
@@ -278,6 +287,8 @@ Bei den Abhängigkeiten ziehe ich es vor, ausdrücklich anzugeben, um welche Art
 - **Unidirektionale und bidirektionale Abhängigkeiten**: Damit können Sie beschreiben, ob Tool B von Tool A abhängt oder Tool C von Tool B abhängt, da Tool B von Tool C abhängt.
 - **Erweiternde Abhängigkeiten**: Erweiternde Abhängigkeiten erschließen mehr Funktionen und Features, wenn sie eingerichtet sind, müssen aber nicht unbedingt vorhanden sein. Wenn Sie beispielsweise ein Tool mit manueller Benutzerverwaltung haben, können Sie nun **Single Sign-On** (**SSO**) dafür nutzen, was Ihren manuellen Aufwand reduziert.
 - **Konfliktbehaftete Abhängigkeiten**: Wie der Name schon sagt, vertragen sich diese beiden Dinge nicht gut miteinander.
+  
+<img width="1011" height="314" alt="image" src="https://github.com/user-attachments/assets/65b64ea5-4acb-44ee-b797-ca316938e646" />
 
 Abbildung 2.5: Abhängigkeitsmatrix
 
@@ -285,7 +296,7 @@ Haben Sie es bemerkt? Im Beispiel der bidirektionalen Abhängigkeiten wird die B
 
 Das Abhängigkeitsmanagement ist eine kontinuierliche Aufgabe. Mit der Zeit besteht die Gefahr, dass Sie vergessen, neue Tools hinzuzufügen. Unabhängig davon, welche Methode Sie zur Implementierung neuer Funktionen verwenden, ist es daher möglicherweise eine gute Idee, eine automatische Unteraufgabe zu erstellen, um auch die Abhängigkeitsmatrix zu aktualisieren. Ein großer Vorteil ist auch, diese Matrix von Zeit zu Zeit zu bewerten, um potenzielle Engpässe oder Probleme zu identifizieren, an denen Sie arbeiten können.
 
-Anwendungen x Plattform – eine wechselseitige Beeinflussung
+## Anwendungen x Plattform – eine wechselseitige Beeinflussung
 
 Der **wechselseitige Einfluss** ist so definiert, dass beide Elemente in einer Beziehung zueinander stehen, in der das eine das andere ergänzt oder ihm gleichwertig ist. In der Beziehung zwischen der Plattform und den Anwendungen Ihrer Benutzer besteht eine gewisse gegenseitige Beeinflussung. Beispielsweise muss eine Anwendung drastisch skaliert werden. Als Plattform unterstützen Sie dieses Verhalten, garantieren aber auch, dass es keine Auswirkungen auf andere Anwendungen hat. Auf der anderen Seite hat sich die Anwendung für Ihre Plattform entschieden, weil Sie ihre Anforderungen unterstützen. Eine Plattform ohne Benutzer ist nutzlos. Um als Anwendung die beste Leistung zu erzielen, sollten Sie auf dieser Plattform laufen.
 
@@ -293,13 +304,13 @@ Dieses Beispiel ist jedoch sehr allgemein gehalten. Gegenseitige Beeinflussung w
 
 Daher wäre „Abhängigkeit” das falsche Wort, um diese Beziehung zu beschreiben. Es handelt sich um eine Koexistenz, eine Zusammenarbeit, ein gemeinsames Ziehen in die gleiche Richtung. Als Plattform-Engineering-Team und insbesondere als Architekt müssen Sie diese gegenseitige Beeinflussung bei der Entwicklung Ihrer Lösung berücksichtigen. Um dies zu Ihrer eigenen Superkraft zu machen, müssen Sie die Plattform-Ingenieure und Nutzer über diese Auswirkungen aufklären und sich darauf konzentrieren, wie sie das Beste aus der Plattform herausholen können, ohne Einschränkungen zu spüren.
 
-Gegenseitige Beeinflussung
+## Gegenseitige Beeinflussung
 
 Der gegenseitige Einfluss ist das unsichtbare Zusammenspiel zwischen der Anwendung und der Plattform. Verstehen Sie ihn als eine gemeinsame Kraft, die die Plattform und die Anwendung der Nutzer zusammen besser macht, als sie es ohne einander wären.
 
 Ein weiterer Bereich, in dem solche wechselseitigen Einflüsse sichtbar werden, sind Prozesse.
 
-Möglichkeiten der Prozessdefinition für eine Plattform
+## Möglichkeiten der Prozessdefinition für eine Plattform
 
 Die Plattformentwicklung übernimmt viele Ansätze aus der DevOps-Methodik. In einer DevOps-Rolle konzentrieren sich einige Teile auf die Automatisierung. Diese automatisierten Schritte führen zur Definition von Prozessen. Man könnte also auch sagen, dass Plattformingenieure technische Prozesse erstellen, die als Plattform als Produkt implementiert werden, damit sie benutzerorientiert funktionieren. Diese Verfahren sind jedoch bei expliziten Designentscheidungen nicht sehr verbreitet. Die Form des Prozesses (oder wie der Prozess aussieht) hängt davon ab, wie bestimmte Komponenten funktionieren. Im Hinblick auf die Kombinierbarkeit der Plattform mag dies ein selbstverständlicher Ansatz sein, aber könnten wir die Plattform durch explizites Design der Prozesse verbessern?
 
@@ -314,11 +325,11 @@ Jeder dieser Punkte erfordert eine eigene Prozessdefinition.
 
 Sie haben die Möglichkeit, Optimierungspotenziale mit Fokus auf Benutzerfreundlichkeit und Handhabung zu finden. Durch die Nutzung der Prozessperspektive unterscheidet sich die Benutzerorientierung in Ihrer Plattformentwicklung von der gängigeren, rein technisch ausgerichteten Definition von Funktionen. Leider können wir Ihnen zum jetzigen Zeitpunkt keine weiteren Einblicke geben, da diese Disziplin noch neu ist und es kaum einen Wissensaustausch dazu gibt. In [Kapitel 3](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/3) werden wir uns näher mit diesem Thema befassen.
 
-Die Diskussion um Vendor Lock-in
+## Die Diskussion um Vendor Lock-in
 
 Zum Abschluss des Themas Abhängigkeiten müssen wir noch auf die Diskussion über Vendor Lock-in eingehen. Sie ist Teil strategischer und architektonischer Entscheidungen und führt oft zu seltsamen Ergebnissen. An dieser Stelle sollten Sie sich bewusst sein, dass Sie immer Abhängigkeiten haben werden und ein Vendor Lock-in nichts anderes ist. Da Open Source eine fantastische Grundlage bietet, um proprietäre Software zu vermeiden, wird es auch als Argument dafür verwendet, Dinge selbst zu entwickeln. Die wichtige Frage lautet: Mit welcher Geschwindigkeit und Servicequalität möchten Sie Ihren Nutzern die Plattform zur Verfügung stellen? Mit welchen Betriebskosten rechnen Sie? Darüber hinaus müssen Sie Aspekte wie das verfügbare Team, die erforderlichen Fähigkeiten und die von Ihrem Unternehmen bevorzugten Kosten (**Betriebskosten** (**OPEX**) oder **kapitalisierte Ausgaben** (**CAPEX**)) berücksichtigen.
 
-Hier sind einige unterschiedliche Perspektiven zum Thema Vendor Lock-in:
+## Hier sind einige unterschiedliche Perspektiven zum Thema Vendor Lock-in:
 
 - **Besser selbst entwickeln**: Bestimmte Funktionen komplett selbst zu entwickeln, mag sich wie die ultimative Freiheit anfühlen und vermeidet jegliche Art von Anbietern. In Wahrheit werden Sie jedoch nur zu Ihrem eigenen Anbieter. Irgendwann möchten oder können Sie nicht mehr in Ihre Entwicklung investieren (übliches Projektverhalten). Damit ziehen Sie sich als Ihr eigener Anbieter aus Ihrem eigenen Markt zurück und alles, was Sie befürchtet haben, wird wahr.
 - **Auswahl der besten Lösung pro Problem, nicht pro Kontext**: Im Bereich der Beobachtbarkeit gibt es eine Vielzahl von Optionen für Überwachung, Protokollierung und Nachverfolgung. Ein gängiger Ansatz hierfür ist die Auswahl des Open-Source-Tools, das am besten zum jeweiligen Anwendungsfall passt. Dazu müssen Sie dann einen Log-Collector und Agenten implementieren, um Metriken weiterzuleiten. Das Ergebnis ist eine vollständig komponierbare Observability-Lösung. Andererseits büßen Sie im Vergleich zu einer Lösung eines einzelnen Anbieters Funktionen wie Kontextbewusstsein, Skalierbarkeit oder Bedienbarkeit ein. Ich möchte nicht sagen, dass proprietäre Software besser ist, aber ich habe viel zu oft Organisationen gesehen, die 10 bis 14 verschiedene Tools in unterschiedlichen Versionen einsetzen, die in großem Umfang laufen und hohe Betriebskosten verursachen. Tatsächlich wird diese Vorgehensweise bei einem Toolset als nicht hilfreich angesehen, wenn es um Vorfälle geht. In diesem Fall neigen wir leider dazu, die Wahrheit zu ignorieren und Ausreden dafür zu finden, warum es so besser ist.
@@ -328,35 +339,41 @@ Vendor Lock-in ist ein emotionaler Diskussionspunkt auf der Agenda eines Archite
 
 Bis jetzt haben Sie etwas über Abhängigkeiten und den Umgang mit ihnen gelernt. Im nächsten Abschnitt werden wir lernen, wie man sie sichtbar macht.
 
-Referenzarchitekturen
+**Referenzarchitekturen**
 
 Referenzarchitekturen sind wertvolle Ressourcen für ein Plattform-Engineering-Team, Ihre Plattform und interessierte Nutzer. Sie bilden die Grundlage für Diskussionen und Entscheidungsprozesse und helfen dabei, zukünftige Arbeiten mit etwas Weitsicht zu definieren. Leider können viele Plattform-Teams kein klares Bild ihres Systems vermitteln.
 
-Anbieterspezifische Referenzarchitekturen
+## Anbieterspezifische Referenzarchitekturen
 
 Nun können sich diese Referenzarchitekturen ändern und für verschiedene Anbieter, die Sie möglicherweise nutzen, unterschiedlich aussehen. Die Plattform-Engineering-Community \[6\] hat einige Optionen und Vorlagen zusammengestellt, auf denen Sie aufbauen können. Ein guter Ausgangspunkt ist die Vorlage für einen einzelnen Cloud-Anbieter, hier mit einem Bezug zu AWS. Allerdings fehlt noch die Funktionsebene. Der Fokus liegt hier auf dem Cloud-Anbieter, da dieser oft eine große Anzahl von Komponenten für Ihre Plattform definiert. Wie Sie in der nächsten Abbildung sehen können, finden sich die Dienste **des Cloud-Service-Providers** (**CSP**) in jedem Teil der Architektur wieder. Sie könnten ein noch aussagekräftigeres Ziel entwerfen, indem Sie CSP CI/CD, Secrets Management und Cloud-IDPs nutzen.
+<img width="1030" height="529" alt="image" src="https://github.com/user-attachments/assets/45173b40-8413-414a-b6a3-091af6c9a7c3" />
 
 Abbildung 2.6: AWS-Referenzarchitektur von platformengineering.org
 
 Im Vergleich zur Single-Provider-Plattform bringt eine Multi-Provider-Plattform ihre eigene Komplexität mit sich. Neben den von jedem Anbieter genutzten Ressourcen müssen wir auch berücksichtigen, wo Container-Images gespeichert und verteilt werden sollen, wie die Beobachtbarkeit gewährleistet werden kann und wie Geheimnisse und Zertifikate über die Anbieter hinweg verwaltet werden sollen. Die folgende Referenzarchitektur zeigt, dass es nicht einfach ist, die Erwartungen zu erfüllen. Mit einer Multi-Cloud-Plattformstrategie entsteht eine Vielzahl von Problemen, um die Sie sich kümmern müssen. Die Kosten steigen drastisch, die Implementierungen und das Plattformverhalten ändern sich mit jedem CSP geringfügig, und es wird schwierig, einen Ansatz zu definieren, der sich überhaupt richtig anfühlt. Aspekte wie Verfügbarkeit, Sicherheit, Skalierbarkeit und Effizienz stehen im Widerspruch zueinander, da sie auf mehreren Umgebungen aufbauen.
 
+<img width="1040" height="533" alt="image" src="https://github.com/user-attachments/assets/7f1a2674-429b-418a-a230-1cbb85c8ca10" />
+
 Abbildung 2.7: Multi-Provider-Referenzarchitektur von platformengineering.org
 
 Allerdings muss nicht jede Plattform in der Cloud ausgeführt werden. Die Anzahl der Optionen ist unbegrenzt. In etablierten Unternehmen sehen wir häufig hybride, lokale oder Cloud-erweiterte Umgebungen, die auf bewährten Lösungen wie VMware Tanzu oder Red Hat OpenShift basieren. In der folgenden Abbildung sehen wir, wie eine Plattform mit OpenShift als Kern aussehen würde.
+
+<img width="1026" height="526" alt="image" src="https://github.com/user-attachments/assets/03d61b4f-9248-420e-970a-2a0abaca5650" />
+
 
 Abbildung 2.8: OpenShift-Referenzarchitektur von platformengineering.org
 
 Es ist wichtig, Ihre Referenzarchitektur an die Umgebungen anzupassen, in denen sie ausgeführt wird.
 
-Wichtiger Hinweis
+**Wichtiger Hinweis**
 
 Die Umgebung, die Sie für Ihre Plattform wählen, schreibt automatisch einige Teile Ihrer Plattform vor, ob es Ihnen gefällt oder nicht! Eine exponentielle Zunahme der Anzahl von Cloud- und Infrastrukturanbietern erhöht die Herausforderungen für Ihr Plattformdesign.
 
-Erweiterung der Referenzarchitekturen um eine Funktionsebene
+**Erweiterung der Referenzarchitekturen um eine Funktionsebene**
 
 Die Schwachstelle der meisten Referenzarchitekturen ist, dass sie keinen Überblick über die Fähigkeiten bieten, die von den Komponenten bereitgestellt werden, die auf der tatsächlichen Plattform-Laufzeitumgebung ausgeführt werden. Diese Perspektive ist erforderlich, da Benutzer ohne sie die Features und Funktionen der Plattform nicht nutzen können.
 
-In der nächsten Abbildung finden Sie einige Referenzen für die Fähigkeitsebene:
+**In der nächsten Abbildung finden Sie einige Referenzen für die Fähigkeitsebene**:
 
 - **Benutzerbereich**: Die tatsächliche Umgebung, die der Benutzer sieht und zum Hosten seiner Anwendungen nutzen kann
 - **Skalierung und Zeitplanung**: Funktionen, die die Benutzeranwendung dabei unterstützen, auf Ereignisse zu reagieren, herunterzuskalieren oder benutzerdefinierte Zeitplanungsoptionen bereitzustellen
@@ -366,11 +383,13 @@ In der nächsten Abbildung finden Sie einige Referenzen für die Fähigkeitseben
 - **Sicherheit und Compliance**: Bereitstellung von Funktionen zur Verwaltung und Speicherung von Geheimnissen, zum aktiven Scannen von Clustern und Anwendungen auf CVEs und Schwachstellen
 - **Beobachtbarkeit**: Dies bietet einen einfachen und schnellen Einstieg in die Beobachtbarkeit, vereinheitlicht die Datenerfassung oder hilft bei der Kostenkontrolle
 
+<img width="988" height="598" alt="image" src="https://github.com/user-attachments/assets/749735ea-f9c3-40cc-8ed7-834d0bd3f776" />
+
 Abbildung 2.9: Die Funktionsebene mit Beispiel-Tools
 
 Die Funktionsebene ist für die eigentliche Anwendungsbereitstellung und den Betrieb von entscheidender Bedeutung. Hier findet die größte technische Interaktion statt, und wenn die Anwendung des Benutzers hier versagt, sind alle anderen investierten Anstrengungen umsonst.
 
-Eine Plattformarchitektur geht über Referenzen hinaus
+## Eine Plattformarchitektur geht über Referenzen hinaus
 
 Zusammenfassend lässt sich sagen, dass Referenzarchitekturen ein leicht verständliches Konzept der Plattform vermitteln. Was sie nicht bieten, ist die tatsächliche Architektur der Plattform. Wo läuft die Versionsverwaltung des Quellcodes? Wo befinden sich die CI/CD-Pipeline-Komponenten? Wo ist die Container-Registry? Wie wird der IDP gehostet?
 
@@ -378,11 +397,14 @@ Daher müssen wir als Plattformarchitekten eine tatsächliche Plattformarchitekt
 
 Das folgende Diagramm zeigt, wie eine solche Architektur aussehen könnte. Sie werden auch sehen, dass verschiedene Komponenten und Netzwerkverbindungen verteilt sind. Wenn man jedoch von einer Plattformarchitektur spricht, sollte sie technisch gesehen so dargestellt werden.
 
+<img width="1009" height="683" alt="image" src="https://github.com/user-attachments/assets/8df48abb-0e80-4623-b7aa-6c759aa90941" />
+
+
 Abbildung 2.10: Plattformarchitektur
 
 Es ist schwierig, den richtigen Ansatz zu finden, um die Infrastruktur- und Plattformkomponenten in einem Diagramm darzustellen. Es ist nicht der sauberste Ansatz, aber es ist notwendig, alle Abhängigkeiten und gegenseitigen Einflüsse hervorzuheben. Halten Sie es so einfach wie möglich, aber so detailliert wie erforderlich. Sie können es sogar in verschiedene Diagramme aufteilen, um bestimmte Informationen hervorzuheben.
 
-Verantwortung für Ihre Architekturen übernehmen
+## Verantwortung für Ihre Architekturen übernehmen
 
 Es scheint viel Papierkram zu sein, verschiedene Versionen und Varianten einer Architektur zu verwalten und zu handhaben. Möglicherweise haben Sie jedoch bereits die Erfahrung gemacht, dass sich eine Plattform schneller verändert als die Diagramme. Wichtig ist, dass weder das Diagramm als Ergebnis Ihrer Arbeit als Architekt die Entwicklung der Plattform verlangsamt, noch dass die Plattformentwicklung die Diagramme verlangsamt. Ich habe Projekte gesehen, in denen Architekten zu einer herausragenden hierarchischen Institution wurden. Alle diese Projekte scheiterten und hatten Schwierigkeiten, das Richtige zu tun. Als Architekt sind Sie nicht allwissend, aber Sie sind auch nicht das Plattform-Entwicklungsteam. Zusammenarbeit, Abstimmung und Synchronisation sind der Schlüssel, fast wie bei der Plattform, die Sie aufbauen möchten.
 
@@ -390,11 +412,11 @@ Das Gleiche gilt für Ihre Architekturen. Sie müssen sie besitzen, aber nicht b
 
 Später in diesem Buch werden wir ein relevantes Thema behandeln, wenn wir über die Verantwortung für Ihre Architektur sprechen: den Umgang mit technischen Schulden.
 
-Meinungsstarke Plattformen und die Kosten für Qualität
+# Meinungsstarke Plattformen und die Kosten für Qualität
 
 Bei der Architektur einer Plattform treten zwei Probleme auf: meinungsstarke Tools und die Kosten für Qualität. Für beide gibt es sehr gute Argumente, aber auch sehr starke Gegenargumente.
 
-Meinungsstarke Tools und Produkte
+**Meinungsstarke Tools und Produkte**
 
 Meinungsstarke Tools, Produkte und Dienstleistungen betonen ein striktes Konzept und bieten keine Alternativen. Praktisch alles kommt mit einer Meinung daher, aber die Frage ist, wie flexibel und kombinierbar sie sind. Eine starke Meinung darüber, wie etwas gemacht werden sollte, erleichtert die folgenden Entscheidungen, da der Lösungsraum kleiner wird. Mit einer wachsenden Nutzerbasis für einen solchen Ansatz könnte er dominant werden und schließlich zu einem De-facto-Standard werden. Wir müssen sie in unserer Architektur sorgfältig berücksichtigen und uns über ihre potenziellen zukünftigen Auswirkungen im Klaren sein.
 
@@ -402,7 +424,7 @@ Nun kann die strikte Umsetzung eines Konzepts viele Vorteile mit sich bringen. B
 
 Sie sollten auch zwischen den sichtbaren und großen Konzepten und den eher unsichtbaren, versteckten unterscheiden. Die ersten sind leicht zu identifizieren und zu bewerten. Sie verfügen über eine große Anzahl vordefinierter Integrationen und basieren in der Regel auf der Technologie eines einzigen Anbieters. Die kleinen und versteckten, eigenwilligen Tools sind schwieriger, da sie ihre Nachteile umso mehr offenbaren, je intensiver Sie sie nutzen.
 
-Die Kosten für Qualität
+**Die Kosten für Qualität**
 
 Es gibt ein Sprichwort: Lieber einmal teuer kaufen als oft billig. Bei gut gemachten Plattformen ist dieses Sprichwort falsch. Eine produktorientierte Denkweise bedeutet kontinuierliche Investitionen. Es ist eher wie ein Garten, den man Tag für Tag pflegen muss, als wie eine Uhr, in die man einmalig investiert.
 
@@ -414,7 +436,7 @@ Auf strategischer Ebene beeinflusst das Problem der Qualitätskosten viele Entsc
 
 Sie müssen den goldenen Mittelweg für Ihre Plattform finden. Gehen Sie jedoch nicht davon aus, dass eine perfekte Plattform den Anforderungen anderer entspricht. Wenn Sie dieses Problem in Phasen angehen, ist das ein klares Zeichen dafür, dass Sie die Produktmentalität mit Nutzerorientierung aus den Augen verloren haben.
 
-Erstellen Sie Ihre eigene Architektur
+## Erstellen Sie Ihre eigene Architektur
 
 Es ist Zeit zu handeln. Bisher haben wir alle relevanten Input-Quellen, Themen und Perspektiven behandelt, die zu berücksichtigen sind, damit wir mit der Erstellung einer Architektur beginnen können. Daher haben wir eine Vorlage vorbereitet, die Sie im GitHub-Repository für dieses Buch oder als Miro-Vorlage für die Zusammenarbeit finden.
 
@@ -427,12 +449,12 @@ In diesen Vorlagen werden Sie durch verschiedene Schritte und Architekturdiagram
 
 Da Architektur ein lebendiges Konstrukt ist, müssen Sie sie wiederholt überarbeiten und dabei den Zyklus PLANEN, AUSFÜHREN, ÜBERPRÜFEN, HANDELN befolgen.
 
-Nehmen Sie sich Zeit, um die Vorlagen durchzugehen:
+**Nehmen Sie sich Zeit, um die Vorlagen durchzugehen**:
 
 - **GitHub**: https://github.com/PacktPublishing/Platform-Engineering-for-Architects/tree/main/Chapter02
 - **Miro**: [https://miro.com/miroverse/platform-architecture-workshop](https://miro.com/miroverse/platform-architecture-workshop%0A)
 
-Erstellen Ihrer Referenzarchitektur
+## Erstellen Ihrer Referenzarchitektur
 
 Die Referenzarchitektur umreißt Ihre geplanten Komponenten, kategorisiert sie und verankert sie an vorderster Front Ihrer Plattformimplementierung. Dies ist auch Ihre Hilfe bei der Definition der Abhängigkeitskarte zu einem bestimmten Zeitpunkt.
 
@@ -444,9 +466,11 @@ Zu guter Letzt müssen Sie sich mit der Observability- und der Sicherheitsebene 
 
 Am wichtigsten ist, dass Sie am Ende alle Perspektiven zusammenführen: die Prinzipien und den Zweck der Plattform, ihre Hauptnutzer, ihre Kombinierbarkeit und die gegenseitige Beeinflussung all dieser beweglichen Komponenten. Aber Ihr Entwurf muss nicht perfekt sein. Bevor Sie sich zu tief in den Entwurfsprozess vertiefen, lesen Sie weiter, denn wir behandeln das Thema TVP später in diesem Kapitel.
 
-Fokus auf die Fähigkeitsebene und Komponenten
+**Fokus auf die Fähigkeitsebene und Komponenten**
 
 Wenn die Referenzarchitektur steht, müssen wir sie im nächsten Schritt um die Fähigkeitsebene erweitern. Dies ist sicherlich ein großer Schritt, da es buchstäblich Hunderte von Open-Source-Lösungen für jede Anforderung innerhalb der Fähigkeitsebene gibt. Falls Sie die CNCF-Landschaft noch nie gesehen haben, zeigt die folgende Momentaufnahme etwa ein Drittel aller verfügbaren, von der CNCF gelisteten Open-Source-Projekte \[7\].
+
+<img width="993" height="501" alt="image" src="https://github.com/user-attachments/assets/154920d9-95fd-487a-95b5-2aa9c5e54ee1" />
 
 Abbildung 2.11: CNCF-Landschaft (Das Bild dient als visuelle Referenz; die Textinformationen sind nicht wesentlich.)
 
@@ -454,7 +478,7 @@ Beachten Sie, dass es mindestens eine Handvoll anderer Open-Source-Organisatione
 
 Das Gute und das Schlechte am Cloud-Native-Universum ist, dass Sie für jedes Mikroproblem mindestens drei ± 1 Optionen zur Lösung haben.
 
-Für die Fähigkeitsebene wird ebenfalls empfohlen, von unten nach oben zu arbeiten:
+**Für die Fähigkeitsebene wird ebenfalls empfohlen, von unten nach oben zu arbeiten**:
 
 - Welche Integrationen in die Ressourcen benötigen wir?
 - Wie stellen wir die Betriebsdaten für die Observability-Lösung bereit? Müssen wir zwischen Infrastruktur- und Anwendungsbereich unterscheiden, und wenn ja, wie?
@@ -467,7 +491,7 @@ Rechnen Sie damit, dass Sie die meiste Zeit auf der Funktionsebene arbeiten werd
 
 Konzentrieren Sie sich auch hier zunächst auf das Wesentliche. Die richtige Netzwerkverwaltung und Speicherintegration ist wichtiger als die Bereitstellung einer Machine-Learning-Workbench-Lösung oder neuer Container-Laufzeiten wie **WebAssembly** (**Wasm**) \[8\].
 
-Definition der Infrastrukturarchitektur für die Plattform
+# Definition der Infrastrukturarchitektur für die Plattform
 
 Nach dem unterhaltsamen Teil der Definition der Referenzarchitektur müssen wir uns direkt der ernsthaften Architekturdefinition zuwenden. Was wie ein Witz klingt, wird ziemlich oft übersprungen, doch viele Plattformen können diese Ansicht nicht bieten. Tatsächlich ist dieses Diagramm für die Implementierung, die Architekturdiskussion sowie die Sicherheits- und Compliance-Prüfungen relevanter als die Referenzarchitektur. Es ist jedoch auch schwieriger zu verstehen.
 
@@ -479,7 +503,7 @@ Sie können auch die Hervorhebungen im Architekturdiagramm variieren. Wir sehen 
 
 Denken Sie daran, Dinge wie Verwaltungsumgebungen/Cluster, Staging-Umgebungen für Integrationstests oder sogar einen Schritt vor der Entwicklungsumgebung in das Diagramm aufzunehmen. Aus Gründen der Kontinuität können auch Backup und Wiederherstellung hilfreich sein. Je mehr Sie daran arbeiten, desto mehr Details werden Sie entdecken. Wenn ein Diagramm zu komplex wird, sollten Sie verschiedene Versionen bereitstellen.
 
-Visualisierung des Kontrollflusses der Plattform
+## Visualisierung des Kontrollflusses der Plattform
 
 Neu für Sie könnte der **Kontrollfluss** sein. Er ist der erste gute Schritt eines prozessähnlichen Ansatzes, um bestimmte relevante Pfade für die Verwaltung der Plattform und der Benutzerergebnisse freizugeben. Innerhalb einer Plattform gibt es mehrere Flüsse; diese drei sind die wichtigsten:
 
@@ -491,7 +515,7 @@ Es gibt viele weitere kleinere Kontrollflüsse, die uns helfen können, die Plat
 
 Wir verlassen nun die Theorie und wenden uns konkreten Anwendungsfällen zu. Wir werden uns einige Beispiele für verschiedene Plattformtypen und -implementierungen ansehen. Im nächsten Teil werden Sie Ihren Blickwinkel von allgemeinen Plattformen auf spezialisierte Lösungen erweitern.
 
-Plattformen als Produkt erkunden – Anwendungsfälle und Implementierungen
+## Plattformen als Produkt erkunden – Anwendungsfälle und Implementierungen
 
 Wir haben viel über den Zweck der Plattform gesprochen, beispielsweise über Self-Service First. Aber wie erreichen wir dies und welche Anwendungsfälle möchten wir als Self-Service anbieten?
 
@@ -503,7 +527,7 @@ Experten finden und die von ihnen verursachten Engpässe
 
 Es gibt einen großartigen Blogbeitrag von Thoughtworks mit einem Zitat, das uns dabei hilft, mit der Suche nach guten Anwendungsfällen zu beginnen \[9\].
 
-Was macht etwas zu einer Plattform?
+## Was macht etwas zu einer Plattform?
 
 Plattformen sind ein Mittel, um Fachwissen zu zentralisieren und gleichzeitig Innovationen an den Kunden oder Nutzer zu dezentralisieren.
 
@@ -511,7 +535,7 @@ Mit anderen Worten: In jeder IT-Organisation, die Software zur Unterstützung ih
 
 Das Ziel unserer Plattform ist es, Anwendungsfälle und das dafür erforderliche Fachwissen zu identifizieren und diese Anwendungsfälle dann auf einfache Weise als Self-Service für alle bereitzustellen, ohne dass jedes Mal ein Experte hinzugezogen werden muss.
 
-Zentralisieren Sie Fachwissen durch einen Self-Service
+## Zentralisieren Sie Fachwissen durch einen Self-Service
 
 Ermöglichen Sie es jedem, seine Arbeit zu erledigen, ohne ein Experte sein zu müssen oder einen Experten in allen Bereichen zu befragen, die für die Erledigung seiner Arbeit erforderlich sind!
 
@@ -521,11 +545,11 @@ In [Kapitel 3](https://subscription.packtpub.com/book/cloud-and-networking/97818
 
 Lassen Sie uns nun einige dieser Anwendungsfälle und Implementierungsoptionen von Organisationen untersuchen, mit denen wir in der Vergangenheit zusammengearbeitet haben!
 
-Zentralisierung von Fachwissen als Self-Service-Anwendungsfall
+## Zentralisierung von Fachwissen als Self-Service-Anwendungsfall
 
 Es gibt zwar noch viele weitere Anwendungsfälle, aber hier sind einige Beispiele, die Sie wahrscheinlich als Self-Service-Funktion als Teil Ihrer Plattform implementieren werden.
 
-Bereitstellung konformer Umgebungen
+**Bereitstellung konformer Umgebungen**
 
 Je nach Branche gibt es bestimmte Vorschriften darüber, wie Daten gespeichert werden müssen, wie Umgebungen gesichert werden müssen und welche Art von Berichterstattung erforderlich ist. Um sicherzustellen, dass jede Umgebung, die von einem Team in einem Unternehmen angefordert wird, all diesen Regeln entspricht, können wir dies als Self-Service-Funktion unserer Plattform implementieren.
 
@@ -539,7 +563,7 @@ Eine weitere ähnliche User Story könnte lauten: „Als QA-Ingenieur möchte ic
 
 Die Umsetzung eines solchen Anwendungsfalls kann sehr unterschiedlich sein, aber wir sollten immer mit der Endbenutzererfahrung beginnen und diese berücksichtigen. Wahrscheinlich möchten wir, dass sich unsere Datenwissenschaftler oder Qualitätsingenieure bei unserem internen Entwicklungsplattform-Portal anmelden. Dort können sie den Anwendungsfall der Bereitstellung einer konformen Umgebung auswählen. Anschließend können sie die relevanten Daten eingeben, um alle aufgeworfenen Fragen zu beantworten. Diese Eingaben können dann verwendet werden, um diese Umgebung zu erstellen und sie dem Team, das sie angefordert hat, zur Verfügung zu stellen.
 
-Durchführung von Leistungs- und Ausfallsicherheitstests
+# Durchführung von Leistungs- und Ausfallsicherheitstests
 
 Leistungs- und Ausfalltests sollten Teil jeder Softwareversion sein, um sicherzustellen, dass neue Funktionen die Benutzererfahrung nicht beeinträchtigen, indem sie extrem langsam werden. Wir möchten auch sicherstellen, dass unsere neue Software gegen unvorhergesehene Szenarien wie Netzwerkverbindungsprobleme, langsame oder nicht verfügbare Backend-Dienste oder Daten oder eine unerwartet hohe Auslastung resistent ist.
 
@@ -551,7 +575,7 @@ Es könnte mehrere Iterationen dieser Self-Service-Funktion geben, die wir imple
 
 Wie im vorherigen Beispiel könnten wir mit einem Portal beginnen, über das Teams die Leistungstestumgebung anfordern können. Um die zweite, vollständig automatisierte User Story zu erfüllen, müssen wir über die Bereitstellung einer API nachdenken, die vom CI/CD-Pipeline-System aufgerufen werden kann, alle relevanten Eingabeparameter abruft und dann das tatsächliche Ergebnis des ausgeführten Tests zurückgibt.
 
-Onboarding einer neuen Anwendung
+## Onboarding einer neuen Anwendung
 
 Die Erstellung neuer Anwendungen oder Dienste ist die Aufgabe von Entwicklungsteams. Dazu müssen sie in der Regel viele verschiedene Schritte durchlaufen, wie z. B. die Erstellung eines neuen Git-Repositorys, das Hinzufügen von Boilerplate-Code und Metadaten-Einstellungen, die Konfiguration der Build-Pipelines (CI) und viele weitere Schritte.
 
@@ -561,11 +585,14 @@ Eine gute User Story für eine Self-Service-Funktion der Plattform wäre folgend
 
 Betrachtet man den gesamten SDLC, kann unser Self-Service sogar einen Schritt früher beginnen, nämlich mit den Funktionsanforderungen, die vom Produktteam mit Tools wie **Jira** erstellt wurden. Die folgende Abbildung 2.12 zeigt den End-to-End-Onboarding-Workflow einer neuen Anwendung in einer der Organisationen, mit denen die Autoren zusammengearbeitet haben:
 
+<img width="1030" height="428" alt="image" src="https://github.com/user-attachments/assets/4b72bf05-dee3-4db6-991a-2abed07486cf" />
+
+
 Abbildung 2.12: End-to-End-Anwendungs-Onboarding als Self-Service (Das Bild dient als visuelle Referenz; die Textinformationen sind nicht wesentlich.)
 
 Für Entwicklungsteams beginnt die Reise mit dem Jira-Ticket. Anschließend gehen sie zu Backstage, dem von dieser Organisation ausgewählten IDP, wo sie den Self-Service-Assistenten für das Onboarding von Anwendungen durchlaufen. Dieser Assistent erstellt ein neues Git-Repository, das mit einsatzbereiten Codevorlagen, Pipelines, Bereitstellungsanweisungen, Konfigurationen für die Beobachtbarkeit, Eigentumsrechten und vielem mehr vorinstalliert ist. Sobald der Code committet ist, stellen die Pipelines das Artefakt automatisch in einem Entwicklungscode-Bereich bereit, der automatisch mit Visual Studio Code verbunden wird!
 
-Zugriff auf Observability-Daten für die Reaktion auf Vorfälle
+**Zugriff auf Observability-Daten für die Reaktion auf Vorfälle**
 
 Sobald neue Software in der Produktion bereitgestellt wird, verlagert sich der Fokus der Entwickler in der Regel auf die nächste Anwendung oder Funktion. Wenn jedoch eine Katastrophe eintritt, ist es an der Zeit, dass sie das Operations- oder SRE-Team bei der Fehlerbehebung unterstützen, um alle aufgetretenen Probleme zu beheben.
 
@@ -575,7 +602,7 @@ In [Kapitel 3](https://subscription.packtpub.com/book/cloud-and-networking/97818
 
 Nachdem wir nun einige Anwendungsfälle haben, wollen wir uns ansehen, wie wir diese Ideen in etwas umsetzen können, das unsere Benutzer tatsächlich nutzen und von dem sie profitieren können.
 
-TVPs verstehen
+# TVPs verstehen
 
 Im Produktmanagement sprechen wir in der Regel von einem **Minimum Viable Product** (**MVP**). Das MVP definiert die einfachste Version eines Produkts, die Sie entwickeln müssen, um es auf dem Markt zu verkaufen. Das Konzept des MVP wurde ursprünglich durch die Lean-Startup-Bewegung von Eric Ries \[10\] eingeführt. Ich empfehle jedem, entweder das Buch oder die ausgezeichneten Blog-Beiträge auf der Website [theleanstartup.com](https://theleanstartup.com/) zu lesen.
 
@@ -590,7 +617,7 @@ In Lean Startup wird das MVP auch als die erste Version eines Produkts definiert
 
 Lassen Sie uns nun genauer betrachten, wie wir all diese Lean-Startup-Ideen anwenden und unser eigenes MVP definieren können – oder, wie wir es gerne nennen, unser TVP!
 
-Finden Sie Ihren TVP-Anwendungsfall
+# Finden Sie Ihren TVP-Anwendungsfall
 
 In einem früheren Abschnitt haben wir bereits untersucht, welche Anwendungsfälle wir als Self-Service über unsere Plattform anbieten könnten. Wir haben sie identifiziert, indem wir untersucht haben, wo derzeit Experten benötigt werden, um eine Aufgabe zu erledigen, oder wo viel manuelle Arbeit erforderlich ist.
 
@@ -612,7 +639,7 @@ Basierend auf dem vorangegangenen Beispiel könnten wir argumentieren, dass wir 
 
 Unabhängig davon, ob Sie ICE, RICE oder ein anderes Modell verwenden, sollte es Ihnen helfen, eine Entscheidung darüber zu treffen, welcher Anwendungsfall zuerst angegangen werden soll, um schnell eine Wirkung zu erzielen. Bevor wir mit der Umsetzung beginnen, lassen Sie uns darüber sprechen, wie gut diese erste Umsetzung sein muss!
 
-Gut genug oder perfekt gemacht?
+# Gut genug oder perfekt gemacht?
 
 Wir sind uns wahrscheinlich alle einig, dass ein Produkt so gut wie nie perfekt oder fertig ist! Es gibt immer das eine oder andere Feature, das wir gerne hätten, oder diesen lästigen Bug, von dem wir hoffen, dass ihn endlich jemand behebt. Wenn wir mit einem neuen Produkt wie unserer Plattform beginnen, müssen wir diese Denkweise ändern und uns mit einer ersten Version zufrieden geben, die gut genug ist. Das bedeutet nicht, dass wir Abkürzungen nehmen, sondern nur, dass wir unsere perfektionistische Mentalität beiseite lassen und den Mut haben müssen zu sagen: „Es ist gut genug – lasst es uns veröffentlichen!“
 
@@ -622,7 +649,7 @@ Wie lässt sich das auf unser TVP übertragen? Im Gegensatz zum Beispiel von Goo
 
 Das bedeutet, dass wir bei der ersten Implementierung unseres TVP nicht perfekt sein müssen, aber es muss gut genug sein, um zu zeigen, dass wir einen Mehrwert bieten. Was dieser Mehrwert ist, müssen wir in unserer Hypothese für die von uns implementierten Anwendungsfälle spezifizieren.
 
-TVP – Validierung unserer Hypothese
+## TVP – Validierung unserer Hypothese
 
 Wir haben also unseren Anwendungsfall ausgewählt und wissen, dass unsere erste Lieferung gut genug sein muss, damit unsere Endnutzer sie verwenden und einen Mehrwert daraus ziehen können. Aber worin besteht dieser Mehrwert? Wie können wir messen und nachweisen, dass die Leistungsfähigkeit unserer Plattform tatsächlich Wirkung zeigt?
 
@@ -642,11 +669,14 @@ Die Hypothese ist auch eine gute Möglichkeit, die Idee denjenigen Personen inne
 
 Die letzte Frage, die noch offen ist, lautet: Wie können wir unsere Hypothese messen und validieren? Für manche dürfte es einfach sein, davon auszugehen, dass wir über Daten wie die Anzahl der Tickets für Compliance-Verstöße, Tickets für skalierbarkeitsbezogene Produktprobleme oder die für Incident-Response-Tickets gebuchte Entwicklungszeit verfügen. Schwieriger wird es bei der Vorlaufzeit, da zunächst erklärt werden muss, wie ein Unternehmen die Vorlaufzeit definiert. Beginnt sie mit der Erstellung der ersten Feature-Anforderung oder wenn der Entwickler mit der Arbeit daran beginnt? Wie messen wir außerdem den gesamten End-to-End-Stream? All dies ist zwar möglich, aber wir müssen sicherstellen, dass wir wissen, wie wir den Status quo messen können, um ihn dann mit den Zahlen vergleichen zu können, sobald wir unser TVP eingerichtet haben, um unsere Hypothese zu validieren.
 
-Entwickeln, messen und lernen
+## Entwickeln, messen und lernen
 
 Wir wissen, was wir entwickeln wollen, wie unsere Hypothese lautet und wie wir sie messen. Jetzt ist es an der Zeit, dies in die Tat umzusetzen. Wie bei jeder agilen Produktentwicklung wollen wir entwickeln, messen und lernen. Wir möchten unsere Endnutzer so früh wie möglich einbeziehen. Der beste Weg, dies zu tun, ist, sie bereits in der Prototyping-Phase einzubeziehen und von ihnen zu lernen. Kontinuierliches Feedback hilft uns, wichtige Entscheidungen frühzeitig zu treffen, anstatt zu warten, bis wir eine endgültige Version haben, die unsere Nutzer ablehnen, weil wir etwas sehr Offensichtliches übersehen haben.
 
 Der Prozess lässt sich am besten mit dem folgenden Diagramm veranschaulichen, das Sie auch in vielen Publikationen finden, die vom Lean-Startup-Ansatz inspiriert sind:
+
+
+<img width="977" height="833" alt="image" src="https://github.com/user-attachments/assets/af1e8f43-c501-45e7-bd0a-8ceddd630dfb" />
 
 Abbildung 2.13: Entwickeln, messen und lernen, um zu Ihrem TVP zu gelangen
 
@@ -666,7 +696,7 @@ Die TVP ist die Version unserer Plattform, die unseren Endnutzern einen Mehrwert
 
 Wenn Sie mit der Einführung einer Plattform beginnen, ist es wichtig, deren Akzeptanz zu verfolgen und festzustellen, ob Sie auf dem richtigen Weg sind. Als Nächstes helfen wir Ihnen dabei, KPIs dafür zu definieren.
 
-Betrachten Sie die relevanten KPIs, um die Akzeptanz transparent zu machen
+# Betrachten Sie die relevanten KPIs, um die Akzeptanz transparent zu machen
 
 Tue Gutes und rede darüber. (Georg Volkmar Graf von Zedtwitz-Arnim, 1978.)
 
@@ -680,9 +710,11 @@ Aus diesem Grund müssen Sie zweitens den aktuellen Kontext der KPIs Ihrer Platt
 
 Wichtiger Hinweis
 
-KPIs und ihr aktueller Reifegrad müssen ausdrücklich angegeben werden.
+# KPIs und ihr aktueller Reifegrad müssen ausdrücklich angegeben werden.
 
 Das folgende Diagramm zeigt beispielsweise, wie die KPIs im Vergleich zu einer Umgebung aussehen könnten, in der eine Plattform schlecht integriert ist. Die Zahlen basieren auf einigen Messungen aus verschiedenen Projekten und wurden hier verallgemeinert. Auf der linken Seite ist keine Verbesserung erkennbar, oder sie entwickeln sich weiter auf und ab. Am offensichtlichsten ist ein Anstieg der Supportanfragen. Im Zusammenhang mit einer geringeren Anzahl von Anwendungen, die diese nutzen, ist dies ein schlechtes Zeichen. Auf der rechten Seite sehen wir nun eine Verbesserung für alle KPIs. Die meisten Zahlen werden nicht auf Null sinken, aber sie werden unabhängig vom Wachstum der Plattform, der Endnutzerzahlen oder anderen langfristigen Auswirkungen stabil bleiben.
+
+<img width="936" height="277" alt="image" src="https://github.com/user-attachments/assets/a2cd0b6a-f771-47b5-85ea-de1e97867d8f" />
 
 Abbildung 2.14: Vergleich der Auswirkungen der Plattform (links: ohne Plattform, rechts: mit Plattform)
 
@@ -692,17 +724,19 @@ Mit den ersten Supportanfragen zur Einführung steigen die Kosten pro Änderung,
 
 Über die drei Phasen hinweg sinkt die Zeit pro Release. Dies ist ein Effekt der Automatisierung und des Self-Service und flacht im letzten Segment ab. Dies ähnelt fast allen anderen KPIs, die eine stetige Entwicklung aufweisen. Im Vergleich zu den anderen Diagrammen haben wir auch die Darstellung der Anzahl der hinzugefügten Anwendungen geändert. Jetzt können Sie die Anzahl der migrierten Apps pro Quartal sowie die Gesamtzahl der Anwendungen sehen.
 
+<img width="1024" height="716" alt="image" src="https://github.com/user-attachments/assets/5a918a4d-495e-4188-ab4c-23bc82d10bb9" />
+
 Abbildung 2.15: Beispiel-KPIs mit der Segmentierung des Plattform-Lebenszyklus
 
 Wenn Unternehmen solche Zahlen sehen, würden sie normalerweise ihre Investitionen einstellen. Mit einer produktorientierten Denkweise bedeuten diese Zahlen jedoch, dass Sie in der Lage sind, kontinuierliche Verbesserungen und Innovationen zu statischen Kosten anzubieten, während die Kunden zufrieden sind und eine schnelle Entwicklung ermöglicht wird.
 
-Definition von KPIs für die Plattformakzeptanz
+# Definition von KPIs für die Plattformakzeptanz
 
 Wir können viele technische Zahlen als Grundlage für unsere KPIs verwenden. Diese sind leicht zugänglich und lassen sich gut miteinander in Beziehung setzen. Die Interpretation der Zahlen liegt jedoch bei Ihnen. Der Rückgang der Serviceanfragen kann daran liegen, dass Sie über eine hervorragende Dokumentation verfügen, aber auch daran, dass niemand die Plattform nutzt. Wie bereits gezeigt, muss daher ein vollständiges Bild vermittelt werden. Dies kann kompliziert werden, da jeder neue KPI weitere Details zu den Daten hinzufügen kann. Irgendwann müssen Sie hier eine Grenze ziehen.
 
 Für Entwickler und DevOps-Teams gibt es bereits einige Frameworks, die wir als Grundlage verwenden können.
 
-DORA-Metriken
+**DORA-Metriken**
 
 **DevOps Research and Assessment** (**DORA**) ist ein Start-up, das von Gene Kim und Jez Humble gegründet wurde, die Sie vielleicht aus dem DevOps-Handbuch kennen. Die DORA-Metriken sind ein Satz von vier KPIs, mit denen die Leistung eines DevOps-Teams und die Auswirkungen einer Plattform auf ihre Nutzer gemessen werden können. Obwohl sie nicht immer gut passen, werden sie weit verbreitet eingesetzt und beispielsweise von Systemen wie GitLab \[13\] verwendet.
 
@@ -738,9 +772,13 @@ Das Gute an den DORA-Kennzahlen ist, dass die meisten Unternehmen in der Lage se
 
 Die folgende Abbildung zeigt ein Grafana-Dashboard für Endbenutzer, das Echtzeitdaten anzeigt. In der oberen linken Ecke sehen Sie, dass die Anzahl der in der Produktion bereitgestellten Apps 105 beträgt und die Gesamtzahl der Bereitstellungen 1.847. In der oberen rechten Ecke werden die Vorlaufzeit für eine Änderung in Stunden (612,5), die Änderungsfehlerquote (0,522 %), die Bereitstellungshäufigkeit (5,02) und die MTTR (199) angezeigt. Die Grafiken unten zeigen die Bereitstellungen pro Anwendung.
 
+<img width="1033" height="544" alt="image" src="https://github.com/user-attachments/assets/9bd7023e-9140-454c-88ca-801ed4f16d46" />
+
 Abbildung 2.16: Reales Beispiel für ein DORA-Dashboard (Das Bild dient als visuelle Referenz; die Textinformationen sind nicht wesentlich.
 
 Wie können Sie mit DORA beginnen? Eine Möglichkeit ist die Nutzung **von Keptn**, einem CNCF-Inkubationsprojekt, das automatisierte Beobachtbarkeit für anwendungsorientierte Bereitstellungen auf Kubernetes bietet. Keptn kann auf Namespace-Ebene über die Anmerkung „ “ aktiviert werden und erstellt Prometheus-Metriken sowie OpenTelemetry-Traces, um Bereitstellungen beobachtbar zu machen. Diese Metriken umfassen die Dauer der Bereitstellungen sowie deren Erfolg oder Misserfolg und liefern Dimensionen für Bereitstellung, Anwendung, Umgebung und Version. Damit stehen Ihnen sofort einige der wichtigsten DORA-Metriken zur Verfügung, die Sie in Ihr Dashboard aufnehmen können, wie in der folgenden Abbildung gezeigt:
+
+<img width="960" height="591" alt="image" src="https://github.com/user-attachments/assets/75e92ede-a340-42c6-9542-684c0eefe3a9" />
 
 Abbildung 2.17: Keptn bietet automatisierte Beobachtbarkeit von Bereitstellungen, um einige der DORA-Metriken zu melden
 
@@ -748,7 +786,7 @@ Keptn bietet zusätzliche Funktionen, wie z. B. die SLO-basierte Validierung des
 
 Weitere Informationen finden Sie auf der Keptn-Website und in den DORA-Tutorials \[15\].
 
-SPACE-Framework
+**SPACE-Framework**
 
 Das **SPACE-Framework** kombiniert fünf Dimensionen, die die Produktivität eines Entwicklerteams bewerten. Dieser Ansatz wurde von GitHub, Microsoft und der University of Victoria entwickelt. Er konzentriert sich auf die Art und Weise, wie Teams zusammenarbeiten, und auf ihre Ergebnisse. Die fünf Dimensionen verdeutlichen dies:
 
@@ -782,13 +820,19 @@ Die letzte Dimension, Effizienz und Fluss, kann wiederum auf DORA-Metriken basie
 
 Das SPACE-Framework kann auf individueller, Team- und Organisationsebene angewendet werden. Das folgende Diagramm aus Michael Kaufmanns Buch „Accelerate DevOps with GitHub” enthält weitere Beispiele für diese Ebenen.
 
+
+<img width="1003" height="586" alt="image" src="https://github.com/user-attachments/assets/79ddbcf4-2105-42ff-838b-97f6e63a3e79" />
+
 Abbildung 2.18: Beispiele für SPACE-Metriken von Michael Kaufmann \[16\]
 
 Mit dem SPACE-Framework erhalten wir nun tiefe Einblicke in die Entwicklung, was für uns als Plattformingenieure hilfreich ist und die DORA-Metriken erweitert. Wir können diese Metriken aufeinander aufbauen. So können Produktverantwortliche, Architekten und Plattformingenieure beurteilen, ob sie das Richtige auf die richtige Weise tun. Allerdings fehlen uns noch Inputs von den Experten **für Entwicklererfahrung** (**DevEx**).
 
-DevEx-Framework
+## DevEx-Framework
 
 SPACE und DORA fehlt die DevEx-Perspektive. Auch wenn wir uns mit Zufriedenheit und Fluss befassen, erhalten wir kein vollständiges Bild unseres Plattform-Engineering-Teams. Hier kommt das **DevEx-Framework** ins Spiel \[17\]. Es beschränkt die Perspektive auf nur drei Dimensionen. Zusammen bilden sie die Grundlage für DevEx und können dessen Wirkungsbereich erweitern.
+
+
+<img width="986" height="891" alt="image" src="https://github.com/user-attachments/assets/44332fc6-ef9e-4fa5-bd15-1550e0eca8de" />
 
 Abbildung 2.19: Die drei Kerndimensionen von DevEx
 
@@ -812,7 +856,7 @@ Diese zu messen ist schwierig, da die Antwort zwischen tatsächlichen Kennzahlen
 
 Wie Sie an diesen Beispielen sehen können, gibt es viel Interpretationsspielraum. Wenn Sie die KPIs Ihrer Plattform definieren, müssen Sie sicherstellen, dass diese Kennzahlen klar beschrieben sind. Sie müssen besonders präzise sein, indem Sie erklären, wie Sie welches Feedback und welche Kennzahlen auf welche Weise interpretieren.
 
-Wichtiger Hinweis
+## Wichtiger Hinweis
 
 Architekten müssen diese KPIs und ihre Bedeutung verstehen, damit sie die Plattform effektiv verbessern können.
 
@@ -822,20 +866,23 @@ Im vorherigen Rahmen wurden einige Leistungskennzahlen hervorgehoben, wie z. B. 
 
 Es gibt jedoch einen Weg, der nicht abstrakt und unklar ist wie ein Story Point, und der eine narrensichere Methode darstellt, um mit Benutzern und Stakeholdern über die Plattform und ihre Effizienz zu sprechen: Kosten. Ich weiß, dass dies kein innovativer KPI ist, aber er wird von vielen Teams oft falsch angewendet und von Produktverantwortlichen gefürchtet. Damit meine ich auch nicht, die Kosten, die Infrastruktur oder die Lizenzen des Teams zu melden. Sie können die Kostenkennzahlen als Nachweis für die Leistung Ihrer Plattform und des Plattformteams verwenden.
 
-Kosten pro Änderung
+# Kosten pro Änderung
 
 **Die Kosten pro Änderung** sind eine effiziente Möglichkeit, die Verbesserung und Leistungsfähigkeit einer Plattform hervorzuheben. Innerhalb der Endnutzer-Community des Cloud-nativen Ökosystems finden wir Beispiele für diesen KPI, der verwendet wird, um zu diskutieren, wie gut eine Plattform läuft.
 
-Vergleichen wir zwei verschiedene Werte für die Kosten pro Änderung:
+### Vergleichen wir zwei verschiedene Werte für die Kosten pro Änderung:
 
 - **500 $ pro Änderung**: 15.000 $ pro Monat oder 180.000 $ pro Jahr bei 30 Änderungen pro Monat
 - **80 $ pro Änderung**: 2.400 $ pro Monat oder 28.800 $ pro Jahr bei 30 Änderungen pro Monat
 
 Nun gibt es natürlich einen drastischen Unterschied zwischen beiden Zahlen. Sie sollten jedoch bedenken, dass Sie immer mit höheren Kosten und sehr wenigen Änderungen beginnen werden. Im Idealfall verbessern sich das Plattformteam und die Plattform im Laufe der Zeit, sodass sich die Gesamtkosten stabilisieren, aber die Anzahl der Änderungen steigt. Dies führt zu niedrigeren Kosten pro Änderung. Die folgende Grafik veranschaulicht dies, um es besser zu visualisieren. Die gepunktete Linie zeigt ein Beispiel für die Gesamtkosten. Sie steigen im Laufe der Zeit leicht an, da die Plattform effektiver wird. Die dunkle Linie zeigt die Änderungen pro Jahr und die gestrichelte Linie die Kosten pro Änderung. Wie Sie sehen können, sinken die Kosten pro Änderung drastisch, je mehr Änderungen Sie vornehmen können. Es handelt sich um eine sehr einfache Zahl, aber ein starkes Kommunikationsmittel für Ihre Plattform und ihr Plattform-Engineering-Team.
 
+<img width="1021" height="604" alt="image" src="https://github.com/user-attachments/assets/275db445-bedf-4ffd-8b03-42d6cec2a749" />
+
+
 Abbildung 2.20: Beispiel für die Gesamtkosten pro Jahr
 
-Kosten pro Projekt/Produkt
+# Kosten pro Projekt/Produkt
 
 Im Zusammenhang mit den Kosten pro Änderung stehen die Kosten pro Projekt, Produkt oder Anwendung. Wir können diese Kosten aus zwei verschiedenen Blickwinkeln betrachten:
 
@@ -844,13 +891,13 @@ Im Zusammenhang mit den Kosten pro Änderung stehen die Kosten pro Projekt, Prod
 
 Um die Leistung der Plattform und des Teams hervorzuheben, würde ich empfehlen, die gesamten gemeinsamen Kosten zu verwenden. Solche Zahlen sind einfach zu ermitteln und können auf die Projekte aufgeteilt werden, sodass Sie sie ohne großen Aufwand monatlich verfolgen können. Eine Alternative dazu sind die Einführungskosten pro Projekt. Für diese Kennzahl müssen Sie den Aufwand berechnen, der für die Einarbeitung in jedes Projekt unter Verwendung der Plattform erforderlich ist. Ich persönlich würde jedoch keinen Aufwand für diese Kennzahlen betreiben. Es handelt sich dabei eher um rhetorische Zahlen v er Natur, die keinen Einblick in die Leistung Ihrer Plattform geben, sondern eher Aufschluss darüber liefern, wie effizient Sie bei der Einarbeitung sind.
 
-Benutzer-/Produkt-Gemeinkosten
+# Benutzer-/Produkt-Gemeinkosten
 
 Die Perspektive der Gemeinkosten ist der Kosten pro Änderung sehr ähnlich. Hier summieren Sie alle direkten und gemeinsamen Kosten und reduzieren sie nur um die verbrauchten Ressourcen. Daher ist es wichtig, zwischen Tools wie Agenten, Netzwerkverkehr und möglicherweise persönlichen benutzerbezogenen Kosten und den tatsächlich vom Produkt verbrauchten Ressourcen zu unterscheiden. Die Berechnung ist kompliziert, aber das Ergebnis ist eine Leistungskennzahl für die Gemeinkosten Ihrer Plattform und Ihres Plattformteams.
 
 Diese Kennzahl spaltet die Gemüter. Einerseits sollte sie so gering wie möglich sein, um die Plattform intern verkaufen zu können. Andererseits repräsentiert diese Zahl die Kosten für den tatsächlichen Wert der Plattform. Daher glaube ich, dass wir einen Mittelweg finden müssen, der nicht zu kostspielig, aber auch nicht zu teuer ist.
 
-Zusammenfassung
+# Zusammenfassung
 
 In diesem Kapitel haben Sie die grundlegenden Prinzipien von Plattformen kennengelernt und erfahren, wie Sie die Ziele Ihres Plattformteams entwickeln können. Sie verfügen nun über die Werkzeuge, um eine Plattformarchitektur zu dokumentieren und zu entwerfen, gefolgt von Endbenutzerbeispielen für verschiedene Plattformen. Dieses Kapitel hat Ihnen zusätzliche Perspektiven auf die Fähigkeiten von Plattformen vermittelt. Mit dem Ansatz des TVP haben Sie gelernt, sich auf einzelne Meilensteine zu konzentrieren, ohne zu übergreifend zu sein, und sich schneller an die Anforderungen anzupassen. Abschließend haben wir Ihnen einige Ansätze zur Messung Ihrer Plattformakzeptanz und Leistungsmetriken vorgestellt.
 
