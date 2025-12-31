@@ -261,7 +261,7 @@ Komponierbarkeit ist ein Prinzip, vielleicht sogar eine Ideologie, und auf jeden
 
 Die Kombinierbarkeit hilft auch bei der richtigen Anpassung einer Plattform. Eine generische, einheitliche Plattform klingt auf dem Papier immer gut, ist aber unrealistisch und erhöht die Komplexität. Je mehr Komponenten Sie in eine Plattform einbringen müssen, desto wahrscheinlicher ist es, dass sie nicht gut zusammenarbeiten. Daher erhöht die Möglichkeit, Anpassungen für bestimmte Anwendungsfälle vorzunehmen, ohne die gesamte Architektur zu ändern, die Nutzbarkeit. Ein weiterer großer Vorteil der Kombinierbarkeit ist die Trennung der Aufgabenbereiche.
 
-In [Kapitel 1](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/1) haben wir den Zweck einer Plattform als Abstraktionsschicht für Plug-and-Play-Speziallösungen hervorgehoben. Die strikte Durchsetzung der Kombinierbarkeit verursacht zwar viel Arbeit auf organisatorischer Ebene, ermöglicht es aber spezialisierten Teams, ihre Kernkompetenzen direkt in Ihre Plattform einzubringen.
+In [Kapitel 1](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap1/Platform%20Engineering_1%20de.md) haben wir den Zweck einer Plattform als Abstraktionsschicht für Plug-and-Play-Speziallösungen hervorgehoben. Die strikte Durchsetzung der Kombinierbarkeit verursacht zwar viel Arbeit auf organisatorischer Ebene, ermöglicht es aber spezialisierten Teams, ihre Kernkompetenzen direkt in Ihre Plattform einzubringen.
 
 Um zu beurteilen, ob eine Komponente für Ihre Plattform komponierbar ist, müssen Sie auf vier Fähigkeiten achten:
 
@@ -323,7 +323,7 @@ Dies sollte nicht zu einer Geschäftsprozessmodellierung werden. Zu viele erweit
 
 Jeder dieser Punkte erfordert eine eigene Prozessdefinition.
 
-Sie haben die Möglichkeit, Optimierungspotenziale mit Fokus auf Benutzerfreundlichkeit und Handhabung zu finden. Durch die Nutzung der Prozessperspektive unterscheidet sich die Benutzerorientierung in Ihrer Plattformentwicklung von der gängigeren, rein technisch ausgerichteten Definition von Funktionen. Leider können wir Ihnen zum jetzigen Zeitpunkt keine weiteren Einblicke geben, da diese Disziplin noch neu ist und es kaum einen Wissensaustausch dazu gibt. In [Kapitel 3](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/3) werden wir uns näher mit diesem Thema befassen.
+Sie haben die Möglichkeit, Optimierungspotenziale mit Fokus auf Benutzerfreundlichkeit und Handhabung zu finden. Durch die Nutzung der Prozessperspektive unterscheidet sich die Benutzerorientierung in Ihrer Plattformentwicklung von der gängigeren, rein technisch ausgerichteten Definition von Funktionen. Leider können wir Ihnen zum jetzigen Zeitpunkt keine weiteren Einblicke geben, da diese Disziplin noch neu ist und es kaum einen Wissensaustausch dazu gibt. In [Kapitel 3](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap3/Platform%20Engineering_3%20de.md) werden wir uns näher mit diesem Thema befassen.
 
 ## Die Diskussion um Vendor Lock-in
 
@@ -541,7 +541,7 @@ Ermöglichen Sie es jedem, seine Arbeit zu erledigen, ohne ein Experte sein zu m
 
 Wenn wir uns nun den gesamten **Softwareentwicklungslebenszyklus** (**SDLC**) innerhalb dieser Organisationen ansehen und alle Aufgaben, Experten und die benötigte Zeit von der ersten Idee einer neuen App oder Funktion bis zur Veröffentlichung für Endbenutzer auflisten, können wir viele Engpässe identifizieren, die den SDLC verlangsamen. Dies liegt entweder daran, dass bestimmte Aufgaben manuell ausgeführt werden müssen oder dass jemand mit Expertenwissen erforderlich ist, um eine Aufgabe zu erledigen. Da Experten in der Regel rar sind, werden sie zu gemeinsamen Ressourcen, auf die Teams warten müssen, wenn sie ihre neue Funktion auf den Markt bringen wollen.
 
-In [Kapitel 3](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/3), im Abschnitt „Den bestehenden SDLC verstehen“, werden wir uns genauer ansehen, wie man den aktuellen SDLC oder den Wertschöpfungsprozess innerhalb eines Unternehmens am besten versteht. Sie lernen verschiedene Ansätze zum Verständnis des Lebenszyklus eines Artefakts, der damit verbundenen Aufgaben und Abhängigkeiten kennen und erfahren, wie Sie die Zeit verfolgen können, um geeignete Kandidaten für die Automatisierung dieser Aufgaben als Teil eines Plattformangebots zu identifizieren.
+In [Kapitel 3](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap3/Platform%20Engineering_3%20de.md), im Abschnitt „Den bestehenden SDLC verstehen“, werden wir uns genauer ansehen, wie man den aktuellen SDLC oder den Wertschöpfungsprozess innerhalb eines Unternehmens am besten versteht. Sie lernen verschiedene Ansätze zum Verständnis des Lebenszyklus eines Artefakts, der damit verbundenen Aufgaben und Abhängigkeiten kennen und erfahren, wie Sie die Zeit verfolgen können, um geeignete Kandidaten für die Automatisierung dieser Aufgaben als Teil eines Plattformangebots zu identifizieren.
 
 Lassen Sie uns nun einige dieser Anwendungsfälle und Implementierungsoptionen von Organisationen untersuchen, mit denen wir in der Vergangenheit zusammengearbeitet haben!
 
@@ -598,7 +598,7 @@ Sobald neue Software in der Produktion bereitgestellt wird, verlagert sich der F
 
 In vielen Unternehmen ist der Zugriff auf Telemetrie- oder Beobachtungsdaten in der Produktion auf ausgewählte Teams beschränkt, die sich um diese Produktionsumgebungen kümmern. Es gibt auch Compliance-Gründe, da nicht jeder Zugriff auf potenziell sensible Daten haben sollte. Wenn man jedoch im sogenannten War Room sitzt, ist es wichtig, schnell auf die relevanten Observability-Daten zugreifen zu können, ohne zu viele Antragsformulare ausfüllen, Daten von einer Umgebung in eine andere kopieren oder Daten aus dem Produktions-Observability-Tool in ein Format konvertieren zu müssen, das die Entwickler gewohnt sind.
 
-In [Kapitel 3](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/3) gehen wir näher auf diesen Anwendungsfall ein, daher beschränken wir uns hier auf die User Story: „Als Entwicklungsteam möchten wir einfachen Zugriff auf die relevanten Observability-Daten für einen Produktionsvorfall erhalten, um das Problem schnell zu lösen!“
+In [Kapitel 3](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap3/Platform%20Engineering_3%20de.md) gehen wir näher auf diesen Anwendungsfall ein, daher beschränken wir uns hier auf die User Story: „Als Entwicklungsteam möchten wir einfachen Zugriff auf die relevanten Observability-Daten für einen Produktionsvorfall erhalten, um das Problem schnell zu lösen!“
 
 Nachdem wir nun einige Anwendungsfälle haben, wollen wir uns ansehen, wie wir diese Ideen in etwas umsetzen können, das unsere Benutzer tatsächlich nutzen und von dem sie profitieren können.
 
