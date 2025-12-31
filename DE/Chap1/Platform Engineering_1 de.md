@@ -5,7 +5,7 @@
 
 
 
-## Plattform-Engineering und die Kunst, Plattformen zu entwickeln ##
+# Plattform-Engineering und die Kunst, Plattformen zu entwickeln #
 
 In diesem ersten Kapitel lernen wir, wie wir erkennen können, wann unser Unternehmen bereit ist, eine Plattform zu planen. Dazu klären wir, warum Plattformen zu einem so wichtigen Thema geworden sind, wie eine produktorientierte Denkweise dazu passt und anhand welcher Kriterien wir feststellen können, ob wir für eine Plattform bereit sind oder nicht. Wir lernen die Unterschiede zwischen Plattformen kennen und erfahren, welche Plattformtypen am häufigsten aufgebaut werden.
 
