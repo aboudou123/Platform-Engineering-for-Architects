@@ -6,7 +6,7 @@ Von hier aus beginnen wir mit der Definition Ihrer Architektur. Sie lernen die K
 
 Zuletzt lernen Sie, wie Sie Ihre Plattformreise mit der **Thinnest Viable Platform** (**TVP**) beginnen und wie Sie die Einführung der Plattform durch relevante **Leistungskennzahlen** (**KPIs**) sichtbar machen können.
 
-In diesem lernen Sie Folgendes:
+**In diesem Kapitel lernen Sie Folgendes:**
 
 - Verständnis der Plattformprinzipien und Definition des Zwecks Ihrer Plattform und Ihres Teams
 - Erkunden der Plattformarchitektur – Schichten, Komponenten und Meta-Abhängigkeiten
