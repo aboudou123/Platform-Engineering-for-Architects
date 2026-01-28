@@ -528,7 +528,7 @@ Sicherheit ist ein bewegliches Ziel, und mit dem technologischen Fortschritt neh
 
 Ein Aspekt guter Sicherheitsdisziplin ist die Pflege genauer Dokumentationen und Architekturdiagramme. Wenn eine wesentliche Änderung an der Anwendungsarchitektur vorgenommen wird, kann dies die Risikooberflächen und Angriffsvektoren verändern. Beispielsweise könnte eine undokumentierte oder unzureichend dokumentierte Abhängigkeit von einer Bibliothek oder einem Netzwerkport zu einer Schwachstelle führen, die möglicherweise schwieriger zu erkennen ist.
 
-### Grundlegende Anwendungssicherheit
+# Grundlegende Anwendungssicherheit
 
 In [Kapitel 5](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/5) haben wir die Erstellung und Bereitstellung von Images und Artefakten behandelt. Die beschriebene Methode der semantischen Versionierung für eine Anwendung stellt eine Best Practice für die Erstellung von Software dar, jedoch nicht für deren Verwendung. Wenn eine Version unter Verwendung von Git für die Quellcodeverwaltung einer Anwendung erstellt wird, erhält die Version dank der modernen Funktionalität von Git zusätzlich zu einer vom Menschen definierten Version eine SHA-256-Signatur. Im Gegensatz zu den Versionsnummern, die wiederverwendet werden können, ist der **Secure Hash Algorithm** (**SHA**) eine Signatur für genau diesen Build der Software und immer eindeutig. Daher ist es für bewährte Sicherheitsverfahren wichtig, die vollständige SHA-Adresse für die von der Plattform verwendeten Images anstelle der Image-Version zu verwenden.
 
@@ -536,7 +536,7 @@ Hier ist ein Beispiel für den Docker-Pull-Befehl unter Verwendung der Image-Ver
 
 docker pull quay.io/keycloak/keycloak@sha256:520021b1917c54f899540afcb0126a2c90f12b828f25c91969688610f1bdf949
 
-### KopierenErklären
+# KopierenErklären
 
 Neben den Image-Versionen gibt es noch eine weitere Identifizierungsmethode, die als **Floating Tags** bekannt ist. Ein Floating Tag ist ein Zeiger und wendet einen beliebigen Wert an, der für die Wiederverwendung in einem Release-Image vorgesehen ist. Die gängigsten Tags sind „latest“, aber sie können so ziemlich alles be ieren, da es nur Branchennormen und keine technischen Einschränkungen gibt. Da ein Tag später auf jedes Release-Image umgeleitet werden kann, ist dies keine sichere Methode, um eine Abhängigkeit zu ziehen. Zu den Risiken der Verwendung von Floating Tags gehören die folgenden:
 
@@ -550,13 +550,13 @@ Eine typische Methode zur Festlegung einer Richtlinie wäre die Verwendung von T
 
 OPA und Kyverno sind zwei Beispiele für OSS, die für die Sicherheit genutzt werden können, aber sie sind nicht die einzigen Tools im Open-Source-Ökosystem.
 
-### FOSS für die Plattformsicherheit und wie man es einsetzt
+# FOSS für die Plattformsicherheit und wie man es einsetzt
 
 Es gibt eine Vielzahl von FOSS-Projekten innerhalb und außerhalb der Linux Foundation oder CNCF, die Ihnen bei der Verwaltung der Sicherheitslage Ihrer Plattform helfen. Die zuvor erwähnten Projekte wie Harbor und Trivy sind nur zwei von vielen.
 
 Wenn Sie Ihre Sicherheitsanforderungen vergleichen, z. B. die Einhaltung der OWASP Top Ten für verfügbare Open-Source-Projekte, finden Sie ein Tool, mit dem Sie jeden Punkt auf der Liste abarbeiten können.
 
-### Muster und Tools für das Sicherheitsmanagement
+# Muster und Tools für das Sicherheitsmanagement
 
 Die Plattform kann nur begrenzt zur Verwaltung der Sicherheitslage des Unternehmens beitragen. Daher muss sie eine solide Grundlage für die Sicherheit bieten, indem sie nützliche Integrationen bereitstellt, einen sicherheitsorientierten Ansatz verfolgt und, wie in den vorangegangenen Kapiteln erläutert, offen für Beiträge der Entwickler-Community ist, die sie unterstützt. Wenn Sie festgelegt haben, welche Compliance-Stufen erforderlich sind, können Sie damit beginnen, zu untersuchen, welche Fehler zu einem Versagen Ihrer Compliance und Sicherheitslage führen könnten, indem Sie prozessbasierte Sicherheitsüberprüfungen und technologiebasierte Sicherheitsüberprüfungen durchführen:
 
@@ -565,7 +565,7 @@ Die Plattform kann nur begrenzt zur Verwaltung der Sicherheitslage des Unternehm
 
 Für jedes Unternehmen, das ein bestimmtes Maß an Sicherheit und Compliance gemäß einem geltenden Rahmenwerk nachweisen möchte, hilft dieses Compliance-Rahmenwerk dabei, die Häufigkeit der Prozessausführung zu definieren und diese Leitlinien mit regelmäßigen Audits zu kombinieren, um sicherzustellen, dass die Plattform nicht ins Hintertreffen gerät.
 
-### Was würde unser fiktives Unternehmen tun?
+# Was würde unser fiktives Unternehmen tun?
 
 Unser fiktives Unternehmen Financial One ACME ist ein traditionsreiches Finanzinstitut, das an seiner Cloud-nativen Transformation arbeitet, um gegenüber jüngeren Fintech-Unternehmen wettbewerbsfähig zu bleiben. Als Finanzinstitut hat es das inhärente Ziel, Risiken zu minimieren. Außerdem unterliegt es regulatorischen Beschränkungen, darunter PCI DSS.
 
@@ -613,7 +613,7 @@ Schließlich wird das Plattformteam von Financial One ACME nicht nur sicherstell
 
 Diese Beispielantworten decken nur einen Teil der Sicherheits- und Compliance-Anforderungen ab, die für ein Finanzinstitut wie eine Bank gelten würden. Darüber hinaus unterliegen sie wahrscheinlich zusätzlichen staatlichen Vorschriften, die noch weitergehende Maßnahmen zur Minderung von Sicherheits- und Compliance-Risiken erfordern würden. Genau wie Ihr Team müsste auch unser fiktives Unternehmen jeden einzelnen Punkt der für es geltenden Compliance-Rahmenbedingungen berücksichtigen und vor allem gemeinsame Verfahren einführen, um ein Höchstmaß an Sicherheit zu gewährleisten.
 
-### Zusammenfassung
+# Zusammenfassung
 
 Zusammenfassend lässt sich sagen, dass Sicherheit und Compliance ein weites Feld sind, zu dem viele Experten spezielle Werke veröffentlicht haben. Dieses Kapitel sollte nicht als allumfassend angesehen werden, sondern Ihnen den richtigen Weg weisen, um eine Cybersicherheitsstrategie für Ihr IDP zu definieren und umzusetzen. Es ist wichtig zu wissen, wie Sie Schwachstellen im Blick behalten können, und in Ihrem Unternehmen Verfahren und Tools einzurichten, um Schwachstellen im IDP und den darin gehosteten Anwendungen zu erkennen und aufzudecken.
 
