@@ -1,4 +1,4 @@
-### Die Grundlage für die Unterstützung von Plattformfunktionen schaffen ###
+#  **Die Grundlage für die Unterstützung von Plattformfunktionen schaffen**
 
 Die Lösung von Problemen, die Nutzer haben, die Gestaltung einer guten Nutzer- und Entwicklererfahrung und die Vermeidung technischer Komplexität sind die grundlegenden Schritte zu erfolgreichen Produkten und erfolgreicher Plattformentwicklung.
 
@@ -15,7 +15,7 @@ In diesem Kapitel gehen wir die obligatorischen Schritte und Prozesse durch, um 
 - Erkundung von Multi-Cloud, Multi-SaaS und der Fragmentierung von Funktionen
 - Erforschung einer Referenzarchitektur für unsere Plattform
 
-Financial One ACME – unser fiktives Unternehmen
+# Financial One ACME – unser fiktives Unternehmen
 
 In diesem Abschnitt lernen wir, wie man die Anforderungen der Nutzer in einem Ingenieursunternehmen versteht, wie man die Anforderungen verschiedener Teams in Einklang bringt und wie man entscheidet, welche Funktionen in eine Plattform aufgenommen werden sollen und welche nicht.
 
@@ -56,7 +56,7 @@ Lassen Sie uns nun verstehen, wer die potenziellen Nutzer unserer zukünftigen *
 
 Nachdem wir nun wissen, wer wir als Team sind und wer unsere potenziellen Nutzer sind, wollen wir uns damit befassen, wie wir eine Plattform aufbauen müssen, die ihre Probleme löst!
 
-Überwindung der Komplexität der Plattform durch die richtige Perspektive
+# Überwindung der Komplexität der Plattform durch die richtige Perspektive
 
 „Wir haben Monate damit verbracht, unsere neue Plattform aufzubauen. Die Entwickler hassen sie! Helfen Sie mir zu verstehen, warum!“
 
@@ -68,7 +68,7 @@ Der Fehler, den viele machen, besteht darin, die ursprüngliche Idee nicht mit d
 
 Wenn Sie in der Vergangenheit bereits im Produktmanagement tätig waren, denken Sie wahrscheinlich: „Aber das ist doch Produktmanagement für Anfänger!“ Da stimme ich voll und ganz zu! Allerdings verfügt nicht jedes Team, das mit der Entwicklung einer neuen Plattform beauftragt ist, über Erfahrung im Produktmanagement. Viele Teams, die wir gesehen haben, befinden sich in einer Situation, in der sie mit der Entwicklung einer Plattform beginnen können, ohne die Parallelen zur Entwicklung eines normalen Produkts zu erkennen. Viele Aufgaben fallen bereits vor Beginn der Produktentwicklung an.
 
-Anwendung grundlegender Produktmanagement-Prinzipien – „Geben Sie Ihren Nutzern kein schnelleres Pferd“
+# Anwendung grundlegender Produktmanagement-Prinzipien – „Geben Sie Ihren Nutzern kein schnelleres Pferd“
 
 Der richtige Ansatz für erfolgreiche Plattform-Engineering-Initiativen entspricht dem, was erfolgreiche Produktteams in der Vergangenheit getan haben:
 
@@ -95,15 +95,18 @@ Um dieses schnelle Feedback zu erhalten, müssen Sie Folgendes tun:
 
 Dieser Prozess wird so lange fortgesetzt, bis Sie nachweisen können, dass Ihre Nutzer bereit sind, Ihre Lösung zu verwenden, da sie ihre Arbeitsweise verbessert.
 
-Vermeiden Sie den „Sunk-Cost-Fehler”
+# Vermeiden Sie den „Sunk-Cost-Fehler”
 
 Nicht jedes Projekt wird zum Erfolg führen, egal wie hart und oft Sie es versuchen und wiederholen. Der **Sunk-Cost-Fallacy** ist ein bekanntes Problem, das wir sowohl in alltäglichen Entscheidungen als auch in der Softwareentwicklung beobachten können. Es verdeutlicht das Problem, dass Unternehmen aufgrund bereits getätigter Investitionen weiterhin in eine Strategie investieren, obwohl es offensichtlich ist, dass es besser wäre, diese Investition zu stoppen, da sie keine Aussicht auf Erfolg hat. Zu diesem Thema gibt es zahlreiche Informationen, die Sie nachlesen können, beispielsweise den Artikel **„Sunk Cost“** \[2\].
 
 Daher ist es wichtig, zu definieren, wann Sie Ihre Iterationen beenden sollten. Wenn der Moment, in dem „die Nutzer die Lösung lieben”, nicht innerhalb einer bestimmten Zeitspanne eintritt, müssen Sie bereit sein, den Stecker zu ziehen und die Initiative zu beenden. Dazu müssen Sie sich Meilensteine setzen, um diesen **Validierungspunkt** Ihrer Lösung zu erreichen. Denken Sie daran, wie bereits erwähnt, dass Sie nicht mit einem Beitrag enden wollen, der lautet: „Wir haben Monate damit verbracht, diese Plattform zu entwickeln. Die Entwickler hassen sie! Helfen Sie mir zu verstehen, warum!“
 
-Schritte zum Aufbau dessen, was die Nutzer brauchen – ein Beispiel aus der Praxis
+# Schritte zum Aufbau dessen, was die Nutzer brauchen – ein Beispiel aus der Praxis
 
 Kehren wir noch einmal zum Anfang zurück. Was müssen wir entwickeln? Im Produktmanagement gibt es viele verschiedene Memes (ein Beispiel finden Sie in Abbildung 3.1) darüber, wie sich die entwickelten Produkte von den Bedürfnissen der Nutzer unterscheiden. Das Gleiche gilt, wenn Sie nach Memes zum Thema Overengineering suchen. Sie alle kommen zu dem gleichen Schluss: Etwas entwickeln, ohne zuvor die Bedürfnisse der Nutzer zu verstehen!
+
+
+<img width="1024" height="322" alt="image" src="https://github.com/user-attachments/assets/1f56a38d-9246-486c-b0c2-ff6560b10711" />
 
 Abbildung 3.1: Das Paradoxon des Overengineering
 
@@ -113,7 +116,7 @@ Der schwierigste Schritt auf jedem Weg ist der erste Schritt. In unserem Fall ge
 
 Um dies in der Praxis zu veranschaulichen, gehen wir mehrere Schritte durch, wie wir dies für Financial One ACME angehen würden!
 
-Schritt 1 – Verstehen Sie die tatsächlichen Probleme Ihrer Nutzer
+**Schritt 1 – Verstehen Sie die tatsächlichen Probleme Ihrer Nutzer**
 
 In Flurgesprächen beklagen sich die Entwicklungsteams oft darüber, dass die Analyse von Problemen in ihrer Software in der Vorproduktionsphase viel einfacher war als in Produktionsumgebungen. Sie haben vollen Zugriff auf alle Protokolle ihres Build-Servers (Jenkins) und ihrer Testtools (Selenium und JMeter) sowie auf die Umgebung, in der sie ihre Software bereitgestellt haben. Sie konnten problemlos die Protokollebenen erhöhen oder schnell eine neue Version mit mehr Protokollausgaben bereitstellen, um Probleme schneller zu triagieren.
 
@@ -170,17 +173,23 @@ Wie in der Produktentwicklung müssen wir unsere Endnutzer einbeziehen, indem wi
 
 Der Vorschlag in unserem Szenario nutzt den Ansatz „Configuration as Code“. Entwickler können Log-Levels, Log-Ausgabe, Eigentumsrechte und Benachrichtigungskanäle im Code festlegen. Dies kann eine eigenständige YAML- oder JSON-Datei sein oder Teil einer Kubernetes-Bereitstellungsdefinition. Die Entwickler müssen diese Datei lediglich in ihrem Git-Repository einchecken. DevOps und IT-Ops können den **Pull Request** (**PR**) validieren und genehmigen, um sicherzustellen, dass alle Daten korrekt sind. Wenn eine neue Warnmeldung eingeht oder jemand Protokolle auf Abruf anfordert, ruft die neue Plattform-Engineering-Funktion die richtigen Protokolldateien für die Komponente ab, bei der ein Problem vorliegt. Anschließend kontaktiert sie anhand der Informationen zu Eigentumsverhältnissen und Benachrichtigungen das Entwicklungsteam mit einem Link oder einer Zusammenfassung der für diese Situation relevanten Protokolle. Das folgende Diagramm veranschaulicht den vorgeschlagenen End-to-End-Workflow und zeigt, wie er die Erfahrung für Entwickler, IT-Ops und DevOps verbessert:
 
+
+<img width="965" height="578" alt="image" src="https://github.com/user-attachments/assets/685e3e2c-5297-4dca-a3ea-f767ac6f70e3" />
+
 Abbildung 3.2: Verbesserung der Erfahrung durch Configuration as Code für Entwickler, DevOps und IT-Mitarbeiter
 
 Die vorgeschlagene Lösung behebt alle aktuellen Schwachstellen und stellt gleichzeitig sicher, dass nur die Teams, denen eine Komponente gehört, ihre Daten sehen können. Diese Lösung ist auch erweiterbar, sodass sie in Produktions- und Vorproduktionsumgebungen gleichermaßen funktioniert. Dies wäre eine zukünftige Weiterentwicklung dieser Funktion!
 
-Schritt 4 – Ihr erster Prototyp
+**Schritt 4 – Ihr erster Prototyp**
 
 Wenn die vorgeschlagene Lösung akzeptiert wird, ist es an der Zeit, an einer Prototyp-Implementierung zu arbeiten. Prototypen sind eine großartige Möglichkeit, schnelles Feedback zu einer Implementierung zu erhalten, die technisch noch nicht perfekt sein muss. Für unsere Zwecke ist ein Prototyp der beste Weg, da wir überprüfen möchten, ob das Problem, das die Benutzer gelöst haben möchten, so gelöst werden kann, dass sie unsere Lösung nutzen würden.
 
 Der erste Teil des Prototyps sollte sich auf die Schnittstelle zu dieser neuen Funktion konzentrieren, die wir entwickeln. In unserem Fall ist dies die zuvor besprochene Konfigurationsdatei. Eine wichtige Überlegung für den Prototyp ist die Entscheidung, ob die Lösung das Problem auf dem bestehenden Technologie-Stack (3-Tier-Anwendung auf Cloud-VMs) lösen soll oder ob es sich um ein Problem handelt, das wir nur lösen wollen, wenn Financial One ACME seine neue Cloud-native Implementierung einführt. Das Ziel sollte immer sein, unabhängig vom zugrunde liegenden Technologie-Stack die gleiche Entwicklererfahrung zu bieten. Bei der Implementierung können jedoch der Gewinn und der Aufwand sehr unterschiedlich sein.
 
 Um den Prototyp für beide Technologie-Stacks zu testen, sehen Sie sich die folgenden Configuration-as-Code-Dateien an:
+
+<img width="1063" height="1319" alt="image" src="https://github.com/user-attachments/assets/1da4a69a-64aa-4e70-98c3-f70d58546811" />
+
 
 Tabelle 3.3: Zwei deklarative Möglichkeiten zur Implementierung der vorgeschlagenen Lösung
 
@@ -223,7 +232,7 @@ Im Rahmen des Prototyps dieser Lösung könnten wir noch viel mehr tun:
 - Implementieren Sie eine ordnungsgemäße Authentifizierung, um die REST-API aufzurufen
 - Implementieren Sie Ratenbegrenzungen, um Probleme beim Aufruf des Backend-Git, der K8s-API oder der Logging-Plattform-API zu vermeiden
 
-Die Liste ließe sich fortsetzen.
+**Die Liste ließe sich fortsetzen.**
 
 Es ist nicht notwendig, all diese Punkte zu Beginn zu implementieren, um den Prototyp zu validieren und den Wert solcher Funktionen zu beweisen.
 
@@ -233,7 +242,7 @@ Was wir bisher gelernt haben, ist, wie wir die tatsächlichen Probleme unserer N
 
 Nachdem wir nun verstanden haben, dass wir beim Aufbau einer neuen Plattform eine produktorientierte Denkweise benötigen, ist es an der Zeit, unsere Anforderungserfassung zu erweitern. Wenn wir über die Bedürfnisse der Entwickler hinausblicken und verstehen, wie sich die Plattform in die bestehenden End-to-End-Prozesse und -Tools einfügt, sind wir für die zukünftige Einführung und das Wachstum in Bezug auf die Funktionen bestens gerüstet!
 
-Berücksichtigung bestehender Prozesse und Integration einer neuen Implementierung
+# Berücksichtigung bestehender Prozesse und Integration einer neuen Implementierung
 
 Wir haben gerade darüber gesprochen, wie Sie die tatsächlichen Schwachstellen Ihrer Benutzer identifizieren und gute Kandidaten für Ihre ersten Prototypen auswählen können, um frühzeitig Feedback zu erhalten. Die Anforderungen dürfen jedoch nicht nur von Ihren Endbenutzern kommen. Wir müssen über die einfache Bereitstellung von Self-Service-Funktionen über einen Chatbot, eine Vorlagen-Datenbank oder eine neue CLI hinausdenken.
 
@@ -247,11 +256,11 @@ Wir müssen den gesamten Wertschöpfungsprozess betrachten und analysieren und h
 
 Der erste Schritt besteht darin, den bestehenden Prozess zu verstehen, wie wir die positiven Auswirkungen, die wir erzielen möchten, nachweisen können, welche Anforderungen für eine Erweiterung bestehen und wer die wichtigsten Entscheidungsträger sind.
 
-Verständnis des bestehenden SDLC – „der Lebenszyklus eines Artefakts”
+# Verständnis des bestehenden SDLC – „der Lebenszyklus eines Artefakts”
 
 Da das Ziel des Platform Engineering darin besteht, Plattformfunktionen bereitzustellen, die die Art und Weise verbessern und verändern, wie Entwickler bestimmte Aufgaben neben dem SDLC ausführen, ist es wichtig, den aktuellen SDLC in der Organisation zu verstehen. Insbesondere in großen Unternehmen ist es sehr wahrscheinlich, dass es nicht nur einen Prozess gibt, sondern viele, die sich im Laufe der Jahre entwickelt haben. Es ist auch sehr wahrscheinlich, dass nur wenige – wenn überhaupt – den aktuellen SDLC von der ersten Anforderung und Erstellung des Artefakts bis zum Betrieb der neuen Software in der Produktion kennen, bis sie ersetzt oder außer Betrieb genommen wird. Es ist sehr wichtig, nicht den Fehler zu machen, anzunehmen, dass wir – oder eine einzelne Person – den bestehenden End-to-End-Prozess kennen. Selbst Ingenieure, die seit vielen Jahren für Unternehmen arbeiten, leben oft in ihrer eigenen Blase und haben nur ein begrenztes Verständnis dafür, was typischerweise von der Entstehung einer neuen Idee bis zur Auslieferung, zum Betrieb und schließlich zur Stilllegung des Codes geschieht.
 
-Das Artefakt-Lebenszyklus-Experiment – von der Idee über den Git-Commit bis zur Produktion!
+**Das Artefakt-Lebenszyklus-Experiment – von der Idee über den Git-Commit bis zur Produktion!**
 
 Eine einfache Methode, um den End-to-End-Prozess zu lernen, ist ein kleines Experiment.
 
@@ -261,7 +270,7 @@ Wir haben zwei Möglichkeiten, diesen Artefakt-Lebenszyklus zu verstehen. Ersten
 
 Ein anderer Ansatz besteht darin, eines der Entwicklungsteams zu bitten, eine „Demo“- oder „nicht beeinträchtigende“ Funktion zu erstellen. Angesichts der Beliebtheit von Feature-Flagging könnte dies eine einfache Funktion hinter einem Flag sein, die einen kleinen Aspekt der Laufzeit des Artefakts verändert. Der Vorteil dabei ist, dass dies kein Risiko für die Produktion darstellt, uns aber ermöglicht, alles über den aktuellen SDLC zu erfahren und daraus den aktuellen Lebenszyklus von Artefakten in dieser Organisation abzuleiten!
 
-Einblicke in den Lebenszyklus von Artefakten
+**Einblicke in den Lebenszyklus von Artefakten**
 
 Ich habe mehrere dieser Workshops zum Thema „Den Lebenszyklus eines Artefakts verstehen” mit verschiedenen Organisationen auf der ganzen Welt durchgeführt. Das Ergebnis waren viele Einblicke und Erkenntnisse über die Menschen, Prozesse und Tools. Dazu gehörten unter anderem die folgenden Punkte:
 
@@ -274,6 +283,9 @@ Ich habe mehrere dieser Workshops zum Thema „Den Lebenszyklus eines Artefakts 
 
 Mit diesen Erkenntnissen können Sie auch eine Visualisierung des gesamten SDLC oder des gesamten Artefakt-Lebenszyklus erstellen. Eine solche Visualisierung wird sehr nützlich sein, sobald wir Diskussionen darüber führen, wie sich die Fähigkeiten unserer Plattform auf die derzeit bestehenden Prozesse auswirken werden:
 
+<img width="1005" height="267" alt="image" src="https://github.com/user-attachments/assets/f6f0f56c-0731-4855-bb7e-f954ebeecdf6" />
+
+
 Abbildung 3.3: Verständnis des Lebenszyklus eines Software-Artefakts
 
 Der Lebenszyklus eines Artefakts beschränkt sich nicht auf die anfängliche Bereitstellung
@@ -282,9 +294,12 @@ Während Initiativen im Bereich Platform Engineering oft darauf abzielen, die an
 
 In unserem ersten Beispiel von Financial One ACME haben wir über eine operative Lebenszyklusphase gesprochen. Diese umfasste den mühsamen Prozess für Entwicklungsteams, Zugriff auf Log-Dateien in der Produktion zu erhalten, um aktuelle Probleme zu triagieren. Die folgende Abbildung visualisiert diese Lebenszyklusphase und diesen Prozess!
 
+
+<img width="1005" height="520" alt="image" src="https://github.com/user-attachments/assets/c99bf096-c16c-4a49-8af0-def90791d43b" />
+
 Abbildung 3.4: Lebenszyklus der Incident Response beim Zugriff auf Protokolle
 
-Anforderungen der beteiligten Teams und bestehender Prozesse
+**Anforderungen der beteiligten Teams und bestehender Prozesse**
 
 Bei unserer Übung zum Verständnis des Flusses eines Artefakts während des gesamten Lebenszyklus haben wir viel über die beteiligten Teams, vorhandenen Tools und Prozesse gelernt. Wir haben auch erfahren, welche Tools unsere zukünftigen Plattformfunktionen möglicherweise integrieren müssen, mit welchen Teams wir zusammenarbeiten müssen und – falls wir bestehende Tools ersetzen oder integrieren – was wir tun müssen, um die Funktionen der aktuellen Tool-Implementierung nicht zu beeinträchtigen.
 
@@ -297,9 +312,12 @@ Hier sind einige Beispiele für diese Erkenntnisse:
 
 Bisher haben wir gelernt, wie wichtig es ist, den gesamten Prozess und Lebenszyklus von Software-Artefakten zu verstehen. Es ist wichtig zu wissen, welche Teams beteiligt sind und welche bestehenden Prozesse wir durchlaufen müssen, wenn wir ein neues Tool einführen. Wir haben auch zusätzliche zukünftige Bereiche kennengelernt, in denen eine Plattform-Engineering-Fähigkeit erhebliche Verbesserungen für die Softwarebereitstellung und den Lebenszyklus von Artefakten bieten kann!
 
-Einführung von Lebenszyklusereignissen – Messung und Verbesserung der Effizienz des SDLC
+# Einführung von Lebenszyklusereignissen – Messung und Verbesserung der Effizienz des SDLC #
 
 Wir haben bereits über das Konzept des Artefakt-Lebenszyklus gesprochen. Ein Artefakt durchläuft in der Regel eine Reihe von Phasen: Anforderung akzeptiert, Implementierung gestartet, Pull-Anforderung, Artefakt erstellt, Sicherheitsscan abgeschlossen, Test abgeschlossen, Build validiert, Artefakt befördert, Bereitstellung abgeschlossen, Funktion freigegeben, Problem erkannt, Konfiguration geändert, Problem behoben und Artefakt außer Betrieb genommen. Auch wenn jede Organisation leicht unterschiedliche Lebenszyklusphasen hat, lässt sich dies gut anhand der DevOps-Unendlichkeitsschleife veranschaulichen. Um den Lebenszyklus eines Artefakts nachzuverfolgen, empfehlen wir Ihnen, jeden Schritt als Lebenszyklusereignis zu protokollieren. Die folgende Abbildung zeigt ein Beispiel für solche Ereignisse und einige der Metadaten, die die beteiligten Tools und Teams hinzufügen sollten, um den gesamten Ablauf eines Artefakts von den anfänglichen Anforderungen bis zum Betrieb besser zu verstehen:
+
+
+<img width="1024" height="538" alt="image" src="https://github.com/user-attachments/assets/64278e2c-b286-4d12-8b1f-bbc8b089182d" />
 
 Abbildung 3.5: Der SDLC und seine Artefakt-Lebenszyklusereignisse
 
@@ -315,7 +333,7 @@ Die Standardisierung von Ereignissen wie diesen hat viele Vorteile:
 
 Bevor Sie sich daran machen, Ihre Lebenszyklusereignisse zu definieren, sollten Sie sich die bestehenden Initiativen in den Open-Source-Communities sowie die Aktivitäten der Anbieter in den Bereichen Bereitstellung, Observability und **Application Lifecycle Management** (**ALM**) ansehen. Es besteht kein Grund, das Rad neu zu erfinden, da derzeit Standards entwickelt werden!
 
-Präsentation des Wertversprechens zur Verbesserung des bestehenden SDLC/DORA
+# Präsentation des Wertversprechens zur Verbesserung des bestehenden SDLC/DORA
 
 Das Verständnis des bestehenden SDLC und die Visualisierung des Lebenszyklus eines Artefakts liefern wertvolle Erkenntnisse für unsere laufenden Plattform-Engineering-Initiativen. Dies wird auch für alle Mitglieder der Engineering-Organisation aufschlussreich sein, da viele von ihnen wahrscheinlich noch nie einen Überblick darüber hatten, wo der aktuelle Prozess Verbesserungspotenzial bietet.
 
@@ -338,7 +356,7 @@ Die Erfolgschancen sind höher, wenn wir die Vorteile unserer Plattform klar art
 
 Nachdem wir nun gelernt haben, wie wir unsere Vorschläge so gestalten können, dass sie alle Beteiligten des Software-Lieferungs- und Artefakt-Lebenszyklus einbeziehen, ist es an der Zeit, darüber nachzudenken, wie wir die vorgeschlagene Lösung gestalten sollten.
 
-Entwurf der Infrastrukturarchitektur
+# Entwurf der Infrastrukturarchitektur
 
 An dieser Stelle haben wir unseren Vorschlag vorgestellt. Sobald wir die erste Zustimmung aller beteiligten Teams und Sponsoren aus der Geschäftsleitung erhalten haben, ist es an der Zeit, zur nächsten Phase überzugehen: Wir müssen über die Gestaltung der Lösung nachdenken und darüber, wie sie sich in die zugrunde liegende Infrastruktur einfügt, um alle nicht-funktionalen Anforderungen unserer Organisation zu erfüllen: Ausfallsicherheit, Verfügbarkeit, Überprüfbarkeit, Sicherheit, obligatorische Integrationen und so weiter.
 
@@ -354,7 +372,7 @@ Wir dürfen zwar von Anfang an nicht übertreiben, aber es ist wichtig, sich all
 
 In [Kapitel 4](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap4/Platform%20Engineering_4%20de.md) werden wir uns eingehender mit der Architektur des Plattformkerns befassen und dabei Kubernetes als einheitliche Orchestrierungsschicht verwenden. Unabhängig davon, ob Sie sich letztendlich für Kubernetes als zugrunde liegende Abstraktionsschicht entscheiden oder etwas anderes verwenden, müssen Sie diese Fragen beantworten, da sie sich auf einige Ihrer Entscheidungen auswirken werden. Lassen Sie uns also einige Antworten darauf finden, wie sich dies auf unsere Architekturentscheidungen auswirken würde!
 
-Vermeiden Sie den Elfenbeinturm-Ansatz – wir sind Eigentümer der Plattform!
+# Vermeiden Sie den Elfenbeinturm-Ansatz – wir sind Eigentümer der Plattform!
 
 Bevor wir die Fragen zu den Auswirkungen auf die Infrastruktur beantworten, wollen wir uns mit der grundlegenden Frage der Eigentumsverhältnisse befassen:
 
@@ -370,7 +388,7 @@ Wir müssen einen Elfenbeinturm-Ansatz vermeiden, bei dem wir Best Practices von
 
 Kehren wir nun zurück und beantworten wir einige der zuvor aufgeworfenen Fragen zur Infrastruktur, die unsere Architekturentscheidungen beeinflussen könnten.
 
-Organisatorische Einschränkungen – bestehende Infrastrukturanforderungen?
+# Organisatorische Einschränkungen – bestehende Infrastrukturanforderungen?
 
 Wir müssen herausfinden, ob es Einschränkungen bei der Nutzung bestehender Infrastrukturdienste gibt. In Unternehmen bestehen wahrscheinlich Verträge mit Infrastruktur- oder Cloud-Anbietern. Wenn solche Einschränkungen bestehen, spielen sie eine Rolle bei unseren Entscheidungen – müssen wir beispielsweise unseren eigenen K8s-Cluster vor Ort betreiben oder können wir einen Managed Service eines Anbieters nutzen? Wenn wir an einen bestimmten Cloud-Anbieter gebunden sind, bedeutet dies auch, dass wir möglicherweise auf dessen Serviceangebote (Speicher, Datenbank, Caches und mehr) beschränkt sind.
 
@@ -378,7 +396,7 @@ In diesem Zusammenhang möchten wir auch die Zugriffskontrolle, den Datenverkehr
 
 Es ist wichtig, alle diese organisatorischen Einschränkungen zu kennen, bevor wir die Entscheidungen über Infrastruktur und Architektur endgültig treffen!
 
-Konnektivitätsbeschränkungen – Interoperabilitätsanforderungen?
+# Konnektivitätsbeschränkungen – Interoperabilitätsanforderungen?
 
 Die Funktionen unserer Plattform erfordern die Verbindung und Interaktion mit anderen bestehenden Systemen. Dies reicht vom Zugriff auf SSO, Ihr Git-Repository, CI/CD-Pipelines, Observability, Orchestrierungsebenen, Cloud-APIs und mehr.
 
@@ -388,7 +406,7 @@ Wir müssen uns Gedanken über Firewalls, Pull- versus Push-Konnektivität sowie
 
 Es ist wichtig, alle diese Konnektivitätsbeschränkungen zu kennen, bevor wir endgültige Entscheidungen über die Infrastruktur und den Standort unserer Plattform in Bezug auf alle anderen Systeme treffen, mit denen wir uns verbinden müssen.
 
-Ausfallsicherheitsbeschränkungen – SLAs und andere nicht-funktionale Anforderungen?
+# Ausfallsicherheitsbeschränkungen – SLAs und andere nicht-funktionale Anforderungen?
 
 Das Ziel unserer Plattform ist es, die tägliche Arbeit für eine Vielzahl interner Benutzer (Entwickler, DevOps, IT-Ops, Qualitätsingenieure, App-Support und mehr) zu verbessern. Das bedeutet, dass unsere Plattform jederzeit verfügbar sein und funktionieren muss, wenn unsere Benutzer sie benötigen. In globalen Unternehmen kann dies operative Ausfallsicherheit und hohe Verfügbarkeit rund um die Uhr bedeuten. Wenn die Plattform nicht verfügbar ist, können unsere Ingenieure ihre wichtigen Aufgaben nicht ausführen, wie z. B. die Veröffentlichung einer neuen Version einer Software, das Beheben eines Sicherheitsproblems oder die Skalierung ihrer Workloads, um der gestiegenen Nachfrage der Endnutzer gerecht zu werden!
 
@@ -403,11 +421,11 @@ Dynamische, horizontale oder vertikale Skalierung ist ein Thema, auf das wir sp�
 
 Nachdem wir nun Antworten auf all diese Fragen haben, können wir fundiertere Entscheidungen über die Infrastruktur und die Architektur unserer Plattform und ihre Funktionen treffen!
 
-Erforschung von Multi-Cloud, Multi-SaaS und der Fragmentierung von Funktionen
+# Erforschung von Multi-Cloud, Multi-SaaS und der Fragmentierung von Funktionen
 
 Wenn wir uns mit der Fragmentierung von Funktionen und deren Interaktion mit der Platform as a Service und ihrer Skalierbarkeit befassen, fällt uns eine Sache als wichtige Funktion ein, die auf den ersten Blick vielleicht nicht ganz offensichtlich ist: Der IDP sollte nicht nur Multi-User, sondern auch Multi-Tenant sein.
 
-Multi-Tenancy und Eigentumsrechte als Funktion unserer Plattform
+# **Multi-Tenancy und Eigentumsrechte als Funktion unserer Plattform** 
 
 Multi-Tenancy wird normalerweise im Zusammenhang mit einer Produktionsanwendung betrachtet. Unser Plattformkunde Financial One ACME möchte beispielsweise sein Single-Tenant-Produkt in ein Multi-Tenant-Produkt umwandeln. Dies wird ihm helfen, höhere Gewinnmargen zu erzielen, den Betriebsaufwand zu senken und eine Reihe weiterer geschäftlicher Vorteile zu erzielen. Die gleiche Datentrennung, die innerhalb einer Produktionsanwendung in einer stark regulierten Branche besteht, sollte auf jeder Ebene des Anwendungslebenszyklus, einschließlich der IDP, vorhanden sein. Dies ist nicht nur eine bewährte Vorgehensweise, sondern möglicherweise auch notwendig, um bestimmte Sicherheits- und Compliance-Zertifizierungen zu erhalten.
 
@@ -446,7 +464,7 @@ Da unsere Plattform und alle ihre Komponenten nicht ausschließlich auf Kubernet
 - Auswirkungen auf die Leistung und Skalierbarkeit verschiedener Anbieter zu haben
 - Erhöhung der Gesamtbetriebskosten unserer Software
 
-Zentralisierte und dezentralisierte Plattformfunktionen
+# Zentralisierte und dezentralisierte Plattformfunktionen
 
 In den folgenden Kapiteln werden wir weitere Beispiele für den Betrieb unseres IDP und seiner Komponenten entweder als zentraler Dienst, pro Umgebung, pro Region oder sogar pro Mandant (falls dies erforderlich ist) vorstellen. Ihre Erkenntnisse über die organisatorischen Anforderungen werden diese Entscheidungen beeinflussen, z. B. ob unsere Kunden verlangen, dass sie in bestimmten Regionen betrieben werden, oder ob sie einen bestimmten Cloud-Anbieter nicht nutzen dürfen.
 
@@ -456,7 +474,7 @@ Dezentrale Komponenten haben den Vorteil, dass sie die Prozesse der Datenerfassu
 
 Nachdem wir nun gelernt haben, dass Multi-X – darunter Multi-Tenancy, Cloud und SaaS – Auswirkungen auf unsere Architekturentscheidungen haben wird, ist es wichtig, ein gutes Gleichgewicht zwischen Aufwand, Nutzen und externen Anforderungen an unsere Plattform zu finden. Mit all dem Wissen, das wir bisher gewonnen haben, können wir eine gute Referenzarchitektur für unsere Plattform entwickeln, die wir im letzten Teil dieses Kapitels besprechen werden!
 
-Erkundung einer Referenzarchitektur für unsere Plattform
+# Erkundung einer Referenzarchitektur für unsere Plattform
 
 Architekturdiagramme sind eine gute Möglichkeit, einen Überblick darüber zu geben, was ein System dem Endbenutzer bietet und wie es im Inneren funktioniert. In diesem Kapitel haben wir mehrere wichtige Schritte zur Schaffung der Grundlage für eine zukünftige Plattform und ihre Funktionen erörtert:
 
@@ -468,6 +486,9 @@ Architekturdiagramme sind eine gute Möglichkeit, einen Überblick darüber zu g
 
 Eine andere Möglichkeit, dies darzustellen, ist ein hochrangiges Diagramm unserer Plattform. Das folgende Diagramm ist zwar nicht vollständig, kann jedoch als gute Referenz für die Plattformen dienen, die Sie aufbauen werden:
 
+<img width="1021" height="467" alt="image" src="https://github.com/user-attachments/assets/6e470a22-80f3-4619-a218-52be0938e1ef" />
+
+
 Abbildung 3.6: Referenzarchitektur für unsere Plattformgrundlage (Das Bild dient als visuelle Referenz; die Textinformationen sind nicht wesentlich.)
 
 Unsere Plattform als Produkt muss einen klaren Zweck haben!
@@ -476,7 +497,7 @@ Beginnen Sie damit, den Zweck zu visualisieren und zu formulieren, bevor Sie sic
 
 Gehen wir dieses Diagramm gemeinsam durch, so wie Sie es Ihren Kollegen oder Endnutzern präsentieren würden. Wir beginnen oben und arbeiten uns nach unten vor, bevor wir uns mit den Aspekten Beobachtbarkeit, Verfügbarkeit, Ausfallsicherheit und Sicherheit befassen.
 
-Der Zweck – Self-Service für Ihre Endnutzer
+# Der Zweck – Self-Service für Ihre Endnutzer
 
 In [Kapitel 2](https://github.com/aboudou123/Platform-Engineering-for-Architects/edit/main/DE/Chap2/Platform%20Engineering_2%20de.md) haben wir ein Beispiel für ein Plattformprinzip gegeben, das wir „Self-Service first“ genannt haben. Wir haben eine detaillierte Beschreibung gegeben: „Wir werden unseren Kunden alle Plattformfunktionen als Self-Service zur Verfügung stellen, wobei wir uns auf ihre Benutzererfahrung konzentrieren und eine selbstbestimmte Softwareentwicklung ermöglichen.“
 
@@ -484,7 +505,7 @@ Genau das spiegelt sich oben im vorangegangenen Diagramm wider. Hier haben wir a
 
 Ein hochrangiges Diagramm wie dieses bietet nur begrenzt Platz. Wir könnten Beispiele für die verschiedenen Self-Service-Funktionen für Endbenutzer als Text hinzufügen oder – falls erforderlich – eine detailliertere Version dieses Diagramms für jeden Endbenutzer und seine Self-Service-Funktionen bereitstellen!
 
-Benutzeroberfläche/Entwicklererfahrung
+# Benutzeroberfläche/Entwicklererfahrung
 
 Jede Endbenutzergruppe ist anders. Selbst innerhalb von Endbenutzergruppen gibt es möglicherweise unterschiedliche Fähigkeiten, die bei der Gestaltung und Implementierung der Benutzeroberfläche für die Self-Service-Funktionen unserer Plattform berücksichtigt werden müssen.
 
@@ -496,7 +517,7 @@ Dann gibt es noch Ihre Automatisierungsingenieure, die weder in einer IDE arbeit
 
 Wie bereits in diesem Kapitel erwähnt, hat jeder Benutzer unterschiedliche Fähigkeiten und daher auch unterschiedliche Erwartungen an eine gute Benutzererfahrung. Die Fokussierung auf eine gute Benutzererfahrung ist entscheidend, da dies ein entscheidender Faktor dafür ist, ob die Plattform angenommen wird oder nicht. Aus diesem Grund ist es wichtig, die Benutzeroberfläche und ihr mögliches Aussehen in unserer Referenzarchitektur hervorzuheben, da dies die Art und Weise ist, wie unsere Benutzer mit unserer Plattform interagieren werden!
 
-Kernkomponenten der Plattform
+# Kernkomponenten der Plattform
 
 Auch wenn wir alle unsere Vorlieben bei der Auswahl von Tools und Technologien haben, sollte der richtige Ansatz für die Auswahl Ihrer Kernplattformkomponenten nicht auf persönlichen Vorlieben basieren. Er muss sich danach richten, welche Self-Service-Anwendungsfälle (d. h. Funktionen unserer Plattform) wir über eine Benutzeroberfläche bereitstellen möchten, die eine gute Benutzer- und Entwicklererfahrung bietet.
 
@@ -510,13 +531,13 @@ Im vorstehenden Diagramm haben wir die Plattformkomponenten in die folgenden Ber
 
 Die Beobachtbarkeit wird später in diesem Buch noch näher behandelt, da sie für viele Disziplinen wie SRE, automatische Skalierung, Incident Response und Fehlerbehebung eine wichtige Rolle spielt.
 
-Eine Plattform, die verfügbar, widerstandsfähig und sicher ist
+# Eine Plattform, die verfügbar, widerstandsfähig und sicher ist
 
 Eine Plattform ist ein Produkt! Ein Produkt, das von unseren internen Benutzern verwendet werden soll, muss daher verfügbar sein, wenn sie es benötigen, ausfallsicher sein, wenn viele Benutzer es gleichzeitig benötigen, und sicher sein, damit unsere Benutzer dem Produkt vertrauen.
 
 Um sicherzustellen, dass unsere Plattform immer verfügbar ist, wenn unsere Nutzer sie benötigen, müssen wir dieselben architektonischen Prinzipien anwenden, die wir auch bei jeder anderen Software anwenden würden, die erfolgreich sein soll. Für unsere Plattform bedeutet dies, dass alle kritischen Komponenten der Plattform standardmäßig verfügbar, widerstandsfähig und sicher sein müssen. Sehen wir uns einige Beispiele und Best Practices für diese drei Säulen an.
 
-Verfügbarkeit
+**Verfügbarkeit**
 
 Unsere Nutzer betrachten unsere Plattform als verfügbar, wenn sie sie für die von uns versprochenen Self-Service-Anwendungsfälle nutzen können. Erinnern Sie sich an unseren vorgeschlagenen Self-Service-Anwendungsfall „Anfordern eines Protokolls aus der Produktion” aus Abbildung 3.2? Wenn ein Entwicklungsteam diesen Self-Service-Anwendungsfall befolgt, erwartet es, dass unsere Plattform die angeforderten Protokolle jederzeit innerhalb einer angemessenen Zeit liefert, egal ob es Dienstagmittag oder Freitagabend um 23 Uhr ist.
 
@@ -532,7 +553,7 @@ Beide Szenarien können durch benutzerdefinierte Skripte durchgeführt werden, d
 
 Es gibt noch viele andere Dinge, die wir tun müssen, um die Verfügbarkeit der Systeme sicherzustellen. Diese werden wir im nächsten Abschnitt behandeln, in dem wir über Ausfallsicherheit sprechen werden.
 
-Ausfallsicherheit
+**Ausfallsicherheit**
 
 Wir haben gerade über die Verfügbarkeit unseres Produkts gesprochen. Für unsere Endbenutzer muss die Plattform immer verfügbar sein, unabhängig davon, ob sie der einzige Benutzer im System sind oder ob 1.000 andere versuchen, Self-Service-Aufgaben auszuführen. Sie erwarten auch Verfügbarkeit, unabhängig davon, ob es Probleme in unserer internen Infrastruktur oder unseren Cloud-Diensten gibt. An dieser Stelle sprechen wir über die Ausfallsicherheit eines Systems. Das bedeutet, dass das System trotz unerwarteter Ereignisse (hohe Auslastung, Komponentenausfälle, Verbindungsprobleme usw.) verfügbar bleibt.
 
@@ -543,13 +564,14 @@ Aus architektonischer Sicht gibt es viele Möglichkeiten, ein System widerstands
 - **Automatische Skalierung bereitstellen**: Mit **Horizontal Pod Autoscaler** (**HPA**) und **Kubernetes Event Driven Autoscaling** (**KEDA**) können wir unsere Implementierung auf der Grundlage von Indikatoren wie CPU, Speicher, eingehenden Anfragen oder sogar der Benutzererfahrung skalieren. Auf diese Weise können wir die meisten Probleme mit der Ausfallsicherheit bei Ressourcenengpässen vermeiden.
 - **Automatische Sicherung und Wiederherstellung durchführen**: Nicht jedes Problem lässt sich vermeiden. Im Katastrophenfall ist es wichtig, über automatisierte Sicherungs- und Wiederherstellungsoptionen zu verfügen, damit wir so schnell wie möglich zum normalen Betrieb zurückkehren können.
 
-Aus Sicht der Softwarearchitektur bietet unsere REST-API mehrere Optionen:
+**Aus Sicht der Softwarearchitektur bietet unsere REST-API mehrere Optionen:**
 
 - **API-Ratenbegrenzung**: Wir können die Anzahl der eingehenden Anfragen insgesamt oder von einem bestimmten Benutzer oder Team begrenzen. Dadurch werden Probleme vermieden, die entstehen können, wenn jemand versehentlich (oder absichtlich) unser System mit zu vielen Anfragen überflutet.
 - **Warteschlange für eingehende Anfragen**: Ereignisgesteuerte Architekturen ermöglichen es uns, Anfragen in eine Warteschlange zu stellen und sie zu bearbeiten, sobald Mitarbeiter verfügbar sind. Die Mitarbeiter können dann auch je nach Länge der Warteschlange skaliert werden. Während zusätzliche Ebenen, wie z. B. Anfragenwarteschlangen, möglicherweise die Latenz der Anfragen beeinflussen, erhöht dieses Architekturmuster die Stabilität, Ausfallsicherheit und Verfügbarkeit.
 - **Wiederholungsversuche und Backoff für nachgelagerte Systeme**: Da wir auch Aufrufe an Backend-Systeme wie Git oder das Logging-Observability-Backend senden, möchten wir sicherstellen, dass wir nicht von Problemen auf deren Seite beeinträchtigt werden. Zu diesem Zweck können wir API-Wiederholungsversuche (für den Fall, dass ein API-Aufruf zu lange dauert oder fehlschlägt) in Kombination mit Backoff (Verlängerung der Zeit zwischen API-Aufrufen) implementieren. Diese Strategien erhöhen unsere Ausfallsicherheit und helfen auch unseren nachgelagerten Systemen.
 
-Sicherheit
+
+**Sicherheit**
 
 Wenn unsere Plattform jederzeit verfügbar ist, ist das ein guter Anfang. Aber wie jedes Softwareprodukt muss sie auch sicher sein. Dies ist für Plattformen sogar noch wichtiger, da sie es unseren Endbenutzern ermöglichen, neue Softwareanwendungen zu erstellen, bereitzustellen und zu betreiben, die ebenfalls sicher sein müssen. Wenn unsere Plattform auf einem Stack und Tools läuft, die bekannte Schwachstellen aufweisen oder gehackt werden können, sind wir Angreifern ausgesetzt, die dies für Angriffe auf die Software-Lieferkette oder für den Zugriff auf vertrauliche Informationen ausnutzen. Schauen wir uns noch einmal unsere REST-API an. Wenn wir jedem erlauben, diese API zu verwenden, um Protokolle aus der Produktion anzufordern, könnten wir am Ende wichtige Protokollinformationen an einen Hacker senden.
 
@@ -557,7 +579,7 @@ Deshalb ist es wichtig, strengste Sicherheitsrichtlinien auf unsere Plattform, j
 
 Wir sind das Plattform-Engineering-Team, was bedeutet, dass wir für die Sicherheit unserer Plattform ebenso verantwortlich sind wie für ihre Verfügbarkeit und Ausfallsicherheit!
 
-Erfolgskennzahlen und Optimierung
+# Erfolgskennzahlen und Optimierung
 
 „Wir haben Monate damit verbracht, unsere neue Plattform aufzubauen. Die Entwickler hassen sie! Helfen Sie mir zu verstehen, warum!“
 
@@ -565,7 +587,7 @@ Mit allem, was wir bisher gelernt haben, sollten wir in einer guten Position sei
 
 Wir haben bereits viel über Observability gesprochen, sowohl als Self-Service-Funktion unserer Plattform und für unsere Endnutzer als auch über die Nutzung von Observability zum Verständnis der internen Abläufe unserer Plattform, um Verfügbarkeit und Ausfallsicherheit zu gewährleisten. Die Beobachtung unserer Plattformkomponenten wie Backstage, ArgoCD, Jenkins, OpenFeature, Git, Harbor, Redis, Istio und Kubernetes selbst gibt uns viele Einblicke in den Erfolg unserer Plattform und ihrer Funktionen. Lassen Sie uns einen Blick auf einige wichtige Indikatoren werfen, wie wir sie erfassen können und was wir mit ihnen tun können, um die Akzeptanz und Effizienz unserer Plattform zu optimieren.
 
-Aktive Nutzer
+**Aktive Nutzer**
 
 Wenn Tools wie Backstage das Entwicklerportal der Wahl für unsere Plattform sind, möchten wir messen, wie viele unserer Benutzer sich täglich oder wöchentlich bei Backstage anmelden. Wir möchten messen, wie viele neue Projekte über die Backstage-Template-Engine erstellt werden und wie viele neue oder aktualisierte Git-Repositorys daraus resultieren.
 
@@ -575,13 +597,13 @@ All dies sind gute Indikatoren für die aktuelle Akzeptanz. Wenn wir eine langsa
 
 Es ist jedoch wichtig, zunächst zu messen, wie viele aktive Nutzer wir auf der Plattform haben, und dies als Ausgangsbasis zu verwenden, damit wir zusätzliche Maßnahmen festlegen und die Akzeptanz steigern können!
 
-SLOs/DORA
+# SLOs/DORA
 
 Eine Plattform bietet die Möglichkeit, Best Practices durch Self-Service-Vorlagen zu fördern. Hier kommen SLOs ins Spiel. Wir können nicht nur SLOs für unsere Plattformkomponenten definieren, wie z. B. die Verfügbarkeit, sondern dies auch als Gelegenheit nutzen, SLO-Definitionen in jede neue Vorlage für neue Softwareprojekte aufzunehmen, die unsere Endbenutzer über unsere Plattform erstellen – wir möchten, dass auch ihre Software hochverfügbar, widerstandsfähig und sicher ist.
 
 Darüber hinaus können wir messen, wie viele neue Softwareprojekte und Releases mit Hilfe unserer Plattform erstellt und veröffentlicht werden. Wir können die Anzahl der Jenkins-Jobausführungen, deren Dauer, die Häufigkeit der ArgoCD-Synchronisationen und die Anzahl der Deployments, die in der Produktion landen und ihre SLOs erfüllen, untersuchen. All dies sind Indikatoren, die uns helfen, Teile der DORA-Metriken an die Engineering-Teams zurückzumelden. Diese Metriken benötigen sie, um ihre Effizienz nachzuweisen. Dies hilft uns als Plattformteam auch dabei, hervorzuheben, wie viel effizienter Teams mit Hilfe unserer Plattform werden, da wir davon ausgehen, dass sich Kennzahlen wie die Bereitstellungshäufigkeit oder die Vorlaufzeit für Änderungen verbessern werden. Wir werden DORA in [Kapitel 5](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap5/Platform%20Engineering_5%20de.md), in dem wir uns mit CI/CD-Automatisierung befassen, genauer behandeln!
 
-Nutzung/FinOps
+**Nutzung/FinOps**
 
 Es ist ein großartiges Ziel, dass viele Nutzer unsere Plattform nutzen, und wir haben bereits gelernt, wie wir dies messen können. Indem wir mehr Teams auf eine zentralisierte Plattform bringen, können wir Best Practices für die richtige Dimensionierung und Skalierung von Bereitstellungen sowie die Optimierung der Auslastung der zugrunde liegenden Infrastruktur zentral durchsetzen, was zu einer Kostenoptimierung für die Plattform und alle darüber bereitgestellten Anwendungen führt.
 
@@ -591,7 +613,7 @@ Es gibt viele weitere Anwendungsfälle, die uns helfen, die Auslastung der zugru
 
 Wir hoffen, dass Sie einen ähnlichen Ansatz für die Erstellung einer Referenzarchitektur für Ihre Plattform-Engineering-Projekte anwenden können. Beginnen Sie mit einer allgemeinen Übersicht, die den Zweck der Plattform aufzeigt, einen Überblick über die Funktionen und die Benutzeroberfläche gibt, Einblicke in die Kernkomponenten der Plattform vermittelt und angibt, wie Sie den Erfolg Ihrer Plattform-Engineering-Initiative messen.
 
-Zusammenfassung
+# Zusammenfassung
 
 In diesem Kapitel haben wir gelernt, wie man Plattform-Engineering mit einer produktorientierten Denkweise angeht: Finden Sie das eigentliche Problem, das wir lösen müssen, bieten Sie eine einfache, schnelle Lösung, um unsere Implementierung zu validieren, identifizieren Sie, wie unsere Plattform in bestehende Prozesse und organisatorische Anforderungen passt, präsentieren Sie eine Lösung mit einem Wertversprechen, das sich nicht nur auf die Entwicklungsteams konzentriert, und entwerfen Sie dann ein flexibles Design, ohne in Überengineering zu verfallen!
 
