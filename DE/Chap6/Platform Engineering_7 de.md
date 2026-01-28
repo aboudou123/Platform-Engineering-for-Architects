@@ -107,7 +107,7 @@ OWASP ging noch einen Schritt weiter und führte 2022 zusätzlich eine Kubernete
 
 Die Listen stimmen weitgehend überein, gelten jedoch beide für einen Kubernetes-basierten IDP. Anstatt diese Listen als umfassende Leitfäden für die Erstellung einer Sicherheitsstrategie zu betrachten, sollten sie als Mindestanforderungen für die Sicherheitsstrategie des IDP angesehen werden, die jedoch einen umfassenden Ausgangspunkt für Ihr Scoping-Projekt darstellen.
 
-**Implementierung von Bedrohungsmodellen**
+# Implementierung von Bedrohungsmodellen
 
 Nachdem Sie den Sicherheitsumfang festgelegt haben, ist der zweite Schritt **die Bedrohungsmodellierung**. Ein Bedrohungsmodell ist eine Darstellung aller Faktoren, die die Sicherheit Ihrer Anwendung oder in diesem Fall Ihrer Plattform beeinträchtigen können. Die Durchführung einer Bedrohungsmodellierung ist ein hervorragendes Beispiel dafür, wie man zu den richtigen Schlussfolgerungen für die Sicherheitsstrategie eines Unternehmens gelangt. Sie können diese Top-Ten-Listen als Leitfaden für Ihre Gespräche zum Thema Bedrohungsmodellierung verwenden. Laut „ ” (Was ist Bedrohungsmodellierung?), den Autoren des Threat Modeling Manifesto ([threatmodelingmanifesto.org](http://threatmodelingmanifesto.org/)), sollte ein Bedrohungsmodell die folgenden vier Fragen beantworten:
 
@@ -124,7 +124,7 @@ Diese Zusammenarbeit im Bereich Sicherheit ist eine der wichtigsten Strategien, 
 
 Um sich in der Welt der Sicherheitsstandards zurechtzufinden, muss man zunächst versuchen, die Sprache der Akronyme zu entschlüsseln. Das Ziel ist nicht, über Nacht zum Sicherheitsexperten zu werden, sondern zu wissen, welches Sicherheitsniveau Sie benötigen, und sicherzustellen, dass die Plattform alles Notwendige tut, um diese Sicherheit zu gewährleisten. Eine einfache Möglichkeit, dieses Problem anzugehen, besteht darin, sich anzuschauen, in welcher Branche Ihr Unternehmen tätig ist und welche Sicherheitsframeworks relevant sind. Ein Krankenhaus oder eine große medizinische Gruppe in den USA müsste beispielsweise die Vorschriften des **Health Insurance Portability and Accountability Act** (**HIPAA**) einhalten. Daher müsste jeder Anbieter einer ähnlichen Organisation, unabhängig vom Standort, in der Lage sein, die Vorschriften v , einzuhalten. Durch das Verständnis der Endkunden und der Bedürfnisse des Entwicklungsteams kann ein Plattformteam bestimmen, welches Maß an Sicherheit und Compliance über die üblichen Best Practices hinaus erforderlich ist.
 
-Werfen wir einen kurzen Blick auf einige Sicherheitsstandards. Diese Liste ist keineswegs vollständig, behandelt jedoch einige der gängigsten Standards:
+### Werfen wir einen kurzen Blick auf einige Sicherheitsstandards. Diese Liste ist keineswegs vollständig, behandelt jedoch einige der gängigsten Standards:
 
 |     |     |     |     |     |
 | --- | --- | --- | --- | --- |
