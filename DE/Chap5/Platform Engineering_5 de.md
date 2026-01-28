@@ -37,7 +37,7 @@ Nachdem wir nun die Grundlagen geschaffen haben, wollen wir uns mit Continuous X
 - **Testautomatisierung**: Während des Build-Prozesses werden Unit-Tests, Integrationstests und andere Prüfungen durchgeführt, wobei der Build als fehlerhaft markiert wird, wenn einer der Tests fehlschlägt.
 - **Feedback-Schleife**: Diese bietet Entwicklern schnelles Feedback, um Probleme rasch zu beheben, was zu einer insgesamt höheren Codequalität und -stabilität führt.
 
-Kontinuierliche Tests und Validierung der Beobachtbarkeit
+##  Kontinuierliche Tests und Validierung der Beobachtbarkeit
 
 Während CI bereits die Bedeutung automatisierter Unit- und Integrationstests hervorhebt, möchten wir betonen, dass mehr automatisierte Tests und Validierungen in einer frühen Phase des Lebenszyklus zu einer besseren Qualität und Stabilität führen. Angenommen, die gebaute Software bietet REST-APIs oder eine Benutzeroberfläche, sollte eine grundlegende Validierung dieser Schnittstellen durchgeführt werden, um die korrekte Funktionalität zu überprüfen (z. B. geben APIs die richtigen Antworten zurück, werden beim Testen mit ungültigen Parametern die richtigen HTTP-Statuscodes verwendet, gibt es Zeitüberschreitungen bei API-Aufrufen oder werden HTTP-Fehler zurückgegeben?
 
@@ -51,18 +51,18 @@ Für Financial One ACME und seine kritischen Finanzdienstleistungen sollten wir 
 - Protokolliert die API keine vertraulichen Daten wie Kreditkartennummern, Benutzernamen oder Tokens?
 - Generiert die API ordnungsgemäß Metriken für fehlgeschlagene Versuche, sodass diese in der Produktion verwendet werden können, um vor potenziellen Hackerangriffen zu warnen?
 
-### Kontinuierliche Bereitstellung
+## Kontinuierliche Bereitstellung
 
 Wie auf der Website zu Continuous Delivery (https://continuousdelivery.com/) definiert, ist „Continuous Delivery die Fähigkeit, Änderungen aller Art – einschließlich neuer Funktionen, Konfigurationsänderungen, Fehlerbehebungen und Experimente – sicher, schnell und nachhaltig in die Produktion oder in die Hände der Benutzer zu bringen“. Das Ziel besteht darin, die Angst vor Fehlschlägen bei Bereitstellungen zu beseitigen. Anstelle von seltenen Big-Bang-Releases sollten Bereitstellungen zur Routine werden, da sie kontinuierlich erfolgen. Darüber hinaus können wir das Risiko durch die Anwendung neuer Bereitstellungsmuster wie Blue/Green, Canary oder Feature Flagging noch weiter reduzieren. Diese werden im Abschnitt über Bereitstellungen im Vergleich zu Releases näher erläutert!
 
-Einige Aspekte der kontinuierlichen Bereitstellung sind wie folgt:
+## Einige Aspekte der kontinuierlichen Bereitstellung sind wie folgt:
 
 - **Automatisierte Bereitstellungen**: Neue Artefakte, die aus CI hervorgehen, werden mit anderen Änderungen gebündelt und automatisch bereitgestellt. Bereitstellungsdefinitionen sind deklarativ und versionskontrolliert und ermöglichen daher eine besser vorhersehbare, wiederholbare und risikoarme Art der Aktualisierung in jeder Umgebung.
 - **Bereitstellungspipelines**: Pipelines ermöglichen im Vergleich zu CI Tests und Validierungen der Bereitstellung auf höherer Ebene. Hier werden Tests hinsichtlich Leistung, Sicherheit, Skalierbarkeit, Ausfallsicherheit und Benutzererfahrung durchgeführt. Dabei wird nicht nur ein einzelnes Artefakt validiert, sondern der gesamte Satz an Bereitstellungsänderungen!
 - **Qualitätskontrollen und Freigabe**: Am Ende einer Bereitstellungspipeline dienen alle Testergebnisse als Qualitätskontrolle, bevor die Änderung in die nächste Umgebung übernommen wird: von der Entwicklung zur **Qualitätssicherung** (**QA**), von der QA zur Staging-Umgebung, von der Staging-Umgebung zur Produktion.
 - **Rollback versus Rollforward**: Wenn das Qualitätsgate in der Produktion fehlschlägt, kann ein Rollback ausgelöst werden, indem auf die vorherige versionskontrollierte Bereitstellungskonfiguration zurückgegriffen wird. Eine andere Strategie ist das Rollforward, bei dem Probleme behoben werden und dank automatisierter Bereitstellungen die Korrektur schnell bereitgestellt werden kann, um ein Rollback zu vermeiden.
 
-Kontinuierliche Bereitstellungen – Entkopplung von Bereitstellungen und Releases
+### Kontinuierliche Bereitstellungen – Entkopplung von Bereitstellungen und Releases
 
 CD stellt Änderungen automatisiert und schnell bereit. Es besteht jedoch weiterhin das Risiko, dass eine Änderung zu einem Fehler führt, der entweder ein Rollback oder ein Rollforward erforderlich macht, wie zuvor erläutert.
 
@@ -182,7 +182,7 @@ spec:
 
 &nbsp; Mietdauer: „12 Stunden”
 
-CopyExplain
+## CopyExplain
 
 Die Kompositionsdefinition von PerformanceTestCluster wurde vom Plattform-Engineering-Team in Zusammenarbeit mit Experten erstellt, die sich mit der Installation von Lasttest- und Beobachtungstools auskennen. Im vorangegangenen Beispiel würde ein neuer mittelgroßer K8s-Cluster bereitgestellt, die angeforderte App würde mithilfe des referenzierten Helm-Charts installiert, Observability-Daten würden erfasst (z. B. Prometheus und Log-Scraping konfiguriert) und das Lasttest-Tool würde bereitgestellt, um Spike-Last-Szenarien ausführen zu können. Sobald alles bereit ist, wird eine Slack-Benachrichtigung mit den Umgebungsdetails an das Team gesendet. Zu guter Letzt würde die Umgebung nach 12 Stunden, wie im obligatorischen Feld „leaseTime“ angegeben, heruntergefahren werden.
 
@@ -201,6 +201,8 @@ Um sicherzustellen, dass diese Komponenten bei Bedarf verfügbar sind, müssen w
 - **Service Level Agreements (SLAs) und Warnmeldungen bei Problemen**: Wir – das Plattformteam – müssen wissen, dass etwas nicht in Ordnung ist, bevor unsere Endbenutzer uns dies melden. Aus diesem Grund müssen wir für jede Komponente SLAs einrichten und geeignete Warnmeldungen konfigurieren, falls die Systeme nicht wie erwartet funktionieren. Der einfachste Weg, dies zu erreichen, ist die Einrichtung synthetischer Überprüfungen der wichtigsten API-Endpunkte jedes Tools (z. B. die Überprüfung der Reaktionsfähigkeit der Jenkins-Benutzeroberfläche mit einer synthetischen Überprüfung, die alle fünf Minuten durchgeführt wird; dies gibt uns ein Frühwarnsignal, falls Jenkins Probleme bekommt, bevor es jemand anderes bemerkt).
 
 Das folgende Beispiel-Dashboard zeigt wichtige Gesundheitsindikatoren von Tools wie Argo CD. Das Gleiche muss für alle anderen Tools gelten, die unsere Kernplattformfunktionen ausmachen!
+
+
 <img width="997" height="441" alt="image" src="https://github.com/user-attachments/assets/73ca92e4-66cf-4bba-98eb-85ebcd3bf84f" />
 
 Abbildung 5.1: Überwachen und beobachten Sie jedes Tool, das Teil der Plattform ist
@@ -453,6 +455,7 @@ Nachdem wir nun die Grundlagen der Synchronisierung kennen, wollen wir uns versc
 Die einfachste Version – und wahrscheinlich das Modell, mit dem viele beginnen – ist der Monorepo-Ansatz mit GitOps-Operatoren, die in eine einzige Zielumgebung ziehen, wie wir in Abbildung 5.3 für beide Muster „ “ gesehen haben. Während das einzelne Ziel ein gängiges Muster ist, insbesondere wenn Sie mit GitOps beginnen, gibt es noch andere Muster, die wir kurz hervorheben möchten.
 
 GitOps kann auch so eingerichtet werden, dass wir einen zentralen GitOps-Operator haben, der den gewünschten Zustand, wie er in Git deklariert ist, beibehält und mit mehreren Zielumgebungen synchronisiert, indem er diese Änderungen herausgibt. Dies wird als **Hub-and-Spoke-Modell** bezeichnet. Eine weitere Option ist das **Many-to-Many-Modell**, bei dem jede Zielumgebung über einen eigenen GitOps-Operator verfügt, der den gewünschten Zustand kontinuierlich mit dem Zustand auf seinem eigenen Cluster synchronisiert, wie in der folgenden Abbildung dargestellt:
+
 
 <img width="933" height="281" alt="image" src="https://github.com/user-attachments/assets/06012090-3e72-4195-b340-fbd957fb84b2" />
 
