@@ -1,3 +1,5 @@
+# Chapter 9: Choosing Technical Debt to Unbreak Platforms
+
 # **Technische Schulden wählen, um Plattformen funktionsfähig zu halten**
 
 Was sind **technische Schulden** und wie können sie eine Plattform reparieren? Technische Schulden sind die laufenden Kosten für die Wartung einer Software. Dabei handelt es sich um die tatsächlichen Ausgaben für die Laufzeitumgebung, die Zeit für den Betrieb und die Aktualisierung sowie die Kundenzufriedenheit. Genau wie finanzielle Schulden können sich auch technische Schulden anhäufen. Wenn sich der Betrag immer weiter erhöht, kann das Team keine neuen Schulden machen oder neue Funktionen bereitstellen, da die gesamte Arbeitszeit für die Behebung der aktuellen Probleme aufgewendet wird.
@@ -519,6 +521,12 @@ Wenn es eine Lehre gibt, die Sie aus diesem Kapitel über technische Schulden mi
 Wenn Sie sich mit technischen Schulden befassen, denken Sie an die Beispielindikatoren und Fragen, die wir in der Einleitung zu diesem Kapitel besprochen haben. Wenn Sie technische Schulden erkennen und die entsprechenden Kosten kennen, können Sie besser kommunizieren und Prioritäten setzen, um diese Punkte mit den Teams zu klären, die sich damit befassen müssen. Die Bewältigung technischer Schulden ist zwar an sich zeitaufwändig und kostspielig, aber sie hilft Ihnen, die Grundlage für eine Plattform zu schaffen, die langfristig Bestand hat und für zukünftige Veränderungen gerüstet ist.
 
 Im nächsten und letzten Kapitel werden wir uns mit Veränderungen befassen und damit, wie Ihre Plattform diese Veränderungen als stabile Grundlage für Ihre IT-Organisation bereitstellen kann. Sie lernen das Konzept nachhaltiger und schlanker Architekturen kennen und erfahren, wie Sie Ihren Benutzern die Umsetzung dieser Ansätze ermöglichen können. Wir werden die Perspektive des „goldenen Pfades” als benutzerorientierten Begriff hinterfragen und uns die Frage stellen, ob wir als Plattformingenieure und -architekten nicht auch einen goldenen Pfad benötigen. Abschließend schließen wir das Buch mit einigen abschließenden Gedanken zu den nächsten Trendthemen.
+
+======================================================
+ENDE Chapter 0 9
+====================================================
+
+# Chapter 10: Crafting Platform Products for the Future
 
 # Plattformprodukte für die Zukunft entwickeln
 
