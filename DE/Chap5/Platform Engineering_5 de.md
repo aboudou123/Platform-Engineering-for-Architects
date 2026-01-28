@@ -1,4 +1,4 @@
-Integration, Bereitstellung und Implementierung – Automatisierung ist allgegenwärtig
+# Integration, Bereitstellung und Implementierung – Automatisierung ist allgegenwärtig
 
 [Kapitel 2](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap2/Platform%20Engineering_2%20de.md) enthielt eine Referenzarchitektur einer Plattform, in der Schichten wie Entwicklererfahrung, Automatisierung und Orchestrierung sowie Beobachtbarkeit hervorgehoben wurden. [Kapitel 3](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap3/Platform%20Engineering_3%20de.md) endete mit einer anderen Perspektive auf diese Referenzarchitektur unter Verwendung eines Top-Down-Ansatzes aus Zweck, Benutzeroberfläche, Kernplattformkomponenten, Plattform als Produkt und Erfolgskennzahlen.
 
@@ -15,13 +15,13 @@ Daher werden wir in diesem Kapitel die folgenden Hauptthemen behandeln:
 - Erreichen einer nachhaltigen CI/CD für DevOps – Orchestrierung des Anwendungslebenszyklus
 - **Interne Entwicklerplattformen** (**IDPs**) – die Automatisierung Kraken in der Plattform
 
-Eine Einführung in Continuous X
+# Eine Einführung in Continuous X
 
 Wenn Sie zum ersten Mal von **Continuous Integration** (**CI**) oder **Continuous Delivery** (**CD**) hören, empfehlen wir Ihnen, sich mit der hervorragenden Literatur zu diesen Grundkonzepten vertraut zu machen. Jez Humble ist der Betreuer von https://continuousdelivery.com/ und hat zusammen mit Dave Farley das Originalbuch zu Continuous Delivery verfasst. Wenn Sie einen Crashkurs zu diesem Thema benötigen, schauen Sie sich bitte deren Material an. Es gibt auch mehrere aufgezeichnete Vorträge, die einen guten Überblick bieten, wie beispielsweise der Vortrag mit dem Titel „Continuous Delivery Sounds Great But It Won't Work Here” (Kontinuierliche Bereitstellung klingt großartig, aber hier wird es nicht funktionieren): https://vimeo.com/193849732.
 
 Damit wir alle dasselbe Verständnis haben, lassen Sie uns kurz zusammenfassen, was die Bausteine sind und warum dies für die Softwarebereitstellung wichtig ist.
 
-Allgemeine Definition von Continuous X
+# Allgemeine Definition von Continuous X
 
 Die Grundlage für die Automatisierung der Softwarebereitstellung ist ein ordnungsgemäßes Konfigurationsmanagement aller Ressourcen, die für die Erstellung, Bereitstellung, Validierung, den Betrieb und die Skalierung unserer Systeme erforderlich sind: Code, Tests, Bereitstellungs- und Infrastrukturdefinitionen, Abhängigkeiten, Beobachtbarkeit, Eigentumsverhältnisse und mehr. Durch die Versionierung all dieser Ressourcen können wir wiederholbare und zuverlässige Ergebnisse erzielen, haben die Möglichkeit zur Überprüfung, können schwerwiegende Änderungen rückgängig machen und verfügen über Disaster-Recovery-Funktionen.
 
@@ -29,7 +29,7 @@ Git oder eine beliebige Variante von Git ist wahrscheinlich das, was heute in So
 
 Nachdem wir nun die Grundlagen geschaffen haben, wollen wir uns mit Continuous X befassen.
 
-CI
+## CI
 
 **CI** ist eine Methode, bei der der Schwerpunkt auf der häufigen und automatisierten Integration von Codeänderungen in ein gemeinsames Repository liegt. Wenn mehrere Entwickler an derselben Codebasis arbeiten, ist es wichtig, diese Änderungen regelmäßig zusammenzuführen, um sicherzustellen, dass der Code gut integriert ist und ein Artefakt (ein Container-Image, eine Binärdatei) erzeugt, das in einer Umgebung bereitgestellt werden kann. Zu den wichtigsten Aspekten von CI gehören die folgenden:
 
@@ -51,7 +51,7 @@ Für Financial One ACME und seine kritischen Finanzdienstleistungen sollten wir 
 - Protokolliert die API keine vertraulichen Daten wie Kreditkartennummern, Benutzernamen oder Tokens?
 - Generiert die API ordnungsgemäß Metriken für fehlgeschlagene Versuche, sodass diese in der Produktion verwendet werden können, um vor potenziellen Hackerangriffen zu warnen?
 
-Kontinuierliche Bereitstellung
+### Kontinuierliche Bereitstellung
 
 Wie auf der Website zu Continuous Delivery (https://continuousdelivery.com/) definiert, ist „Continuous Delivery die Fähigkeit, Änderungen aller Art – einschließlich neuer Funktionen, Konfigurationsänderungen, Fehlerbehebungen und Experimente – sicher, schnell und nachhaltig in die Produktion oder in die Hände der Benutzer zu bringen“. Das Ziel besteht darin, die Angst vor Fehlschlägen bei Bereitstellungen zu beseitigen. Anstelle von seltenen Big-Bang-Releases sollten Bereitstellungen zur Routine werden, da sie kontinuierlich erfolgen. Darüber hinaus können wir das Risiko durch die Anwendung neuer Bereitstellungsmuster wie Blue/Green, Canary oder Feature Flagging noch weiter reduzieren. Diese werden im Abschnitt über Bereitstellungen im Vergleich zu Releases näher erläutert!
 
@@ -74,7 +74,7 @@ Kontinuierliche Bereitstellungen gehen noch einen Schritt weiter und nutzen neue
 
 Durch die Entkopplung von Bereitstellungen und Releases können Teams die Einführung neuer Funktionen ihrer Software besser steuern und damit Risiken minimieren. Es gibt noch mehr über die Implementierungsdetails und Herausforderungen zu erklären, aber das würde den Rahmen dieses Buches sprengen. Wenn Sie mehr erfahren möchten, schauen Sie sich OpenFeature \[1\] an, ein Inkubationsprojekt der **Cloud Native Computing Foundation** (**CNCF**). OpenFeature bietet Entwicklern eine standardisierte, herstellerunabhängige Methode zur Verwaltung von Feature-Flags. Die Community rund um OpenFeature verfügt auch über viele Best Practices für die progressive Bereitstellung, darunter alle zuvor besprochenen Muster.
 
-Continuous X für die Infrastruktur
+# Continuous X für die Infrastruktur
 
 Continuous X ist nicht nur für Anwendungscode oder Konfigurationen relevant. Die gleichen Konzepte sollten auf jede Infrastrukturdefinition angewendet werden. Als Plattform benötigen wir bestimmte Infrastrukturkomponenten. Dabei kann es sich um virtuelle Maschinen, Kubernetes-Knoten, Load Balancer, **Domain Name System** (**DNS**), Dateispeicher, Datenbanken, virtuelle Netzwerke, Serverless oder andere Komponenten handeln, die es uns ermöglichen, unsere Kernplattform sowie die Anwendungen zu betreiben, die über unsere Plattform-Self-Services bereitgestellt, betrieben und verwaltet werden.
 
@@ -144,7 +144,7 @@ Mit IaC können wir den gewünschten Zustand unserer IaC definieren. Dabei hande
 
 Für weitere Details zu IaC, einschließlich Versionskontrollstrategien (wo IaC angesiedelt ist), empfehlen die Autoren, sich bestehende Bücher und Blogs zu diesem Thema anzusehen.
 
-Crossplane – IaC für Plattformen und Anwendungen
+## Crossplane – IaC für Plattformen und Anwendungen
 
 IaC ist nicht auf die Kernplattformdienste beschränkt, sondern auch für die Anwendungen relevant, die unsere Entwicklungsteams über unsere Plattform-Self-Services bereitstellen dürfen. Eine neue Anwendung benötigt möglicherweise Dateispeicher, eine Datenbank und ein öffentliches DNS oder muss eine Drittanbieterlösung bereitstellen; dies hängt von ihrer eigenen virtuellen Maschine ab, auf die von der bereitgestellten Anwendung aus zugegriffen werden kann, die sich möglicherweise auf K8s befindet.
 
@@ -188,7 +188,7 @@ Die Kompositionsdefinition von PerformanceTestCluster wurde vom Plattform-Engine
 
 Das vorstehende Beispiel zeigt bereits die Leistungsfähigkeit von IaC, wenn wir dies in unsere Continuous X-Bemühungen integrieren!
 
-Continuous X als systemkritische Komponente unserer Plattform
+# Continuous X als systemkritische Komponente unserer Plattform #
 
 Es gibt viele verschiedene Tools, aus denen wir wählen können, um Continuous X zu implementieren: Jenkins, GitLab, Tekton, Argo CD, Flux, Keptn, Crossplane, Selenium und k6, um nur einige zu nennen. Unabhängig davon, für welche Tools wir uns entscheiden, müssen diese Tools jederzeit verfügbar, widerstandsfähig und sicher sein, da sie das Rückgrat unserer Plattform bilden. Diese Tools sind genauso geschäftskritisch wie jede andere Software, die unser Geschäft antreibt. Denken Sie an Financial One ACME. Wenn die Entwickler eine Korrektur für ein kritisches Produktionsproblem in ihrer Finanzsoftware veröffentlichen müssen, müssen sie sich darauf verlassen können, dass Continuous X einwandfrei funktioniert.
 
@@ -201,16 +201,18 @@ Um sicherzustellen, dass diese Komponenten bei Bedarf verfügbar sind, müssen w
 - **Service Level Agreements (SLAs) und Warnmeldungen bei Problemen**: Wir – das Plattformteam – müssen wissen, dass etwas nicht in Ordnung ist, bevor unsere Endbenutzer uns dies melden. Aus diesem Grund müssen wir für jede Komponente SLAs einrichten und geeignete Warnmeldungen konfigurieren, falls die Systeme nicht wie erwartet funktionieren. Der einfachste Weg, dies zu erreichen, ist die Einrichtung synthetischer Überprüfungen der wichtigsten API-Endpunkte jedes Tools (z. B. die Überprüfung der Reaktionsfähigkeit der Jenkins-Benutzeroberfläche mit einer synthetischen Überprüfung, die alle fünf Minuten durchgeführt wird; dies gibt uns ein Frühwarnsignal, falls Jenkins Probleme bekommt, bevor es jemand anderes bemerkt).
 
 Das folgende Beispiel-Dashboard zeigt wichtige Gesundheitsindikatoren von Tools wie Argo CD. Das Gleiche muss für alle anderen Tools gelten, die unsere Kernplattformfunktionen ausmachen!
+<img width="997" height="441" alt="image" src="https://github.com/user-attachments/assets/73ca92e4-66cf-4bba-98eb-85ebcd3bf84f" />
 
 Abbildung 5.1: Überwachen und beobachten Sie jedes Tool, das Teil der Plattform ist
 
-Plattformkomponenten sind genauso geschäftskritisch wie Ihre kritischen Anwendungen
+### Plattformkomponenten sind genauso geschäftskritisch wie Ihre kritischen Anwendungen
 
 Der Kern der Plattform dreht sich um die Bereitstellung von Änderungen in verschiedenen Umgebungen. Alle Tools, die diese Anwendungsfälle unterstützen – insbesondere diejenigen für Continuous X – müssen hochverfügbar, widerstandsfähig und sicher sein. Achten Sie darauf, dass Sie für alle Komponenten der Plattform die gleichen bewährten Verfahren anwenden!
 
 Nachdem wir nun die Kernkonzepte von Continuous X (Integration, Testen, Validierung, Bereitstellung, Deployment und Release) zusammengefasst und erläutert haben, dass alle Konfigurationen (Code, Deployment-Konfiguration, Infrastruktur, Beobachtbarkeit usw.) denselben Prinzipien folgen müssen, ist es an der Zeit, einen Blick darauf zu werfen, wie diese Konzepte genutzt werden können, um Teams, die dies über eine Plattform nutzen, Selbstbedienungsautonomie zu bieten.
 
-GitOps – Vom Pushen zum Pulling des gewünschten Zustands
+
+# GitOps – Vom Pushen zum Pulling des gewünschten Zustands
 
 **CI/CD** gibt es schon seit vielen Jahren. Das Buch „Continuous Delivery“ wurde ursprünglich im Jahr 2010 veröffentlicht – Jahre vor dem Aufkommen von Containern (die durch Docker ab 2013 populär wurden) und Container-Orchestrierungsplattformen (wie Kubernetes ab 2014).
 
@@ -227,12 +229,13 @@ Die vorstehende Beschreibung ist kein einheitliches Modell. GitOps wird in jeder
 - **Push GitOps**: Pushen des gewünschten Zustands über Pipelines oder Workflows im Gegensatz zum Pulling von Änderungen in die Zielumgebung durch GitOps-Operatoren
 
 Im folgenden Abschnitt beleuchten wir eine Variante von GitOps, die das Pull-Modell (Einlesen einer Konfiguration in die Zielumgebung) gegenüber dem **Push**\-Modell (Einfügen einer Konfiguration aus einem externen Tool in die Zielumgebung) bevorzugt . Diese Variante kann mit CNCF-Tools wie Flux oder Argo CD implementiert werden, wie in der folgenden Abbildung aus dem Learning Center von Codefresh zu GitOps dargestellt: https://codefresh.io/learn/gitops/.
+<img width="948" height="471" alt="image" src="https://github.com/user-attachments/assets/38c0f87d-307d-4900-bead-78e7976d0380" />
 
 Abbildung 5.2: Grundlegender GitOps-Ablauf, wie er von GitOps-Tools wie Argo CD oder Flux gefördert wird
 
 Es liegt an Ihnen, ob Sie das Push-Modell mit automatisierten Pipelines oder Workflows bevorzugen, um Änderungen in Ihre Ziel-Kubernetes-Umgebungen zu übertragen! Um Ihnen die Entscheidung zu erleichtern, wollen wir uns die einzelnen Phasen genauer ansehen und einige Best Practices kennenlernen, die in jeder Phase zum Einsatz kommen sollten!
 
-Phase 1 – vom Quellcode zum Container-Image
+# Phase 1 – vom Quellcode zum Container-Image
 
 Die Umstellung auf GitOps ändert nichts daran, wie wir unsere Anwendungen aus Quellcode erstellen, der in Git versionskontrolliert ist. Vor dem Erstellen neuer Artefakte empfiehlt es sich, Abhängigkeitsprüfungen und -aktualisierungen zu automatisieren. Tools wie **Renovate Bot** \[3\] lassen sich in Git integrieren und erstellen Pull-Anfragen, wenn veraltete Abhängigkeiten, Bibliotheken von Drittanbietern oder andere Abhängigkeiten gefunden werden.
 
@@ -249,7 +252,7 @@ Sobald die CI den Quellcode erfolgreich kompiliert, Unit-Tests durchgeführt und
 
 Nachdem wir nun ein Container-Image in unsere Container-Registry hochgeladen haben, können wir es in einer Bereitstellungsdefinition verwenden.
 
-Phase 2 – vom Container-Image zum mit Metadaten angereicherten Bereitstellungsartefakt
+# Phase 2 – vom Container-Image zum mit Metadaten angereicherten Bereitstellungsartefakt
 
 Das Container-Image muss nun seinen Weg in eine Bereitstellungsdefinition finden. Bei Kubernetes benötigen wir eine Manifestdatei, die unsere Bereitstellungsdefinition definiert und die wir später auf unseren K8s-Cluster anwenden können.
 
@@ -335,6 +338,9 @@ Monorepo versus Polyrepo
 
 Bei der Gestaltung Ihrer Git-Repository-Struktur haben Sie zwei allgemeine Optionen, die in der Branche als Monorepo oder Polyrepo bezeichnet werden: ein einzelnes Git-Repository oder mehrere Repositorys, die nach Teams oder Funktionen aufgeteilt sind:
 
+
+<img width="1018" height="324" alt="image" src="https://github.com/user-attachments/assets/d291f00d-f72e-46e8-a968-cfac991874ec" />
+
 Abbildung 5.3: Mono versus Polyrepo – Vor- und Nachteile beider Muster
 
 - **Monorepo**: Beim Monorepo-Muster werden alle Konfigurationsdateien (Code, Infrastruktur, Beobachtbarkeit usw.) in einem einzigen Git-Repository gespeichert. Dieses Muster gilt für jede potenzielle Umgebung (Entwicklung, Test, Staging, Produktion) – das bedeutet, dass sich jede Konfiguration in einem einzigen Git-Repo befindet, getrennt durch Ordner.
@@ -345,7 +351,7 @@ Der Vorteil eines Monorepos ist, dass sich alles an einem Ort befindet. Der Nach
 
 Der Vorteil ist eine bessere Trennung der Zuständigkeiten. Der Nachteil ist, dass wir letztendlich eine große Anzahl von Git-Repositorys verwalten müssen, was es schwieriger macht, die Konsistenz und allgemeine Gültigkeit über alle Konfigurationen hinweg sicherzustellen, die sich über mehrere Repositories erstrecken, aus denen die gesamte Konfiguration besteht.
 
-Verzeichnisstruktur – befolgen Sie das DRY-Prinzip
+### Verzeichnisstruktur – befolgen Sie das DRY-Prinzip
 
 Unabhängig davon, ob es sich um ein Mono- oder Polyrepo handelt, muss das einzelne Git-Repository über eine gute Verzeichnisstruktur verfügen. In der Regel spiegelt diese die Organisationsstruktur wider, die die Entwicklungsteams von den Teams trennt, die die zugrunde liegende Infrastruktur oder Plattform verwalten. Eine bewährte Vorgehensweise ist es, dem DRY-Prinzip (**Don't Repeat Yourself**) \[7\] zu folgen. Die Idee dahinter ist, die beste Struktur zu finden, um das Kopieren/Einfügen gemeinsamer YAML-Einstellungen an verschiedenen Stellen zu vermeiden. Hier helfen Tools wie Helm und Kustomize.
 
@@ -355,11 +361,12 @@ Das folgende Strukturbeispiel wurde von einem GitOps-Blog von **Red Hat** \[8\] 
 | --- | --- |
 | ├── bootstrap<br><br>│ ├── base<br><br>│ └── overlays<br><br>│ └── default<br><br>├── cluster-config<br><br>│ ├── GitOps-Controller<br><br>│ ├── identity-provider<br><br>│ └── Bildscanner<br><br>└── Komponenten<br><br>&nbsp;   ├── Anwendungssätze<br><br>&nbsp;   ├── Anwendungen<br><br>&nbsp;   └── argocdproj | └── Bereitstellung<br><br>&nbsp;   ├── Basis<br><br>&nbsp;   └── overlays<br><br>&nbsp;       ├── dev<br><br>&nbsp;       ├── prod<br><br>&nbsp;       └── stage |
 
+
 Tabelle 5.1: Eine mögliche Verzeichnisstruktur, die von Tools wie Kustomize verwendet wird
 
 Nachdem wir nun die verschiedenen Möglichkeiten zur Organisation unserer Repositorys und Verzeichnisstrukturen kennengelernt haben, müssen wir lernen, wie das neue Container-Image aus Phase 1 in unsere Bereitstellungsdefinition in unseren Repositorys gelangt!
 
-Aktualisieren des Manifests mit der neuen Container-Image-Version
+### Aktualisieren des Manifests mit der neuen Container-Image-Version
 
 Der letzte Schritt in Phase 2 besteht darin, eine neue Image-Version, die aus der CI hervorgegangen ist, in unsere Bereitstellungsdateien zu übernehmen. Dies kann durch Aktualisieren des Bereitstellungsmanifests, wie im vorangegangenen Beispiel gezeigt, oder durch Aktualisieren einer values.yaml-Datei bei Verwendung von Helm-Charts erfolgen.
 
@@ -424,6 +431,8 @@ Nachdem wir nun alles als Code in Git haben, ist es an der Zeit, darüber zu spr
 
 GitOps-Operatoren gleichen kontinuierlich ab und stellen sicher, dass der in unseren Repositorys deklarierte gewünschte Zustand mit dem tatsächlichen Zustand in unseren Zielumgebungen übereinstimmt. Der Operator erkennt eine Nichtübereinstimmung, wenn der Zustand in Git nicht mit dem in der Zielumgebung übereinstimmt. Dies kann passieren, wenn die Git-Konfiguration geändert wurde (z. B. wenn ein neues Image verfügbar ist und eine Manifestaktualisierung verursacht). Es kann auch passieren, wenn jemand die Konfiguration in K8s ändert (z. B. durch eine manuelle Aktualisierung oder ein anderes Automatisierungstool). Das Folgende ist eine allgemeine Übersicht über die Rolle des GitOps-Operators:
 
+<img width="985" height="179" alt="image" src="https://github.com/user-attachments/assets/46cf8044-4004-49c5-a0d7-580b82ba8a5b" />
+
 Abbildung 5.4: Der GitOps-Operator synchronisiert den gewünschten Zustand in Git mit dem tatsächlichen Zustand in K8s
 
 Je nach GitOps-Operator-Tool gibt es unterschiedliche Konfigurationsoptionen für den Abgleichprozess. Es lohnt sich, die Dokumentation der beiden bekanntesten Tools im Cloud-Native-Ökosystem zu lesen: **Argo CD** \[9\] und **Flux** \[10\]. Machen Sie sich auch mit den Konfigurationselementen vertraut, da einige Tools das Konzept von Projekten und Anwendungen verwenden, während andere nur das Konzept einer Quelle kennen.
@@ -445,6 +454,9 @@ Die einfachste Version – und wahrscheinlich das Modell, mit dem viele beginnen
 
 GitOps kann auch so eingerichtet werden, dass wir einen zentralen GitOps-Operator haben, der den gewünschten Zustand, wie er in Git deklariert ist, beibehält und mit mehreren Zielumgebungen synchronisiert, indem er diese Änderungen herausgibt. Dies wird als **Hub-and-Spoke-Modell** bezeichnet. Eine weitere Option ist das **Many-to-Many-Modell**, bei dem jede Zielumgebung über einen eigenen GitOps-Operator verfügt, der den gewünschten Zustand kontinuierlich mit dem Zustand auf seinem eigenen Cluster synchronisiert, wie in der folgenden Abbildung dargestellt:
 
+<img width="933" height="281" alt="image" src="https://github.com/user-attachments/assets/06012090-3e72-4195-b340-fbd957fb84b2" />
+
+
 Abbildung 5.5: Hub-and-Spoke- und Many-to-Many-GitOps-Operator-Muster
 
 Nachdem wir nun die wichtigsten Phasen in GitOps besprochen haben, lassen Sie uns noch einmal zusammenfassen und einen kurzen Blick auf einige Best Practices werfen.
@@ -463,7 +475,7 @@ Die Autoren haben Konfigurationen gesehen, die zu API-Ratenbegrenzungen und soga
 
 Um Benachrichtigungen zu erhalten, erstellen GitOps-Tools Kubernetes-Ereignisse, die Sie in Ihre Observability-Lösung einspeisen und dann darauf reagieren/alarmieren können. GitOps-Tools bieten in der Regel auch eine Art native Benachrichtigungsfunktion, mit der bei einem besonderen Ereignis ein externes Tool ausgelöst werden kann. Flux bietet beispielsweise Alerts, während Argo CD mit „ ” ein Benachrichtigungskonzept bereitstellt. Beide ermöglichen es Ihnen beispielsweise, Slack-Nachrichten zu senden oder andere externe Tools auszulösen, wenn bestimmte Ereignisse auftreten, die Ihre Aufmerksamkeit erfordern!
 
-GitOps – vom Push zum Pull
+# GitOps – vom Push zum Pull
 
 GitOps erweitert die Leistungsfähigkeit von Git vom Anwendungscode auf alles, was als Code vorliegt. Während CI/CD sich weiterhin auf die Erstellung von Artefakten konzentriert, bietet GitOps eine elegante Möglichkeit, den gewünschten Bereitstellungsstatus während des gesamten Softwareentwicklungslebenszyklus in jede Zielumgebung zu übertragen. Änderungen an einem System können nur über Git vorgenommen werden, was den Vorteil der Rückverfolgbarkeit von Änderungen, der Rückgängigmachung zu einer früheren Version und der Durchsetzung von Überprüfungsprozessen durch Pull-Anfragen bietet.
 
@@ -471,7 +483,7 @@ Nachdem wir nun die Grundlagen von GitOps behandelt haben, sollten wir uns anseh
 
 Wenden wir uns nun den Container-Registries zu, denn ohne sie könnten wir keine der Images veröffentlichen oder verteilen, die von den Entwicklungsteams erstellt werden, die die Plattform als Self-Service nutzen.
 
-Die Bedeutung von Container- und Artefakt-Registern als Einstiegspunkte verstehen
+# Die Bedeutung von Container- und Artefakt-Registern als Einstiegspunkte verstehen
 
 Container- und Artefakt-Registries verdienen ein eigenes Kapitel, da sie einer der Grundbausteine moderner Cloud-nativer Plattformen sind. Wir werden jedoch versuchen, Ihnen das relevante Wissen zu vermitteln, das Ihnen helfen soll, den späteren Kapiteln dieses Buches folgen zu können.
 
@@ -484,17 +496,20 @@ Während private Container-Registries in der Regel nur intern aufgerufen werden,
 
 Die folgende Abbildung gibt einen sehr allgemeinen Überblick darüber, wie Container-Registries in den End-to-End-Bereitstellungsprozess integriert sind, der mit dem Pushen eines neuen Artefakts (von Drittanbietern oder CI/CD) beginnt und endet, wenn dieses neue Artefakt in den Zielumgebungen bereitgestellt wird:
 
+
+<img width="970" height="443" alt="image" src="https://github.com/user-attachments/assets/0e7c50bb-a653-4a3d-b421-b1386c5a4453" />
+
 Abbildung 5.6: Container-Registries – das Herzstück unserer Plattform
 
 Obwohl es viele detaillierte Informationen von verschiedenen Open-Source- und kommerziellen Registry-Anbietern gibt, möchten wir einen kurzen Überblick darüber geben, wie Registries in unsere Plattform-Engineering-Architektur passen, warum bestimmte Konzepte wichtig sind und wie wir Container-Registries unseren Endbenutzern am besten als benutzerfreundlichen Self-Service zur Verfügung stellen können!
 
-## Vom Container zum Artefakt-Register
+# Vom Container zum Artefakt-Register
 
 Bevor wir uns mit dem Prozess befassen, möchten wir kurz darauf hinweisen, dass Container-Registries – obwohl der Name dies vermuten lässt – nicht auf Container-Images beschränkt sind. Die meisten Container-Registries unterstützen in der Regel den OCI \[11\]-Image-Standard. In den letzten Jahren wurden Container-Registries erweitert, um auch Nicht-Container-Artefakte wie Helm Charts, gezippte Versionen von Manifesten oder Kustomize-basierte Vorlagen zu unterstützen. Mit dieser Erweiterung ging auch eine Namensänderung für Artefakt-Registries einher, da diese Tools Artefakte im Allgemeinen und nicht nur Container-Images verwalten.
 
 Aber das ist noch nicht alles. Artefakt-Registries, Open-Source- oder SaaS-Dienste (kurz für **Software as a Service**) bieten oft zusätzliche Funktionen wie Zugriffskontrolle, regionale Replikation, Audit-Protokollierung, Durchsetzung von Richtlinien, Sicherheitsscans, Benachrichtigungen und vieles mehr.
 
-Erstellen und Übertragen von Artefakten in die Registry
+# Erstellen und Übertragen von Artefakten in die Registry
 
 Das Hochladen (Pushing) und Herunterladen (Pulling) von Images kann mit Docker-Befehlen (oder anderen Tools wie Podman) erfolgen. Zuvor müssen Sie sich bei der Registry (Ihrer privaten oder öffentlichen Registry, z. B. Docker Hub) authentifizieren. Nach der Authentifizierung ist das Pushen und Pulling ganz einfach, wie der folgende Code zeigt:
 
@@ -524,11 +539,11 @@ Beim Erstellen neuer Images im Rahmen des CI-Prozesses ist es wichtig, die Best 
 
 Neben einer API-Schnittstelle bieten Registries in der Regel auch eine **Benutzeroberfläche** (**UI**), die es einfacher macht, zu sehen, welche Images hochgeladen wurden, wie viel Speicherplatz sie belegen, und – je nach den Verwaltungsfunktionen der Registry – auch die Konfigurationsaspekte all dieser Funktionen bereitstellt (z. B. Erstellen von Projekten, Verwalten von Benutzern, Festlegen von Richtlinien, Konfigurieren von Webhooks usw.).
 
-## Verwalten hochgeladener Artefakte
+# Verwalten hochgeladener Artefakte
 
 Registries verwalten Artefakte in der Regel in Projekten. Projekte können innerhalb der Registry privat oder öffentlich sein, was bedeutet, dass Artefakte in einem öffentlichen Projekt für jeden zugänglich sind, der auf die Registry zugreifen kann, während private Projekte nur für autorisierte Benutzer zugänglich sind. Damit kommen wir zur Benutzerverwaltung und Zugriffskontrolle, die auf Projektebene definiert werden kann und auch in Zugriffsprotokolle einfließen kann. Registries erstellen Protokolle für jeden Push und Pull, um einen guten Prüfpfad zu haben. CNCF Harbor ist eine sehr beliebte Container-Registry, die auch eine gute Dokumentation zu all diesen Funktionen bietet. Anstatt hier ins Detail zu gehen, empfehlen wir Ihnen, die öffentlich zugängliche Dokumentation \[13\] zu all diesen Funktionen zu lesen. Wichtig ist, dass Sie sich merken, wie Sie Ihre Images in Projekten organisieren und wem Sie Zugriff gewähren. Wenn Sie auch externen Dritten erlauben möchten, ihre Images in Ihre Registries zu übertragen, können Sie für sie spezielle Benutzer erstellen, die ihnen das Hochladen in die jeweiligen Containerprojekte ermöglichen!
 
-## Sicherheitslücken-Scan
+# Sicherheitslücken-Scan
 
 [Kapitel 7](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap7/Platform%20Engineering_8%20de.md) befasst sich ausführlicher mit dem Thema Sicherheit, aber es ist wichtig, an dieser Stelle zu erwähnen, dass eine zentrale Komponente wie ein Artefakt-Register, durch das jedes Artefakt laufen muss, ein idealer Ort für die statische Überprüfung auf Schwachstellen ist. Register bieten oft sofort einsatzbereite Scan-Funktionen oder ermöglichen die Integration zusätzlicher Tools, je nach Art des Artefakts. Diese Tools werden dann entweder beim Hochladen eines neuen Bildes aufgerufen, um die Bilder bei ihrer Ankunft zu scannen, oder nach einem Zeitplan, um sicherzustellen, dass die Bilder kontinuierlich gescannt und erneut gescannt werden.
 
@@ -543,19 +558,22 @@ Ein Artefakt durchläuft in der Regel verschiedene Lebenszyklusphasen, vom erste
 
 Zur Information finden Sie hier die vollständige Liste der verfügbaren Lebenszyklusereignisse, die mit Webhooks verwendet werden können: Artefakt gelöscht, Artefakt abgerufen, Artefakt gepusht, Diagramm gelöscht, Diagramm heruntergeladen, Diagramm hochgeladen, Kontingent überschritten, Kontingent fast erschöpft, Replikation abgeschlossen, Scan fehlgeschlagen und Scan abgeschlossen.
 
-## Aufbewahrung und Unveränderlichkeit
+# Aufbewahrung und Unveränderlichkeit
 
 Repositorys können sehr schnell wachsen – was zu hohen Speicherkosten führen kann, wenn Sie keine gute Bereinigungsstrategie haben. Aus diesem Grund ist es ratsam, alte Bilder, die nicht mehr benötigt werden, zu bereinigen. Einige Registries bieten daher vorgefertigte Aufbewahrungsrichtlinien, in denen Sie festlegen können, welche Bilder bestimmten Regeln entsprechen, die aufbewahrt werden sollen, und wie lange. Sobald Bilder aus der Aufbewahrungsfrist herausfallen, werden sie gelöscht.
 
 Ein weiterer Anwendungsfall ist, dass standardmäßig jeder ein neues Image mit demselben Image-Tag hochladen kann, wodurch die vorherige Image-Version ohne Tag bleibt. Um dies zu verhindern, bieten einige Registries Unveränderbarkeitsregeln, die verhindern, dass Tags aus bestehenden Images entfernt werden!
 
-## Überwachung unserer Registries
+# Überwachung unserer Registries
 
 Da Registries das Herzstück unserer Plattform sind, müssen wir sicherstellen, dass sie einwandfrei funktionieren. Wenn Registries keine Push- oder Pull-Anfragen mehr verarbeiten, keine Schwachstellenprüfungen mehr durchführen und keine Replikationen an andere Registries oder Benachrichtigungen mehr versenden können, haben wir ein Problem! Das bedeutet, dass wichtige Updates nicht schnell genug in die Zielumgebungen gelangen. Dies könnte bedeuten, dass eine Sicherheitslücke – obwohl sie durch ein neues Image behoben wurde – nicht geschlossen werden kann, da das neue Image nicht an die infizierte Umgebung geliefert werden kann. Es kann auch bedeuten, dass wir neue Funktionen nicht zum versprochenen Zeitpunkt ausliefern können.
 
 Um den Zustand unserer Registries zu überwachen, können wir verschiedene Zustandsmetriken beobachten. Bei selbst gehosteten Registries werden diese Metriken häufig über Prometheus oder eine benutzerdefinierte REST-API bereitgestellt. Bei SaaS-gehosteten Registries werden diese Metriken in der Regel über die Monitoring-Service-API des Anbieters bereitgestellt, beispielsweise AWS CloudWatch.
 
 Eine gute Referenz ist Harbor, das zuvor erwähnte CNCF-Projekt. Es stellt über **Prometheus** \[14\] viele wichtige Kennzahlen bereit, darunter die Anzahl der Projekte und Repositorys innerhalb eines Projekts, den belegten Speicherplatz, die Anzahl der ausgeführten und in der Warteschlange stehenden Aufgaben sowie Leistungskennzahlen zu den Harbor-APIs (z. B. wie lange es dauert, Artefakte zu pushen oder zu pullen).
+
+
+<img width="1039" height="370" alt="image" src="https://github.com/user-attachments/assets/1b4432ae-eb5f-4cfd-b3b6-5d14fc8472cd" />
 
 Abbildung 5.7: Überwachung unserer Registry zur frühzeitigen Erkennung potenzieller Probleme
 
@@ -567,7 +585,7 @@ Registries – die zentrale Drehscheibe für alle unsere Artefakte
 
 Nachdem wir nun über die Bedeutung unserer Artefakt-Registrierung gesprochen haben, wollen wir uns nun ansehen, wie all diese Komponenten in unseren End-to-Release-Prozess integriert sind.
 
-Definition des Release-Prozesses und -Managements
+# Definition des Release-Prozesses und -Managements
 
 Wir haben alle Bausteine behandelt, die für die Erstellung und Bereitstellung von Software erforderlich sind. CI erstellt neue Container-Images oder Artefakte und überträgt sie in ein Register. Wir wissen, dass Register in der Lage sind, nach Schwachstellen zu suchen, sich auf andere Register zu replizieren, andere Tools über Aktivitäten zu benachrichtigen und Zugriffskontrollen durchzusetzen.
 
@@ -577,13 +595,16 @@ Wir diskutieren nun, wie ein vollständiger End-to-End-Release-Prozess definiert
 
 Die folgende Abbildung verdeutlicht, dass das Pushen eines neuen Images und dessen Replikation in andere Registries nur ein Teil des Puzzles ist. Die neue Version des Images muss auch in der Bereitstellungsdefinition referenziert werden, die in Mono- oder Poly-Git-Repositorys verwaltet wird. Bei mehreren Phasen (Entwicklung, QA, Produktion) und mehreren Regionen oder Clustern in einer Phase müssen wir diese neue Version auch zwischen den einzelnen Phasen und Regionen/Clustern befördern!
 
+
+<img width="1042" height="376" alt="image" src="https://github.com/user-attachments/assets/6e2b0034-d200-4869-a8b2-1e35aac8ccb1" />
+
 Abbildung 5.8: Release-Prozess – vom ersten Push bis zur Bereitstellung und Weitergabe, von Stufe zu Stufe
 
 In der vorstehenden Abbildung stellt values.yaml die Werte für ein Helm-Chart dar. Es ist natürlich vereinfacht, da es noch viele weitere Werte gibt, die wir zuvor besprochen haben (z. B. Eigentumsverhältnisse, Anwendungskontext, Protokollstufe, Git-Commit-Hash, Container-Registry usw.).
 
 Schauen wir uns nun an, wie diese Bereitstellungsaktualisierungen durchgeführt werden können, was zwischen den Phasen geschehen sollte, welche Rollout-Optionen wir haben und wie wir am besten den Überblick über einen Live-Bestand behalten können, um zu wissen, was wo, wann und von wem bereitgestellt wird!
 
-Aktualisierung der Bereitstellung auf eine neue Version
+# Aktualisierung der Bereitstellung auf eine neue Version
 
 Es gibt verschiedene Möglichkeiten, wie values.yaml für die erste Entwicklungsphase aktualisiert und dann in die nächsten Phasen überführt werden kann. Je nach den verwendeten Tools und dem Reifegrad oder den Prozessen, die in Unternehmen vorhanden sind, kann dies auf verschiedene Weise umgesetzt werden. Die Optionen wären wie folgt:
 
@@ -592,7 +613,7 @@ Es gibt verschiedene Möglichkeiten, wie values.yaml für die erste Entwicklungs
 - **Geplante Aktualisierungen**: Jede Stunde, jeden Tag um 8 Uhr morgens oder nach einem anderen Zeitplan kann ein Pull-Request mit den neuesten Versionsinformationen aus der Registry erstellt werden. Dies ermöglicht sowohl kontinuierliche Aktualisierungen als auch planmäßige Batch-Änderungen.
 - **Manuelle Pull-Anfragen**: Als Vorstufe zur Automatisierung der Pull-Anfragen oder zur Durchsetzung einer obligatorischen manuellen Genehmigung kann die Versionsaktualisierung auch manuell durchgeführt werden.
 
-Änderungen stapeln, um Abhängigkeiten zu bekämpfen
+# Änderungen stapeln, um Abhängigkeiten zu bekämpfen
 
 Bei einfachen Anwendungen oder Microservices, die unabhängig voneinander bereitgestellt werden können, reicht möglicherweise eine einzige Dateiaktualisierung aus. Oft müssen wir jedoch mehrere Änderungen in einer einzigen Änderungsanforderung zusammenfassen. Dies ist der Fall, wenn Änderungen von Änderungen in anderen Komponenten abhängig sind. Ein Beispiel für unser Finance One ACME könnte sein, dass die neue Version des Überweisungsdienstes auch eine neue Version des Kontoinformationsdienstes erfordert, was eine Änderung der Infrastruktur notwendig macht. Sie sehen, dass dies schnell komplex werden kann und eine vollständige Automatisierung erschwert.
 
@@ -644,7 +665,7 @@ Wie wir sehen können, gibt es verschiedene Möglichkeiten, dieses Problem der A
 
 Komplizierter wird es, wenn wir es mit anwendungsübergreifenden Abhängigkeiten oder Abhängigkeiten von gemeinsam genutzten Diensten zu tun haben, die unabhängig voneinander bereitgestellt und aktualisiert werden. Die Befolgung von Best Practices zur Definition guter und klarer APIs zwischen diesen Diensten und die Gewährleistung der Abwärtskompatibilität zwischen den Hauptversionen erleichtern dies. Weitere Informationen finden Sie in der vorhandenen Literatur oder in den Arbeiten der CNCF **TAG App Delivery** \[16\] zum Management von Anwendungs- und Bereitstellungsabhängigkeiten.
 
-Prüfungen vor und nach der Bereitstellung
+# Prüfungen vor und nach der Bereitstellung
 
 Sobald wir alle Änderungen an unserer Bereitstellungskonfiguration fertiggestellt und in Git committet haben, können wir die Bereitstellung im Zielcluster durchführen. Wie bereits in diesem Kapitel erläutert, können wir entweder ein Push-Modell (z. B. eine Delivery-Pipeline, die unsere Änderungen bereitstellt) oder ein Pull-Modell (z. B. einen GitOps-Operator, der die neueste Version in Git mit dem Zielcluster synchronisiert) verwenden.
 
@@ -670,7 +691,7 @@ Ein Tool, das Vor- und Nachbereitungsprüfungen auf Kubernetes unabhängig von d
 
 Weitere Informationen zu Keptn finden Sie in der Dokumentation \[17\].
 
-Benachrichtigungen zur Bereitstellung
+# Benachrichtigungen zur Bereitstellung
 
 Sobald wir wissen, dass eine neue Bereitstellung die Überprüfung nach der Bereitstellung bestanden oder nicht bestanden hat, können wir diese Informationen nutzen und die Personen oder Tools benachrichtigen, die von diesen Informationen profitieren können. Unabhängig davon, ob Sie Tools wie Keptn, die Benachrichtigungen der GitOps-Tools oder die Pipeline verwenden, finden Sie hier einige Beispiele, wohin diese Informationen gesendet werden können:
 
@@ -683,7 +704,7 @@ Bereitstellungsereignisse an das Observability-Backend
 
 Observability-Tools verfolgen nicht nur Metriken, Protokolle und Traces, sondern können auch Ereignisse wie Bereitstellungs- oder Konfigurationsänderungen verfolgen. Viele Observability-Tools (**Dynatrace**, **Datadog**, **New Relic** usw.) können diese Ereignisse nutzen und sie mit einer Änderung im Verhalten der Anwendung in Verbindung bringen. Dies kann die Reaktion auf Vorfälle erheblich verbessern, da sie mit einer bestimmten Bereitstellungsänderung in Verbindung gebracht werden kann.
 
-Beförderungen zwischen Stufen
+# Beförderungen zwischen Stufen
 
 Angenommen, wir haben eine neue Version in der Entwicklung, die alle Prüfungen nach der Bereitstellung erfolgreich bestanden hat. Wie werden diese Änderungen von der Entwicklung zur Qualitätssicherung und dann in die Produktion übertragen? Muss jede Änderung bis in die Produktion übertragen werden oder nicht? Werden neue Versionen auf einmal in allen Produktionsumgebungen ausgerollt oder gibt es dafür bessere Strategien?
 
@@ -696,7 +717,7 @@ Hier sind einige Strategien, die wir in Organisationen gesehen haben, mit denen 
 
 Die Verwendung mehrerer Qualitätskontrollstufen und einer gestaffelten Rollout-Strategie in unseren verschiedenen Produktionsumgebungen hat ein Ziel: das Risiko fehlgeschlagener Bereitstellungen zu reduzieren!
 
-Blue/Green, Canary und Feature Flagging
+# Blue/Green, Canary und Feature Flagging
 
 Die Verwendung mehrerer Phasen mit Checks vor und nach der Bereitstellung reduziert zwar bereits das Risiko, aber wir können für jede einzelne Bereitstellung noch mehr tun: **progressive** Bereitstellungsstrategien wie Blue/Green, Canary oder Feature Flags. Was das genau ist, haben wir bereits im Abschnitt „Kontinuierliche Bereitstellung – Entkopplung von Bereitstellungen und Releases“ ausführlich erläutert.
 
@@ -708,7 +729,7 @@ Im Zusammenhang mit dem Release-Prozess ist dies ein wichtiges Thema, da es mehr
 
 Genau wie bei der Validierung einer Bereitstellung durch Post-Deployment-Checks können wir dasselbe auch bei der progressiven Bereitstellung tun. Open-Source-Tools wie **Argo Rollouts** \[18\] und **Flagger** \[19\] oder kommerzielle Tools bieten automatisierte Analysen zwischen den Phasen des progressiven Rollouts. Dies funktioniert in der Regel durch Abfragen von Daten aus der Observability-Plattform, z. B. Prometheus, um zu überprüfen, ob sich die neue Version in Bezug auf wichtige Service-Level-Indikatoren wie Fehlerrate bei Anfragen, Antwortzeit, Speicher- und CPU-Auslastung nicht von der bestehenden Version unterscheidet. Für weitere Details empfiehlt es sich, die Dokumentation der jeweiligen Tools zu lesen, die für progressive Rollouts verwendet werden.
 
-Release-Bestand
+# Release-Bestand
 
 Der Mehrwert der Automatisierung des Bereitstellungs- und Release-Prozesses besteht darin, dass Engineering-Teams Updates häufiger in den verschiedenen Zielumgebungen veröffentlichen können. Je einfacher wir diese Automatisierung über unsere Plattform verfügbar machen, desto mehr Teams werden letztendlich mehr Releases bereitstellen.
 
@@ -742,7 +763,7 @@ spec:
 
 &nbsp;       app.kubernetes.io/version: 1.5.1
 
-KopierenErklären
+## KopierenErklären
 
 Mit diesen Informationen in K8s können wir einfach die K8s-API jedes K8s-Clusters abfragen, um einen Überblick über alle Bereitstellungen nach diesen Labels zu erhalten. Wir könnten dann einen Überblick wie diesen erhalten:
 
@@ -763,7 +784,7 @@ Observability-Tools bieten diese Funktion häufig, da sie bereits die K8s-APIs a
 
 Ein anderer Ansatz besteht darin, diese Informationen direkt aus Git zu parsen. Tools wie Backstage tun genau das und bieten mit diesen Informationen einen leicht durchsuchbaren Softwarekatalog.
 
-Release-Management – vom Start bis zur Missionskontrolle
+# Release-Management – vom Start bis zur Missionskontrolle
 
 Für viele Unternehmen endet der Release-Prozess mit der tatsächlichen Bereitstellung einer neuen Version in der Produktion, wenn die Betriebsteams alle Aspekte der Aufrechterhaltung des Betriebs der Software „ “ übernehmen. Diese beiden Phasen werden oft auch als **Start** und **Missionskontrolle** bezeichnet, in Anlehnung an die Art und Weise, wie die NASA ihre Weltraummissionen verwaltet.
 
@@ -775,7 +796,7 @@ Beim Aufbau zukünftiger Plattformen muss unser Fokus darauf liegen, Self-Servic
 
 Im nächsten Abschnitt befassen wir uns eingehend mit der Lebenszyklusorchestrierung, der Erhöhung der Transparenz durch die Beobachtbarkeit unserer Lebenszyklen und der Frage, wie ein ereignisgesteuertes Modell dazu beitragen kann, die Komplexität von Pipeline- und Orchestrierungscode zu reduzieren.
 
-Erreichen einer nachhaltigen CI/CD für DevOps – Orchestrierung des Anwendungslebenszyklus
+# Erreichen einer nachhaltigen CI/CD für DevOps – Orchestrierung des Anwendungslebenszyklus
 
 Vom Erstellen über das Veröffentlichen, Bewerben und Bereitstellen bis hin zum Freigeben und Beheben. Das sind eine Menge Aufgaben, die automatisiert werden müssen, um den gesamten Lebenszyklus unserer Artefakte und Anwendungen zu orchestrieren. Die Herausforderung, die wir bei Teams gesehen haben, die die End-to-End-Verantwortung übernehmen, besteht darin, dass die meisten dieser Skripte sich mit Folgendem befassen:
 
@@ -831,7 +852,7 @@ Der erste Schritt besteht darin, dass die Tools, die wir entlang des Artefakt-Le
 
 Die Tools, die noch nicht integriert sind, können diese Ereignisse mithilfe der verfügbaren SDKs problemlos ausgeben. Das folgende Code-Beispiel in Python erstellt ein Pipeline Run Finished Event (cdevents.new_pipelinerun_finished_event) mit Metadaten, die die Pipeline, das Artefakt oder den Eigentümer identifizieren:
 
-import cdevents
+## import cdevents
 
 event = cdevents.new_pipelinerun_finished_event(
 
@@ -875,19 +896,22 @@ headers, body = to_structured(event)
 
 requests.post("&lt;some-url&gt;", data=body, headers=headers)
 
-KopierenErklären
+## KopierenErklären
 
 Das vorstehende Python-Codebeispiel erstellt ein neues pipelinerun_finished_event, das die abgeschlossene Ausführung einer Pipeline anzeigt. Die zusätzlichen Kontextdaten geben an, um welche Pipeline es sich handelt und wann sie erstellt wurde, und ermöglichen es uns, zusätzliche Metadaten bereitzustellen, z. B. Eigentumsverhältnisse, Artefakte oder die Anwendung, zu der diese Pipeline gehört.
 
 Unabhängig davon, ob Sie den CDEvents-Standardvorschlag verwenden oder Ihre eigenen Lebenszyklusereignisse senden, ist es ratsam, sich an CloudEvents zu orientieren, da dieses Projekt bereits über zahlreiche Branchenintegrationen verfügt, die CloudEvents entweder ausgeben oder konsumieren können, darunter beispielsweise Knative!
 
-Abonnieren von Ereignissen zur Orchestrierung
+# Abonnieren von Ereignissen zur Orchestrierung
 
 Sobald alle unsere Tools standardisierte Ereignisse ausgeben, können wir unseren Artefakt-Lebenszyklusprozess einfacher orchestrieren, indem wir die Tools, die wir in den Prozess einbinden möchten, die Ereignisse abonnieren lassen, auf die sie reagieren sollen.
 
 Wir haben dasselbe Konzept bereits weiter oben in diesem Kapitel besprochen, als wir über die Verwendung der Webhook-Funktionen von Tools wie Argo CD oder Harbor gesprochen haben, um zu reagieren, wenn ein neues Artefakt verfügbar ist oder wenn eine neue Bereitstellung erfolgreich synchronisiert wurde.
 
 Der Vorteil eines Standard-Ereignismodells besteht darin, dass Tools nicht mehr einen bestimmten Webhook eines bestimmten Tools (z. B. Argo CD-Webhooks) abonnieren müssen. Stattdessen können wir einen zentralen Ereignishub abonnieren, der alle standardisierten Lebenszyklusereignisse von allen beteiligten Tools empfängt, wie hier dargestellt:
+
+
+<img width="976" height="503" alt="image" src="https://github.com/user-attachments/assets/0bb5ef42-dfa0-4942-b220-42cd91deeee0" />
 
 Abbildung 5.9: Alle Tools senden und abonnieren standardisierte Lebenszyklusereignisse
 
@@ -907,7 +931,7 @@ Tabelle 5.3: Dasselbe Ereignis aus Argo kann von verschiedenen Tools für versch
 
 Einige Tools bieten bereits standardmäßige Unterstützung für CloudEvents, wobei sie entweder eine CloudEvent-Quelle abonnieren oder einen API-Endpunkt bereitstellen können, der CloudEvents verarbeiten kann. Für andere ist es erforderlich, eine schlanke Integrationsschicht zu erstellen, über die diese Ereignisse abonniert und dann an das Zieltool weitergeleitet werden. Dies kann auch mithilfe von Event-Bus-Systemen implementiert werden, die CloudEvents unterstützen.
 
-Ereignisse analysieren
+# Ereignisse analysieren
 
 Nachdem wir nun wissen, wie Ereignisse gesendet werden und wie sie von anderen Tools abonniert werden können, können wir diskutieren, wie wir sie nutzen können, um zu analysieren, wie gut unsere Lebenszyklusprozesse tatsächlich funktionieren.
 
@@ -926,7 +950,7 @@ Es gibt wahrscheinlich noch viele weitere Fragen, die wir alle durch die Analyse
 
 Wie können wir sie analysieren? Sie können alle diese Ereignisse in eine Datenbank oder Ihre Observability-Plattform streamen. In Abbildung 5.9 haben wir OpenTelemetry aufgenommen, da Ereignisse einfach erfasst, an Ihr Observability-Backend weitergeleitet und dort analysiert werden können.
 
-Transparenz in CI/CD durch Ereignisbeobachtbarkeit
+# Transparenz in CI/CD durch Ereignisbeobachtbarkeit
 
 Wenn alle Ereignisse mit all ihren Metadaten und klar definierten Typen, die die Lebenszyklusphasen repräsentieren, an einem einzigen Ort gespeichert sind, erhalten wir viel Transparenz in den Integrations-, Bereitstellungs- und Betriebsprozessen. Mit diesen Daten können wir unsere Prozesse optimieren, was zu mehr Nachhaltigkeit führt.
 
@@ -934,7 +958,7 @@ Die Automatisierung von CI/CD und Betrieb führt in der Regel zu einer Vielzahl 
 
 In [Kapitel 9](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap9/Platform%20Engineering_9%20de.md) werden wir weitere Aspekte behandeln, wie wir durch die richtigen architektonischen Entscheidungen die technischen Schulden in allen unseren Plattformkomponenten reduzieren können.
 
-IDPs – der Automatisierungs-Kraken in der Plattform
+# IDPs – der Automatisierungs-Kraken in der Plattform
 
 In diesem Kapitel haben wir bisher viel über die grundlegenden Bausteine zur Automatisierung des End-to-End-Prozesses von Build, Delivery, Deployment und Release gelernt. Wir haben über neue Ansätze zur Bereitstellung des gewünschten Zustands mit GitOps gesprochen, bei denen der gewünschte Zustand aus der Zielumgebung abgerufen und nicht von einem externen Tool, wie z. B. einer Pipeline, übertragen wird.
 
@@ -944,7 +968,7 @@ In diesem letzten Abschnitt möchten wir einen kurzen Blick darauf werfen, welch
 
 Dabei versetzen wir uns in die Lage unserer Benutzer, unserer Entwickler oder unserer Entwicklungsteams, da sie es sind, die sich auf eine neue Arbeitsweise einstellen müssen.
 
-Bereitstellung von Vorlagen als „Golden Paths” für einen leichteren Einstieg!
+# Bereitstellung von Vorlagen als „Golden Paths” für einen leichteren Einstieg!
 
 Wir versuchen, viele neue Praktiken durchzusetzen, wie z. B. die Sicherstellung der richtigen Metadaten bei den Bereitstellungen (Version, Anwendungskontext, Eigentumsverhältnisse usw.) oder die Durchführung von Sicherheitslückenprüfungen als Teil jeder Build-Pipeline. In der Plattform-Engineering-Community werden diese auch als „Golden Paths” bezeichnet. Um sicherzustellen, dass diese Praktiken von Teams, die neue Projekte starten, leicht befolgt werden können, müssen wir sie leicht zugänglich und anwendbar machen!
 
@@ -960,7 +984,7 @@ Sobald die Vorlagen definiert sind, stehen sie über einen benutzerfreundlichen 
 
 Weitere Informationen zu Vorlagen finden Sie in der ausführlichen Dokumentation und den Beispielen auf der **Backstage-Website** \[21\].
 
-Abstraktionen durch Crossplane
+# Abstraktionen durch Crossplane
 
 Eine weitere Vereinfachung und Möglichkeit zur Durchsetzung von Best Practices besteht darin, bei der Definition Ihrer Anwendung oder Dienste eine zusätzliche Abstraktionsebene bereitzustellen. In K8s müssen wir unsere Bereitstellungen, Dienste, Ingress, **Persistent Volume Claims** (**PVCs**) und noch mehr definieren, wenn wir abhängige Dienste wie eine Datenbank, einen Cache oder andere erforderliche Softwarekomponenten bereitstellen müssen.
 
@@ -974,7 +998,7 @@ KopierenErklären
 
 Bei der Bereitstellung von Abstraktionen ist es wichtig, diese den Entwicklern bekannt zu machen. Dies kann durch die Bereitstellung von Schulungsmaterialien oder einfach durch denselben Template-Ansatz erfolgen, wie zuvor beschrieben, unter Verwendung eines Tools wie Backstage.
 
-Alles Git-Flow-gesteuert
+# Alles Git-Flow-gesteuert
 
 Nun, es sollte keine Überraschung sein, dass Git unsere Quelle der Wahrheit ist – das haben wir bereits zu Beginn des Kapitels festgestellt. Die meisten Git-Lösungen bieten jedoch zusätzliche Funktionen, mit denen wir auch Standards und Prozesse durchsetzen können (z. B. GitHub-Workflows). Workflows können nach einem Zeitplan oder als Teil vieler verschiedener Ereignisse ausgelöst werden, die im End-to-End-Ablauf eines Git-gesteuerten Prozesses auftreten können (z. B. Push, Pull-Anfragen, Release).
 
@@ -982,7 +1006,7 @@ Auf diese Weise können wir unsere Standards auch vor dem Erstellen und Pushen v
 
 Je nach ausgewähltem Git-Tool finden Sie in der Regel einen Marktplatz oder einen Best-Practice-Katalog mit Workflows und Aktionen, die für bestimmte Arten von Projekten ausgeführt werden können und sollten. Machen Sie sich mit allen Möglichkeiten vertraut, die Ihnen Ihr ausgewähltes Tool bietet.
 
-Softwarekatalog
+# Softwarekatalog
 
 Sobald wir Entwicklern die Möglichkeit geben, mehr Software zu entwickeln, die allen unseren Prozessen entspricht, werden wir hoffentlich das Ergebnis in Form vieler neuer Dienste sehen. Das sind Dienste, über die auch andere Entwickler Bescheid wissen müssen, damit wir das Problem der „ ” vermeiden, bei dem Entwicklungsteams doppelte Dienste erstellen, und damit Entwickler dazu ermutigt werden, auf der Grundlage bestehender Dienste und APIs weitere Funktionen zu entwickeln.
 
@@ -992,6 +1016,9 @@ Da Git die Quelle der Wahrheit ist, können wir die meisten dieser Informationen
 
 Backstage, das Tool, das auch die zuvor erwähnte Vorlagenfunktion bietet, verfügt ebenfalls über einen Softwarekatalog. Es bezieht seine Daten aus der Analyse spezifischer Metadatendateien in Git-Repositorys, ermöglicht aber auch die Bereitstellung von Entitätsinformationen aus externen Datenquellen. Die folgende Abbildung stammt aus dem Backstage-Blog und zeigt, wie der Softwarekatalog von Spotify in Backstage aussieht:
 
+
+<img width="979" height="615" alt="image" src="https://github.com/user-attachments/assets/474f0b3c-64e8-4863-8fe3-1ec7035e5e9c" />
+
 Abbildung 5.10: Aus Entitätsmetadaten in Git extrahierter Softwarekatalog
 
 Wie wir dem vorstehenden Screenshot entnehmen können, sind Softwarekataloge eine leistungsstarke Möglichkeit, um zu verstehen, welche Softwarekomponenten innerhalb einer Organisation verfügbar sind, um welche Art von Software es sich handelt ( ), wem sie gehört, wo der Quellcode zu finden ist und welche weiteren Informationen verfügbar sind.
@@ -1000,7 +1027,7 @@ Tools wie Backstage sind nicht das vollständige IDP, sondern stellen ein Portal
 
 Backstage ist zwar eine Option, aber es gibt noch viele andere Möglichkeiten. Von selbst entwickelten bis hin zu anderen Open-Source- oder kommerziellen Tools wie Cortex, Humanitec, Port oder Kratix.
 
-Zusammenfassung
+# Zusammenfassung
 
 In diesem Kapitel haben wir viel über die zugrunde liegende Automatisierung und die Prozesse gelernt, mit denen ein Artefakt von der ersten Erstellung bis zur Produktion gelangt. Für moderne Plattformen sollte ein GitOps-Ansatz, bei dem wir Änderungen ziehen statt zu pushen, eine wichtige Überlegung sein. Wir haben gelernt, dass Git die Quelle der Wahrheit und Artefakte (Container- oder OCI-konforme Images) unsere Geschäftslogik in unseren Zielumgebungen sind.
 
