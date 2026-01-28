@@ -158,7 +158,7 @@ Wenn Sie mehr darüber erfahren möchten, wie Kubelet die verschiedenen Sonden v
 
 Eine weitere hervorragende Quelle ist die offizielle Kubernetes-Dokumentation zur Konfiguration von Liveness-, Readiness- und Startup-Probes: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
 
-Zustandsprüfungen sind nur innerhalb von Kubernetes gültig
+## Zustandsprüfungen sind nur innerhalb von Kubernetes gültig
 
 Es ist wichtig zu verstehen, dass alle diese Zustandsprüfungen nur innerhalb des Kubernetes-Clusters durchgeführt werden und uns nicht sagen, ob ein Dienst, der über einen Ingress für unsere Endbenutzer verfügbar ist, auch aus Sicht der Endbenutzer als funktionsfähig gilt. Eine bewährte Vorgehensweise besteht darin, die Integrität und Verfügbarkeit zusätzlich aus einer „Outside-In”-Perspektive als externe Kontrolle zu überprüfen. Sie können beispielsweise synthetische Tests verwenden, um zu überprüfen, ob alle exponierten Endpunkte erreichbar sind und erfolgreiche Antworten zurückgeben.
 
@@ -206,7 +206,7 @@ Region: „eu-west“
 
 &nbsp;   URL: „https://tenantABC-eu-west.financialone.acme”
 
-CopyExplain
+### CopyExplain
 
 Crossplane bietet Anwendungs- und Infrastruktur-Orchestrierung und nutzt das Operator-Muster, um kontinuierlich sicherzustellen, dass jede Anwendungsinstanz – wie in der Zusammensetzung definiert – wie erwartet ausgeführt wird.
 
