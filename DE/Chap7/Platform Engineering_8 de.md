@@ -1,4 +1,4 @@
-### Kostenmanagement und Best Practices ###
+# Kostenmanagement und Best Practices
 
 Die Cloud-Migration hatte in den letzten Jahren für viele IT-Organisationen höchste Priorität und ist auch für die kommenden Jahre weiterhin eine strategisch relevante Ausrichtung. Der Betrieb und Besitz eines eigenen Rechenzentrums ist ebenfalls nach wie vor ein wertvoller Ansatz; das Design und die Kosten für die eigenen Rechenzentrumskapazitäten sind in der Regel besser durchdacht als bei der Cloud. In diesem Kapitel werden wir uns näher damit befassen und über die Notwendigkeit des Cloud-Kostenmanagements und der Optimierung nachdenken.
 
