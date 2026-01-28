@@ -2,7 +2,7 @@
 
 In Teil 2 befassen wir uns mit den technischen Grundlagen einer Plattform und führen Sie durch die relevanten Entscheidungspunkte während des Entwurfsprozesses. Dazu lernen Sie die vier Hauptkomponenten einer Plattform kennen: die Kernkomponenten und Infrastruktur, die durch Kubernetes repräsentiert werden, die für eine Plattform erforderliche Automatisierung, die relevanten Komponenten für eine selbstbedienungsorientierte, entwicklerfreundliche Plattform und die Schritte, die zum Aufbau sicherer und konformer Umgebungen erforderlich sind.
 
-Entwurf des Plattformkerns – Kubernetes als einheitliche Schicht
+# Entwurf des Plattformkerns – Kubernetes als einheitliche Schicht
 
 Als Plattform-Engineering-Team müssen Sie eine wichtige Entscheidung über den zugrunde liegenden Technologie-Stack Ihrer Kernplattform treffen. Diese Entscheidung wird langfristige Auswirkungen auf Ihr Unternehmen haben, da sie die Fähigkeiten und Ressourcen bestimmt, die Sie für den Aufbau einer Plattform benötigen, die aktuelle und zukünftige Self-Service-Anwendungsfälle unterstützt.
 
@@ -20,7 +20,7 @@ Daher behandeln wir in diesem Kapitel die folgenden Hauptthemen:
 - Nutzung und Verwaltung der Infrastrukturfunktionen von Kubernetes
 - Entwerfen für Flexibilität, Zuverlässigkeit und Robustheit
 
-Warum Kubernetes eine wichtige Rolle spielt und warum es (nicht) für jeden geeignet ist
+# Warum Kubernetes eine wichtige Rolle spielt und warum es (nicht) für jeden geeignet ist
 
 Im Moment konzentrieren wir uns auf Kubernetes, aber es gibt auch andere Möglichkeiten, eine Plattform für die Ausführung Ihrer Workloads bereitzustellen. Neben vielen verschiedenen Varianten von Kubernetes, wie z. B. OpenShift, gibt es Alternativen wie Nomad, CloudFoundry, Mesos und OpenNebula. Sie alle haben ihre Daseinsberechtigung, aber nur eine hat sich fast überall durchgesetzt: Kubernetes!
 
@@ -31,13 +31,13 @@ Neben diesen Plattformen können Sie virtuelle Maschinen oder Dienste von öffen
 
 Kubernetes verfügt über ein wichtiges Ökosystem und eine wichtige Community, eine Vielzahl von Anwendungsfällen, die von anderen Unternehmen implementiert wurden, und hochmotivierte Mitwirkende, die sich den nächsten Herausforderungen von Kubernetes stellen.
 
-Kubernetes – ein Anfang, aber nicht das Endziel!
+# Kubernetes – ein Anfang, aber nicht das Endziel!
 
 „Kubernetes ist eine Plattform zum Aufbau von Plattformen. Es ist ein Anfang, aber nicht das Endziel“, so Kelsey Hightower, der 2014 bei Google arbeitete, als Kubernetes der Welt vorgestellt wurde. Kubernetes spielt zwar eine wichtige Rolle beim Aufbau moderner Cloud-nativer Plattformen, aber das bedeutet nicht, dass es für jeden die perfekte Lösung ist. Erinnern Sie sich an den produktorientierten Ansatz für die Plattformentwicklung? Dieser beginnt damit, die Schwachstellen Ihrer Nutzer in Bezug auf „ “ zu verstehen. Sobald wir die Schwachstellen kennen, können wir daran arbeiten, wie wir die Anwendungsfälle implementieren und welche Technologieentscheidungen wir treffen.
 
 Schauen Sie sich noch einmal den ersten Abschnitt in [Kapitel 1](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap1/Platform%20Engineering_1%20de.md) mit dem Titel „Brauchen Sie wirklich eine Plattform?“ an, in dem wir einen Fragebogen bereitgestellt haben, der Ihnen bei der Entscheidung hilft, was der Kern der Plattform sein soll. Die Antwort könnte Kubernetes lauten, muss es aber nicht. Beginnen wir mit einem Blick auf unseren eigenen Anwendungsfall von Financial One ACME.
 
-Würde Financial One ACME sich für Kubernetes entscheiden?
+# Würde Financial One ACME sich für Kubernetes entscheiden?
 
 Wenn wir über den Anwendungsfall von Financial One ACME nachdenken, „Einfacherer Zugriff auf Protokolle in der Produktion zur Problembeseitigung“, erfordert die Verwendung der vorgeschlagenen Lösung nicht unbedingt Kubernetes als zugrunde liegende Plattform.
 
@@ -60,11 +60,11 @@ Dieser einzelne Anwendungsfall für Financial One ACME führt möglicherweise ni
 
 Es ist eine schwierige und weitreichende Entscheidung, die ein gutes Gleichgewicht zwischen Weitsicht und Überengineering erfordert. Um diese Entscheidung zu erleichtern, wollen wir uns die Vorteile der Wahl von Kubernetes als Kernplattform ansehen.
 
-Vorteile der Wahl von Kubernetes als Kernplattform
+# Vorteile der Wahl von Kubernetes als Kernplattform
 
 Um die wichtige Entscheidung für den Kern einer zukünftigen Plattform zu erleichtern, wollen wir uns ansehen, warum andere Unternehmen Kubernetes als zentralen Baustein wählen. Das Verständnis dieser Gründe, der Vorteile und auch der Herausforderungen sollte es Architekten erleichtern, diese wichtige Entscheidung zu treffen.
 
-Deklarativer Sollzustand – Promise-Theorie
+## Deklarativer Sollzustand – Promise-Theorie
 
 Traditionelle IT-Abläufe verwenden das **Verpflichtungsmodell**, bei dem ein externes System das Zielsystem anweist, bestimmte Dinge zu tun. Dieses Modell erfordert, dass viel Logik in das externe System, z. B. eine automatisierte Pipeline, eingebracht wird. Eine skriptbasierte Pipeline, sei es auf Basis von Jenkins, GitHub Actions oder anderen Lösungen, muss nicht nur Änderungen am Zielsystem vornehmen. Die Pipeline muss auch mit unvorhergesehenen Ergebnissen und Fehlern außerhalb des Systems, das sie verändert, umgehen können. Was tun wir beispielsweise, wenn die Bereitstellung einer neuen Softwareversion innerhalb einer bestimmten Zeit nicht funktioniert? Sollten wir sie zurückrollen? Wie würde die Pipeline das bewerkstelligen?
 
@@ -110,19 +110,22 @@ Spezifikation:
 
 &nbsp;   ...
 
-KopierenErklären
+### KopierenErklären
 
 Eine vollständig funktionierende Ingress-Objektbeschreibung umfasst etwas mehr als das, was in diesem Manifest \[1\]-Beispiel gezeigt wird. Dieses Beispiel erklärt jedoch sehr gut, wie eine Definition von Kubernetes in die tatsächlichen Aktionen übersetzt wird, die man erwarten würde – und erfüllt damit das Versprechen.
 
 Nun stellt sich die Frage: „Wie funktioniert diese ganze Magie?“ Um dies zu beantworten, werden wir zunächst die Konzepte von Controllern und Operatoren untersuchen.
 
-Kubernetes-Controller und -Operatoren
+# Kubernetes-Controller und -Operatoren
 
 Kubernetes-Controller sind im Wesentlichen Regelkreise, die die Versprechungstheorie von Kubernetes erfüllen. Mit anderen Worten: Controller automatisieren das, was IT-Administratoren oft manuell tun: Sie beobachten kontinuierlich den aktuellen Zustand eines Systems, vergleichen ihn mit dem erwarteten Zustand und führen Korrekturmaßnahmen durch, um das System am Laufen zu halten!
 
 Eine Kernaufgabe von Kubernetes-Controllern ist daher die kontinuierliche Abstimmung. Diese kontinuierliche Aktivität ermöglicht es ihnen, den gewünschten Zustand durchzusetzen, beispielsweise indem sie sicherstellen, dass der gewünschte Zustand, der im Beispiel der Ingress-Definition aus dem vorherigen Abschnitt zum Ausdruck kommt, mit dem aktuellen Zustand übereinstimmt. Wenn sich entweder der gewünschte Zustand oder der aktuelle Zustand ändert, bedeutet dies, dass sie nicht mehr synchron sind. Der Controller versucht dann, die beiden Zustände zu synchronisieren, indem er Änderungen am verwalteten Objekt vornimmt, bis der aktuelle Zustand wieder mit dem gewünschten Zustand übereinstimmt!
 
 Die folgende Abbildung zeigt, wie ein Controller den gewünschten Zustand (ausgedrückt durch Manifeste und gespeichert in etcd) überwacht, ihn mit dem aktuellen Zustand (dem in etcd gespeicherten Zustand) vergleicht und die verwalteten Objekte (z. B. Ingress, Deployments, SSL-Zertifikate usw.) verwaltet:
+
+
+<img width="953" height="688" alt="image" src="https://github.com/user-attachments/assets/7a257010-9b05-4fc6-b74e-b3e2e81b5eb3" />
 
 Abbildung 4.1: Abgleich und Selbstheilung durch Kubernetes-Controller
 
@@ -136,13 +139,16 @@ Wenn Sie mehr über Controller und Operatoren erfahren möchten, werfen Sie eine
 
 Nachdem wir nun mehr über Controller und Operatoren wissen, wollen wir uns ansehen, wie sie auch für die integrierte Ausfallsicherheit aller Kubernetes-Komponenten und -Bereitstellungen sorgen!
 
-Integrierte Ausfallsicherheit durch Probes
+## Integrierte Ausfallsicherheit durch Probes
 
 Controller überprüfen kontinuierlich, ob sich unser System im gewünschten Zustand befindet, indem sie den Zustand des Kubernetes-Clusters sowie seiner Knoten und aller bereitgestellten Pods überwachen. Wenn eine der überwachten Komponenten nicht in Ordnung ist, versucht das System, sie durch bestimmte automatisierte Maßnahmen wieder in einen fehlerfreien Zustand zu versetzen. Nehmen wir zum Beispiel Pods. Wenn Pods nicht mehr fehlerfrei sind, werden sie schließlich neu gestartet, um die Ausfallsicherheit des gesamten Systems zu gewährleisten. Das Neustarten von Komponenten ist oft auch die Standardmaßnahme, die ein IT-Administrator nach dem Motto „Schalten wir es aus und wieder ein und schauen wir, was passiert!“ ergreift.
 
 Genau wie IT-Administratoren, die wahrscheinlich nicht einfach wahllos Dinge ein- und ausschalten, verfolgt Kubernetes einen ausgefeilteren Ansatz, um die Ausfallsicherheit unserer Kubernetes-Cluster, Knoten und Workloads zu gewährleisten.
 
 Kubelet – eine Kernkomponente von Kubernetes – beobachtet kontinuierlich den Lebenszyklus und den Gesundheitszustand von Pods mithilfe verschiedener Arten von Probes: Startup, Readiness und Liveness. Die folgende Abbildung zeigt die verschiedenen Gesundheitszustände, in denen sich ein Pod je nach den Ergebnissen der Startup-, Readiness- und Liveness-Probe-Prüfungen befinden kann:
+
+
+<img width="1038" height="608" alt="image" src="https://github.com/user-attachments/assets/edfc27c0-c2c1-4d18-91b4-2183afd46f3e" />
 
 Abbildung 4.2: Kubelet ermittelt den Gesundheitszustand von Pods mithilfe von Probes
 
@@ -158,7 +164,7 @@ Es ist wichtig zu verstehen, dass alle diese Zustandsprüfungen nur innerhalb de
 
 Nachdem wir nun die integrierte Ausfallsicherheit für Pods kennengelernt haben, wie sieht es mit komplexeren Konstrukten aus, z. B. Anwendungen, die in der Regel aus mehreren verschiedenen Pods und anderen Objekten wie Ingress und Speicher bestehen?
 
-Workload- und Anwendungslebenszyklus-Orchestrierung
+### Workload- und Anwendungslebenszyklus-Orchestrierung
 
 Wie wir gelernt haben, bietet Kubernetes eine integrierte Orchestrierung des Lebenszyklus von Pods, wie im vorherigen Abschnitt erläutert. Geschäftsanwendungen, die wir auf Kubernetes bereitstellen, bestehen jedoch in der Regel aus mehreren voneinander abhängigen Pods und Workloads. Nehmen wir als Beispiel unser Unternehmen Financial One ACME: Die Finanzdienstleistungsanwendungen, die zur Unterstützung seiner Kunden bereitgestellt werden, enthalten mehrere Komponenten, wie z. B. ein Frontend, ein Backend, Caches, Datenbanken und Ingress. Leider gibt es in Kubernetes kein Konzept für Anwendungen. Zwar gibt es mehrere Initiativen und Arbeitsgruppen, die sich mit der Definition einer Anwendung befassen, doch müssen wir uns derzeit auf andere Ansätze für die Verwaltung von Anwendungen verlassen, die aus mehreren Komponenten bestehen.
 
@@ -210,7 +216,7 @@ Kubernetes bietet viele Bausteine für die Erstellung resilienter Systeme. Sie k
 
 Das Neustarten von Komponenten ist eine Möglichkeit, Ausfallsicherheit zu gewährleisten, aber es gibt noch weitere. Werfen wir einen Blick auf die automatische Skalierung, die ein weiteres kritisches Problem in dynamischen Umgebungen löst!
 
-Automatische Skalierung von Clustern und Workloads
+### Automatische Skalierung von Clustern und Workloads
 
 In den meisten Branchen ist die zu erwartende Auslastung eines Systems nicht gleichmäßig über alle Tage des Jahres verteilt. Es gibt immer eine gewisse Saisonalität: Der Einzelhandel verzeichnet Spitzen am Black Friday und Cyber Monday, Steuerdienstleister am Stichtag für die Steuererklärung und Finanzdienstleister oft, wenn die Gehaltszahlungen anstehen. Das Gleiche gilt für unsere eigenen Financial One ACME-Kunden. Als Finanzdienstleistungsunternehmen gibt es immer einen gewissen Grundverkehr von Endnutzern, aber zu Monatsanfang und -ende kommt es zu Spitzen.
 
@@ -228,7 +234,7 @@ Weitere Informationen hierzu finden Sie in der Dokumentation: [https://kubernete
 
 Nachdem wir nun die Optionen für die Skalierung innerhalb einer Kubernetes-Umgebung kennengelernt haben, wie wäre es mit einer Skalierung auf andere Kubernetes-Cluster?
 
-Einmal deklarieren – überall ausführen (theoretisch)
+### Einmal deklarieren – überall ausführen (theoretisch)
 
 Das Versprechen von Kubernetes als offenem Standard besteht darin, dass sich jeder deklarierte Zustand (Ingress, Workloads, Secrets, Speicher, Netzwerk usw.) gleich verhält, unabhängig davon, ob Sie ihn auf einem einzelnen Cluster oder auf mehreren Clustern ausführen, um bestimmte Anforderungen zu erfüllen, wie z. B. die Trennung von Phasen (Entwicklung, Staging und Produktion) oder die Trennung von Regionen (USA, Europa und Asien).
 
@@ -240,7 +246,7 @@ Die gute Nachricht ist, dass die globale Community daran arbeitet, dieses Proble
 
 Wir haben uns viele Vorteile der Wahl von Kubernetes als Kernplattform angesehen. Es gibt jedoch noch einen weiteren guten Grund, warum Kubernetes in den letzten 10 Jahren seit seiner ersten Veröffentlichung so große Akzeptanz gefunden hat: die globale Community und die CNCF!
 
-Globale Community und CNCF
+# Globale Community und CNCF
 
 Kubernetes wurde im Juni 2014 von Google angekündigt, und die Version 1.0 wurde am 21. Juli 2015 veröffentlicht. Google arbeitete dann mit der Linux Foundation zusammen und gründete die CNCF mit Kubernetes als ihrem ersten Projekt! Seitdem haben die Community und die Projekte die Welt im Sturm erobert!
 
@@ -254,7 +260,7 @@ Hier sind einige Dinge, die Sie beachten sollten, da sie Ihnen helfen werden, si
 - **Reifegrad**: Die CNCF gibt auch einen Reifegrad von „Sandbox”, „Incubating” oder „Graduated” an, der den Stufen „Innovators”, „Early Adopters” und „Early Majority” des Crossing-the-Chasm-Diagramms (https://en.wikipedia.org/wiki/Crossing_the_Chasm) entspricht. Graduierte Projekte sind in verschiedenen Branchen weit verbreitet und stellen eine sichere Wahl für die von ihnen unterstützten Anwendungsfälle dar. Inkubierende Projekte haben den Sprung vom technischen Spielfeld geschafft und werden von einer wachsenden Zahl unterschiedlicher Maintainer erfolgreich eingesetzt. Weitere Informationen zu den Kriterien für die CNCF-Reife und dazu, wer sich auf welcher Stufe befindet, finden Sie auf der offiziellen Website unter https://www.cncf.io/project-metrics/.
 - **Anwender**: Jedes CNCF-Projekt ist bestrebt, die Akzeptanz zu steigern und zu verfolgen. Eine Möglichkeit hierfür besteht darin, dass Organisationen, die ein Projekt aktiv übernehmen, sich in die Datei ADOPTERS.md eintragen, die jedes CNCF-Projekt in der Regel in seinem GitHub-Repository hat. Wenn Sie sich entscheiden, eines dieser Projekte zu übernehmen, empfehlen wir Ihnen, Ihren Namen ebenfalls in die Liste der Anwender aufzunehmen, indem Sie einen Pull-Request öffnen. Dies hilft dem Projekt und anderen Organisationen bei der Entscheidung, ob es sich um ein lohnenswertes Projekt handelt!
 
-Kubernetes ist aufgrund seiner Community unverzichtbar
+# Kubernetes ist aufgrund seiner Community unverzichtbar
 
 Kubernetes verfügt zwar über eine starke technologische Basis, aber es sind vor allem die Community und das Ökosystem, die in den letzten mehr als zehn Jahren aufgebaut wurden, die Kubernetes zu einer praktikablen Option für Plattformingenieure machen, die es als ihre Kernplattform nutzen möchten.
 
@@ -262,17 +268,20 @@ Wir haben nun besser verstanden, was Kelsey Hightower meinte, als er sagte: „K
 
 Während wir uns oft auf die Vorteile von Kubernetes für die Bereitstellung und Orchestrierung von Anwendungen konzentrieren, wollen wir uns nun ansehen, wie wir Kubernetes nutzen können, um unsere Infrastrukturkapazitäten auf unsere zukünftige Plattform zu übertragen!
 
-Nutzung und Verwaltung der Infrastrukturkapazitäten von Kubernetes
+# Nutzung und Verwaltung der Infrastrukturkapazitäten von Kubernetes
+
 
 In [Kapitel 2](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/2) wurden Ihnen das Plattform-Referenzkomponentenmodell und die Fähigkeitsebene vorgestellt. Wenn wir über die Übertragung von Infrastrukturkapazitäten auf Kubernetes schreiben, werden dem Endbenutzer diese Kapazitäten bei der Nutzung der Plattform bewusst. Wir müssen zwischen Ressourcen unterscheiden, die in Kubernetes integriert werden müssen, und solchen, die durch in Kubernetes bereitgestellte Spezifikationen konfiguriert und außerhalb des Clusters manipuliert oder neu erstellt werden. In der folgenden Abbildung finden Sie Beispiele im Abschnitt „Ressourcenintegration und Netzwerk“, die eine solide Integration erfordern, da sie sonst eine nützliche und funktionierende Plattform aktiv verhindern.
 
+<img width="1021" height="609" alt="image" src="https://github.com/user-attachments/assets/e8dd9ef9-38a7-4b23-bd73-e5c6f62fe861" />
+
 Abbildung 4.3: Funktionsbereich mit Beispiel-Tools
 
-Integration von Infrastrukturressourcen
+# Integration von Infrastrukturressourcen
 
 Wir werden die grundlegenden Komponenten und Designentscheidungen besprechen, die Sie für die zugrunde liegenden Technologien der Plattform treffen müssen. Erstens sind Sie aufgrund der Leistungsfähigkeit von Kubernetes flexibler in Ihrer Toolauswahl und können diese nach Bedarf erweitern. Dies ist besonders hilfreich, wenn Sie die Funktionen der Plattform für verschiedene Anwendungsfälle anpassen.
 
-Container-Speicherschnittstelle
+# Container-Speicherschnittstelle
 
 Die **Container Storage Interface** (**CSI**) bietet Zugriff auf die Speichertechnologie, die mit dem Cluster oder den Knoten, auf denen der Cluster ausgeführt wird, verbunden ist. In der CSI-Entwicklerdokumentation \[3\] finden Sie einen Treiber für fast jeden Speicheranbieter. Die Liste enthält Treiber für Cloud-Anbieter wie AWS **Elastic Block Storage** (**EBS**), softwaredefinierten Speicher wie Ceph oder einen Konnektor für kommerzielle Lösungen wie NetApp. Darüber hinaus unterstützt der CSI-Treiber auch toolspezifische Treiber wie cert-manager und HashiCorp Vault. Kurz gesagt, das CSI ist unverzichtbar für alle Daten, die länger als der Container, zu dem sie gehören, bestehen bleiben sollen und nicht in einer Datenbank gespeichert sind oder für die Speicherung in einer Datenbank benötigt werden.
 
@@ -293,6 +302,9 @@ Aufgrund ihrer Komplexität werden diese Komponenten mit Helm oder anderen Paket
 Die Übersicht über den CSI-Treiber enthält weitere Informationen darüber, welche Zugriffsmodi unterstützt werden. Da es keine einheitliche Lösung gibt, müssen Sie Ihre Optionen für den Benutzer transparent machen und deren Verwendung erklären.
 
 Die wichtigsten Elemente, die Ihre Benutzer kennen und verstehen müssen, sind StorageClass, PersistentVolume und PersistentVolumeClaim. Wenn ein Pod/Deployment ein Volume benötigt, löst StorageClass die Erstellung eines neuen Volumes aus. Falls ein Pod/Deployment bereits einmal ein Volume beansprucht hat und dieses nicht zerstört wurde, weist die Kubernetes-Steuerungsebene das Volume erneut dem Pod/Deployment zu.
+
+
+<img width="1029" height="381" alt="image" src="https://github.com/user-attachments/assets/18858b7c-ff43-4fb4-819b-570279e86b0e" />
 
 Abbildung 4.4: Dynamische Bereitstellung neuer persistenter Volumes
 
@@ -326,7 +338,7 @@ parameters:
 
 &nbsp; guaranteedReadWriteLatency: „true“ # providerspezifisch
 
-CopyExplain
+**CopyExplain**
 
 Der Nachteil dabei ist, dass Sie menschliches Versagen berücksichtigen müssen, das Ihre Plattform lahmlegen kann, indem es den Speicher füllt, bis das System einfriert.
 
@@ -342,7 +354,7 @@ Stellen Sie außerdem sicher, dass der Treiber speicher- und cloud-/infrastruktu
 
 Ein guter CSI ermöglicht es Ihrer Plattform, überall zu funktionieren und eine Vielzahl von Anwendungsfällen zu unterstützen.
 
-Container-Netzwerkschnittstelle
+# Container-Netzwerkschnittstelle
 
 Die **Container-Netzwerkschnittstelle** (**CNI**) kann zur relevantesten Komponente einer Plattform werden, wird jedoch häufig unterschätzt. Bei vielen Projekten, die wir gesehen haben, ist es einigen Plattformteams egal, welche CNI sie verwenden, und sie nutzen auch keine Netzwerkrichtlinien, Verschlüsselung oder detaillierte Netzwerkkonfigurationen. Dank der einfachen Abstraktion der Netzwerkschicht ist der Einstieg nicht überwältigend. Andererseits gibt es viele Anwendungsfälle, in denen die CNI die wichtigste Komponente ist. Ich habe sogar Projekte gesehen, die aufgrund der Dynamik einer CNI gescheitert sind, die nicht mit dem sehr traditionellen und veralteten Ansatz der Netzwerkimplementierung kompatibel war.
 
@@ -350,7 +362,7 @@ Ein CNI erfordert immer eine dedizierte Implementierung, da es sich um eine Reih
 
 Daher sollten wir Architekten CNI niemals als „nur ein weiteres Objekt in Kubernetes” betrachten. Wir müssen es bewerten und einführen. Einige CNIs sind auf einfache Wartung und einen soliden, aber einfachen Funktionsumfang ausgelegt. Wenn der Schwerpunkt beispielsweise auf Layer 3 liegt, sollten Sie Flannel in Betracht ziehen. Andere CNIs, wie Calico, sind eine absolut zuverlässige Wahl mit einem umfangreichen Funktionsumfang. Cilium hat die Verwendung von eBPF eingeführt, um eine noch schnellere und sicherere Netzwerk en zu ermöglichen. Wenn Ihnen die Wahl zwischen diesen Optionen immer noch schwerfällt, weil Sie möglicherweise zusätzliche Anforderungen haben, wie z. B. die Bereitstellung verschiedener Netzwerkebenen, dann hat die Community auch dafür eine Antwort für Sie: Multus. Nehmen Sie sich Zeit und entdecken Sie Ihre Optionen. Es gibt Dutzende von CNIs.
 
-Das CNI kann erhebliche Auswirkungen auf Ihre Plattformen haben:
+# Das CNI kann erhebliche Auswirkungen auf Ihre Plattformen haben:
 
 - **Sicherheit**: CNIs können unterschiedliche Funktionen für Netzwerkrichtlinien bieten, um eine detaillierte Kontrolle über Ihr Netzwerk zu erreichen. Sie können über zusätzliche Verschlüsselungsfunktionen, Integrationen in Identitäts- und Zugriffsmanagementsysteme und detaillierte Beobachtungsmöglichkeiten verfügen.
 - **Skalierbarkeit**: Je größer der Cluster wird, desto mehr Kommunikation findet im gesamten Netzwerk statt. Das CNI muss Ihr Wachstumsziel unterstützen und auch bei komplexem Routing und Chatten über die Leitungen effizient bleiben.
@@ -359,7 +371,7 @@ Das CNI kann erhebliche Auswirkungen auf Ihre Plattformen haben:
 
 Beachten Sie, dass nicht jedes CNI alle diese Funktionen unterstützt. Einige bieten beispielsweise nicht einmal Unterstützung für Netzwerkrichtlinien. Andere CNIs sind cloudanbieterspezifisch, lassen sich nur mit einem Cloudanbieter integrieren und ermöglichen einige cloudanbieterspezifische Funktionen.
 
-Architektonische Herausforderungen – CNI-Verkettung und mehrere CNIs
+# Architektonische Herausforderungen – CNI-Verkettung und mehrere CNIs
 
 Plattformen sind für CNI-Verkettung prädestiniert. CNI-Verkettung führt die sequenzielle Verwendung mehrerer CNIs ein. Die Reihenfolge, in der CNIs verwendet werden, und der Zweck dafür werden im Verzeichnis /etc/cni/net.d definiert und vom Kubelet verarbeitet. Auf diese Weise kann das Plattformteam einen Teil des Netzwerks verwalten und einen geschützten Ansatz bieten, während Plattformbenutzer ihr Netzwerk auf einer höheren Ebene frei konfigurieren können. Beispielsweise kann ein Plattformnutzer auf Antrea als CNI zugreifen, um sein Netzwerk bis zu einem gewissen Grad zu konfigurieren. Er kann auch Netzwerkrichtlinien und Egress-Konfigurationen anwenden, um zu verhindern, dass seine Anwendung mit allen kommuniziert. Auf der anderen Seite der Plattform verwaltet das Plattform -Engineering-Team über Cilium die globale clusterübergreifende Kommunikation sowie die Netzwerkverschlüsselung, um bewährte Sicherheitsverfahren durchzusetzen. Darüber hinaus werden die von Cilium sichtbaren Netzwerkdaten den Betriebs- und Sicherheitsteams zur Verfügung gestellt. Am besten eignen sich diese Anwendungsfälle für die Interaktion mit den eigenen CNIs der Cloud-Anbieter. Diese ermöglichen oft eine bessere Integration zwischen der Plattform und der Cloud, verfügen jedoch auf der anderen Seite nicht über viele erweiterte Funktionen.
 
@@ -373,11 +385,14 @@ Ein weiterer zu evaluierender Ansatz wäre die Zuweisung mehrerer Netzwerkschnit
 
 Das Multus CNI ist eine Art Meta-Plugin auf dem Knoten und befindet sich zwischen den eigentlichen CNIs und den Pod-Netzwerkschnittstellen, wie in der folgenden Abbildung dargestellt. Es verbindet die verschiedenen Netzwerkschnittstellen auf der einen Seite mit dem Pod und übernimmt auf der anderen Seite die Verbindung zu den erwarteten CNIs für die richtige Netzwerkschnittstelle.
 
+
+<img width="901" height="999" alt="image" src="https://github.com/user-attachments/assets/e6f213eb-f629-4851-a7cd-3955372bc208" />
+
 Abbildung 4.5: Multus-Meta-CNI-Plugin
 
 Beide Ansätze müssen sorgfältig evaluiert werden. Sie haben erhebliche Auswirkungen auf die Komplexität, Leistung und Sicherheit Ihres Netzwerks.
 
-Bereitstellung verschiedener CPU-Architekturen
+### Bereitstellung verschiedener CPU-Architekturen
 
 Kubernetes unterstützt mehrere CPU-Architekturen: AMD64, ARM64, 386, ARM, ppc64le und sogar Mainframes mit s390x. Viele Cluster laufen heute auf AMD64, aber zum Zeitpunkt der Erstellung dieses Artikels sorgt ein starkes Interesse an ARM64 für eine Verschiebung. Bei dieser Diskussion geht es in erster Linie darum, Kosten zu sparen und ein wenig zusätzliche Leistung zu gewinnen, während gleichzeitig der Gesamtstromverbrauch gesenkt wird. Zumindest auf dem Papier ist dies eine Win-Win-Win-Situation. Nicht nur „ “ ist ARM64 eine mögliche Veränderung in der Infrastruktur, auch das Open-Source-Architekturprojekt RISC-V gewinnt an Fahrt und ist der erste Cloud-Anbieter, der RISC-V-Angebote erstellt \[4\].
 
@@ -401,6 +416,10 @@ Der Name WebAssembly ist jedoch irreführend. Ursprünglich entwickelt, um Code 
 
 Im Zusammenhang mit Kubernetes unterstützen die OCI- und CRI-Laufzeiten Wasm. Das bedeutet, dass Sie einen Wasm-Container neben einem regulären Container ausführen können. Wie Sie in der folgenden Abbildung sehen können, sind keine weiteren Änderungen erforderlich. Das Wasm-App-Image wird auf Knotenebene gespeichert und von den darüber liegenden Schichten ausgeführt.
 
+
+<img width="1023" height="973" alt="image" src="https://github.com/user-attachments/assets/83455ab0-d203-472a-b453-7dd0dacecb3c" />
+
+
 Abbildung 4.6: Wasm auf einem Kubernetes-Knoten
 
 Um Wasm auf Ihrer Plattform ausführbar und verfügbar zu machen, müssen Sie eine Laufzeitklasse angeben und deren Verwendung auf Deployment-/Pod-Ebene definieren. Im folgenden Beispiel sehen Sie links die Spezifikation für crun als RuntimeClass und rechts eine Pod-Definition, in der wir für spec.runtimeClassName crun zuweisen. Für crun müssen wir außerdem eine Anmerkung hinzufügen, um crun mitzuteilen, dass dieser Pod über ein Wasm-Image verfügt:
@@ -412,6 +431,9 @@ Um Wasm auf Ihrer Plattform ausführbar und verfügbar zu machen, müssen Sie ei
 Tabelle 4.1: Definition einer RuntimeClass und eines Pods, die in der Wasm-Laufzeit ausgeführt werden
 
 Als Alternative dazu bieten neue Entwicklungen wie SpinKube eine ganze Reihe von Tools, um Kubernetes-Ressourcen optimal zu nutzen \[5\]. Dieser Ansatz ermöglicht die Integration der Entwicklungserfahrung in die Bereitstellung und Ausführung der containerisierten Wasm-Anwendung. Die folgende Abbildung zeigt den Workflow und wie die verschiedenen Komponenten zusammenarbeiten. Dies vereinfacht den Entwicklungsprozess und bringt eine schnelle, aber robuste neue Laufzeitumgebung auf die Plattform.
+
+<img width="1046" height="848" alt="image" src="https://github.com/user-attachments/assets/a8925cee-237d-4a14-aeab-2a0e82a51c33" />
+
 
 Abbildung 4.7: SpinKube-Übersicht \[6\]
 
@@ -426,13 +448,13 @@ Aber ist Wasm wirklich eine Technologie, die von der Branche angenommen wurde? H
 
 Wasm ist noch kein Ersatz für Container. Es handelt sich um einen evolutionären Schritt, der für einige Fälle sehr gut geeignet ist, aber es mangelt an Akzeptanz und es gibt Probleme beim Debugging-Prozess. Es ist jedoch nur eine Frage der Zeit, bis diese Hindernisse überwunden sind.
 
-Plattformen für die GPU-Nutzung aktivieren
+# Plattformen für die GPU-Nutzung aktivieren
 
 Ähnlich wie die Unterstützung für verschiedene CPU-Architekturen oder die Erweiterung der Container-Laufzeitumgebung um Wasm ist in letzter Zeit auch die GPU-Aktivierung für Benutzer äußerst relevant geworden. Es muss ein Geräte-Plugin installiert werden, das für den jeweiligen GPU-Typ spezifisch ist, z. B. AMD, Intel oder Nvidia. Dadurch werden benutzerdefinierte planbare Ressourcen wie nvidia.com/gpu für Kubernetes und seine Benutzer verfügbar gemacht. Außerdem sind wir keine Experten für GPUs und ihre Fähigkeiten. Aus Sicht der Plattformtechnik haben die verschiedenen Anbieter unterschiedliche Funktionssätze und Erweiterungen für ihre Plugins entwickelt.
 
 Ich empfehle dringend, Experten für diesen Bereich zu entwickeln oder zu finden, wenn Ihre Benutzer GPUs benötigen. Der Bereich der KI und LLMs befindet sich in einer rasanten Expansion. Hardware- und Softwareanbieter entwickeln monatlich neue Tools, Systeme und Ansätze, um diese Technologien zu nutzen. Jedes Szenario hat seine ganz spezifischen Anforderungen. Das Training eines Modells erfordert eine enorme Menge an Daten, GPUs, Speicherplatz und Arbeitsspeicher. Die Feinabstimmung eines Modells hängt in erster Linie davon ab, wie groß das zu trainierende Modell sein soll. Ein Modell mit sieben Milliarden Parametern passt in einen 14-GB-VRAM, aber durch eine Erhöhung der Präzision kann seine Größe leicht auf 24 GB oder mehr ansteigen. Schließlich erfordert die Bereitstellung einer Inferenz-Engine für die Bereitstellung eines LLM für Benutzer eine Menge Netzwerkkommunikation.
 
-Wichtiger Hinweis
+**Wichtiger Hinweis**
 
 Inferenz bedeutet, eine Eingabeaufforderung an ein LLM zu senden. Die meisten Menschen glauben, dass das LLM dann wie ein Mensch eine Geschichte erstellt. Tatsächlich muss das LLM jedoch nach jedem Wort die gesamte Eingabeaufforderung, einschließlich der neuen Wörter, erneut an das LLM senden, damit es über das nächste Wort entscheiden kann, das dem Satz hinzugefügt wird.
 
@@ -445,7 +467,7 @@ Als Faustregel gilt, dass Sie für die benötigten GPU-VRAMs (Video-RAM ist der 
 
 Daher ist eine Zusammenarbeit zwischen der Plattform und dem Machine-Learning-Team erforderlich. Je nach den Modellen, die sie verwenden möchten, entspricht die von Ihnen gewählte Hardware möglicherweise nicht mehr den Anforderungen.
 
-Architektonische Herausforderungen
+# Architektonische Herausforderungen
 
 Die Integration von GPUs ist zwar sehr einfach, es gibt jedoch einige Aspekte, die besprochen werden müssen. Sie sollten sich über Folgendes im Klaren sein:
 
@@ -456,7 +478,7 @@ Die Integration von GPUs ist zwar sehr einfach, es gibt jedoch einige Aspekte, d
 
 Die Erstellung von Plattformen, die für maschinelles Lernen und LLM-Operationen geeignet sind, erfordert ein neues Maß an Optimierung. Nicht ausgelastete GPUs sind Geldverschwendung. Schlecht genutzte GPUs sind Geldverschwendung. Aus Sicht der Infrastruktur müssen wir jedoch noch mehr sicherstellen: Datenschutz, Plattformsicherheit und spezielle Beobachtbarkeit für die Modelle. Meiner Meinung nach sind maschinelles Lernen und LLMs ein spannender Anwendungsfall und bieten Plattformingenieuren einen Spielplatz.
 
-Lösungsraum
+# Lösungsraum
 
 Um die GPU-Nutzung zu optimieren, gibt es einige Ansätze:
 
@@ -470,15 +492,20 @@ Time-Slicing ist die schlechteste Option. Es ist zwar besser als nichts, aber MP
 
 Die folgende Abbildung zeigt die Speicherpartitionen der GPU auf hoher Ebene, denen verschiedene Workloads zugewiesen werden können.
 
+<img width="1034" height="513" alt="image" src="https://github.com/user-attachments/assets/6833f4a6-688c-464f-8293-188260c69935" />
+
 Abbildung 4.8: Beispiel für die Aufteilung einer GPU in drei GPU-Instanzen
 
 Diese GPU-Instanzen können entweder von einem einzelnen Pod, einem Pod mit einem Container, auf dem mehrere Prozesse laufen (nicht ideal), oder unter Verwendung von beispielsweise CUDA von Nvidia genutzt werden. CUDA ist ein MPS, sodass Sie die verschiedenen Ansätze kombinieren können, wie in der folgenden Abbildung dargestellt:
+
+<img width="1033" height="478" alt="image" src="https://github.com/user-attachments/assets/bf1eb507-fcf1-4dc4-b4a6-a18483d121ef" />
+
 
 Abbildung 4.9: Beispiel für die parallele Verwendung von drei GPU-Instanzen
 
 An dieser Stelle können wir einen Blick auf den Forschungs- und Experimentierbereich werfen, in dem Sie Kubernetes **Dynamic Resource Allocation** (**DRA**) mit MIG kombinieren können. Dies bietet einen „ ”-Ansatz, um bei der Zuweisung flexibel zu sein und gleichzeitig die Ressourcen für die Bereitstellungen sicherzustellen. DRA wurde mit Kubernetes v1.26 eingeführt und befindet sich noch in der Alpha-Phase, sodass bei jeder Version mit API-Änderungen zu rechnen ist. Es gibt einige interessante Artikel und Vorträge zu diesem Thema. Je nachdem, wann Sie dies lesen, könnte es bereits veraltet sein \[8\].
 
-Cluster-Skalierbarkeit aktivieren
+# Cluster-Skalierbarkeit aktivieren
 
 Wie bereits in diesem Kapitel erwähnt, ist die Fähigkeit eines Kubernetes-Clusters, seine Größe anzupassen, für verschiedene Anforderungen von Vorteil, von der Ausfallsicherheit über das Wachstum mit der Arbeitslast bis hin zur Fallback-Neustartfunktion und der Bereitstellung der höchsten Verfügbarkeit über Rechenzentren und Verfügbarkeitszonen hinweg. Im Kern unterscheiden wir zwischen dem horizontalen und vertikalen Autoscaler, der auf die Pods abzielt, und dem horizontalen CA, der die Anzahl der Knoten anpasst.
 
@@ -562,13 +589,16 @@ Als Plattformingenieure möchten wir sicherstellen, dass der Benutzer das Skalie
 
 Um die Skalierung Ihres Kubernetes-Clusters bei Cloud-Anbietern zu verwalten, müssen Sie sich mit CA und den verschiedenen verfügbaren Cloud-Integrationen dafür befassen. Wenn Sie die **Cluster-API** (**CAPI**) verwenden, können Sie außerdem auf deren Funktionen für die automatische Cluster-Skalierung aufbauen.
 
-Netzwerkfunktionen und Erweiterungen
+# Netzwerkfunktionen und Erweiterungen
 
 Betrachten wir nun die endgültige Ressourcenintegration von Kubernetes und der zugrunde liegenden Infrastruktur. Dazu beginnen wir mit den Cluster-Netzwerkmechanismen und arbeiten uns bis zum DNS und Lastenausgleich vor. DNS und Lastenausgleich können innerhalb des Clusters und in Abstimmung mit der Infrastruktur, auf der Kubernetes läuft, erfolgen.
 
-Ingress – die alte Methode
+### Ingress – die alte Methode
 
 Ingress ist die alte Definition dafür, wie eine Endbenutzeranfrage von außerhalb des Clusters in das System und zu der exponierten Anwendung weitergeleitet wird. Fast ein Jahrzehnt lang war dies die gängige Methode, um eingehenden Netzwerkverkehr zu definieren. Der Ingress wird in der Regel durch einen Ingress-Controller wie NGINX, HAProxy oder Envoy dargestellt, um nur einige zu nennen. Diese übernehmen inhärent die als Standardressource von Kubernetes definierten Routing-Regeln und verwalten den Rest. Wie Sie in der folgenden Abbildung sehen können, wird der Datenverkehr von dort aus an den richtigen Dienst weitergeleitet, der ihn an den Pod weiterleitet. Physisch gesehen fließt der Datenverkehr von der Netzwerkschnittstelle zum Ingress-Controller und dann zum Pod, aber so gut Kubernetes als Orchestrator auch ist, dazwischen gibt es einige logische Schritte.
+
+
+<img width="1009" height="261" alt="image" src="https://github.com/user-attachments/assets/c7f77b88-05b2-42b5-ae63-83a91a6ad6f9" />
 
 Abbildung 4.10: Ingress-Controller (Quelle: Kubernetes-Dokumentation)
 
@@ -583,7 +613,7 @@ Die Einrichtung eines Multi-Tenant-Clusters ist schwieriger, da Ingress in der R
 
 Ein Teil der Vorzüge des Ingress-Ansatzes liegt in seiner breiten Unterstützung und Integration mit anderen Tools, wie z. B. dem Cert-Manager für die Zertifikatsverwaltung und die Handhabung des externen DNS, auf die wir gleich noch eingehen werden. Außerdem behauptet der Kubernetes-Maintainer, dass es keine Pläne gibt, Ingress zu veralten, da es einfachen Webdatenverkehr auf unkomplizierte Weise perfekt unterstützt.
 
-Gateway-API – der neue Weg
+### Gateway-API – der neue Weg
 
 Im Herbst 2023 wurde die Gateway-API allgemein verfügbar. Anstelle einer einzigen Ressource besteht die Gateway-API aus mehreren Ressourcentypen, die einem Muster folgen, das bereits in anderen kritischen Integrationen verwendet wurde:
 
@@ -597,6 +627,9 @@ Im Herbst 2023 wurde die Gateway-API allgemein verfügbar. Anstelle einer einzig
     - UDPRoute
 
 Wenn wir das folgende Diagramm mit dem Ingress-Ansatz vergleichen, sehen wir die beiden Schritte für eingehenden Datenverkehr, der durch das Gateway geleitet und von \*Route umgeleitet wird.
+
+
+<img width="1005" height="245" alt="image" src="https://github.com/user-attachments/assets/434f0085-417f-473b-b758-448cf99d9cf6" />
 
 Abbildung 4.11: Gateway-API
 
@@ -653,6 +686,10 @@ Neben diesen zusätzlichen Sicherheitsstufen über Namespaces hinweg verfügt di
 
 Eine letzte Anmerkung, bevor wir fortfahren. Die Gateway-API verfügt über Personas. Personas sind vordefinierte Rollen, die eine detaillierte Nutzung der Gateway-Funktionen ermöglichen. Ingress hat nur eine Persona, einen Benutzer, unabhängig davon, ob es sich um einen Administrator oder einen Entwickler handelt. Die folgende Tabelle zeigt die Schreibberechtigungen dieser Personas in einem vierstufigen Modell:
 
+
+<img width="971" height="382" alt="image" src="https://github.com/user-attachments/assets/98c54ad2-9d6e-49b0-beb4-6d6a89ad53c3" />
+
+
 Abbildung 4.12: Schreibberechtigungen für ein erweitertes vierstufiges Modell
 
 An dieser Stelle ist die Gateway-API der wahre Retter unzähliger Nächte, in denen es darum ging, den eingehenden Datenverkehr richtig zu gestalten und eine Multi-Tenant-Plattform mit einem klaren und transparenten Ansatz aufzubauen.
@@ -664,6 +701,9 @@ Das von den Kubernetes-Mitwirkenden entwickelte ExternalDNS-Projekt ist ein Tool
 ExternalDNS ist jedoch kein DNS. Überraschung! Es liest die Ressourcen aus der Kubernetes-API und konfiguriert das externe DNS so, dass es auf die öffentlichen Endpunkte des Clusters verweist. Man könnte auch sagen, dass ExternalDNS es Ihnen ermöglicht, DNS-Einträge dynamisch über Kubernetes-Ressourcen auf eine DNS-Anbieter-unabhängige Weise zu steuern.
 
 Schauen wir uns einmal an, wie ExternalDNS mit dem CoreDNS von Kubernetes und dem Cloud DNS Service zusammenarbeitet. In der nächsten Abbildung sehen Sie links das verwaltete Kubernetes. In diesem Fall werden AWS EKS und CoreDNS auf Kubernetes ausgeführt, um interne DNS-Aufrufe aufzulösen. Wenn ExternalDNS bereitgestellt wird, beobachtet es die Gateway-, Ingress- und Service-Ressourcen. Wenn Änderungen vorgenommen werden oder neue Dienste hinzukommen, aktualisiert ExternalDNS die DNS-Einträge beim Cloud-Anbieter oder DNS-Dienstanbieter.
+
+
+<img width="1054" height="431" alt="image" src="https://github.com/user-attachments/assets/00c8c325-b952-4502-a7ed-b40b9a191983" />
 
 Abbildung 4.13: Externes DNS
 
@@ -679,7 +719,7 @@ Darüber hinaus können auch erhöhte Kosten (aufgrund des unangemessenen Verhal
 
 Erwägen Sie die Verwendung von ExternalDNS nur, wenn Sie andere Teile des Kubernetes-Netzwerks beherrschen und in der Lage sind, Netzwerkrichtlinien und die Gateway-API detailliert zu verwalten, sodass Sie strenge Kontrolle darüber haben, welche Dienste erreichbar sind und wie. Erwägen Sie außerdem, die DNSSEC-Funktion zu aktivieren und eine DNS-Überwachung einzurichten.
 
-Lastenausgleich, EndpointSlices und topologiebewusstes Routing
+## Lastenausgleich, EndpointSlices und topologiebewusstes Routing
 
 Zum Abschluss des Abschnitts über Netzwerke werden wir kurz auf **Lastenausgleich**, **EndpointSlices** und **topologiebewusstes Routing** eingehen.
 
@@ -691,15 +731,15 @@ Die Steuerungsebene erstellt und verwaltet EndpointSlices so, dass nicht mehr al
 
 EndpointSlices sind auch für das Topology-Aware Routing erforderlich. Mit Topology-Aware Routing können Sie den Datenverkehr innerhalb der **Availability Zone** (**AZ**) des Cloud-Anbieters halten. Dies hat zwei wesentliche Vorteile: Es reduziert die Netzwerkkosten und verbessert die Leistung. Anstatt dass ein Pod in AZ 1 mit einem anderen Pod in AZ 2 kommuniziert und dabei große Datenmengen sendet, kommuniziert der Pod in AZ 1 nun mit einer Replik (sofern verfügbar), die sich ebenfalls in AZ 1 befindet. Damit dies optimal funktioniert, sollte der eingehende Datenverkehr über einen externen Load Balancer gleichmäßig verteilt werden und Sie sollten mindestens drei Endpunkte pro Zone haben. Andernfalls kann der Controller diesen Endpunkt mit einer Wahrscheinlichkeit von etwa 50 % nicht zuweisen.
 
-Kubernetes als Teil der Plattform-Steuerungsebene
+# Kubernetes als Teil der Plattform-Steuerungsebene
 
 Wenn wir auf das zweite Kapitel zurückblicken, sehen wir in der Referenzarchitektur, dass eine Plattform stark verteilt sein kann und auf vielen Diensten basiert, die aus einer übergeordneten Perspektive betrachtet vielleicht gar nicht zusammen gehören. Wir haben diskutiert, dass Kubernetes oft zu einem zentralen Bestandteil Ihrer Plattform werden kann. Aber wie zentral kann es werden? Wie bereits erwähnt, dient Kubernetes nicht nur dazu, Workloads auszuführen, sondern ist eine Plattform (basierend auf der Promise-Theorie und einem standardisierten Modell und einer API) zum Aufbau von Plattformen. Dadurch rückt Kubernetes mit einem Bein in die Plattform-Steuerungsebene und tut dies auf zwei Arten: als Ressourcen-Controller und als Plattform-Orchestrator.
 
-Steuerung von Ressourcen aus Kubernetes heraus
+### Steuerung von Ressourcen aus Kubernetes heraus
 
 Das Open-Source-Projekt Crossplane ist die einzige Anbieter-unabhängige Lösung für die Verwaltung von Cloud-Ressourcen innerhalb von Kubernetes. Ursprünglich entwickelt, um andere Kubernetes-Cluster innerhalb von Kubernetes zu verwalten, wurde es schnell zur universellen Lösung für den Umgang mit Cloud-Ressourcen. Cloud-Ressourcen sind als CRDs verfügbar und können über eine Spezifikationsdatei als Kubernetes-native Ressourcen definiert werden. Dies gibt Benutzern die Möglichkeit, ihre Anforderungen zu definieren und die Erstellung der Ressourcen der Promise-Theorie von Kubernetes zu überlassen. Für die verschiedenen Clouds stehen sogenannte Provider zur Verfügung, die die verfügbaren Ressourcen definieren. Ein Benutzer kann einzelne Ressourcen oder ganze Kompositionen erstellen, bei denen es sich um mehrere zusammengehörige Ressourcen handelt.
 
-Das Problem der externen gegenüber intern definierten Ressourcen
+# Das Problem der externen gegenüber intern definierten Ressourcen
 
 Was ist der richtige Ansatz für die Verwaltung von Ressourcen? Sollten sie von einem Infrastrukturteam oder anhand von Eingaben aus Nachfrageformularen definiert werden? Können sie vom Benutzer über die Plattform definiert werden? Alles ist möglich, aber es gibt keine einfache Antwort.
 
@@ -719,17 +759,17 @@ Letztendlich wird es zu einer philosophischen Diskussion. Extern definierte Ress
 
 In diesem Abschnitt haben wir uns mit den grundlegenden Funktionen befasst, die für Kubernetes erforderlich sind, den damit verbundenen Herausforderungen und wie wir diese lösen können. Außerdem fühlen sie sich nicht wie eine dieser verrückten Implementierungen an, die man auf Konferenzen sieht. Wenn man diese Grundlagen richtig hinbekommt, macht das den Unterschied und entscheidet darüber, ob alles andere darauf ein Vergnügen oder eine Qual ist. Als Nächstes schließen wir dieses Kapitel mit einem Blick auf den Ansatz zur Ermittlung der richtigen Knotengrößen und die Auswirkungen auf Flexibilität und Zuverlässigkeit.
 
-Entwerfen für Flexibilität, Zuverlässigkeit und Robustheit
+# Entwerfen für Flexibilität, Zuverlässigkeit und Robustheit
 
 Im vorherigen Teil haben wir die Skalierbarkeit von Clustern und das Zusammenspiel von VPA, HPA und CA besprochen. Dies trägt dazu bei, ein flexibles, zuverlässiges und robustes System zu schaffen. Ein wichtiger Aspekt dabei ist auch, dass Anpassungen möglich sind, solange sie Ihrem System nicht schaden. Die Komponenten des Clusters müssen nahtlos zusammenarbeiten, aber bei Bedarf auch austauschbar sein. Dies ist ein heikles Thema: Auf der einen Seite haben Sie einen atmenden Cluster, dessen Anforderungen im Laufe der Zeit wachsen und schrumpfen, und auf der anderen Seite haben Sie alle Erweiterungen auf und um den Cluster herum, mit denen Sie die bestmöglichen Funktionen für Ihren Anwendungsfall bereitstellen können. Außerdem gibt es die sich ständig weiterentwickelnde Open-Source-Community, die regelmäßig Updates und neue Entwicklungen bereitstellt, die integriert und Ihren Benutzern zur Verfügung gestellt werden sollten. Wie wir Ihnen bereits gesagt haben, müssen Sie deshalb eine Produktmentalität haben – um die bestmögliche Plattform für Ihre Benutzer zu entwickeln ( ). Werfen Sie Dinge weg, die Sie nicht brauchen oder die veraltet sind, aber behalten Sie das gesamte System als Ihren Kern.
 
 Aus irgendeinem Grund gibt es immer noch Diskussionen darüber, ob Sie Ihre gesamte Arbeitslast auf Kubernetes verlagern sollten und ob dies zuverlässig ist. Wir müssen diese Diskussion aus zwei Perspektiven betrachten: bottom-up ausgehend von der Infrastruktur und den Kernaufgaben von Kubernetes und top-down ausgehend von dem, was der Benutzer sehen und erleben kann.
 
-Verbrauch optimieren oder genügend Spielraum lassen
+# Verbrauch optimieren oder genügend Spielraum lassen
 
 Wie wir in [Kapitel 2](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/2) gelernt haben, stehen der Kubernetes-Cluster und die von ihm verwaltete Arbeitslast in einer interessanten Beziehung zueinander und beeinflussen sich gegenseitig. Einige Anwendungen benötigen mehr CPU-Leistung, andere skalieren stattdessen nach oben, und der Rest läuft einfach nach Bedarf. Die richtige Balance zu finden ist nicht einfach, aber ein ideales Ziel ist ein hoher Ressourcenverbrauch, da dadurch die Nutzung der verfügbaren Ressourcen und damit die Kosten optimiert werden.
 
-Wie man die richtige Größe für Cluster findet
+### Wie man die richtige Größe für Cluster findet
 
 Die richtige Größe für den Cluster zu ermitteln, ist immer eine Herausforderung. Die richtige Lösung zu finden, hängt ganz klar von den jeweiligen Umständen ab. Nehmen wir das Beispiel von Financial One ACME, das einen neuen Cluster bereitstellen muss. Wir wissen nicht viel über die zu erwartende Workload, nur dass sie etwas Speicherplatz benötigt und einige bewegliche Teile hat, die nicht so ressourcenintensiv sind. Daher können wir eine der folgenden Optionen wählen:
 
@@ -758,7 +798,7 @@ Wir haben auch einige grobe Regeln für den Speicher:
 
 Darüber hinaus hat jeder Knoten eine Eviction-Schwelle von 100 MB. Wenn die Ressourcen vollständig ausgelastet sind und die Schwelle überschritten wird, beginnt Kubernetes mit der Bereinigung einiger Pods, um einen vollständigen Speicherausfall zu verhindern. Bei learnk8s finden Sie einen sehr detaillierten Blogbeitrag zu diesem Thema (https://learnk8s.io/kubernetes-node-size).
 
-Visualisieren wir diese Zahlen:
+### Visualisieren wir diese Zahlen:
 
 |     |     |     |     |
 | --- | --- | --- | --- |
@@ -787,7 +827,7 @@ Bei der Auswahl der Knotengrößen für den Cluster müssen wir weitere Faktoren
 
 Die richtige Knoten- und Clustergröße zu finden, ist eine Wissenschaft für sich. Keines der beiden Extreme ist gut. Beginnen Sie damit, sich die Art der zu erwartenden Arbeitslast anzusehen. Wenn Sie sich nicht sicher sind, beginnen Sie mit einer mittleren Größe und passen Sie die Knotengrößen bei Bedarf an. Denken Sie auch daran, immer etwas mehr Speicher zur Verfügung zu haben. Die Kernkomponenten von Kubernetes pro Knoten benötigen nicht viel CPU, aber mindestens 2 bis 3 GB Speicher plus alle anderen Standardkomponenten.
 
-Lösungsraum
+# Lösungsraum
 
 Die meisten Public-Cloud-Anbieter bieten die Möglichkeit, mehrere Instanztypen für Kubernetes-Knoten auszuführen. Dies ist für verschiedene Anwendungsfälle hilfreich, von der Isolierung von Workloads über die Optimierung der Auslastung bis hin zur Migration von einer CPU-Architektur zu einer anderen. Wir haben auch über die GPU-Auslastung gesprochen, die Sie in solchen Szenarien kombinieren können, um Nicht-GPU-Workloads auf CPU-Knoten auszuführen, während Sie das Modelltraining auf den GPU-Instanzen durchführen.
 
@@ -797,7 +837,7 @@ Um die richtigen Knotengrößen zu ermitteln, bietet learnk8s Ihnen auch einen I
 
 Auch wenn die Definition der Clustergröße und -skalierung nicht so relevant erscheint, können Sie mit den richtigen Knotengrößen einen direkten Einfluss auf Kosten, Auslastung, Anwendungsverfügbarkeit, Benutzererfahrung und die Anzahl der zusätzlichen Implementierungen nehmen, die Sie durchführen müssen, um potenzielle Nachteile auszugleichen.
 
-Zusammenfassung
+# Zusammenfassung
 
 In diesem Kapitel haben wir uns mit einigen der relevanten Komponenten von Kubernetes als Eckpfeiler Ihrer Plattform näher befasst. Zunächst haben wir untersucht, ob Kubernetes die richtige Wahl ist, und uns angesehen, warum es oft der richtige Weg ist. Mit der Promise-Theorie als Kernstück und vielen robusten Funktionen für den Betrieb und die Erweiterung einer Plattform ist Kubernetes eine nahezu perfekte Grundlage für eine Plattform. Von hier aus haben wir uns einige der grundlegenden Elemente von Kubernetes angesehen: Speicher, Netzwerk, CPU-Architekturen und GPU-Unterstützung. In diesem Zusammenhang haben wir einige Designüberlegungen und Probleme kennengelernt, mit denen wir bei der Implementierung von Kubernetes konfrontiert sein könnten. Auch wenn sich Kubernetes als Grundlage in jeder Umgebung anders anfühlen mag, ist es möglich, eine einheitliche Erfahrung zu schaffen. Dies bringt jedoch erhebliche Nachteile mit sich, wie z. B. den Verlust der Funktionen bestimmter Cloud-Anbieter, Flexibilität und Anpassbarkeit.
 
@@ -805,7 +845,7 @@ Als Nächstes haben wir darüber gesprochen, wie man die Balance zwischen einem 
 
 Im nächsten Kapitel konzentrieren wir uns auf die Automatisierung von Plattformen. Neben der Infrastruktur ist die Automatisierung ein wichtiger Bestandteil einer Plattform und kann, wie Sie später sehen werden, langfristig zu einem Engpass und Kostentreiber werden. Sie lernen, wie Sie einen geeigneten Release-Prozess entwerfen, wie Sie ihn in CI/CD und GitOps implementieren und wie Sie diese Kombination für den Lebenszyklus der Plattform-Artefakte nutzen können. Wir zeigen Ihnen auch, wie Sie diesen Prozess effektiv beobachten können. Weiter[Chap5](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap5/Platform%20Engineering_5%20de.md)
 
-Weiterführende Literatur
+# Weiterführende Literatur
 
 - \[1\] Objekte in Kubernetes: [https://kubernetes.io/docs/concepts/overview/working-with-objects/](https://kubernetes.io/docs/concepts/overview/working-with-objects/%0A)
 - \[2\] Karpenter: [https://karpenter.sh/](https://karpenter.sh/%0A)
