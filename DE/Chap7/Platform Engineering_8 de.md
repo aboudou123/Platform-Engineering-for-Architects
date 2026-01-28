@@ -13,7 +13,7 @@ Insgesamt konzentrieren wir uns auf ein effektives Kostenmanagement und darauf, 
 - Betrachtung von Strategien zur Kostenoptimierung
 - Autoscaling, Cold Storage und andere Tricks zur Kostenoptimierung
 
-# Die Kostenlandschaft verstehen – ist die Cloud der richtige Weg?#
+# Die Kostenlandschaft verstehen – ist die Cloud der richtige Weg?
 
 Das Kostenmanagement im Bereich Platform Engineering beginnt mit einem guten Verständnis der Kostentreiber innerhalb Ihrer Infrastruktur und der Frage, wie bestimmte Plattformkomponenten diese beeinflussen können. Kostentreiber sind auch Elemente, die sich direkt auf die Gesamtkosten Ihres Plattformbetriebs auswirken. Wenn Sie diese verstehen und später identifizieren, können Sie fundierte Entscheidungen treffen, um kostenorientierte und optimierte Plattformen bereitzustellen.
 
@@ -36,7 +36,7 @@ Sicher – Basecamp oder HEY sind nicht mit einem Unternehmen vergleichbar, oder
 
 Die Cloud hat oft einen großen Vorteil: Es gibt fast nichts, was Sie daran hindert, sofort loszulegen. Sie finden unzählige Vorlagen, Blaupausen und Beispiele. Und innerhalb kurzer Zeit sind Sie startklar und haben Ihre erste Umgebung als Plattform zur Verfügung.
 
-**Wenn wir uns für die Cloud entscheiden, müssen wir ihre versteckten Kosten berücksichtigen**
+# Wenn wir uns für die Cloud entscheiden, müssen wir ihre versteckten Kosten berücksichtigen
 
 Da wir uns in diesem Buch in erster Linie auf die Cloud konzentrieren, gehen wir vorerst davon aus, dass diejenigen, die sich für Bare-Metal-Lösungen entscheiden, von Natur aus ein höheres Kostenbewusstsein und eine höhere Sensibilität haben.
 
@@ -54,13 +54,20 @@ Ideale Cloud-Projekte – und wir müssen hier betonen, dass es sich um Dinge mi
 
 Zusammenfassend lässt sich sagen, dass sich die meisten Dienste in Bezug auf die Kosten gegen Sie wenden können. Als Plattformingenieure müssen wir in der Lage sein, diese Elemente zu kontrollieren und Leitplanken und Beschränkungen zu schaffen. Um dies zu ermöglichen, brauchen wir Transparenz bei den Kosten.
 
-Wo findet man Transparenz?
+# Wo findet man Transparenz?
 
 Mittlerweile gibt es eine Vielzahl von Möglichkeiten, Informationen darüber abzurufen, wo wir Geld ausgeben und ob dies anhand von Kennzahlen wie der Auslastung als Verschwendung angesehen wird. Alle Cloud-Anbieter bieten die Möglichkeit, Kosten zu untersuchen (und aufzuschlüsseln), aber aufgrund der Fokussierung auf die Infrastruktur fehlen Details, insbesondere auf der Anwendungsebene. Der folgende Screenshot aus dem AWS Cost Explorer zeigt eine Verbrauchskurve für verschiedene Diensttypen. Wir müssten nun Filter anwenden, um mehr Einblicke zu gewinnen und die Ursachen der Kosten zu analysieren:
+
+
+<img width="1041" height="443" alt="image" src="https://github.com/user-attachments/assets/42c7c3ef-d536-43c5-9f51-5c7761707872" />
 
 Abbildung 8.1: AWS Cost Explorer
 
 Kommerzielle Lösungen wie Apptio Cloudability können Kosten aus vielen verschiedenen Konten, Cloud-Anbietern und Umgebungen in einem einzigen Tool erfassen. Sie wenden die FinOps-Logik auf die gegebenen Daten an und verfügen über vordefinierte Dashboards wie das Dashboard für Stückkosten und Einsparungen aus dem folgenden Screenshot:
+
+
+<img width="1012" height="576" alt="image" src="https://github.com/user-attachments/assets/5fa29606-14ff-4bc0-aa35-4a409ab157c6" />
+
 
 Abbildung 8.2: Detailliertes Dashboard von Apptio Cloudability zu Stückkosten
 
@@ -68,11 +75,14 @@ Microsoft definiert Stückkosten wie folgt: „Die Messung von Stückkosten bezi
 
 In unserer Plattform- und Open-Source-Welt finden wir auch Lösungen für mehr Transparenz, wie Kubecost (mit kommerziellen Tarifen) und OpenCost. Beide können Kosten innerhalb eines Clusters und in Kombination mit Cloud-Anbieter-Ressourcen zuweisen. Leider mangelt es beiden an guten Analysefunktionen. Aus diesem Grund sehen wir oft selbst implementierte Lösungen in Kombination mit Business-Intelligence-Tools (**BI**) oder Prometheus- und Grafana-Implementierungen, die mit einigen Kostendaten angereichert sind. Wie gut diese Lösungen sind, hängt von der investierten Zeit und dem investierten Geld ab.
 
-FinOps und Kostenmanagement
+# FinOps und Kostenmanagement
 
 In den letzten Jahren hat FinOps an Popularität gewonnen und versucht, sich vom klassischen Kostenmanagement abzuheben. Kostenmanagement wird oft als kurzfristige, isolierte, zweckgebundene Aktivität beschrieben, die schnelle Kosteneinsparungen erzielen soll. Wenn Sie als Plattformteam kostenbewusst handeln und Ihre Kosten aktiv verwalten, ist dies auch eine nachhaltige und langfristige Lösung. Der Erfolg von FinOps liegt jedoch in seinem ganzheitlichen Ansatz, der Beschaffungsabteilungen, **Geschäftsbereiche** (**BUs**) und Finanzabteilungen einbezieht und klar darauf abzielt, ein organisatorisches Verständnis für Cloud-Kosten und deren Dynamik zu schaffen.
 
 Die folgende Übersicht über das FinOps-Framework zeigt, dass es einen ähnlichen Ansatz verfolgt wie das, was ein Plattform-Engineering-Team tut. Wir sehen Prinzipien, die mit Ihren Prinzipien in Einklang gebracht werden müssen, Fähigkeiten, die integriert und aktiviert werden müssen und die Ihren Input erfordern, sowie Personas – Rollen wie die des Plattform-Ingenieurs, mit dem sie zusammenarbeiten \[2\]:
+
+
+<img width="1024" height="539" alt="image" src="https://github.com/user-attachments/assets/a8dfc17e-bb5d-4ade-8861-d3656dda5451" />
 
 Abbildung 8.3: FinOps-Framework der FinOps Foundation
 
@@ -80,13 +90,13 @@ Als Plattformteam sollten Sie mit FinOps-Teams zusammenarbeiten und deren Einflu
 
 Im folgenden Abschnitt werden wir diskutieren, wie eine Tagging-Strategie implementiert werden kann. Tags sind eine einfache Lösung, um zusätzliche Informationen zu Cloud- und Kubernetes-Ressourcen bereitzustellen und eine gewisse Transparenz zu schaffen. Außerdem benötigen viele Kostenmanagement- und FinOps-Tools Tags, um bessere Einblicke zu liefern.
 
-Implementierung einer Tagging-Strategie zur Aufdeckung versteckter Kosten
+# Implementierung einer Tagging-Strategie zur Aufdeckung versteckter Kosten
 
 Tags und Labels sind für Sie wahrscheinlich nichts Neues, da sie in einer Vielzahl von Tools, Public Clouds und Kubernetes verwendet werden. Wir verwenden das Wort „Tag” auch für Labels, aber wenn wir das Wort „Labels” verwenden, schreiben wir eigentlich ausschließlich über Kubernetes-Labels.
 
 Das Anwenden und Verwenden von Tags kann zu einer Kunst für sich werden. Wenn es zu viele Tags gibt, kann unklar werden, welche Informationen sie mit dem Dienst verknüpfen sollen. Auch das Fehlen von Tags ist natürlich nicht hilfreich. In Unternehmen mit vielen verschiedenen Geschäftsbereichen und Abteilungen sowie komplexen Release-Mechanismen können Tags überladen oder zu einer bloßen Ansammlung von Abkürzungen werden. Der Punkt ist, dass wir Tags benötigen, um Transparenz darüber zu gewinnen, zu welchen Diensten sie gehören, möglicherweise um verschiedene Service-Levels oder Sicherheitsklassen anzuzeigen, und um letztendlich eine Verknüpfung zwischen diesen Diensten und Kostenstrukturen sowie der Ressourcennutzung herzustellen. Tags ermöglichen also eine genauere Analyse der kostenrelevanten Ressourcen und der Kostenursachen.
 
-Tags für einen bestimmten Zweck verwenden
+# Tags für einen bestimmten Zweck verwenden
 
 Tags können auf verschiedene Zielgruppen und Benutzer ausgerichtet sein. Je nachdem, um welche Subdomain es sich handelt, sollten sie organisatorische, betriebliche, sicherheitsrelevante oder sogar architektonische Informationen enthalten. Wir können auch über Tags nachdenken, die für uns als Plattformingenieure potenziell hilfreich sind.
 
@@ -102,7 +112,7 @@ Einige Quellen weisen auch auf die Verwendung von Tags für die Zugriffsverwaltu
 
 Daher ist es wichtig, wie bei unserer Plattform, den Zweck zu definieren, warum wir Tags verwenden wollen. Tags nach Belieben zu verwenden und so viele wie möglich zu setzen, ist zwar besser als gar nichts, kann aber in Zukunft zu Problemen führen, wenn unklar ist, ob ein Tag nun kritisch ist oder nicht.
 
-Einschränkungen bei Tags und Labels
+# Einschränkungen bei Tags und Labels
 
 Leider gibt es zwei häufig auftretende Probleme:
 
@@ -134,7 +144,7 @@ Der Wert hat 112 Zeichen und enthält /, um die hierarchischen Schritte darzuste
 
 Darüber hinaus gibt es weitere Einschränkungen, wie beispielsweise die maximale Anzahl von Tags pro Konto oder Abonnement.
 
-Festlegen einer Tagging-Strategie
+# Festlegen einer Tagging-Strategie
 
 Wie bereits erläutert, können Tags viele verschiedene Zwecke haben; in erster Linie müssen wir ein Gleichgewicht zwischen technischen Tags und geschäftlichen Tags finden. Geschäftliche Tags lassen sich in organisatorische und kostenbezogene Tags unterteilen. Letztendlich überschneiden sich die Informationen vieler Tags. Um den richtigen Ansatz zu finden, ist es daher oft sinnvoll, einige grundlegende Regeln und Grenzen für die Definition festzulegen. Im zweiten Schritt müssen Sie sich zwischen Betrieb, Plattform und Entwicklung abstimmen, um die richtigen Tags aus technischer Sicht zu finden, bevor Sie mit der Festlegung der organisatorischen Tags fortfahren. Diese Vorgehensweise ist sinnvoll, da die für den Betrieb erforderlichen Tags oft auch Informationen über die Organisation enthalten.
 
@@ -177,7 +187,7 @@ Der letzte Schritt besteht nun darin, mit diesen Grundregeln einen Tag-Katalog a
 
 Tabelle 8.2: Beispiel für einen Tag-Katalog
 
-Automatisierung der Tag-Vergabe
+# Automatisierung der Tag-Vergabe
 
 Es wäre unmöglich, alle Ressourcen manuell zu taggen, insbesondere auf einem IDP mit vielen beweglichen Komponenten. Bestimmte Tools können uns dabei helfen, Ressourcen bei ihrer Erstellung automatisch zu taggen oder sie sogar nachträglich zu „patchen”. Wie wir bereits gesehen haben, müssen wir auf der Plattform zwischen der Infrastruktur, auf der die Plattform läuft, und der Benutzerperspektive der Workloads unterscheiden, die sie ausführen oder vom Cluster aus verwalten.
 
@@ -205,7 +215,7 @@ Environment = „Production”
 
 Owner = „Ops“ } } }
 
-KopierenErklären
+### KopierenErklären
 
 Praktisch alle IaC-Lösungen bieten diesen Ansatz und können an jede Art von Infrastruktur angepasst werden, egal ob Cloud oder On-Prem.
 
@@ -229,11 +239,11 @@ Labels:
 
 &nbsp;  Herkunft: {{.Release.Service}}
 
-KopierenErklären
+### KopierenErklären
 
 Eine Stärke von Helm ist, dass wir dies mit einer einfachen if-Anweisung kombinieren können. Dadurch können wir einen vordefinierten Satz von Informationen übergeben, je nachdem, wo die Bereitstellung erfolgen soll, oder basierend auf einem anderen Auslöser.
 
-Hinweis
+### Hinweis
 
 Verwenden Sie vordefinierte Labels in Ihren Backstage-Vorlagen, um Ihre Benutzer zu zwingen, ein Mindestmaß an Labels zu definieren.
 
@@ -283,11 +293,11 @@ Regeln:
 
 &nbsp;          foo: bar
 
-CopyExplain
+### CopyExplain
 
 Wir können diese Informationen sehr detailliert auswählen und patchen, und sie können bei Bedarf jederzeit später aktualisiert werden.
 
-Konsolidierte versus getrennte Kosten- und Abrechnungsberichte
+# Konsolidierte versus getrennte Kosten- und Abrechnungsberichte
 
 In vielen Unternehmen besteht Bedarf an konsolidierten Kosten- und Abrechnungsberichten. Für das Unternehmen ist dies zwar auf einer höheren Ebene der schnellste Weg, um die Ausgaben für die Infrastruktur zu verstehen, aber es erfordert auch viele Tags, um eine korrekte Aufteilung und Detailgenauigkeit zu gewährleisten. Wenn Unternehmen zu groß werden und die Anzahl der geschäftlichen Tags die der technischen Tags übersteigt, ist dies ein klares Zeichen dafür, dass etwas schiefgelaufen ist. An diesem Punkt radikal zu sein, wird es dann zu einem Anti-Muster, konsolidierte Kosten- und Abrechnungsberichte zu erstellen. Aber was können wir dann tun? Unternehmen arbeiten beispielsweise häufig mit alphanumerischen Codes, um Abteilungen zu identifizieren. Anstelle einer Abteilung namens „Finanzen und Buchhaltung” gibt es dann beispielsweise „B-2-FA-4”. Ein solcher Code ist die perfekte Grundlage, um viele andere organisatorische oder geschäftliche Tags zu eliminieren und sie in eine Zuordnungstabelle oder Datenbank einzutragen, falls Sie diese Zuordnung programmgesteuert an anderer Stelle vornehmen möchten. Weitere zu berücksichtigende Aspekte sind beispielsweise die Staging-Umgebungen und der Cluster. In den meisten Fällen sind Entwicklungs-, Integrations- und Produktionssysteme eigenständig. Das bedeutet, wenn Ihre Anwendung auf dem Manhattan-Cluster läuft, was mit prod-1234-eu übersetzt werden könnte, dann brauche ich kein weiteres Tag, das stage=production oder region=eu angibt. Um es klar zu sagen: Sie sollten sich darauf beschränken, nicht zu viele Informationen in einen einzigen Wert einzufügen.
 
@@ -295,23 +305,23 @@ Allerdings gibt es in dieser Geschichte ein großes Aber, das uns zum Anfang des
 
 Tags allein reichen nicht aus; sie sind zwar ein wichtiger Bestandteil der Kostenoptimierung, aber welche Optimierungen nehmen Sie vor? Im nächsten Abschnitt werden wir uns mit allgemeinen Ansätzen für Optimierungsstrategien befassen, die nicht nur die richtige Dimensionierung und Reduzierung der Infrastruktur umfassen.
 
-Betrachtung von Strategien zur Kostenoptimierung
+# Betrachtung von Strategien zur Kostenoptimierung
 
 Der schnellste Ansatz zur Senkung der Cloud- und Plattformkosten besteht darin, nicht benötigte Ressourcen abzuschalten. Das größte Problem dabei ist, dass alle an diesem Prozess Beteiligten möglicherweise Gründe haben, warum sie die Infrastruktur in ihrer jetzigen Form benötigen. Ich möchte jedoch Ihre Sichtweise auf dieses Thema von nun an ändern: Kostenoptimierung ist nichts, was wir nachträglich einführen sollten. Hier ist ein weiterer Grundsatz, den Sie berücksichtigen sollten: Seien Sie kostenbewusst und effektiv und berücksichtigen Sie dies bei der Gestaltung der Plattform.
 
-Hinweis
+### Hinweis
 
 Je mehr Potenzial zur Kostenoptimierung in einer Plattform steckt, desto schlechter haben wir unsere Arbeit als Plattformingenieure und -architekten gemacht.
 
 Wir können das Potenzial in jedem Teil unserer Plattform nutzen. Allerdings könnte man darüber ein ganzes Buch schreiben, um alle Aspekte abzudecken. Daher werden wir Prinzipien behandeln, die auf alle Komponenten innerhalb der Plattform anwendbar sind.
 
-Prozesse rationalisieren
+# Prozesse rationalisieren
 
 Prozesse, sowohl geschäftliche als auch technische, können höhere Kosten verursachen. Ich werde Ihnen ein Beispiel für ein Muster/Anti-Muster geben, das zu unnötigen Kosten führt. Die Kubernetes-Version ist in drei Hauptversionen unterteilt, und alle paar Wochen dazwischen erhalten Sie Patches, Bugfixes und Sicherheitspatches. Das Kubernetes-Release-Team hat einen großen Teil des Release-Prozesses automatisiert, indem es nächtliche Builds durchführt und ständig mehrere tausend Tests auf der Kubernetes-Infrastruktur ausführt. Als dieser Ansatz eingeführt wurde, betrachtete die Community ihn als den Heiligen Gral der Top-Tech-Unternehmen. Plötzlich wollte jeder nächtliche Builds seiner Container haben, wobei oft der Testteil übersprungen wurde, da dieser zu aufwendig war.
 
 Der Nachteil dieses Ansatzes ist, dass die meisten nächtlichen Builds nie bereitgestellt werden. Außerdem verhindert er, dass Build-Server nachts heruntergefahren werden können. Die Container-Registry ist ständig ausgelastet, einschließlich CVE-Scans, und die Unternehmenscontainer sind in der Regel eher schwer, was die Übertragungs- und Speicherkosten erhöht. Was die meisten Unternehmen nicht verstanden haben, ist, dass Kubernetes ein globales Projekt ist. Außerdem gibt es, wenn es für jemanden Nacht ist, irgendwo anders Menschen, die wach sind und an neuen Funktionen arbeiten und diese in das Kubernetes-Repository „ “ übertragen. Letztendlich ist Kubernetes eines der größten Open-Source-Projekte, initiiert von Google, dem größten digital-nativen Unternehmen.
 
-Denken Sie darüber nach!
+# Denken Sie darüber nach!
 
 Nur weil alle anderen es tun, sollten Sie zweimal darüber nachdenken, ob es wirklich sinnvoll ist!
 
@@ -329,7 +339,7 @@ Das Schöne an Plattformen ist, dass die meisten Prozesse in CI/CD-Pipelines und
 
 Prozesse in einer technischen Welt klingen oft wie eine Reihe von Skripten, die zusammenlaufen. Ein idealer Zustand ist ein Cloud-nativer Ansatz, der die standardisierte API von Kubernetes, Controller-Funktionen und Ressourcendefinitionen nutzt. Er entkoppelt verschiedene Funktionen und erleichtert mit diesen Prozessen deren Optimierung. Außerdem erschwert er die Einführung neuer, historisch gewachsener Prozessabfälle.
 
-Die besten Angebote zu den besten Preisen finden
+# Die besten Angebote zu den besten Preisen finden
 
 Eine einfache Möglichkeit zur Kostenoptimierung besteht darin, die Listenpreise zu vergleichen und die günstigste Option zu wählen. Günstig ist dabei relativ, da Sie möglicherweise die Leistung, den Durchsatz der Web , die verfügbaren IP-Adressen usw. einschränken. Kosten und Auslastung sind gute Indikatoren, müssen jedoch hinsichtlich ihrer Auswirkungen auf der zweiten Ebene bewertet werden. Wenn Sie beispielsweise die Instanzgröße reduzieren, kann dies zu einer Verringerung des Durchsatzes und der Leistung führen, sodass Sie eine weitere Instanz einführen müssen. Auf diese Weise nutzen Sie möglicherweise zwei Instanzen zu 80 % bis 90 %, zahlen aber dennoch genauso viel oder sogar mehr, als wenn Sie eine größere Instanz mit geringerer Auslastung betreiben würden.
 
@@ -339,7 +349,7 @@ Das sind sehr offensichtliche Schritte. Finden und identifizieren Sie die richti
 
 Es gibt viele Tools wie Cloudability oder Flexera, die Ihnen helfen können, eine günstigere Option zu finden, und einige empfehlen sogar eine Änderung der Architektur, um Kosten zu senken. Diese Tools sind für den Einstieg äußerst hilfreich, aber sie sind oft auch mit hohen Kosten verbunden, und das darin enthaltene Wissen können Sie sich auch durch eigene Recherchen oder die Teilnahme an kostenlosen Kursen zur Kostenoptimierung aneignen.
 
-Entwerfen für höchste Auslastung und geringste Anforderungen
+# Entwerfen für höchste Auslastung und geringste Anforderungen
 
 Wenn Plattformingenieure die Infrastruktur reduzieren, hat dies höchstwahrscheinlich Auswirkungen auf die Benutzererfahrung. Je flexibler Ihre Plattform wird, desto besser kann sie sich an die jeweilige Situation anpassen. Sie können aktive Komponenten einführen, die das System entrümpeln und verkleinern, wo dies möglich ist, und Ihre Benutzer über die Möglichkeiten informieren, die Arbeitslast nach Bedarf zu erhöhen oder zu verringern. Die Abstimmung der Auslastung mit der Rechnung kann die Benutzer zu einem verantwortungsvollen Umgang motivieren.
 
@@ -351,17 +361,17 @@ Im letzten Teil dieses Kapitels sehen wir uns einige konkrete Beispiele für Ska
 
 Autoscaling, Cold Storage und andere Tricks zur Kostenoptimierung
 
-In [Kapitel 4](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/4), im Abschnitt „Automatische Skalierung von Clustern und Workloads”, haben wir bereits einen wichtigen Vorteil und eine Kernfunktion von Kubernetes besprochen. K8s verfügt über verschiedene integrierte Tools und Mechanismen zur Skalierung, z. B. die Konfiguration von ReplicaSets (die Anzahl der gewünschten Instanzen pro Workload) oder die Verwendung von Observability-Daten zur automatisierten Skalierungsentscheidung mit **Horizontal Pod Autoscaler** (**HPA**), **Vertical Pod Autoscaler** (**VPA**) oder **Kubernetes Event Driven Autoscaling** (**KEDA**). Es gibt ein großartiges kostenloses Tutorial, das alle verschiedenen Optionen zur automatischen Skalierung auf Kubernetes durchgeht und von Is It Observable bereitgestellt wird. Hier ist der Link zum YouTube-Tutorial, das auch Links zum GitHub-Tutorial enthält: https://www.youtube.com/watch?v=qMP6tbKioLI.
+In [Kapitel 4](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap4/Platform%20Engineering_4%20de.md), im Abschnitt „Automatische Skalierung von Clustern und Workloads”, haben wir bereits einen wichtigen Vorteil und eine Kernfunktion von Kubernetes besprochen. K8s verfügt über verschiedene integrierte Tools und Mechanismen zur Skalierung, z. B. die Konfiguration von ReplicaSets (die Anzahl der gewünschten Instanzen pro Workload) oder die Verwendung von Observability-Daten zur automatisierten Skalierungsentscheidung mit **Horizontal Pod Autoscaler** (**HPA**), **Vertical Pod Autoscaler** (**VPA**) oder **Kubernetes Event Driven Autoscaling** (**KEDA**). Es gibt ein großartiges kostenloses Tutorial, das alle verschiedenen Optionen zur automatischen Skalierung auf Kubernetes durchgeht und von Is It Observable bereitgestellt wird. Hier ist der Link zum YouTube-Tutorial, das auch Links zum GitHub-Tutorial enthält: https://www.youtube.com/watch?v=qMP6tbKioLI.
 
 Der Hauptanwendungsfall der automatischen Skalierung besteht darin, sicherzustellen, dass Workloads über genügend Rechenleistung, Arbeitsspeicher und Speicherplatz verfügen, um bestimmte Verfügbarkeitsziele zu erreichen. Für unser Unternehmen Financial One ACME könnte dies bedeuten, dass es die automatische Skalierung nutzt, um sicherzustellen, dass sein Backend für Finanztransaktionen 1.000 gleichzeitige Transaktionen innerhalb einer Antwortzeit von 100 ms verarbeiten kann. Autoscaling kann uns zwar dabei helfen, unsere Verfügbarkeitsziele zu erreichen, ist jedoch auch mit Kosten verbunden, da für die Skalierung von Ressourcen jemand für die zusätzlichen Rechen- (CPU) oder Speicherressourcen aufkommen muss. Unsachgemäßes Autoscaling – zu starkes Hoch , kein Herunterskalieren oder Skalieren zum falschen Zeitpunkt – kann ebenfalls zu ungeplanten Kostenexplosionen führen, ohne dass das eigentliche Ziel des Autoscalings erreicht wird!
 
 Wir wollen eine richtige automatische Skalierung. Wenn wir es richtig machen, können wir nicht nur unsere geschäftlichen und technischen Ziele erreichen, sondern auch die automatische Skalierung nutzen, um die Kosten unter Kontrolle zu halten. Werfen wir einen Blick auf einige Themen zur automatischen Skalierung, die Plattformingenieure kennen sollten, und darauf, was wir noch tun können, um die Kosten zu optimieren. Beachten Sie, dass einige der Praktiken, die wir in den folgenden Abschnitten besprechen werden, auch für jede Art von Workload gelten: ob Cloud oder nicht.
 
-Viele Facetten der automatischen Skalierung
+# Viele Facetten der automatischen Skalierung
 
 Die Skalierbarkeit der Cloud und von Kubernetes als Kernplattform ist eine großartige Fähigkeit, über die Plattformingenieure verfügen sollten. Es gibt jedoch viele verschiedene Möglichkeiten der Skalierung. Es gibt verschiedene Auslösepunkte, die eine Skalierung des Systems bewirken können, und die Skalierung darf nicht nur in eine Richtung (in der Regel nach oben) erfolgen, sondern wir müssen auch eine Verkleinerung der Systeme in Betracht ziehen – sogar bis auf Null, um keine Ressourcen zu verschwenden!
 
-Skalierung nach oben – nicht nur bei CPU und Arbeitsspeicher
+# Skalierung nach oben – nicht nur bei CPU und Arbeitsspeicher
 
 Die meisten Ingenieure sind mit der Skalierung auf Basis von CPU und Speicher vertraut. Die meisten Beispiele, die Sie für HPA finden, skalieren die Replikate von Pods in der Regel auf Basis einer bestimmten durchschnittlichen CPU-Auslastung dieses Pods. Das ist die gängigste Methode, die wir auch als reaktive Skalierung bezeichnen, da wir auf Basis einer erreichten Schwelle skalieren.
 
@@ -371,19 +381,19 @@ Für Dienste, die für einen bestimmten Durchsatz optimiert sind, wäre es beisp
 
 Die wichtigste Erkenntnis ist, dass nicht jede Workload CPU- oder speichergebunden ist und Kubernetes Sie nicht darauf beschränkt, Ihre Skalierungsregeln nur auf der Grundlage dieser beiden Schlüsselattribute zu definieren. Die Definition von Skalierungsregeln auf der Grundlage dessen, was Ihre Workload tatsächlich effizienter ausführen lässt, führt auch zu einer effizienteren Ressourcennutzung, was wiederum zu einem System führt, das auch hinsichtlich der Kosten optimiert ist!
 
-Prädiktive versus reaktive Skalierung
+# Prädiktive versus reaktive Skalierung
 
 Oft wird angenommen, dass die automatische Skalierung sofort funktioniert. Das ist jedoch nicht der Fall! Denken Sie an das Finanzunternehmen ACME. Wenn am Zahltag alle ihren neuen Kontostand überprüfen möchten, kann dies innerhalb der ersten paar Stunden dieses Tages zu einem zehnfachen Anstieg des regulären Datenverkehrs führen. Der Cloud-Anbieter kann jedoch nicht garantieren, dass all diese Ressourcen sofort verfügbar sind, da Sie mit vielen anderen Unternehmen konkurrieren, die ebenfalls versuchen, gleichzeitig Cloud-Ressourcen anzufordern. Hinzu kommt, dass die Arbeitslast selbst nicht in der Lage ist, eingehende Anfragen sofort zu verarbeiten, da viele dieser Pods eine bestimmte Startzeit benötigen, bis sie einsatzbereit sind.
 
 Dieses Problem kann durch vorausschauende Skalierung gelöst werden. Im Vergleich zur reaktiven Skalierung – also der Skalierung, wenn wir einen bestimmten Schwellenwert erreichen, wie im vorherigen Abschnitt erläutert – untersucht die vorausschauende Skalierung eine potenzielle zukünftige Situation und reagiert darauf, bevor ein Schwellenwert erreicht wird. Prädiktiv bedeutet nicht, dass wir eine magische Kristallkugel brauchen, um die Zukunft vorherzusagen. Es kann so einfach sein, wie die Skalierung ein paar Stunden vor dem erwarteten Anstieg des Datenverkehrs zu starten, beispielsweise kurz vor dem Zahltag oder vor einer Marketingkampagne, die zu einem bestimmten Zeitpunkt beginnt.
 
-Andere Vorhersagen können dynamischer sein:
+# Andere Vorhersagen können dynamischer sein:
 
 - **Saisonalität**: Eine Prognose könnte auf der Saisonalität basieren, indem historische Daten herangezogen werden. E-Commerce ist ein gutes Beispiel dafür, wo es im Laufe des Jahres bestimmte Termine gibt, an denen es zu einem Anstieg der Auslastung kommt, wie beispielsweise Black Friday oder Cyber Monday. Diese Spitzen sind leicht vorherzusagen!
 - **Verwandte Datenquellen**: Eine weitere Möglichkeit besteht darin, andere Datenquellen zu untersuchen. Versicherungsunternehmen werten häufig Daten zu Unwettern aus. Wenn Stürme vorhergesagt werden und eine gewisse Wahrscheinlichkeit besteht, dass diese Stürme Schäden verursachen, ist es sinnvoll, die Dienste, die diese Kunden zur Einreichung von Versicherungsansprüchen nutzen, vorausschauend zu skalieren. In diesem speziellen Szenario können Sie sogar bestimmte Regionen skalieren, die dem Sturm am nächsten liegen.
 - **Systemabhängigkeiten**: In komplexen Systemen besteht auch die Möglichkeit, abhängige Komponenten auf der Grundlage des Auslastungsverhaltens anderer Teile des Systems zu skalieren. Nehmen wir das Gastgewerbe als Beispiel. Wenn wir feststellen, dass mehr Menschen nach Flügen suchen, weil sie ein langes Wochenende verreisen möchten, können wir auch Backend-Dienste vorausschauend skalieren, die Empfehlungen für Hotels, Autos oder zusätzliche Veranstaltungen am Reiseziel geben.
 
-Anwendungsfall – Vorausschauende Speicherskalierung zur Optimierung von Kosten und Verfügbarkeit
+# Anwendungsfall – Vorausschauende Speicherskalierung zur Optimierung von Kosten und Verfügbarkeit
 
 Nachdem wir nun verschiedene Ansätze zur prädiktiven Skalierung kennengelernt haben, wenden wir diese auf ein sehr kostspieliges Beispiel an: Speicher!
 
@@ -391,11 +401,16 @@ Unsere digitalen Systeme generieren mehr Daten als je zuvor, und es wird davon a
 
 Der folgende Screenshot veranschaulicht, wie dies funktioniert. Er zeigt die Metrik „Prozentualer freier Speicherplatz auf der Festplatte“ im Zeitverlauf. Je mehr Daten wir schreiben, desto weniger freier Speicherplatz steht zur Verfügung. Anstatt unseren Cloud-Speicher bei Erreichen eines bestimmten festen Schwellenwerts zu skalieren, können wir ein prädiktives Modell verwenden und skalieren, wenn wir vorhersagen, dass wir innerhalb des für die Skalierung erforderlichen Zeitraums einen bestimmten niedrigen Schwellenwert erreichen werden. So stellen wir sicher, dass wir immer über genügend freien Speicherplatz verfügen, ohne zu viel zu bezahlen:
 
+
+<img width="1024" height="473" alt="image" src="https://github.com/user-attachments/assets/c0c2d8cc-700e-449e-aef7-5538f3aac12f" />
+
+
 Abbildung 8.4: Vorausschauende Skalierung des Cloud-Speichers zur Optimierung von Kosten und Verfügbarkeit
 
 Das vorstehende Beispiel stammt aus einem realen Anwendungsfall, bei dem durch die kontinuierliche Anpassung der Speichergröße mithilfe eines prädiktiven Skalierungsansatzes erhebliche Kosteneinsparungen erzielt wurden!
 
-Skalierung auf Null – Abschalten, wenn nicht benötigt
+
+# Skalierung auf Null – Abschalten, wenn nicht benötigt
 
 Während viele der von uns betriebenen Systeme rund um die Uhr verfügbar sein müssen, gilt diese Anforderung für einige Systeme nicht. Dabei kann es sich um Systeme handeln, die nur von Mitarbeitern während der regulären Geschäftszeiten genutzt werden, oder um Systeme, die nur zu bestimmten Tages-, Monats- oder Jahreszeiten für bestimmte Aufgaben benötigt werden. Wir alle kennen sicherlich Systeme, die oft ungenutzt sind, aber dennoch wertvolle Ressourcen verbrauchen und somit Kosten verursachen, obwohl sie derzeit nicht benötigt werden.
 
@@ -405,7 +420,7 @@ In Kubernetes haben wir ebenfalls die Möglichkeit, Workloads auf Null zu skalie
 
 Eine Frage, die wir noch beantworten müssen, lautet: Welche Workloads können auf Null skaliert werden und für wie lange? Diese Daten erhalten wir von den Eigentümern dieser Workloads, indem wir angeben, wann und wie lange sie diese benötigen. Ein anderer Ansatz besteht darin, einfach Observability-Daten zu verwenden, um zu sehen, welche Workloads zu welchen Tageszeiten genutzt werden, und auf dieser Grundlage eine kube-green-Sleep-Konfiguration zu erstellen, um Workloads auf Null zu skalieren. Ein Beispiel für diese Implementierung finden Sie im Workshop „The Sustainability” von Henrik Rexed: https://github.com/henrikrexed/Sustainability-workshop.
 
-Von der Skalierung von Workloads zu Clustern
+# Von der Skalierung von Workloads zu Clustern
 
 Bisher haben wir viel über die richtige Dimensionierung oder Skalierung von Workloads gesprochen, um sicherzustellen, dass wir über genügend Ressourcen verfügen, um unsere Geschäftsziele zu erreichen, aber auch, um keine Überkapazitäten zu schaffen, damit wir die Kosten optimieren können.
 
@@ -419,17 +434,20 @@ Neben Tools wie kube-green (bereits erwähnt) ist Karpenter eine hervorragende O
 
 Als Plattformingenieure ist es wichtig, alle verschiedenen Skalierungsoptionen zu kennen. Viele davon können so eingerichtet werden, dass Workloads und Cluster richtig dimensioniert werden. Für einige ist es wichtig, eng mit den Engineering-Teams und den Workload-Eigentümern zusammenzuarbeiten, um Skalierungsstrategien zu definieren, die für diese spezifischen Workloads sinnvoll sind. Insgesamt ist die automatische Skalierung – egal ob es sich um Rechenleistung, Speicher oder Speicherplatz handelt – einer der wichtigsten Faktoren für eine kosteneffiziente Plattformentwicklung!
 
-Kostenbewusstes Engineering
+# Kostenbewusstes Engineering
 
 Nachdem wir nun gelernt haben, was wir in unsere Plattformen integrieren können, um die richtige Größe zu finden und Kosten durch automatische Skalierung zu sparen, müssen wir auch darüber sprechen, was wir tun können, damit Engineering-Teams von Anfang an kostenbewusster arbeiten. Die beste Kostenoptimierung beginnt damit, dass sich jeder in einem Unternehmen der Kostenauswirkungen seiner Handlungen bewusst ist und daher von vornherein kosteneffizientere Systeme entwickelt und entwirft. Die Berichterstattung über Kosten auf der Grundlage von Tags ist eine Möglichkeit, Teams für ihre Kosten zu sensibilisieren. Diese Strategie wurde bereits weiter oben in diesem Kapitel erläutert.
 
 Schauen wir uns einige zusätzliche Optionen an, die unserer Meinung nach jeder in Betracht ziehen sollte, da sie zu einem kostenbewussten Engineering führen können!
 
-Der Ansatz „Nur das, was Sie benötigen”
+# Der Ansatz „Nur das, was Sie benötigen”
 
 In den Anfängen der Cloud gewährten viele Unternehmen ihren Engineering-Teams uneingeschränkten Zugriff auf Cloud-Portale. Dieser einfache „Self-Service” steigerte die Produktivität, da jeder problemlos neue VMs einrichten, neue Speicherdienste erstellen oder sogar Kubernetes-Cluster erstellen konnte. Dieser „Wildwest”-Ansatz führte jedoch bei vielen Unternehmen zu Kostenexplosionen, da die Benutzer einfach neue Dienste einrichteten, ohne über grundlegende Fragen nachzudenken, wie z. B.: Wie groß muss meine virtuelle Umgebung wirklich sein und wie lange brauche ich sie?
 
 Eine der Organisationen, mit denen die Autoren zusammengearbeitet haben, ist ein Finanzunternehmen. Anstatt allen Mitarbeitern uneingeschränkten Zugriff auf ihre Cloud-Portale zu gewähren, haben sie ein eigenes Self-Service-Portal eingerichtet, über das die Entwicklerteams neue VMs, Datenbanken, Cluster usw. erstellen können. Als Teil dieses Self-Service-Portals musste das Team definieren, für welche Anwendung und für welche Umgebung die Ressource benötigt wurde und wie lange diese Maschine benötigt wurde, beispielsweise nur während der Geschäftszeiten. Das Ergebnis war eine Kostenreduzierung von 60 %, da die bereitgestellten Dienste automatisch abgeschaltet wurden, wenn sie nicht mehr benötigt wurden. Der folgende Screenshot zeigt, wie Ingenieure Ressourcen für den Zeitraum anfordern, in dem sie diese benötigen. Auf der rechten Seite sehen Sie außerdem die detaillierten Berichte und das Gesamtoptimierungsziel, das diese Organisation erreicht:
+
+
+<img width="1001" height="464" alt="image" src="https://github.com/user-attachments/assets/f631dce2-c8b9-44f1-af14-c23188e7507c" />
 
 Abbildung 8.5: Eine Self-Service-Plattform, die Kosten meldet und reduziert
 
@@ -445,7 +463,7 @@ Dieser Ansatz wurde in mehreren Organisationen umgesetzt und stellt sicher, dass
 
 Nachdem wir nun darüber gesprochen haben, wie Ressourcen nur dann ausgeführt werden können, wenn sie wirklich benötigt werden, um Kosten zu sparen, wollen wir uns damit befassen, wie Ingenieure auch ihren Code optimieren können, um Kosten zu senken!
 
-Green Engineering – Optimierung Ihres Codes
+# Green Engineering – Optimierung Ihres Codes
 
 Effizienter Code wird in der Regel nicht nur schneller ausgeführt, sondern benötigt auch weniger CPU, Speicher und möglicherweise weniger Festplattenspeicher oder Netzwerkbandbreite. Weniger von allem bedeutet auch weniger Kosten. Warum erstellt dann nicht jeder von Anfang an effizienten Code?
 
@@ -457,17 +475,20 @@ Allzu oft stehen Ingenieure unter Zeitdruck, neue Funktionen zu liefern, oder Un
 
 Es gibt viele weitere Muster in der Softwareentwicklung, die zu Leistungs- oder Skalierbarkeitsproblemen führen. Neben der Erkennung von Mustern können Architekturüberprüfungen für Anwendungen auch zu Kostensenkungen durch effizientere Architekturen oder umgeschriebenen Code führen. Ein prominentes Beispiel ist Amazon Prime Video, das seine verteilte serverlose AWS-Architektur aufgegeben und für seine Videoqualitätsanalyse auf eine sogenannte Monolith-Architektur umgestellt hat, wodurch die Infrastrukturkosten um 90 % gesenkt werden konnten \[4\]. Letztendlich bedeuten diese Muster auch eine ineffiziente Codeausführung, was zu höheren Kosten führt. Als Plattform-Engineering-Teams haben wir die Möglichkeit, diese Muster mit modernen Observability-Tools zu analysieren und diese Informationen an die Ingenieure zurückzugeben, um sie nicht nur auf die Kosten hinzuweisen, die ihnen durch ihren Code entstehen, sondern auch darauf, wo sie mit der Optimierung beginnen können, wie im nächsten Screenshot gezeigt. Diese beiden Diagramme zeigen, wie viele Protokolle pro Dienst erstellt werden, und heben auch hervor, welche Protokolle nicht richtig konfiguriert sind, z. B. wenn keine Protokollebenen festgelegt sind:
 
+
+<img width="1030" height="423" alt="image" src="https://github.com/user-attachments/assets/a7682926-0dcd-47de-8b77-cc85bb682192" />
+
 Abbildung 8.6: Teams einfache Einblicke in Muster wie übermäßige Protokollierung geben
 
 Dies bringt mich zum letzten Teil dieses Abschnitts, nämlich der Möglichkeit, Ingenieure zu schulen und ihnen von der ersten Zeile Code an ein Kostenbewusstsein zu vermitteln!
 
-Die Möglichkeit zur Schulung
+# Die Möglichkeit zur Schulung
 
 Auch wenn dies vielleicht nicht als eine der wichtigsten Aufgaben eines Plattform-Engineering-Teams angesehen wird, da Engineering-Teams unsere Plattformen nutzen, um ihre Anwendungen als Self-Service bereitzustellen, können wir v diese Plattform auch nutzen, um alle über die Kostenauswirkungen aufzuklären, die sie haben, wenn sie die Plattform nutzen, um ihre Software-Services bereitzustellen.
 
 In den vorangegangenen Abschnitten haben wir bereits Anwendungsfälle wie das Senden von Kosten- und Nutzungsberichten an Engineering-Teams oder das Identifizieren und Hervorheben ineffizienter Codemuster hervorgehoben. Der Schlüssel dazu ist eine ordnungsgemäße Kennzeichnung (z. B. wer ist für welchen Teil der Infrastruktur und Anwendungen verantwortlich) sowie eine gute Beobachtbarkeit (z. B. welche Systeme wie viel CPU, Speicher, Netzwerk usw. nutzen). Mit diesen Informationen können die Plattform-Entwicklungsteams diese Daten proaktiv an die Teams weitergeben und ihnen so kontinuierlich zeigen, welche Kostenauswirkungen ihre Anwendungen haben. Dies führt auch zu einem Lerneffekt, der dazu beiträgt, dass die Entwickler von vornherein ein besseres Verständnis für die Kostenauswirkungen ihrer Handlungen haben.
 
-Zusammenfassung
+# Zusammenfassung
 
 In diesem Kapitel sollten Sie ein Gefühl für die Kosten entwickelt und Ideen dazu gewonnen haben, wie Sie dieses Thema auf Ihrer Plattform angehen können. Gute Plattformen bieten ihren Nutzern Transparenz und ermöglichen die Verwendung flexibler Optionen, um ihre Arbeitslast für verschiedene Auslöser anzupassen. An dieser Stelle sollten Sie in der Lage sein, die in den vorherigen Kapiteln erlernten Ansätze, wie z. B. die dynamische Ressourcenzuweisung mit GPUs, zu kombinieren, um eine hohe Auslastung und eine optimale Kostenverteilung zu erreichen.
 
@@ -479,7 +500,7 @@ Zusammenfassend lässt sich sagen: Wenn Sie rational denken und das Geld, das Si
 
 Kommen wir nun direkt zum letzten Kapitel. Wie bereits erwähnt, ist die einzige Konstante die Unbeständigkeit. In unserem letzten Kapitel werden wir daher über den kontinuierlichen Wandel und wie man ihn übersteht sprechen, wobei wir uns mit leichtgewichtigen Architekturen befassen, die von nachhaltigen Ideen motiviert sind, sowie mit dem goldenen Weg für Veränderungen. Zum Abschluss des Kapitels wagen wir einen Blick in die Kristallkugel und behandeln einige technologische Trends, die in den nächsten Jahren relevant werden könnten oder auch nicht.Weiter[Chap 9](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap9/Platform%20Engineering_9%20de.md)
 
-Weiterführende Literatur
+# Weiterführende Literatur
 
 - \[1\] Warum wir die Cloud verlassen haben – David Heinemeier Hansson:
     - https://world.hey.com/dhh/we-have-left-the-cloud-251760fb
