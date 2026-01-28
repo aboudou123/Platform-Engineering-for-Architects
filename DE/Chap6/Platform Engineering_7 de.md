@@ -1,4 +1,4 @@
-**Teil 3 – Plattformen als Produkt – Best Practices**
+# Teil 3 – Plattformen als Produkt – Best Practices**
 
 Im letzten Teil stellen wir Ihnen die Tools zur Verfügung, mit denen Sie Ihre Plattform hinsichtlich Kosteneffizienz optimieren können, sodass Ihre Nutzer dasselbe tun können. Dazu skizzieren wir die einfachen Schritte, die erforderlich sind, um Transparenz in Ihrer Kostenlandschaft zu schaffen, und stellen Ihnen Best Practices zur Reduzierung Ihrer Infrastrukturkosten vor. Von den Infrastrukturkosten gehen wir zu technischen Schulden über, die sich negativ auf die Wartungskosten des ausgewählten Technologie-Stacks auswirken können, wenn sie nicht richtig behandelt werden. Sie lernen Tools und Frameworks zur Bewertung technischer Schulden kennen und erfahren, wie wichtig es ist, Ihre Entscheidungen zu dokumentieren. Abschließend werfen wir einen Blick in die Zukunft. Sie erfahren, warum Veränderungen unumgänglich sind und warum Sie sich aktiv für Veränderungen einsetzen müssen. Vielleicht entdecken Sie eine neue Perspektive auf Ihren goldenen Weg und einige Ideen zu zukünftigen relevanten Technologien.
 
@@ -9,7 +9,7 @@ Dieser Teil umfasst die folgenden Kapitel:
 - [Kapitel 9](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap9/Platform%20Engineering_9%20de.md), Auswahl technischer Schulden, um Plattformen unzerstörbar zu machen
 - [Kapitel 10](https://github.com/aboudou123/Platform-Engineering-for-Architects/blob/main/DE/Chap9/Platform%20Engineering_9%20de.md), Entwicklung von Plattformprodukten für die Zukunft
 
-Entwicklung sicherer und konformer Produkte
+# Entwicklung sicherer und konformer Produkte
 
 Im digitalen Zeitalter nehmen Cyberverbrechen zu. Zwar gelten nicht für jedes Unternehmen die strengen Compliance-Anforderungen einer Bank oder einer Regierungsbehörde, doch können und sollten die Sicherheitsstandards und Best Practices für diese stark regulierten Umgebungen auf Ihre Plattform übertragen werden. Sicherheit auf jeder Ebene eines Unternehmens trägt dazu bei, Sicherheitsverletzungen zu verhindern.
 
@@ -24,17 +24,22 @@ Daher werden wir in diesem Kapitel die folgenden Hauptthemen behandeln:
 - Verständnis der Anwendungssicherheit – Festlegen und Durchsetzen von Richtlinien
 - **Freie und quelloffene Software** (**FOSS**) für die Plattformsicherheit und deren Verwendung
 
-Vereinbarkeit von Security to the Left und Zero Trust
+# Vereinbarkeit von Security to the Left und Zero Trust
 
 **Sicherheit links** und **Zero Trust** sind die aktuellen Schlagworte in der Cybersicherheit. Diese Schlagworte – oder Modewörter, wenn Sie so wollen – werden sicherlich wieder in Vergessenheit geraten, aber die Praktiken, für die sie stehen, werden auch in den kommenden Jahren weiterhin Best Practices sein.
 
 Sicherheit links betrachtet den Prozess der Softwareentwicklung und -bereitstellung als lineares Flussdiagramm, das von links nach rechts gelesen wird. Dieses Diagramm würde in etwa so aussehen:
+
+<img width="986" height="311" alt="image" src="https://github.com/user-attachments/assets/dfa35555-f9e9-420c-b933-10b926e387d4" />
 
 Abbildung 7.1: Einfacher App-Entwicklungs-Workflow
 
 In diesem stark vereinfachten Beispiel schreibt ein Entwickler Code, der dann in die Quellcodeverwaltung gestellt wird und schließlich als Anwendung für die Nutzer herauskommt. Es ist wichtig, diesen Sicherheits-Workflow auf der rechten Seite, also auf der Anwendungsebene selbst, zu betrachten, aber das ist zu spät. Es gibt bereits drei andere offensichtliche Stellen, an denen mangelnde Sicherheit Schwachstellen schaffen kann, die ausgenutzt werden könnten.
 
 Die Lösung von Sicherheitsproblemen auf Personalebene ist das Wesentliche der Sicherheit auf der linken Seite, aber damit ist die Sicherheit noch nicht abgeschlossen, sondern erst der Anfang. Sicherheit muss in jedem Schritt des Flussdiagramms im Mittelpunkt stehen, damit wir an realistischeren Beispielen sehen können, wie Sicherheit mit der Reichweite erweitert werden muss:
+
+
+<img width="974" height="324" alt="image" src="https://github.com/user-attachments/assets/0455f0fd-46ff-4652-b22e-6367bb800c31" />
 
 Abbildung 7.2: Erweiterter Entwicklungs- und Bereitstellungs-Workflow
 
@@ -54,11 +59,11 @@ Jede größere Sicherheitsverletzung und Schwachstelle hätte durch Tests aufged
 
 Nachdem wir nun die Konzepte der Sicherheit auf der linken Seite und „Vertrauen, aber überprüfen“ vorgestellt haben, wollen wir uns ansehen, wie man ein System aufbaut, das sowohl sicher als auch flexibel ist.
 
-Plattform-Sicherheit verstehen – wie man ein sicheres und dennoch flexibles und offenes System aufbaut
+# Plattform-Sicherheit verstehen – wie man ein sicheres und dennoch flexibles und offenes System aufbaut
 
 Die Plattform ist nicht die Gesamtheit der Sicherheitslage eines Unternehmens, sondern nur ein Teil der Gleichung. Bei der Beurteilung, wie Cybersicherheit oder DevSecOps in die Plattform integriert werden können, muss ein Gleichgewicht gefunden werden. Das Vorziehen der Sicherheit hilft, den Aufwand für das Plattformteam zu reduzieren, aber ein klar definierter Umfang hilft allen, ihren Teil der Sicherheitsgeschichte zu verstehen.
 
-Das Problem in überschaubare Teile zerlegen
+# Das Problem in überschaubare Teile zerlegen
 
 Sicherheit und Flexibilität können auch wie zwei Begriffe wirken, die sich diametral gegenüberstehen. Gute Sicherheit ist von Natur aus unflexibel, aber für den Erfolg eines IDP ist es möglich und notwendig, beide Aspekte in Einklang zu bringen. Wie erreichen wir das? Der erste Schritt ist **die Festlegung des Sicherheitsumfangs**.
 
@@ -72,7 +77,7 @@ Viele Sicherheitsexperten haben jahrelang Sicherheitsfragen erforscht und solide
 
 Es lohnt sich, die Arbeit dieser Organisationen zu verstehen, um ein besseres Verständnis dafür zu entwickeln, wie Sicherheit und eine flexible **interne Entwicklerplattform** (**IDP**) zusammenwirken. Da diese Behörden in der Regel Standards für Unternehmen veröffentlichen, die mit der Regierung zusammenarbeiten, ist zu beachten, dass ihre Veröffentlichungen für ein bestimmtes Publikum bestimmt sind und nicht den Austausch mit einem Cybersicherheitsexperten ersetzen, der über Erfahrung in Ihrer spezifischen Branche verfügt.
 
-Umgang mit den OWASP 10
+**Umgang mit den OWASP 10**
 
 Wenn Sie sich immer noch nicht sicher sind, wo Sie anfangen sollen, hat eine andere Organisation Richtlinien veröffentlicht, die einen guten Ausgangspunkt für die Festlegung des Sicherheitsumfangs bieten. Das **Open Worldwide Application Security Project** (**OWASP**) ([owasp.org](http://owasp.org/)) ist eine gemeinnützige Stiftung, die sich auf Cybersicherheit konzentriert. Als angesehene Gruppe von Sicherheitsexperten ist ihre Top-Ten-Liste zu einem Leitfaden für die Vorhersage und Prävention von Sicherheitsproblemen in Software geworden. Diese Liste wird regelmäßig neu veröffentlicht. Die aktuelle Liste aus dem Jahr 2021 lautet wie folgt:
 
@@ -102,7 +107,7 @@ OWASP ging noch einen Schritt weiter und führte 2022 zusätzlich eine Kubernete
 
 Die Listen stimmen weitgehend überein, gelten jedoch beide für einen Kubernetes-basierten IDP. Anstatt diese Listen als umfassende Leitfäden für die Erstellung einer Sicherheitsstrategie zu betrachten, sollten sie als Mindestanforderungen für die Sicherheitsstrategie des IDP angesehen werden, die jedoch einen umfassenden Ausgangspunkt für Ihr Scoping-Projekt darstellen.
 
-Implementierung von Bedrohungsmodellen
+**Implementierung von Bedrohungsmodellen**
 
 Nachdem Sie den Sicherheitsumfang festgelegt haben, ist der zweite Schritt **die Bedrohungsmodellierung**. Ein Bedrohungsmodell ist eine Darstellung aller Faktoren, die die Sicherheit Ihrer Anwendung oder in diesem Fall Ihrer Plattform beeinträchtigen können. Die Durchführung einer Bedrohungsmodellierung ist ein hervorragendes Beispiel dafür, wie man zu den richtigen Schlussfolgerungen für die Sicherheitsstrategie eines Unternehmens gelangt. Sie können diese Top-Ten-Listen als Leitfaden für Ihre Gespräche zum Thema Bedrohungsmodellierung verwenden. Laut „ ” (Was ist Bedrohungsmodellierung?), den Autoren des Threat Modeling Manifesto ([threatmodelingmanifesto.org](http://threatmodelingmanifesto.org/)), sollte ein Bedrohungsmodell die folgenden vier Fragen beantworten:
 
@@ -115,7 +120,7 @@ Sie können beispielsweise mit folgender Frage beginnen: Wir arbeiten daran, wie
 
 Diese Zusammenarbeit im Bereich Sicherheit ist eine der wichtigsten Strategien, um Sicherheit erfolgreich in den Mittelpunkt zu stellen, ohne dabei die Benutzerfreundlichkeit, die Möglichkeit, Beiträge anzunehmen, oder den Self-Service zu beeinträchtigen. Durch einen kollaborativen Prozess der Bedrohungsmodellierung können auch soziotechnische Sicherheitsrisiken angegangen werden. Sicherheit auf der linken Seite bedeutet nicht nur den Computer des Entwicklers, sondern auch den Entwickler selbst. Stellen Sie sicher, dass sie angemessene Vorsichtsmaßnahmen treffen, sich bewusst sind, wie böswillige Akteure versuchen, Situationen zu manipulieren, um Anmeldedaten zu stehlen, und dass sie generell bewährte Verfahren befolgen – beispielsweise, dass sie einen Firmenlaptop nicht im Auto liegen lassen, wo er gestohlen werden könnte.
 
-Gängige Sicherheitsstandards und -frameworks
+# Gängige Sicherheitsstandards und -frameworks
 
 Um sich in der Welt der Sicherheitsstandards zurechtzufinden, muss man zunächst versuchen, die Sprache der Akronyme zu entschlüsseln. Das Ziel ist nicht, über Nacht zum Sicherheitsexperten zu werden, sondern zu wissen, welches Sicherheitsniveau Sie benötigen, und sicherzustellen, dass die Plattform alles Notwendige tut, um diese Sicherheit zu gewährleisten. Eine einfache Möglichkeit, dieses Problem anzugehen, besteht darin, sich anzuschauen, in welcher Branche Ihr Unternehmen tätig ist und welche Sicherheitsframeworks relevant sind. Ein Krankenhaus oder eine große medizinische Gruppe in den USA müsste beispielsweise die Vorschriften des **Health Insurance Portability and Accountability Act** (**HIPAA**) einhalten. Daher müsste jeder Anbieter einer ähnlichen Organisation, unabhängig vom Standort, in der Lage sein, die Vorschriften v , einzuhalten. Durch das Verständnis der Endkunden und der Bedürfnisse des Entwicklungsteams kann ein Plattformteam bestimmen, welches Maß an Sicherheit und Compliance über die üblichen Best Practices hinaus erforderlich ist.
 
@@ -135,7 +140,7 @@ Tabelle 7.1: Erläuterung der Sicherheits- und Compliance-Rahmenwerke
 
 Obwohl sich die Rahmenwerke geringfügig unterscheiden und unterschiedliche Ziele verfolgen, sind sie im Kern identisch. Die von einer Anwendung erfassten und gespeicherten Daten müssen während der Übertragung und im Ruhezustand gesichert sein und dürfen nur an den vorgesehenen Orten landen, auf die die vorgesehenen Benutzer Zugriff haben. Dies wird teilweise mit RBAC erreicht, aber RBAC allein reicht nicht aus. Sicherheitsstandards wie PCI DSS umfassen eine physische Überprüfung der Hardware, der Server und des Zugriffs auf diese physischen Geräte und deren Unterbringung, damit die Compliance zertifiziert werden kann. Compliance und Sicherheit gehen in der Regel Hand in Hand, sind aber eigentlich zwei unterschiedliche Dinge. Ein System kann sicher sein, aber nicht konform, und umgekehrt. Wir werden hier nicht auf diese Unterschiede eingehen, da sie außerhalb des Rahmens eines IDP liegen, aber es ist wichtig zu verstehen, dass Sicherheit mehr ist als nur das Ankreuzen von Kästchen auf einer Liste. Diese Kästchen sollten Aufschluss darüber geben, wie weit sich die Arbeit der Bedrohungsmodellierung durch das System erstrecken muss und wie Sie die Rolle der Plattform in einer regulierten Branche entwickeln.
 
-Schutz von Vermögenswerten
+# Schutz von Vermögenswerten
 
 Entsprechend dem Paradigma des digitalen Raums sind die Vermögenswerte, die wir hier diskutieren, die Daten Ihres Dienstes. Die meisten Sicherheits- und Compliance-Vorschriften konzentrieren sich auf den Umgang mit Daten. Sie sollten dies so verstehen, dass Daten das wertvollste Kapital eines durchschnittlichen Unternehmens sind und als solches geschätzt werden sollten.
 
@@ -204,7 +209,7 @@ Datenhoheit
 
 Viele Länder führen Gesetze zur Datenhoheit ein, die im Wesentlichen vorschreiben, dass Daten, die von Personen innerhalb der Landesgrenzen erstellt wurden, die physischen Grenzen des Landes, in dem sie erstellt wurden, nicht verlassen dürfen. Das bedeutet nicht immer, dass Daten außerhalb des Landes nicht eingesehen werden können (Daten in Verwendung), sondern dass die Datenspeicherung innerhalb der regionalen Grenzen bleiben muss. Dies betrifft die Compliance-Situation für ruhende Daten, nicht jedoch die Sicherheitssituation.
 
-Sicherung von Daten während der Übertragung
+**Sicherung von Daten während der Übertragung**
 
 Wenn Daten übertragen werden, werden sie zwischen Microservices übertragen, was bedeutet, dass sie dem Netzwerk der Plattform und/oder externen Endpunkten ausgesetzt sind. Die Daten müssen während der Übertragung verschlüsselt werden, aber letztendlich müssen die Daten verwendet werden, sodass sie irgendwann vom empfangenden Endpunkt entpackt werden:
 
@@ -214,11 +219,11 @@ Wenn Daten übertragen werden, werden sie zwischen Microservices übertragen, wa
 - Schützen Sie sich vor Injektionen, indem Sie Eingaben bereinigen.
 - Verwenden Sie Netzwerksicherheit und Best Practices für Kryptografie, um Man-in-the-Middle-Angriffe (**MITM**) und andere Arten von Angriffen zu verhindern.
 
-Daten in Verwendung
+### Daten in Verwendung*
 
 Daten in Verwendung sind genau das, wonach es klingt: Daten, die das System anzeigt oder ändert. Wenn sie bereits gespeichert und in Verwendung sind, werden sie entweder aus dem Speicher abgerufen oder zwischengespeichert. Sie können im Speicher gehalten oder unter Verwendung verschiedener Lese- und Caching-Technologien direkt gelesen werden. Daten sind auch dann in Gebrauch, wenn sie zum ersten Mal in ein System eingegeben werden. Dazu gehören die Registrierung neuer Benutzer oder die Speicherung einer neuen Protokollzeile. Oftmals werden Daten in diesem Zustand auch einer Datenumwandlung unterzogen, z. B. Aggregationen oder Bereinigungsvorgängen, die sicherstellen, dass die Daten nicht für einen Injektionsangriff oder sogar für eine Löschung verwendet werden können. Die Sicherung von Daten in Gebrauch ist nur eine weitere Anwendung derselben Prinzipien, die wir auch für Daten in Bewegung oder im Ruhezustand verwenden.
 
-Sichern Ihres Netzwerks
+### Sichern Ihres Netzwerks*
 
 Kubernetes hat eine steckbare Architektur und wird zwar ohne Netzwerkstack ausgeliefert, aber einige Kubernetes-Plattformoptionen haben ihre eigenen Standardeinstellungen. Beispielsweise hat die OpenShift Container Platform eine **Standard-Container-Netzwerkschnittstelle** (**CNI**) namens **Open Virtual Network** (**OVN**) übernommen. Neben OVN gibt es noch andere sichere und besser beobachtbare Lösungen für Kubernetes-Netzwerke.
 
@@ -226,9 +231,13 @@ Kubernetes hat eine steckbare Architektur und wird zwar ohne Netzwerkstack ausge
 
 Neben der Netzwerktechnologie spielt auch die Netzwerktopologie eine wichtige Rolle für die Netzwerksicherheit. Netzwerktools wie Firewalls, VPNs, VLANs, Router, Switches usw. befinden sich möglicherweise nicht auf dem Kubernetes-Cluster, spielen aber eine sehr wichtige Rolle für die Sicherheit des Clusters. Unabhängig davon, wie die endgültige Netzwerktopologie aussieht und wie der Cluster mit dem öffentlichen Internet interagiert (oder vielleicht auch nicht!), müssen Sie für eine ordnungsgemäße Bedrohungsmodellierung und Compliance in der Lage sein, Ihr Netzwerk zu beobachten und zu dokumentieren.
 
-Isolation zwischen Vorproduktions- und Produktionsumgebungen
+### Isolation zwischen Vorproduktions- und Produktionsumgebungen
 
 Eine allgemeine Best Practice besteht darin, dass Ihr System unabhängig von Sicherheits- und Compliance-Anforderungen Produktionsdaten und den Zugriff darauf von anderen Umgebungen isoliert, um den Schutz der Daten zu gewährleisten. Daten sind das wertvollste Kapital der meisten Unternehmen. Daher ist der Schutz und die Isolierung von Daten der beste Weg, um dieses Kapital zu sichern und eine angemessene Sicherheit und Compliance für alle Unternehmen zu gewährleisten. Der Schutz von Daten ist das Herzstück von Sicherheit und Compliance. Produktionsdaten sollten niemals die Produktionsumgebung verlassen, und der Zugriff auf diese Daten muss streng kontrolliert werden, um sicherzustellen, dass keine böswilligen Akteure – intern, extern, absichtlich oder versehentlich – Zugriff auf diese Produktionsdaten erhalten. Beziehen wir uns noch einmal auf unsere Plattformarchitektur aus [Kapitel 2](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/2):
+
+
+<img width="980" height="665" alt="image" src="https://github.com/user-attachments/assets/ac1f4d69-397c-404c-a029-ecefa9432dec" />
+
 
 Abbildung 7.3: Referenzkomponenten der Plattform
 
@@ -240,7 +249,7 @@ Es ist möglich, einen einzigen Cluster zu verwenden und netzwerkrichtlinienbasi
 
 Aus Sicherheits- und Compliance-Gründen ist es daher am besten, die Umgebungen vollständig zu trennen. Durch zwei getrennte Cluster ist die Isolierung der Produktionsdaten gewährleistet und es gibt weniger Spielraum für menschliche Fehler, die diese Sicherheit beeinträchtigen könnten. Darüber hinaus können Sie auch unterschiedliche Netzwerkkonfigurationen verwenden, z. B. Firewall-Regeln mit unterschiedlichen Berechtigungen oder sogar Umgebungen, die vollständig vom öffentlichen Internet getrennt sind.
 
-Verwaltung von Geheimnissen und Tokens
+# Verwaltung von Geheimnissen und Tokens
 
 In Kubernetes ist ein Geheimnis ein Passwort, ein Authentifizierungstoken, eine Umgebungsvariable, ein API-Schlüssel oder ähnliche sensible Daten, auf die eine Anwendung möglicherweise zugreifen muss, um korrekt zu funktionieren oder eine Aufgabe auszuführen. Die Verwaltung von Geheimnissen wird zu einer der wichtigsten Herausforderungen, die es zu lösen gilt, wenn man an einem System arbeitet, das so stark auf Automatisierung angewiesen ist wie ein IDP. Glücklicherweise gibt es Muster und Technologien, die dabei helfen sollen.
 
@@ -254,11 +263,18 @@ In einem Sidecar-Modell hat einer der Container im Pod die spezifische Aufgabe, 
 
 Ein Sidecar-Modell würde wie folgt aussehen, wobei der Pod sowohl die Anwendung als auch den Sidecar enthält:
 
+
+<img width="1005" height="795" alt="image" src="https://github.com/user-attachments/assets/f26d277b-38a3-4d7b-8fbf-347077ef7347" />
+
 Abbildung 7.4: Container-Sidecar-Modell
 
 Sofern jedoch der Sidecar (oder ein anderer Dienst), der die Suche durchführt, nicht in einer Schleife läuft, wird dieses Problem nur einmal gelöst und es werden keine Umgebungen berücksichtigt, in denen sich Geheimnisse regelmäßig ändern können. Hier sind FOSS-Lösungen eine hervorragende Option. Der **External Secrets Operator** (**ESO**) ist ein FOSS-Angebot, das dies ermöglicht. Das Projekt ist Eigentum der Linux Foundation. Eine vollständige Übersicht über die Funktionsweise finden Sie unter [external-secrets.io](http://external-secrets.io/).
 
 Das Referenzarchitekturdiagramm sieht wie folgt aus und entspricht weitgehend unserer Sidecar-Referenz:
+
+
+
+<img width="1027" height="485" alt="image" src="https://github.com/user-attachments/assets/27598a5c-5644-4477-bd10-ca6ec9eea3a3" />
 
 Abbildung 7.5: Referenzarchitektur für ESO
 
@@ -270,7 +286,7 @@ ESO ist besonders nützlich in stark regulierten Umgebungen, in denen die Inhalt
 
 ESO ist nicht das einzige Open-Source-Projekt für die Geheimnisverwaltung in einem Cluster; es gibt mehrere andere, die in der CNCF inkubiert werden, und alle sind eine Überprüfung wert. Die Auswahl des richtigen Tools für Ihr Unternehmen muss nach Abwägung einer Liste von Vor- und Nachteilen erfolgen, aber das von diesen Tools genutzte Muster stellt die beste Vorgehensweise dar, die Sie nachahmen sollten.
 
-Bereinigung von Protokollen
+### Bereinigung von Protokollen
 
 Alle von der Plattform generierten Protokolle sollten bereinigt werden. Dies gilt auch für Anwendungen, überschreitet jedoch die Grenzen der Plattform. Protokolle sind Teil der Daten und daher Vermögenswerte, die die Sicherheit der Plattform schützen muss. Zusätzlich zu den zuvor behandelten Themen Speicherung und Übertragung ist die Datenbereinigung ein wichtiger Bestandteil, um sicherzustellen, dass selbst wenn ein Angreifer Zugriff auf Protokolldaten erhält, er diese nicht dazu verwenden kann, das System weiter zu kompromittieren. Tools zur Überprüfung der Codequalität wie SonarQube (https://docs.sonarsource.com/sonarqube/latest/) eignen sich hervorragend, um sensible Daten zu erkennen, die an den falschen Ort gelangen, sodass das Problem behoben werden kann, bevor es zu einem Sicherheitsvorfall kommt.
 
@@ -280,7 +296,7 @@ Diese Plattformprotokolle sollten außerdem so weit wie möglich frei von **pers
 
 Die Bereinigung von Protokollen umfasst auch Aufbewahrungsrichtlinien. Genauso wie Anwendungsdaten nach Ablauf ihrer **Lebensdauer** (**TTL**) entsorgt werden sollten, gilt dies auch für Protokolldaten. Mit fortschreitender Laufzeit der Plattform verlieren Protokolle für das Plattformteam zunehmend an Nutzen, aber die darin enthaltenen Informationen können ihren Wert behalten, wenn personenbezogene Daten aufgrund geschäftlicher Erfordernisse nicht entfernt werden können. Daher stellt die Aufbewahrung von Daten, die für Kriminelle von Wert sind, ein unnötiges Risiko dar, das selbst durch die Verwendung von Cold Storage nicht gemindert werden kann. Wann Daten vernichtet werden, ist letztlich eine geschäftliche Entscheidung, und es könnte eine Datenumwandlung vorgenommen werden, um die Daten weiter zu anonymisieren, sodass nur die personenbezogenen Daten vernichtet werden, wenn es einen zwingenden Grund gibt, die Plattformmetriken für immer aufzubewahren.
 
-Sicherer Zugriff
+### Sicherer Zugriff
 
 Wir haben RBAC bereits einige Male behandelt. Es wird ausdrücklich als eines der OWASP Top Ten genannt, daher ist es für die Sicherheitslage eines Unternehmens eindeutig wichtig, dass die Zugriffskontrollen korrekt sind. Eine Methode, um dies sicherzustellen, ist die Erstellung von Dienstkonten. Diese Konten sind nicht-menschliche Identitätskonten, die von Workloads auf dem System genutzt werden können. Genau wie bei einem Menschen erfordert die Authentifizierung eines Dienstkontos ein Token, das regelmäßig ausgetauscht werden sollte. Durch die Aufteilung der Zugriffstypen in menschliche und nicht-menschliche können Sie das **Prinzip der geringsten Privilegien** (**PoLP**) nutzen, um sicherzustellen, dass ein Mensch oder eine Workload über die erforderlichen Berechtigungen verfügt, aber keine Berechtigungen, die er nicht benötigt.
 
@@ -296,7 +312,7 @@ Das Prinzip der geringsten Privilegien sollte nicht nur für Workloads gelten, s
     - Wird zu einem SPOF.
     - Konzentriert sich auf die Sicherheit.
 
-Audit-Protokolle
+### Audit-Protokolle
 
 Was ist ein Audit-Protokoll? Ein Audit-Protokoll ist eine Aufzeichnung der Aktionen, die der Kubernetes-API-Server sieht. Das bedeutet, dass jede Änderung im Kubernetes-Cluster, sowohl automatisierte als auch von Menschen initiierte, von Anmeldungen bis zur Pod-Planung, in Audit-Protokollen verfolgt wird. Wenn es identifizierende Informationen gibt, werden diese in Ihren Audit-Protokollen gespeichert. Der Grund dafür ist, dass es für die Behebung von Vorfällen und **die Reaktion auf Sicherheitsvorfälle** (**IR**) entscheidend ist, zu wissen, wer welche Aktion wann und wo durchgeführt hat. Audit-Protokolle sollten nicht nur die API-Anfrage enthalten, sondern auch die Nutzlast, falls vorhanden – wie es bei Methoden wie PUT oder PATCH zu erwarten ist. Anmeldedaten sollten nicht als personenbezogene Daten protokolliert werden und in den meisten Fällen weggelassen werden.
 
@@ -313,11 +329,14 @@ Im Allgemeinen sollten Ereignisse, die gegen bekannte Normen verstoßen, automat
 
 Wir haben bisher die Grundlagen der Sicherheit behandelt und haben noch einen langen Weg vor uns. Nachdem wir nun einige allgemeine Themen kennengelernt haben, wollen wir uns nun mit spezifischeren Themen befassen.
 
-Ein Blick auf SBOM-Praktiken
+# Ein Blick auf SBOM-Praktiken
 
 Open-Source-Tools, Bibliotheken innerhalb von Programmiersprachen, Paketmanager und Container-Images sind die Bausteine moderner Anwendungen und bringen eine Reihe einzigartiger Herausforderungen mit sich, wenn es um die Sicherheit Ihrer **Software-Lieferkette** geht. Dies bezeichnen wir liebevoll als das Dilemma der Lieferkettensicherheit. Wie können Sie eine gute Sicherheitslage aufrechterhalten, wenn Sie nicht den gesamten Code besitzen, der gesichert werden muss?
 
 Wenn wir die Lieferkette visuell darstellen, gibt es einige unbekannte Personen (wir nennen sie Akteure), die zu einer Open-Source-Abhängigkeit beitragen, und einen weiteren, wahrscheinlich bekannten Akteur, der direkter zu Ihrer Codebasis beiträgt. Dies ist eine extrem vereinfachte Darstellung (hier fehlen wahrscheinlich 10 Kästchen), aber sie sollte Ihnen helfen, den Punkt zu verstehen:
+
+
+<img width="1008" height="1319" alt="image" src="https://github.com/user-attachments/assets/8885a3ac-f903-460b-873e-5d490d5122ab" />
 
 Abbildung 7.6: Beispiel für eine Lieferkette
 
@@ -329,11 +348,11 @@ Eine SBOM wird in der Regel zum Zeitpunkt der Erstellung in der CI-Pipeline gene
 
 SBOM-Generierungstools sind noch relativ neu und daher noch nicht perfekt. Es ist möglich, dass ein Tool ein Paket übersieht, das das andere Tool erkennt, und umgekehrt. Um Ihre Sicherheitslage zu verstehen, ist weniger nicht mehr, daher ist es für die Sicherheit am wichtigsten, sich ein möglichst vollständiges Bild zu verschaffen.
 
-Verwendung einer SBOM
+# Verwendung einer SBOM
 
 Eine SBOM ist mehr als nur ein Häkchen auf einer Liste von Anforderungen eines Kunden oder der US-Regierung. Sie ist auch ein wirksames Tool zur Erkennung und Behebung von Schwachstellen. In Abbildung 7.6 zeigen wir, wie Ihre Anwendung wahrscheinlich Code und damit Schwachstellen aus Abhängigkeiten und Bibliotheken übernimmt, die sie möglicherweise nutzt und die Open Source sind. Diese Abhängigkeiten sind schwer nachzuverfolgen, weshalb eine SBOM als Hauptbuch für Ihr System dienen kann. Das bedeutet, dass Sie, wenn später eine erhebliche Sicherheitslücke bekannt gegeben wird, diese Meldung schnell mit Ihrer SBOM abgleichen und zeitnah erkennen können, ob Ihre Software anfällig ist. Dies kann durch einen Blick auf einen bereits erstellten Bericht oder durch einfaches erneutes Ausführen des Berichts erfolgen. Wenn die Erstellung Ihres „ ”-Berichts mit einem Scan gekoppelt ist, sollte das Scan-Tool die neue Sicherheitslücke erkennen, sobald sie in das Register für kritische Sicherheitslücken aufgenommen wurde.
 
-Erstellen einer SBOM für ein GitHub-Repo
+### Erstellen einer SBOM für ein GitHub-Repo
 
 Eine einfache Möglichkeit, eine SBOM für ein GitHub-Repo anzuzeigen, besteht darin, die GitHub-API für das Repo, das Sie untersuchen möchten, zu curlen. Um ein kurzes Beispiel zu geben, werden wir Ihnen zeigen, wie Sie dies tun und wie Sie die Ergebnisse interpretieren können.
 
@@ -451,7 +470,7 @@ In diesem Beispiel ist dies ziemlich einfach, da es besagt, dass das primäre El
 
 Auch hier gilt: Eine SBOM ist ein recht einfaches Tool; sie erstellt ein Verzeichnis, das auflistet, woraus eine Anwendung oder Codebasis besteht. Für sich genommen leistet sie nicht viel, aber als Teil einer Toolchain trägt sie wesentlich dazu bei, Ihre Systeme und die Risikofläche für Schwachstellen, die ihre Abhängigkeiten mit sich bringen, zu verstehen.
 
-Sicherheitslücken im Blick behalten
+# Sicherheitslücken im Blick behalten
 
 Software-Schwachstellen werden in der Regel als **Common Vulnerabilities and Exposures** (**CVE**) bezeichnet. Das **US-Heimatschutzministerium** (**DHS**) unterhält ein öffentliches CVE-Register ([https://www.cve.org](https://www.cve.org/)), in dem Sie sich über bekannte Schwachstellen auf dem Laufenden halten können. Dieses Register kann mit Ihrer Software und Ihren Anwendungen abgeglichen werden, um zu überprüfen, ob bekannte CVEs und Schwachstellen in Ihrer Umgebung vorhanden sind ( ). Ein Plattformteam kann zwar einen maßgeschneiderten Dienst entwickeln, um festzustellen, ob es CVEs in den Systemen gibt, dies ist jedoch nicht erforderlich, da es zahlreiche FOSS-Tools gibt, die diese Aufgabe für Sie übernehmen.
 
@@ -465,11 +484,11 @@ Um Schwachstellen während der Laufzeit im Blick zu behalten, hilft Ihnen das re
 
 Da die SBOM-Generierung und die Erkennung von Schwachstellen in der Regel Teil einer CI-Pipeline sind, wollen wir uns nun mit dem Rest der Pipeline befassen und erläutern, wie Sie die Sicherheit in Ihrem CI/CD-Prozess gewährleisten können.
 
-Pipeline-Sicherheit verstehen – was Sie beachten müssen, um Ihre CI/CD-Pipelines zu sichern
+# Pipeline-Sicherheit verstehen – was Sie beachten müssen, um Ihre CI/CD-Pipelines zu sichern
 
 Angenommen, das Plattformteam hat Einfluss oder Zuständigkeit für GitHub oder andere vom Unternehmen genutzte Repositorys zur Quellcodeverwaltung, dann wird die Sicherheit der CI/CD-Pipelines von Anfang bis Ende zu einem wichtigen Bestandteil der IDP-Sicherheitsstrategie.
 
-Sichern Sie Ihr Repository
+# Sichern Sie Ihr Repository
 
 Die Sicherheit des Code-Repositorys ist ein hervorragendes Beispiel für „Security to the Left“. Durch die frühzeitige Durchsetzung von Sicherheitsnormen und deren Integration in die Arbeitsweise eines Projekts kann ein Unternehmen Probleme im weiteren Verlauf verhindern. Ein gesichertes Repository nutzt mehrere Best Practices:
 
@@ -489,7 +508,7 @@ Die Sicherheit des Code-Repositorys ist ein hervorragendes Beispiel für „Secu
 
 Diese Liste ist keineswegs vollständig, sollte jedoch jedem Unternehmen einen guten Ausgangspunkt bieten, um seinen Quellcode vor böswilligen Akteuren und menschlichen Fehlern zu schützen.
 
-Sicherheit von GitOps
+# Sicherheit von GitOps
 
 GitOps wurde in [Kapitel 5](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/5) ausführlich behandelt, daher werden wir es aufgrund seiner Bedeutung für die Plattformsicherheit nur kurz wiederholen. GitOps wird grob definiert als ein automatisierter Prozess, der das SOT (Git oder eine andere Versionskontrolle) validiert, das den gewünschten Zustand und die Übereinstimmung mit dem tatsächlichen Zustand definiert. Dies geschieht durch einmalige Bereitstellungen oder Änderungen, aber auch durch eine automatisierte Abgleichschleife, die aktiv nach Änderungen im gewünschten Zustand sucht und auf den tatsächlichen Zustand reagiert, um ihn anzupassen, oder eine Änderung im tatsächlichen Zustand erkennt und Änderungen am System vornimmt, um es wieder in den gewünschten Zustand zu versetzen. Das derzeit größte Open-Source-GitOps-Projekt ist Argo CD, ein CD-Tool, das Eigentum der CNCF ist. Innerhalb von Argo CD und anderen GitOps-Paradigmen gibt es einige Best Practices, die zu beachten sind, um eine sicherere Umgebung zu gewährleisten.
 
@@ -503,13 +522,13 @@ Sicherheit und GitOps können ein wichtiger Faktor bei der Auswahl des GitOps-Ar
 
 Nachdem wir nun die Sicherheit der Anwendungsbereitstellung behandelt haben, wollen wir auf unserer sicheren Grundlage aufbauen und uns mit der Anwendungssicherheit befassen.
 
-Anwendungssicherheit verstehen – Richtlinien festlegen und durchsetzen
+# Anwendungssicherheit verstehen – Richtlinien festlegen und durchsetzen
 
 Sicherheit ist ein bewegliches Ziel, und mit dem technologischen Fortschritt nehmen die Angriffsvektoren zu und die Angreifer werden immer raffinierter. Aus diesem Grund sind die Prozesse und Abläufe, die das Team im Bereich Sicherheit pflegt, sogar noch wichtiger als die Technologie selbst. Das liegt nicht daran, dass Technologie keine Rolle spielt, sondern daran, dass eine gute Disziplin und die Gewohnheit eines starken Prozesses es ermöglichen, Technologien entsprechend der Entwicklung der Branche ein- und auszublenden.
 
 Ein Aspekt guter Sicherheitsdisziplin ist die Pflege genauer Dokumentationen und Architekturdiagramme. Wenn eine wesentliche Änderung an der Anwendungsarchitektur vorgenommen wird, kann dies die Risikooberflächen und Angriffsvektoren verändern. Beispielsweise könnte eine undokumentierte oder unzureichend dokumentierte Abhängigkeit von einer Bibliothek oder einem Netzwerkport zu einer Schwachstelle führen, die möglicherweise schwieriger zu erkennen ist.
 
-Grundlegende Anwendungssicherheit
+### Grundlegende Anwendungssicherheit
 
 In [Kapitel 5](https://subscription.packtpub.com/book/cloud-and-networking/9781836203599/5) haben wir die Erstellung und Bereitstellung von Images und Artefakten behandelt. Die beschriebene Methode der semantischen Versionierung für eine Anwendung stellt eine Best Practice für die Erstellung von Software dar, jedoch nicht für deren Verwendung. Wenn eine Version unter Verwendung von Git für die Quellcodeverwaltung einer Anwendung erstellt wird, erhält die Version dank der modernen Funktionalität von Git zusätzlich zu einer vom Menschen definierten Version eine SHA-256-Signatur. Im Gegensatz zu den Versionsnummern, die wiederverwendet werden können, ist der **Secure Hash Algorithm** (**SHA**) eine Signatur für genau diesen Build der Software und immer eindeutig. Daher ist es für bewährte Sicherheitsverfahren wichtig, die vollständige SHA-Adresse für die von der Plattform verwendeten Images anstelle der Image-Version zu verwenden.
 
@@ -517,7 +536,7 @@ Hier ist ein Beispiel für den Docker-Pull-Befehl unter Verwendung der Image-Ver
 
 docker pull quay.io/keycloak/keycloak@sha256:520021b1917c54f899540afcb0126a2c90f12b828f25c91969688610f1bdf949
 
-KopierenErklären
+### KopierenErklären
 
 Neben den Image-Versionen gibt es noch eine weitere Identifizierungsmethode, die als **Floating Tags** bekannt ist. Ein Floating Tag ist ein Zeiger und wendet einen beliebigen Wert an, der für die Wiederverwendung in einem Release-Image vorgesehen ist. Die gängigsten Tags sind „latest“, aber sie können so ziemlich alles be ieren, da es nur Branchennormen und keine technischen Einschränkungen gibt. Da ein Tag später auf jedes Release-Image umgeleitet werden kann, ist dies keine sichere Methode, um eine Abhängigkeit zu ziehen. Zu den Risiken der Verwendung von Floating Tags gehören die folgenden:
 
@@ -531,13 +550,13 @@ Eine typische Methode zur Festlegung einer Richtlinie wäre die Verwendung von T
 
 OPA und Kyverno sind zwei Beispiele für OSS, die für die Sicherheit genutzt werden können, aber sie sind nicht die einzigen Tools im Open-Source-Ökosystem.
 
-FOSS für die Plattformsicherheit und wie man es einsetzt
+### FOSS für die Plattformsicherheit und wie man es einsetzt
 
 Es gibt eine Vielzahl von FOSS-Projekten innerhalb und außerhalb der Linux Foundation oder CNCF, die Ihnen bei der Verwaltung der Sicherheitslage Ihrer Plattform helfen. Die zuvor erwähnten Projekte wie Harbor und Trivy sind nur zwei von vielen.
 
 Wenn Sie Ihre Sicherheitsanforderungen vergleichen, z. B. die Einhaltung der OWASP Top Ten für verfügbare Open-Source-Projekte, finden Sie ein Tool, mit dem Sie jeden Punkt auf der Liste abarbeiten können.
 
-Muster und Tools für das Sicherheitsmanagement
+### Muster und Tools für das Sicherheitsmanagement
 
 Die Plattform kann nur begrenzt zur Verwaltung der Sicherheitslage des Unternehmens beitragen. Daher muss sie eine solide Grundlage für die Sicherheit bieten, indem sie nützliche Integrationen bereitstellt, einen sicherheitsorientierten Ansatz verfolgt und, wie in den vorangegangenen Kapiteln erläutert, offen für Beiträge der Entwickler-Community ist, die sie unterstützt. Wenn Sie festgelegt haben, welche Compliance-Stufen erforderlich sind, können Sie damit beginnen, zu untersuchen, welche Fehler zu einem Versagen Ihrer Compliance und Sicherheitslage führen könnten, indem Sie prozessbasierte Sicherheitsüberprüfungen und technologiebasierte Sicherheitsüberprüfungen durchführen:
 
@@ -546,7 +565,7 @@ Die Plattform kann nur begrenzt zur Verwaltung der Sicherheitslage des Unternehm
 
 Für jedes Unternehmen, das ein bestimmtes Maß an Sicherheit und Compliance gemäß einem geltenden Rahmenwerk nachweisen möchte, hilft dieses Compliance-Rahmenwerk dabei, die Häufigkeit der Prozessausführung zu definieren und diese Leitlinien mit regelmäßigen Audits zu kombinieren, um sicherzustellen, dass die Plattform nicht ins Hintertreffen gerät.
 
-Was würde unser fiktives Unternehmen tun?
+### Was würde unser fiktives Unternehmen tun?
 
 Unser fiktives Unternehmen Financial One ACME ist ein traditionsreiches Finanzinstitut, das an seiner Cloud-nativen Transformation arbeitet, um gegenüber jüngeren Fintech-Unternehmen wettbewerbsfähig zu bleiben. Als Finanzinstitut hat es das inhärente Ziel, Risiken zu minimieren. Außerdem unterliegt es regulatorischen Beschränkungen, darunter PCI DSS.
 
@@ -594,7 +613,7 @@ Schließlich wird das Plattformteam von Financial One ACME nicht nur sicherstell
 
 Diese Beispielantworten decken nur einen Teil der Sicherheits- und Compliance-Anforderungen ab, die für ein Finanzinstitut wie eine Bank gelten würden. Darüber hinaus unterliegen sie wahrscheinlich zusätzlichen staatlichen Vorschriften, die noch weitergehende Maßnahmen zur Minderung von Sicherheits- und Compliance-Risiken erfordern würden. Genau wie Ihr Team müsste auch unser fiktives Unternehmen jeden einzelnen Punkt der für es geltenden Compliance-Rahmenbedingungen berücksichtigen und vor allem gemeinsame Verfahren einführen, um ein Höchstmaß an Sicherheit zu gewährleisten.
 
-Zusammenfassung
+### Zusammenfassung
 
 Zusammenfassend lässt sich sagen, dass Sicherheit und Compliance ein weites Feld sind, zu dem viele Experten spezielle Werke veröffentlicht haben. Dieses Kapitel sollte nicht als allumfassend angesehen werden, sondern Ihnen den richtigen Weg weisen, um eine Cybersicherheitsstrategie für Ihr IDP zu definieren und umzusetzen. Es ist wichtig zu wissen, wie Sie Schwachstellen im Blick behalten können, und in Ihrem Unternehmen Verfahren und Tools einzurichten, um Schwachstellen im IDP und den darin gehosteten Anwendungen zu erkennen und aufzudecken.
 
