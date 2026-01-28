@@ -1,4 +1,4 @@
-#**Technische Schulden wählen, um Plattformen funktionsfähig zu halten**
+# Technische Schulden wählen, um Plattformen funktionsfähig zu halten**
 
 Was sind **technische Schulden** und wie können sie eine Plattform reparieren? Technische Schulden sind die laufenden Kosten für die Wartung einer Software. Dabei handelt es sich um die tatsächlichen Ausgaben für die Laufzeitumgebung, die Zeit für den Betrieb und die Aktualisierung sowie die Kundenzufriedenheit. Genau wie finanzielle Schulden können sich auch technische Schulden anhäufen. Wenn sich der Betrag immer weiter erhöht, kann das Team keine neuen Schulden machen oder neue Funktionen bereitstellen, da die gesamte Arbeitszeit für die Behebung der aktuellen Probleme aufgewendet wird.
 
