@@ -389,7 +389,7 @@ Abbildung 2.9: Die Funktionsebene mit Beispiel-Tools
 
 Die Funktionsebene ist für die eigentliche Anwendungsbereitstellung und den Betrieb von entscheidender Bedeutung. Hier findet die größte technische Interaktion statt, und wenn die Anwendung des Benutzers hier versagt, sind alle anderen investierten Anstrengungen umsonst.
 
-## Eine Plattformarchitektur geht über Referenzen hinaus
+# Eine Plattformarchitektur geht über Referenzen hinaus
 
 Zusammenfassend lässt sich sagen, dass Referenzarchitekturen ein leicht verständliches Konzept der Plattform vermitteln. Was sie nicht bieten, ist die tatsächliche Architektur der Plattform. Wo läuft die Versionsverwaltung des Quellcodes? Wo befinden sich die CI/CD-Pipeline-Komponenten? Wo ist die Container-Registry? Wie wird der IDP gehostet?
 
@@ -404,7 +404,7 @@ Abbildung 2.10: Plattformarchitektur
 
 Es ist schwierig, den richtigen Ansatz zu finden, um die Infrastruktur- und Plattformkomponenten in einem Diagramm darzustellen. Es ist nicht der sauberste Ansatz, aber es ist notwendig, alle Abhängigkeiten und gegenseitigen Einflüsse hervorzuheben. Halten Sie es so einfach wie möglich, aber so detailliert wie erforderlich. Sie können es sogar in verschiedene Diagramme aufteilen, um bestimmte Informationen hervorzuheben.
 
-## Verantwortung für Ihre Architekturen übernehmen
+# Verantwortung für Ihre Architekturen übernehmen
 
 Es scheint viel Papierkram zu sein, verschiedene Versionen und Varianten einer Architektur zu verwalten und zu handhaben. Möglicherweise haben Sie jedoch bereits die Erfahrung gemacht, dass sich eine Plattform schneller verändert als die Diagramme. Wichtig ist, dass weder das Diagramm als Ergebnis Ihrer Arbeit als Architekt die Entwicklung der Plattform verlangsamt, noch dass die Plattformentwicklung die Diagramme verlangsamt. Ich habe Projekte gesehen, in denen Architekten zu einer herausragenden hierarchischen Institution wurden. Alle diese Projekte scheiterten und hatten Schwierigkeiten, das Richtige zu tun. Als Architekt sind Sie nicht allwissend, aber Sie sind auch nicht das Plattform-Entwicklungsteam. Zusammenarbeit, Abstimmung und Synchronisation sind der Schlüssel, fast wie bei der Plattform, die Sie aufbauen möchten.
 
@@ -436,7 +436,7 @@ Auf strategischer Ebene beeinflusst das Problem der Qualitätskosten viele Entsc
 
 Sie müssen den goldenen Mittelweg für Ihre Plattform finden. Gehen Sie jedoch nicht davon aus, dass eine perfekte Plattform den Anforderungen anderer entspricht. Wenn Sie dieses Problem in Phasen angehen, ist das ein klares Zeichen dafür, dass Sie die Produktmentalität mit Nutzerorientierung aus den Augen verloren haben.
 
-## Erstellen Sie Ihre eigene Architektur
+# Erstellen Sie Ihre eigene Architektur
 
 Es ist Zeit zu handeln. Bisher haben wir alle relevanten Input-Quellen, Themen und Perspektiven behandelt, die zu berücksichtigen sind, damit wir mit der Erstellung einer Architektur beginnen können. Daher haben wir eine Vorlage vorbereitet, die Sie im GitHub-Repository für dieses Buch oder als Miro-Vorlage für die Zusammenarbeit finden.
 
@@ -454,7 +454,7 @@ Da Architektur ein lebendiges Konstrukt ist, müssen Sie sie wiederholt überarb
 - **GitHub**: https://github.com/PacktPublishing/Platform-Engineering-for-Architects/tree/main/Chapter02
 - **Miro**: [https://miro.com/miroverse/platform-architecture-workshop](https://miro.com/miroverse/platform-architecture-workshop%0A)
 
-## Erstellen Ihrer Referenzarchitektur
+# Erstellen Ihrer Referenzarchitektur
 
 Die Referenzarchitektur umreißt Ihre geplanten Komponenten, kategorisiert sie und verankert sie an vorderster Front Ihrer Plattformimplementierung. Dies ist auch Ihre Hilfe bei der Definition der Abhängigkeitskarte zu einem bestimmten Zeitpunkt.
 
@@ -503,7 +503,7 @@ Sie können auch die Hervorhebungen im Architekturdiagramm variieren. Wir sehen 
 
 Denken Sie daran, Dinge wie Verwaltungsumgebungen/Cluster, Staging-Umgebungen für Integrationstests oder sogar einen Schritt vor der Entwicklungsumgebung in das Diagramm aufzunehmen. Aus Gründen der Kontinuität können auch Backup und Wiederherstellung hilfreich sein. Je mehr Sie daran arbeiten, desto mehr Details werden Sie entdecken. Wenn ein Diagramm zu komplex wird, sollten Sie verschiedene Versionen bereitstellen.
 
-## Visualisierung des Kontrollflusses der Plattform
+# Visualisierung des Kontrollflusses der Plattform
 
 Neu für Sie könnte der **Kontrollfluss** sein. Er ist der erste gute Schritt eines prozessähnlichen Ansatzes, um bestimmte relevante Pfade für die Verwaltung der Plattform und der Benutzerergebnisse freizugeben. Innerhalb einer Plattform gibt es mehrere Flüsse; diese drei sind die wichtigsten:
 
@@ -535,7 +535,7 @@ Mit anderen Worten: In jeder IT-Organisation, die Software zur Unterstützung ih
 
 Das Ziel unserer Plattform ist es, Anwendungsfälle und das dafür erforderliche Fachwissen zu identifizieren und diese Anwendungsfälle dann auf einfache Weise als Self-Service für alle bereitzustellen, ohne dass jedes Mal ein Experte hinzugezogen werden muss.
 
-## Zentralisieren Sie Fachwissen durch einen Self-Service
+# Zentralisieren Sie Fachwissen durch einen Self-Service
 
 Ermöglichen Sie es jedem, seine Arbeit zu erledigen, ohne ein Experte sein zu müssen oder einen Experten in allen Bereichen zu befragen, die für die Erledigung seiner Arbeit erforderlich sind!
 
@@ -827,7 +827,7 @@ Abbildung 2.18: Beispiele für SPACE-Metriken von Michael Kaufmann \[16\]
 
 Mit dem SPACE-Framework erhalten wir nun tiefe Einblicke in die Entwicklung, was für uns als Plattformingenieure hilfreich ist und die DORA-Metriken erweitert. Wir können diese Metriken aufeinander aufbauen. So können Produktverantwortliche, Architekten und Plattformingenieure beurteilen, ob sie das Richtige auf die richtige Weise tun. Allerdings fehlen uns noch Inputs von den Experten **für Entwicklererfahrung** (**DevEx**).
 
-## DevEx-Framework
+# DevEx-Framework
 
 SPACE und DORA fehlt die DevEx-Perspektive. Auch wenn wir uns mit Zufriedenheit und Fluss befassen, erhalten wir kein vollständiges Bild unseres Plattform-Engineering-Teams. Hier kommt das **DevEx-Framework** ins Spiel \[17\]. Es beschränkt die Perspektive auf nur drei Dimensionen. Zusammen bilden sie die Grundlage für DevEx und können dessen Wirkungsbereich erweitern.
 
@@ -856,7 +856,7 @@ Diese zu messen ist schwierig, da die Antwort zwischen tatsächlichen Kennzahlen
 
 Wie Sie an diesen Beispielen sehen können, gibt es viel Interpretationsspielraum. Wenn Sie die KPIs Ihrer Plattform definieren, müssen Sie sicherstellen, dass diese Kennzahlen klar beschrieben sind. Sie müssen besonders präzise sein, indem Sie erklären, wie Sie welches Feedback und welche Kennzahlen auf welche Weise interpretieren.
 
-## Wichtiger Hinweis
+# Wichtiger Hinweis
 
 Architekten müssen diese KPIs und ihre Bedeutung verstehen, damit sie die Plattform effektiv verbessern können.
 
@@ -870,7 +870,7 @@ Es gibt jedoch einen Weg, der nicht abstrakt und unklar ist wie ein Story Point,
 
 **Die Kosten pro Änderung** sind eine effiziente Möglichkeit, die Verbesserung und Leistungsfähigkeit einer Plattform hervorzuheben. Innerhalb der Endnutzer-Community des Cloud-nativen Ökosystems finden wir Beispiele für diesen KPI, der verwendet wird, um zu diskutieren, wie gut eine Plattform läuft.
 
-### Vergleichen wir zwei verschiedene Werte für die Kosten pro Änderung:
+# Vergleichen wir zwei verschiedene Werte für die Kosten pro Änderung:
 
 - **500 $ pro Änderung**: 15.000 $ pro Monat oder 180.000 $ pro Jahr bei 30 Änderungen pro Monat
 - **80 $ pro Änderung**: 2.400 $ pro Monat oder 28.800 $ pro Jahr bei 30 Änderungen pro Monat
