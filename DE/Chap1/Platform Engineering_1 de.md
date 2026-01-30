@@ -1,4 +1,4 @@
-***Im Rahmen meiner Masterarbeit befasse ich mich mit dem Thema Plattform-Engineering in einem der führenden Robotikunternehmen Bayerns***.
+***Im Rahmen meiner Forschungsarbeit befasse ich mich mit dem Thema Plattform-Engineering in einem der führenden Robotikunternehmen Bayerns***.
 ***Dieses GitHub-Repository dient der schrittweisen Dokumentation meiner Forschungsarbeit sowie der strukturierten Aufbereitung von Methoden, Ergebnissen und gewonnenen Erkenntnissen***.
 
 ***Interessierte Leserinnen und Leser sind eingeladen, den Entstehungsprozess nachzuvollziehen. Konstruktive Anmerkungen, fachliche Hinweise und weiterführende Ideen sind ausdrücklich willkommen***
