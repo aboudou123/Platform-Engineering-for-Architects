@@ -453,7 +453,7 @@ Abbildung 8.5: Eine Self-Service-Plattform, die Kosten meldet und reduziert
 
 Die Berichterstattung in diesem Anwendungsfall bezog sich nicht nur auf die Kosten, sondern auch auf die CO2-Bilanz, die heutzutage für die meisten Unternehmen ein wichtiges Thema ist. Durch die Bereitstellung dieses Self-Service über eine zentrale Plattform war es für dieses Unternehmen einfach, seinen Ingenieuren von Anfang an ein stärkeres Kostenbewusstsein zu vermitteln und ihnen auch die positiven Auswirkungen ihres Handelns aufzuzeigen.
 
-Leasing versus Pauschalpreis für Ressourcen
+# Leasing versus Pauschalpreis für Ressourcen
 
 Das vorherige Beispiel ist großartig, erfordert jedoch, dass die Teams im Voraus genau überlegen, wie lange und wann sie bestimmte Ressourcen benötigen. Ein anderer Ansatz wäre die Verwendung eines **Leasingmodells**. Was bedeutet das?
 
