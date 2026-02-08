@@ -365,7 +365,6 @@ Methodisch lassen sich diese Lücken mit etablierten empirischen Vorgehen adress
 
 ### Nächster Schritt
 
-Sende mir jetzt die **Unterfragen**. Ich erstelle dann eine **zusammenhängende, seitenlange (≥ 2 Seiten)** Ausarbeitung **genau entlang deiner Unterfragen**, inklusive einer konsistenten Argumentationskette (Mechanismus → Evidenz → Designimplikation → Forschungslücke) und sauberer Quellenangaben.
 
 [1]: https://dl.acm.org/doi/10.1109/TSE.2022.3175660?utm_source=chatgpt.com "An Actionable Framework for Understanding and ..."
 [2]: https://arxiv.org/pdf/1703.07019?utm_source=chatgpt.com "Continuous Integration, Delivery and Deployment"
@@ -384,7 +383,7 @@ Sende mir jetzt die **Unterfragen**. Ich erstelle dann eine **zusammenhängende,
 
 =============================================
 
-## Welche Konzepte, Prinzipien und architektonischen Muster des Platform Engineering werden in der wissenschaftlichen Literatur und in industriellen Best Practices zur Gestaltung Interner Entwicklerplattformen beschrieben?
+## Welche Konzepte, Prinzipien und architektonischen Muster des Platform Engineering werden in der wissenschaftlichen Literatur und in industriellen Best Practices zur Gestaltung Interner Entwicklerplattformen beschrieben ?
 
 Im Folgenden beantworte ich die Unterfrage als **strukturierte, quellenbasierte Bestandsaufnahme**: (i) welche **Konzepte/Prinzipien** (soziotechnisch und architektonisch) in der **wissenschaftlichen Literatur** mit klarer Relevanz für interne Entwicklerplattformen beschrieben sind, und (ii) welche **industriellen Best Practices** in **anerkannten Fachbüchern** (nicht Blogs/Marketing) konsolidiert werden. Wo ein Konzept **in der Praxis stark** ist, aber **peer-reviewt nur schwach** belegt, wird dies explizit kenntlich gemacht.
 
@@ -1596,5 +1595,6 @@ Xia, B., et al. (2023). An Empirical Study on Software Bill of Materials: Where 
 [23]: https://ojcchar.github.io/files/27-icse24-sboms.pdf?utm_source=chatgpt.com "BOMs Away! Inside the Minds of Stakeholders - Oscar Chaparro"
 [24]: https://link.springer.com/content/pdf/10.1007/978-3-642-29044-2.pdf?utm_source=chatgpt.com "Experimentation in Software Engineering - Springer Link"
 [25]: https://dl.acm.org/doi/abs/10.1109/ICSE48619.2023.00219?utm_source=chatgpt.com "An Empirical Study on Software Bill of Materials: Where We ..."
+
 
 
