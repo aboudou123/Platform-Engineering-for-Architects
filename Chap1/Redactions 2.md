@@ -430,8 +430,6 @@ Xia, B., et al. (2023). An Empirical Study on Software Bill of Materials: Where 
 
 ---
 
-Wenn du möchtest, kann ich als nächsten Schritt **(a)** den Text in eine **Word-Datei im typischen FH-Layout** (Deckblatt, Abstract, Abbildungsverzeichnis-Platzhalter, Kapitelnummerierung) übertragen oder **(b)** Kapitel 7/8 stärker „handlungsanleitend“ machen (konkrete Prototyp-Artefakte, Evaluationsinstrumente, Fragebogenitems und Metrikdefinitionen) – weiterhin ausschließlich mit wissenschaftlicher Fundierung.
-
 [1]: https://books.google.com/books/about/DevOps.html?id=fcwkCQAAQBAJ&utm_source=chatgpt.com "DevOps: A Software Architect's Perspective"
 [2]: https://dl.acm.org/doi/10.1109/MS.2021.3119106?utm_source=chatgpt.com "GitOps: The Evolution of DevOps? | IEEE Software"
 [3]: https://www.sei.cmu.edu/documents/1445/2014_021_001_424904.pdf?utm_source=chatgpt.com "Toward Design Decisions to Enable Deployability"
@@ -457,3 +455,4 @@ Wenn du möchtest, kann ich als nächsten Schritt **(a)** den Text in eine **Wor
 [23]: https://ojcchar.github.io/files/27-icse24-sboms.pdf?utm_source=chatgpt.com "BOMs Away! Inside the Minds of Stakeholders - Oscar Chaparro"
 [24]: https://link.springer.com/content/pdf/10.1007/978-3-642-29044-2.pdf?utm_source=chatgpt.com "Experimentation in Software Engineering - Springer Link"
 [25]: https://dl.acm.org/doi/abs/10.1109/ICSE48619.2023.00219?utm_source=chatgpt.com "An Empirical Study on Software Bill of Materials: Where We ..."
+
