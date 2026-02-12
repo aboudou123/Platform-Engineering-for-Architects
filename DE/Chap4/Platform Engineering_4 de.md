@@ -1,3 +1,9 @@
+==========================
+
+# Kubernetes  K8s
+
+======================
+
 # **Teil 2 – Entwerfen und Erstellen von Plattformen**
 
 In Teil 2 befassen wir uns mit den technischen Grundlagen einer Plattform und führen Sie durch die relevanten Entscheidungspunkte während des Entwurfsprozesses. Dazu lernen Sie die vier Hauptkomponenten einer Plattform kennen: die Kernkomponenten und Infrastruktur, die durch Kubernetes repräsentiert werden, die für eine Plattform erforderliche Automatisierung, die relevanten Komponenten für eine selbstbedienungsorientierte, entwicklerfreundliche Plattform und die Schritte, die zum Aufbau sicherer und konformer Umgebungen erforderlich sind.
