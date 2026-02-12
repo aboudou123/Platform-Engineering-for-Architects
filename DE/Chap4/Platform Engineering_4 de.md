@@ -348,7 +348,7 @@ parameters:
 
 Der Nachteil dabei ist, dass Sie menschliches Versagen berücksichtigen müssen, das Ihre Plattform lahmlegen kann, indem es den Speicher füllt, bis das System einfriert.
 
-Herausforderungen für CSI
+# Herausforderungen für CSI
 
 Die Definition eines CSI ist ein relativ neuer Ansatz, aber die zugrunde liegenden Technologien des Speichermanagements und des softwaredefinierten Speichers sind viel älter als Kubernetes. Wir können dies auch in vielen CSI-Treibern feststellen, die nichts anderes als eine Shim-Wrapper-Lösung für Legacy-Code sind. Für weniger flexible und skalierbare Cluster ist dies möglicherweise kein Problem, aber in Umgebungen, in denen viel los ist, möchten Sie kein CSI in Ihrem System haben, das zum Engpass wird. Einige CSIs haben sogar Einschränkungen und Begrenzungen, um ihren Ausfall bei großem Umfang zu verhindern. Fairerweise muss man sagen, dass dies in der Regel bei lokalen Installationen und einigen älteren Speichertechnologien der Fall ist. Bei diesen kommen noch die Darstellung **der Logical Unit Number** (**LUN**) und Verbindungsbeschränkungen als weitere zu berücksichtigende Faktoren hinzu. Die LUN dient den Pods dazu, Anfragen an den Speicherraum zu stellen und Daten abzurufen. Es gibt Beschränkungen hinsichtlich der Anzahl der Verbindungen, die ein physischer Server zum Speicher herstellen kann. Auch dies ist wichtig, wenn Sie Ihren eigenen Speicher und Ihre eigenen SANs verwalten.
 
@@ -414,7 +414,7 @@ KopierenErklären
 
 Eine bevorstehende Alternative zur Bereitstellung verschiedener Container-Images ist die Kompilierung der Software als **WebAssembly** (**Wasm**)-Container.
 
-Wasm-Laufzeit
+# Wasm-Laufzeit
 
 Die Verwendung von Wasm als alternatives Containerformat hat im letzten Jahr drastisch zugenommen. Wasm ist ein binäres Befehlsformat für eine stapelbasierte virtuelle Maschine. Stellen Sie es sich als eine Zwischenebene zwischen verschiedenen Programmiersprachen und vielen verschiedenen Ausführungsumgebungen vor. Sie können Code, der in über 30 verschiedenen Sprachen geschrieben ist, in eine \*.wasm-Datei kompilieren und diese Datei dann auf jeder Wasm-Laufzeitumgebung ausführen.
 
@@ -589,7 +589,7 @@ Es gibt einige Einschränkungen, die Sie bei der Autoscaler-Familie berücksicht
     - Die CA-Skalierungen basieren auf den Anforderungen und Grenzen der Pods. Dies kann zu vielen ungenutzten Ressourcen, schlechter Auslastung und hohen Kosten führen.
     - Wenn eine CA einen Skalierungsbefehl an den Cloud-Anbieter auslöst, kann es Minuten dauern, bis neue Knoten für den Cluster bereitgestellt werden. Während dieser Zeit verschlechtert sich die Anwendungsleistung. Im schlimmsten Fall wird sie unbrauchbar.
 
-Lösungsansatz
+# Lösungsansatz
 
 Als Plattformingenieure möchten wir sicherstellen, dass der Benutzer das Skalierungsverhalten definieren kann, ohne die Plattform zu gefährden. Die Verwendung von HPA, VPA und CA erfordert eine perfekte Konfiguration und Steuerung, Schutzvorrichtungen durch eine Policy-Engine und eine genaue Überwachung. Es ist von entscheidender Bedeutung, die Skalierung und Deskalierung des Clusters zu steuern und gleichzeitig die automatische Skalierung innerhalb des Namespace für Ihre Benutzer zu ermöglichen.
 
@@ -657,7 +657,7 @@ Dieser umfangreiche Funktionsumfang ist ein echter Game-Changer für alle, die P
 
 Mit der Gateway-API können Sie namensraumübergreifende Routen erstellen, entweder mit ReferenceGrant oder mit AllowedRoutes. Die zulässigen Routen werden über Referenzbindungen implementiert, die vom Gateway-Eigentümer definiert werden müssen, aus welchen Namensräumen Datenverkehr erwartet wird. In der Praxis wird die Gateway-Konfiguration wie folgt erweitert:
 
-Namespaces:
+**Namespaces**:
 
 &nbsp; from: Selector
 
@@ -675,7 +675,7 @@ Namespaces:
 
 &nbsp;     - omega
 
-KopierenErklären
+**Erklären**
 
 Dadurch wird der Datenverkehr aus den Namespaces alpha und omega zugelassen.
 
@@ -700,7 +700,7 @@ Abbildung 4.12: Schreibberechtigungen für ein erweitertes vierstufiges Modell
 
 An dieser Stelle ist die Gateway-API der wahre Retter unzähliger Nächte, in denen es darum ging, den eingehenden Datenverkehr richtig zu gestalten und eine Multi-Tenant-Plattform mit einem klaren und transparenten Ansatz aufzubauen.
 
-ExternalDNS
+**External DNS**
 
 Das von den Kubernetes-Mitwirkenden entwickelte ExternalDNS-Projekt ist ein Tool, das häufig in Cloud-basierten Kubernetes-Clustern verwendet wird, aber dennoch nicht oft als relevante Implementierung hervorgehoben wird. Es überbrückt jedoch die Lücke zwischen einigen zufälligen IPs von Pods im Cluster, leitet sie an ein öffentlich oder privat erreichbares DNS weiter und leitet den Datenverkehr an die Anwendung innerhalb der Plattform weiter. ExternalDNS bietet Unterstützung für fast alle Cloud- und Cloud-ähnlichen Umgebungen sowie für verkehrs- und inhaltsorientierte Dienste wie CloudFlare.
 
