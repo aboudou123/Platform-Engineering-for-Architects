@@ -248,14 +248,17 @@ errorResponse:
   links:
     adoRunUrl: "string (if started)"
     logsUrl: string
-=======================================
 
-
-=======================================
-
-Perfekt — dann bauen wir Backstage **privat** (nur intern erreichbar) **ohne Entra ID**. Das ist ein sehr typisches Enterprise-Setup. Unten ist ein **umsetzbarer MVP-Plan** (als Ticket-Backlog nutzbar) mit klarer Architektur, Datenflüssen und minimaler Infrastruktur.
 
 ---
+
+
+=======================================
+
+
+=======================================
+
+
 
 ## 1) Architekturvariante (Backstage private auf AKS, ohne Entra)
 
