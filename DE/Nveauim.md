@@ -743,9 +743,133 @@ docker build --no-cache -t backstage-idp:dev .
 
 <img width="1694" height="880" alt="image" src="https://github.com/user-attachments/assets/96c905d9-457c-4040-a399-5690310ba21d" />
 
-
-
 ---
+```bash
+
+cd ~/idp/koffitapp
+
+cat > Dockerfile <<'EOF'
+# -------- build stage --------
+FROM node:22-bookworm-slim AS build
+WORKDIR /app
+
+# Build-Tools (für native Node-Module) + git
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 make g++ git ca-certificates \
+  && rm -rf /var/lib/apt/lists/*
+
+# Yarn über Corepack
+RUN corepack enable
+
+# Nur die Dateien kopieren, die Yarn fürs Install braucht
+COPY package.json yarn.lock .yarnrc.yml backstage.json tsconfig.json ./
+
+# Yarn 4 nutzt .yarn/
+COPY .yarn ./.yarn
+
+# Workspace-Quellcode
+COPY packages ./packages
+COPY plugins ./plugins
+
+# Install + Build
+RUN yarn install --immutable || yarn install
+RUN yarn build:backend
+
+# Production node_modules für Runtime erzeugen (wichtig!)
+RUN yarn workspaces focus --all --production
+
+# -------- runtime stage --------
+FROM node:22-bookworm-slim AS runtime
+WORKDIR /app
+ENV NODE_ENV=production
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+  && rm -rf /var/lib/apt/lists/*
+
+# Runtime: node_modules + minimal nötige Dateien
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/package.json ./package.json
+COPY --from=build /app/yarn.lock ./yarn.lock
+
+# Backstage Backend Build-Output (bei dir: dist enthält bundle.tar.gz + skeleton.tar.gz)
+COPY --from=build /app/packages/backend/dist ./packages/backend/dist
+COPY --from=build /app/packages/backend/package.json ./packages/backend/package.json
+
+# Optional: Configs ins Image (für Start ohne Volume-Mount)
+COPY app-config.yaml ./app-config.yaml
+COPY app-config.production.yaml ./app-config.production.yaml
+COPY app-config.local.yaml ./app-config.local.yaml
+
+EXPOSE 7007
+
+# Start: Backstage backend mit deiner Config
+# (Backstage lädt standardmäßig app-config.yaml, aber wir geben sie explizit mit)
+CMD ["node", "packages/backend", "--config", "app-config.yaml"]
+EOF
+```
+
+# @backstage/backend-defaults testen
+
+```bash
+docker run --rm backstage-idp:dev sh -lc 'node -p "require.resolve(\"@backstage/backend-defaults\")"'
+```
+
+<img width="1465" height="168" alt="image" src="https://github.com/user-attachments/assets/6dbca1d1-c819-4706-b33b-06bf2dc13f91" />
+
+
+
+
+
+<img width="1447" height="389" alt="image" src="https://github.com/user-attachments/assets/fb0b9b52-b0ad-4500-bb42-83bc659da513" />
+
+
+
+
+# Neue Datei start-backend.sh erstellen (Copy & Paste)
+
+
+```bash
+cd ~/idp/koffitapp
+
+cat > start-backend.sh <<'EOF'
+#!/usr/bin/env sh
+set -eu
+
+R=/app/runtime
+rm -rf "$R"
+mkdir -p "$R"
+
+echo "== Extract skeleton =="
+tar -xzf /app/packages/backend/dist/skeleton.tar.gz -C "$R"
+
+echo "== Extract bundle =="
+tar -xzf /app/packages/backend/dist/bundle.tar.gz -C "$R"
+
+echo "== Start Backstage backend =="
+cd "$R"
+
+# Damit Node die Dependencies in /app/node_modules findet
+export NODE_PATH=/app/node_modules
+
+exec node packages/backend --config /app/app-config.yaml
+EOF
+
+chmod +x start-backend.sh
+
+```
+<img width="763" height="666" alt="image" src="https://github.com/user-attachments/assets/a3f8f0cb-a232-4368-9394-7234f0722bc7" />
+
+
+# Kontrolle
+
+<img width="873" height="245" alt="image" src="https://github.com/user-attachments/assets/1d2d3f9b-545e-49d8-af81-28780dece816" />
+
+
+<img width="1313" height="1036" alt="image" src="https://github.com/user-attachments/assets/9653b011-f4d8-464b-aad5-5a14b8fa62ba" />
+
+
+
 
 ## 4) Start testen
 
