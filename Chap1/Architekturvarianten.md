@@ -248,3 +248,207 @@ errorResponse:
   links:
     adoRunUrl: "string (if started)"
     logsUrl: string
+=======================================
+
+
+=======================================
+
+Perfekt — dann bauen wir Backstage **privat** (nur intern erreichbar) **ohne Entra ID**. Das ist ein sehr typisches Enterprise-Setup. Unten ist ein **umsetzbarer MVP-Plan** (als Ticket-Backlog nutzbar) mit klarer Architektur, Datenflüssen und minimaler Infrastruktur.
+
+---
+
+## 1) Architekturvariante (Backstage private auf AKS, ohne Entra)
+
+### Komponenten
+
+* **AKS (private access)**
+* **Namespace `idp`**
+* **Backstage (Frontend+Backend)** als Deployment
+* **PostgreSQL (Managed Azure Database for PostgreSQL)** *(empfohlen, stabil & wenig Ops)*
+* **Private Ingress**: NGINX Ingress **internal** (Private Load Balancer) oder interner App Gateway
+* **TLS intern**: Unternehmens-PKI (Root/Intermediate) oder cert-manager mit internem Issuer
+* **OIDC Provider**: **Keycloak** *(oder ein vorhandener interner IdP)*
+
+  * Gruppen/Rollen: `idp-admin`, `platform`, `dev`
+* **Secrets**: Key Vault + CSI Driver / External Secrets Operator
+* **Execution Engine**: **Azure DevOps Pipelines** (2 Pipelines)
+* **Audit/Logs**: zentraler Log-Sink (z. B. Log Analytics / ELK / Splunk) + Links zu ADO Runs
+
+### Datenfluss (beide Use Cases, identisch)
+
+1. User → Backstage (über internes Netz/VPN) → Login via Keycloak (OIDC)
+2. Backstage Scaffolder Form → Validierung → Trigger ADO Pipeline Run (REST API)
+3. Pipeline führt aus (ADO/Artifactory/Sonar APIs) → schreibt Audit Event → liefert Links zurück
+4. Backstage zeigt Ergebnis: Repo/Pipeline/Sonar/Artifactory Links + ADO Run URL (Status)
+
+---
+
+## 2) Minimaler Infrastruktur-Plan (Track 1, priorisiert)
+
+### 2.1 Netzwerk & Private Exposure (Blocker zuerst)
+
+1. **Private Access bestätigen**
+
+   * Zugriff nur via VPN/Corp-Netz (kein Public Endpoint).
+2. **Private Ingress bereitstellen**
+
+   * NGINX Ingress mit **internal Load Balancer** (Azure annotation) *oder* App Gateway Ingress (AGIC), intern.
+3. **Interne DNS-Route**
+
+   * z. B. `backstage.dev.<corp>.local` → private LB IP.
+
+### 2.2 Identity (ohne Entra → Keycloak)
+
+4. **Keycloak bereitstellen** *(kann auch extern existieren; falls nicht: in AKS)*
+
+   * Realm `platform`
+   * Client `backstage` (OIDC)
+   * Gruppen: `idp-admin`, `platform`, `dev`
+5. **RBAC-Mapping definieren**
+
+   * `idp-admin` → Backstage Admin
+   * `platform` → Templates/Actions verwalten
+   * `dev` → Actions ausführen
+
+### 2.3 Datenbank & Secrets
+
+6. **Azure Database for PostgreSQL** bereitstellen
+
+   * private connectivity (Private Endpoint) wenn möglich
+7. **Secrets Management**
+
+   * Key Vault + CSI Secrets Store (oder External Secrets)
+   * Secrets: `POSTGRES_*`, `KEYCLOAK_CLIENT_SECRET`, `ADO_TOKEN`, `ARTIFACTORY_TOKEN`, `SONAR_TOKEN`
+
+### 2.4 Backstage Deployment & Ops-Baseline
+
+8. **Backstage deployen** (Helm/Kustomize)
+
+   * Catalog aktivieren
+   * Scaffolder aktivieren
+   * Auth OIDC via Keycloak
+9. **Logging/Monitoring MVP**
+
+   * Container logs zentral
+   * Alerts: Pod crashloop, 5xx rate, Ingress down
+
+---
+
+## 3) ADO Pipelines (MVP-Design, kurz & umsetzbar)
+
+### 3.1 Pipeline `repo-provisioning` (idempotent)
+
+**Inputs**
+
+* `requestId` (UUID), `requestorUpn`
+* `adoProject`, `repoName`, `serviceName`, `ownerTeam`
+* `ciTemplate` (enum), `templateRef`
+* `artifactoryRepoKey`, `sonarProjectKey`, optional `qualityGate`
+* `dryRun` (bool)
+
+**Steps**
+
+1. Validate (naming, allowlist projects, collisions)
+2. Ensure Repo exists (create if not)
+3. Seed template → replace placeholders → push
+4. Ensure pipeline YAML exists & pipeline configured
+5. Ensure Sonar project + assign Quality Gate
+6. Ensure Artifactory publish config present
+7. Write audit event (JSON) + output links
+
+### 3.2 Pipeline `permission-management` (idempotent)
+
+**Inputs**
+
+* `requestId`, `requestorUpn`
+* `adoProject`, `scopeType` (project/repo/pipeline), `scopeId`
+* `principalType` (user/group/sp), `principalId`
+* `role` (reader/contributor/admin), `operation` (grant/revoke/change)
+* `dryRun`
+
+**Steps**
+
+1. Validate (allowlist scopes, SoD: kein Admin für себя)
+2. Resolve principal → ADO descriptor
+3. Read current permissions (baseline)
+4. Apply change
+5. Read after state → diff
+6. Write audit event + output
+
+### Audit Event (für beide)
+
+* Pflicht: `requestId`, `requestor`, `action`, `targets`, `timestamp`, `result`, `adoRunUrl`
+* Für Permissions: `before/after` oder `diffSummary`
+
+---
+
+## 4) Action-Contracts (Textschema, knapp)
+
+### Repo-Provisioning Contract
+
+* Pflicht: `adoProject, repoName, ownerTeam, ciTemplate, templateRef, artifactoryRepoKey, sonarProjectKey`
+* Validierung: naming regex, project allowlist, uniqueness, template allowlist
+* Success: `repoUrl, pipelineUrl, sonarUrl, adoRunUrl, auditEventId`
+* Error: `errorCode, failingStep, correlationId, adoRunUrl(if any)`
+
+### Permission-Management Contract
+
+* Pflicht: `scopeType, scopeId, principalType, principalId, role, operation`
+* Validierung: SoD, allowed roles per scope, approval optional
+* Success: `diffSummary, targetUrl, adoRunUrl, auditEventId`
+* Error: `errorCode, failingStep, correlationId`
+
+---
+
+## 5) Portal-Integration (Backstage, private)
+
+### Scaffolder Templates (High Level)
+
+* Template `repo-provisioning`
+
+  * parameters → validate → trigger ADO pipeline → output links → (optional) register entity in Catalog
+* Template `permission-management`
+
+  * parameters → validate (SoD) → trigger pipeline → output diff + run link
+
+### Trigger & Status
+
+* Trigger: Backstage Backend → ADO Runs API (PAT/Service Connection)
+* Status: MVP-einfach **nur Link** zum ADO Run + optional Polling (später)
+* Ergebnis: User sieht immer einen **korrelierbaren Run** + Audit Event
+
+---
+
+## 6) Empfehlung „jetzt“ + konkrete To-Dos für die nächsten 2 Wochen
+
+### Empfehlung
+
+Da ihr **bereits AKS habt**, Backstage **private** betreiben wollt und **kein Entra** nutzt, ist der sauberste Weg:
+**Backstage MVP auf AKS + Keycloak OIDC + ADO Pipelines als Runner.**
+Das bleibt compliance-fähig, intern kontrollierbar und exakt kompatibel mit eurem Infra-Only-Ansatz.
+
+### Nächste 2 Wochen (konkret als Backlog)
+
+**Woche 1**
+
+1. Private Ingress (internal LB) + interne DNS
+2. Keycloak bereitstellen/konfigurieren (Realm, Client, Gruppen)
+3. Postgres (Managed) + Secrets in Key Vault
+4. Skeleton ADO Pipelines anlegen + Parameter/Validation + DryRun
+
+**Woche 2**
+5) Backstage deployen (Auth + DB + Scaffolder)
+6) Backstage → ADO Trigger Action implementieren/konfigurieren
+7) `repo-provisioning` fertigstellen (Repo + Seed + Sonar + Artifactory + Audit)
+8) `permission-management` fertigstellen (Resolve + apply + diff + Audit)
+9) Logging/Alerting MVP (Backstage up + Pipeline failure/duration)
+
+---
+
+Wenn du mir sagst, **ob Keycloak bereits existiert** (oder neu auf AKS soll), und ob ihr **Private DNS Zone** in Azure nutzt, kann ich den Netzwerk-/Ingress-Teil als **exakte Tickettexte** formulieren (inkl. AKS annotations für internal LB und einer sauberen Namenskonvention für `backstage.dev.eu1`).
+
+
+
+
+
+
