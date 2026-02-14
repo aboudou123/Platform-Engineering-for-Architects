@@ -250,8 +250,6 @@ errorResponse:
     logsUrl: string
 
 
----
-
 
 =======================================
 
@@ -284,7 +282,7 @@ errorResponse:
 3. Pipeline führt aus (ADO/Artifactory/Sonar APIs) → schreibt Audit Event → liefert Links zurück
 4. Backstage zeigt Ergebnis: Repo/Pipeline/Sonar/Artifactory Links + ADO Run URL (Status)
 
----
+
 
 ## 2) Minimaler Infrastruktur-Plan (Track 1, priorisiert)
 
@@ -335,7 +333,6 @@ errorResponse:
    * Container logs zentral
    * Alerts: Pod crashloop, 5xx rate, Ingress down
 
----
 
 ## 3) ADO Pipelines (MVP-Design, kurz & umsetzbar)
 
@@ -383,7 +380,6 @@ errorResponse:
 * Pflicht: `requestId`, `requestor`, `action`, `targets`, `timestamp`, `result`, `adoRunUrl`
 * Für Permissions: `before/after` oder `diffSummary`
 
----
 
 ## 4) Action-Contracts (Textschema, knapp)
 
@@ -401,7 +397,7 @@ errorResponse:
 * Success: `diffSummary, targetUrl, adoRunUrl, auditEventId`
 * Error: `errorCode, failingStep, correlationId`
 
----
+
 
 ## 5) Portal-Integration (Backstage, private)
 
@@ -420,7 +416,7 @@ errorResponse:
 * Status: MVP-einfach **nur Link** zum ADO Run + optional Polling (später)
 * Ergebnis: User sieht immer einen **korrelierbaren Run** + Audit Event
 
----
+
 
 ## 6) Empfehlung „jetzt“ + konkrete To-Dos für die nächsten 2 Wochen
 
@@ -445,10 +441,6 @@ Das bleibt compliance-fähig, intern kontrollierbar und exakt kompatibel mit eur
 7) `repo-provisioning` fertigstellen (Repo + Seed + Sonar + Artifactory + Audit)
 8) `permission-management` fertigstellen (Resolve + apply + diff + Audit)
 9) Logging/Alerting MVP (Backstage up + Pipeline failure/duration)
-
----
-
-Wenn du mir sagst, **ob Keycloak bereits existiert** (oder neu auf AKS soll), und ob ihr **Private DNS Zone** in Azure nutzt, kann ich den Netzwerk-/Ingress-Teil als **exakte Tickettexte** formulieren (inkl. AKS annotations für internal LB und einer sauberen Namenskonvention für `backstage.dev.eu1`).
 
 
 
