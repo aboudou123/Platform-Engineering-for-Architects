@@ -802,7 +802,7 @@ Für Zufriedenheit und Wohlbefinden können wir Methoden wie den **Employee Sati
 
 Ideen für Leistungskennzahlen sind Vorlaufzeit, Zeit vom Vorfall bis zur Wiederherstellung, Anzahl der Releases und Testcodeabdeckung. Um pragmatisch zu sein, verwenden Sie für den Anfang die DORA-Kennzahlen.
 
-Um die Aktivität zu messen, können Sie Folgendes heranziehen:
+**Um die Aktivität zu messen, können Sie Folgendes heranziehen**:
 
 - Bereitstellungshäufigkeit
 - Anzahl der Codezeilen
