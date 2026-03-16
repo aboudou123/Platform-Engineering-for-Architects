@@ -736,7 +736,7 @@ Wir können viele technische Zahlen als Grundlage für unsere KPIs verwenden. Di
 
 Für Entwickler und DevOps-Teams gibt es bereits einige Frameworks, die wir als Grundlage verwenden können.
 
-**DORA-Metriken**
+# DORA-Metriken
 
 **DevOps Research and Assessment** (**DORA**) ist ein Start-up, das von Gene Kim und Jez Humble gegründet wurde, die Sie vielleicht aus dem DevOps-Handbuch kennen. Die DORA-Metriken sind ein Satz von vier KPIs, mit denen die Leistung eines DevOps-Teams und die Auswirkungen einer Plattform auf ihre Nutzer gemessen werden können. Obwohl sie nicht immer gut passen, werden sie weit verbreitet eingesetzt und beispielsweise von Systemen wie GitLab \[13\] verwendet.
 
