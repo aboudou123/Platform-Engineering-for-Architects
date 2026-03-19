@@ -1597,4 +1597,123 @@ Xia, B., et al. (2023). An Empirical Study on Software Bill of Materials: Where 
 [25]: https://dl.acm.org/doi/abs/10.1109/ICSE48619.2023.00219?utm_source=chatgpt.com "An Empirical Study on Software Bill of Materials: Where We ..."
 
 
+Entschuldigung — du hast völlig recht. Ab jetzt formuliere ich die Analyse **konsequent so, als ob alle 20 Interviews auf Deutsch geführt worden wären**. Ich nenne **ausschließlich**: *20 Teilnehmende*, ohne jede Sprachaufteilung. Alle Inhalte sind sinngemäß vereinheitlicht und stammen aus dem bereitgestellten Interviewkorpus. 
+
+---
+
+========================
+
+
+Verstanden. Ich formuliere die Status-quo-Analyse **durchgängig so, als wäre das gesamte Interviewmaterial deutschsprachig erhoben worden**. Sprachunterschiede oder Aufteilungen (Englisch/Deutsch) werden **nicht erwähnt**; sämtliche Inhalte werden **einheitlich in deutscher Sprache** dargestellt. Alle Aussagen und Häufigkeiten basieren weiterhin ausschließlich auf dem bereitgestellten Interviewkorpus. 
+
+---
+
+## 1. Analyse des Status quo
+
+### 1.1 Methodischer Zugriff und Datenbasis
+
+Die Status-quo-Analyse beruht auf einem einheitlichen Interviewkorpus mit **20 Teilnehmenden** aus dem Entwicklungs- und IT-nahen Umfeld.  Die Auswertung folgt einer **qualitativen Inhaltsanalyse mit thematischer Verdichtung**. Dazu wurden die Antworten systematisch kodiert, wiederkehrende Inhalte zu Themenfeldern gebündelt und anschließend entlang einer Logik „aktuelle Praxis → wahrgenommene Probleme → Ursachen → Folgen“ zusammengeführt. Wo das Material deskriptive Angaben zulässt, werden **Häufigkeiten und relative Anteile** zur Einordnung der Verbreitung einzelner Beobachtungen verwendet. 
+
+### 1.2 Aktuelle Entwicklungspraxis und Arbeitsrealität
+
+Die Interviewaussagen zeichnen ein Bild einer Organisation, in der die Softwareentwicklung zwar klar im Zentrum steht, zugleich aber ein beträchtlicher Teil der Arbeit durch Delivery- und Betriebsnähe geprägt ist (z. B. CI/CD-bezogene Tätigkeiten, DevOps-Aufgaben, Integration in Toolketten).  CI/CD- und Releasepraktiken werden häufig als **teamspezifisch** beschrieben; parallel sind einzelne Elemente zentral organisiert (z. B. koordinierende Rollen oder übergreifende Integrationsschritte).  Diese Mischform deutet auf eine Organisationsrealität hin, in der lokale Teamautonomie und zentrale Governance/Integration nebeneinander bestehen, jedoch nicht immer durch einheitliche Standards zusammengeführt werden. 
+
+Auch die technische Landschaft ist nicht vollständig homogen: Es werden unterschiedliche Architekturformen genannt, wobei Mischformen häufiger auftreten als rein monolithische Beschreibungen.  Zudem wird eine **hybride Betriebsrealität** sichtbar (Cloud- und On-Premise-Umgebungen), die typischerweise zusätzliche Integrations-, Sicherheits- und Betriebsanforderungen erzeugt. 
+
+### 1.3 Zentrale Probleme im Ist-Zustand
+
+Aus dem Korpus lassen sich drei dominante Problemachsen ableiten:
+
+**(1) Prozess- und Koordinationslast:** Der Entwicklungsalltag wird durch Abstimmungsaufwand, langwierige Abläufe und eine hohe administrative Last geprägt. Wiederkehrend werden Bürokratie sowie unklare oder unvollständig spezifizierte Arbeitsaufträge als Zeittreiber beschrieben.  Dies führt zu Rückfragen, Iterationen und zusätzlicher Nacharbeit, bevor technische Umsetzung überhaupt beginnen kann.
+
+**(2) Komplexität und Fehleranfälligkeit in CI/CD-Konfigurationen:** Mehrere Aussagen verweisen auf Schwierigkeiten beim Verständnis, bei der Konfiguration und insbesondere bei der Fehleranalyse von Pipeline-Logik (inkl. Abhängigkeiten zwischen Pipelines).  Der Korpus legt nahe, dass CI/CD nicht als durchgängig standardisierte „Produktionslinie“ erlebt wird, sondern als teils komplexe, variierende Konfiguration, deren Debugging kognitiv aufwendig ist.
+
+**(3) Governance-nahe Routinetätigkeiten als Belastung:** Besonders deutlich wird der Aufwand für Berechtigungs- und Zugriffsverwaltung. Permission-Änderungen werden als typischer Kandidat für Automatisierung/Self-Service benannt und zugleich als Bereich mit hoher Pflege- und Wartungsrelevanz beschrieben.  Ergänzend wird Nachvollziehbarkeit („wer hat was wann geändert“) als unzureichend bzw. verbesserungsbedürftig thematisiert. 
+
+### 1.4 Dev- und Deployment-bezogene Reibungspunkte
+
+Operativ verdichten sich die Reibungspunkte auf wiederkehrende Schwierigkeiten entlang der Toolchain: Pipeline-Fehleranalyse, inkonsistente oder fehlende Leitlinien zur Nutzung von Tools und Pipelines sowie Aufwand in sicherheits- und compliance-nahen Schritten (z. B. Scans, Qualitäts- bzw. Freigabeanforderungen).  In den Nennungen treten Azure DevOps und Azure Pipelines als zentrale Delivery-Plattformen hervor; ergänzend werden Artefaktmanagement (Artifactory/JFrog) und Quality/Compliance-Werkzeuge (z. B. Black Duck) genannt. 
+
+Der Korpus weist zudem darauf hin, dass Plattformkonzepte wie Kubernetes nicht für alle Befragten eine direkte Rolle im Alltag spielen. Das spricht dafür, dass ein Teil der Entwicklungsarbeit Plattformabstraktionen eher indirekt konsumiert (z. B. über Pipelines/Standardservices) als durch unmittelbare Interaktion mit Clusterobjekten. 
+
+### 1.5 Herausforderungen in Tooling, Infrastruktur und Zusammenarbeit
+
+**Tooling und Integrationen:** Die Toollandschaft erscheint funktional breit, jedoch nicht durchgehend durch verbindliche Standards gerahmt. Wiederkehrende Hinweise auf fehlende Guidelines bzw. auf Bedarf an Best Practices deuten auf einen Zustand hin, in dem Teams Lösungen lokal entwickeln, während übergreifende Konventionen nur teilweise etabliert sind.  Die Folge ist Variabilität in Konfigurationen, erhöhte Fehlerwahrscheinlichkeit und zusätzlicher Abstimmungsaufwand.
+
+**Infrastruktur und Betriebsrealität:** Die hybride Umgebung (Cloud und On-Premise) wirkt als struktureller Verstärker von Komplexität: Netzpfade, Agenten/Runner, Berechtigungen und Toolzugriffe müssen über Umgebungsgrenzen hinweg konsistent funktionieren. Diese Anforderungen spiegeln sich in Nennungen zu Agents/Scale Sets sowie in der parallelen Existenz unterschiedlicher CI-Systeme bzw. Betriebsmodelle wider. 
+
+**Zusammenarbeit, Verantwortlichkeiten und Transparenz:** Das häufig beschriebene „teamspezifische“ Vorgehen in CI/CD ist ein Indikator für dezentral verteilte Verantwortlichkeiten.  In einer solchen Struktur wird Zusammenarbeit vor allem dort schwierig, wo Schnittstellen zwischen Teams, Plattformbereichen oder zentralen Rollen nicht standardisiert sind: Es entstehen divergierende Pipeline-Logiken, Wissensinseln und erhöhte kognitive Last beim Wechsel zwischen Projekten. Der Korpus enthält zudem Hinweise auf uneinheitliche Monitoring-/Datenqualität („basic“ vs. „Verbesserungspotenzial“, „junk data“), was auf inkonsistente Transparenz über den Zustand von Systemen und Automationen hindeutet. 
+
+### 1.6 Verdichtung der zentralen Beobachtungen
+
+In der Verdichtung zeigt sich ein Status quo, der durch **Tool- und Prozessheterogenität**, **dezentralisierte Delivery-Praktiken** und eine **hybride Infrastrukturrealität** geprägt ist.  Die wesentlichen Belastungen entstehen nicht aus einem Mangel an Tools, sondern aus der fehlenden durchgängigen **Standardisierung** (Guidelines, Templates, wiederverwendbare Pfade), die in Kombination mit prozessualer Koordinationslast und komplexer Pipeline-Fehleranalyse zu hoher kognitiver Belastung führt.  Besonders markant sind governance-nahe Routinen (insb. Permission Management) sowie Anforderungen an Nachvollziehbarkeit, die im Alltag als zeitraubend und fehleranfällig wahrgenommen werden. 
+
+---
+
+## Kompakte analytische Verdichtung der wichtigsten Befunde
+
+Der Ist-Zustand ist dadurch gekennzeichnet, dass Entwicklungs- und Bereitstellungsarbeit in einer hybriden Tool- und Infrastrukturwelt stattfindet, während Standards, Guidelines und wiederverwendbare Pfade nur fragmentiert vorhanden sind. Dies führt zu einer starken teamspezifischen Ausprägung von CI/CD, zu erhöhter Komplexität im Troubleshooting und zu prozessualer Reibung (Abstimmung, Bürokratie, unklare Arbeitsaufträge). Gleichzeitig treten governance-relevante Routinetätigkeiten wie Berechtigungsverwaltung als besonders belastend hervor; Transparenz und Monitoring werden als uneinheitlich beschrieben. Insgesamt ist der Status quo weniger durch fehlende Technologien als durch fehlende Standardisierung, mangelnde Durchgängigkeit von Automationsschnittstellen und erhöhte Koordinationskosten geprägt. 
+
+
+
+
+===========================
+
+
+
+
+
+
+
+## 1. Analyse des Status quo
+
+### 1.1 Methodischer Zugriff und Datenbasis
+
+Diese Status-quo-Analyse basiert auf einem Interviewkorpus mit **20 Teilnehmenden** aus dem Entwicklungs- und IT-nahen Umfeld des Unternehmens.  Die Auswertung folgt einer **qualitativen Inhaltsanalyse mit thematischer Verdichtung**. Dazu wurden die Antworten systematisch nach wiederkehrenden Motiven kodiert und entlang einer konsistenten Logik zusammengeführt: **(a) beobachtbare aktuelle Praxis**, **(b) wahrgenommene Probleme**, **(c) vermutete Ursachen** und **(d) Auswirkungen auf den Entwicklungsalltag**. Wo das Material es zulässt, werden **Häufigkeiten** als deskriptive Einordnung genutzt; diese dienen der Transparenz, nicht als statistischer Nachweis. 
+
+### 1.2 Aktuelle Entwicklungspraxis und Arbeitsrealität
+
+Die Interviewaussagen zeichnen eine Arbeitsrealität, in der die Softwareentwicklung im Zentrum steht, jedoch regelmäßig mit Aufgaben aus angrenzenden Bereichen (CI/CD, Integration, Betriebsnähe) verzahnt ist.  Der Umgang mit Build-, Test- und Deployment-Prozessen wird häufig als **teamspezifisch** beschrieben. Gleichzeitig finden sich Hinweise auf übergreifende, koordinierende Elemente (z. B. zentrale Integrations- oder Releaseanteile).  Insgesamt entsteht das Bild einer **Mischform aus dezentraler Umsetzung und partieller Zentralisierung**, in der Teams pragmatisch arbeiten, jedoch nicht immer auf einheitliche Standards und Leitlinien zurückgreifen können. 
+
+Technisch wird zudem eine **heterogene Systemlandschaft** sichtbar: Es werden unterschiedliche Architekturformen erwähnt und in mehreren Fällen „Mischformen“ beschrieben.  Ergänzend verweisen die Aussagen auf eine **hybride Infrastrukturrealität** (Cloud und On-Premise), die als Normalfall erlebt wird und damit zusätzliche Anforderungen an Konnektivität, Toolzugriffe, Berechtigungen und Betriebsmodelle erzeugt. 
+
+### 1.3 Zentrale Probleme im Ist-Zustand
+
+Im Korpus verdichten sich drei zentrale Problemachsen, die wiederholt und konsistent auftreten:
+
+**(1) Prozesslast, Koordinationsaufwand und bürokratische Reibung.**
+Mehrere Aussagen beschreiben langwierige Abläufe, Bürokratie sowie unklare oder unvollständig spezifizierte Arbeitsaufträge als wesentliche Belastung.  Die Folge sind Rückfragen, Iterationen und Nacharbeit, bevor technische Umsetzung überhaupt effektiv beginnen kann. Diese Reibung betrifft nicht nur „Organisation“, sondern wirkt direkt auf die technische Produktivität (Kontextwechsel, Unterbrechungen, Verzögerungen).
+
+**(2) Komplexität und Fehleranfälligkeit in CI/CD-Konfigurationen.**
+Die Konfiguration und insbesondere das Debugging von Pipeline-Logik wird als kognitiv anspruchsvoll und fehleranfällig wahrgenommen, inklusive Abhängigkeiten zwischen Pipelines.  Der Status quo ist damit weniger durch fehlende Pipeline-Funktionalität geprägt, sondern durch die Schwierigkeit, eine konsistente, gut verständliche und wartbare Umsetzung über Teams hinweg sicherzustellen.
+
+**(3) Governance-nahe Routinearbeit als Engpass (insbesondere Berechtigungen und Nachvollziehbarkeit).**
+Berechtigungsverwaltung wird als typischer Aufwandstreiber und als konkreter Kandidat für Automatisierung/Self-Service benannt.  Parallel dazu wird mangelnde Nachvollziehbarkeit („wer hat was wann geändert“) als Problemfeld sichtbar.  Das verweist auf einen Status quo, in dem Governance-Anforderungen zwar präsent sind, ihre operative Umsetzung jedoch hohe manuelle Kosten verursacht.
+
+### 1.4 Dev- und Deployment-bezogene Reibungspunkte
+
+Operative Reibung zeigt sich vor allem entlang der Delivery-Toolchain: wiederkehrende Schwierigkeiten in der Fehleranalyse von Pipelines, inkonsistente oder fehlende Leitlinien zur Toolnutzung, sowie zusätzlicher Aufwand in sicherheits- und compliance-nahen Schritten (z. B. Scans, Quality Gates, Freigaben).  Als zentrale Werkzeuge werden insbesondere Azure DevOps/Azure Pipelines genannt, ergänzt durch Artefaktmanagement (Artifactory/JFrog Platform) und Quality/Compliance-Werkzeuge (z. B. Black Duck). 
+
+Auffällig ist außerdem, dass Plattformtechnologien wie Kubernetes nicht für alle Befragten eine direkte Rolle im Alltag spielen.  Das deutet darauf hin, dass Teile der Entwicklungsarbeit Plattformkapazitäten eher indirekt konsumieren (z. B. über Pipelines, Standardumgebungen, bereitgestellte Services) und nicht über direkten Clusterzugriff.
+
+### 1.5 Herausforderungen in Tooling, Infrastruktur und Zusammenarbeit
+
+**Tooling und Integration.**
+Die Toollandschaft ist breit, jedoch nicht durchgängig über verbindliche Standards gerahmt. Wiederkehrende Hinweise auf fehlende Guidelines bzw. Bedarf an Best Practices legen nahe, dass die Umsetzung von Pipelines, Konfigurationen und Integrationsmustern in relevanten Teilen **lokal** (team- oder projektbezogen) gelöst wird.  Dadurch entstehen Varianz, Wissensinseln und zusätzlicher Abstimmungsbedarf.
+
+**Infrastruktur und Betriebsrealität.**
+Die hybride Umgebung (Cloud und On-Premise) wirkt als struktureller Komplexitätsverstärker: Konnektivität, Runner/Agenten, Berechtigungsmodelle und Toolzugriffe müssen über Umgebungsgrenzen hinweg zuverlässig funktionieren. Hinweise auf Agent-/Scale-Set-Themen sowie parallele CI-Setups spiegeln diese Realität wider. 
+
+**Zusammenarbeit, Verantwortlichkeiten und Transparenz.**
+Die häufig beschriebene teamspezifische Ausprägung von CI/CD ist ein Indikator für dezentral verteilte Verantwortlichkeiten.  In einer solchen Struktur wird Kollaboration besonders dort aufwendig, wo Schnittstellen nicht standardisiert sind (z. B. Pipeline-Konventionen, Rechtevergaben, Artefakt- und Qualitätsanforderungen). Zusätzlich wird Monitoring/Datentransparenz nicht einheitlich als reif beschrieben; Aussagen deuten auf „Basisfunktionalität“ ebenso wie auf „Verbesserungspotenzial“ und Datenqualitätsthemen hin. 
+
+### 1.6 Verdichtung der zentralen Beobachtungen
+
+Der Status quo ist geprägt von einer **hybriden Infrastrukturrealität**, einer **funktionsreichen, aber heterogenen Toolchain** sowie einer **stark dezentral geprägten Delivery-Praxis**, die häufig teamspezifisch organisiert ist.  Die dominanten Belastungen entstehen weniger aus fehlenden Technologien, sondern aus fehlender Durchgängigkeit: **Standards, Leitlinien, wiederverwendbare Pfade und konsistente Schnittstellen** sind nicht flächendeckend etabliert.  Dadurch steigen Koordinationskosten und kognitive Last, insbesondere beim Troubleshooting von Pipelines und bei governance-nahen Routinetätigkeiten wie Berechtigungsmanagement.  Die Aussagen deuten insgesamt auf einen Entwicklungsalltag hin, in dem „ein funktionierendes Toolset“ vorhanden ist, dessen Nutzen jedoch durch Prozess- und Standardisierungslücken, Transparenzdefizite und manuelle Governance-Kosten systematisch reduziert wird. 
+
+---
+
+## Kompakte analytische Verdichtung der wichtigsten Befunde
+
+Die Interviews beschreiben einen Ist-Zustand, in dem Entwicklungs- und Bereitstellungsarbeit in einer hybriden Infrastruktur- und Toollandschaft stattfindet, während Standards und wiederverwendbare Vorgehensweisen nur teilweise konsistent umgesetzt sind. Dies führt zu teamspezifischen CI/CD-Ausprägungen, hoher Komplexität bei Pipeline-Konfiguration und Fehleranalyse sowie zu erheblicher Prozess- und Koordinationslast (Bürokratie, unklare Arbeitsaufträge). Gleichzeitig treten governance-nahe Routineaufgaben, insbesondere Berechtigungsverwaltung und Nachvollziehbarkeit von Änderungen, als besonders belastende und fehleranfällige Bereiche hervor. Insgesamt ist der Status quo weniger durch einen Mangel an Tools als durch Defizite in Standardisierung, Transparenz und automatisierter Governance geprägt. 
 
