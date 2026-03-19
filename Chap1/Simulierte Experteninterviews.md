@@ -1394,3 +1394,61 @@ Der aktuelle Entwicklungs- und Bereitstellungsalltag ist durch **dezentral organ
 | Observability        | Uneinheitlich; teils nur basic, teils Verbesserungsbedarf                     | dt.: „verbesserungswürdig“; engl.: „basic Azure features“, „junk data“              | Mittel      |
 
 Wenn Sie möchten, kann ich den Abschnitt noch stärker „masterarbeitstypisch“ glätten (z. B. mit einheitlichen Übergängen, weniger Tool-Nennung im Fließtext) – ohne in Richtung Requirements oder Lösungsteil abzurutschen.
+
+
+
+=============================================================
+# 19.03.2026
+
+===========================================================
+
+
+## 1. Analyse des Status quo
+
+### 1.1 Methodischer Zugriff und Datenbasis
+
+Die vorliegende Status-quo-Analyse basiert auf einem Interviewkorpus mit **20 Teilnehmenden** aus dem entwicklungs- und betriebsnahen Umfeld des Unternehmens.  Das Material liegt **zweisprachig** vor, wird jedoch als **einheitlicher, zusammenhängender Datenkorpus** behandelt; nicht-deutschsprachige Aussagen werden in der Auswertung sinngemäß in deutscher Sprache integriert, ohne sie als separate Teilmenge zu behandeln.  Die Analyse folgt einer **qualitativen Inhaltsanalyse mit thematischer Verdichtung**. Dazu wurden Aussagen entlang wiederkehrender Beobachtungsfelder gebündelt und systematisch in eine Kette aus **beobachtbarer Praxis**, **wahrgenommenen Problemen**, **organisationalen bzw. technischen Ursachen** sowie **Folgen für den Entwicklungsalltag** überführt.  Wo das Interviewmaterial strukturierte Auszählungen enthält (z. B. Anzahl von Nennungen pro Antwortfeld), werden diese deskriptiv genutzt, um die Verbreitung einzelner Befunde transparent einzuordnen, ohne daraus repräsentative Schlüsse abzuleiten. 
+
+### 1.2 Aktuelle Entwicklungspraxis und Arbeitsrealität
+
+Die Aussagen zeigen eine Arbeitsrealität, in der Softwareentwicklung im Zentrum steht, jedoch regelmäßig mit Aufgaben an der Schnittstelle zu Build-, Deploy- und Betriebsprozessen verbunden ist.  Der Grad der direkten Einbindung in Build/Deploy/Operations wird von den Befragten heterogen beschrieben: Einige berichten von punktueller Betroffenheit („nicht täglich, aber regelmäßig relevant“), andere von substanziellen Anteilen im Arbeitsalltag. 
+
+Die Organisation von CI/CD und Releases wird häufig als **teamnah** und in Teilen **teamspezifisch** beschrieben; zugleich finden sich Hinweise auf übergreifende bzw. zentral koordinierte Elemente (z. B. Integration in Releases, Bündelung/Koordination).  Diese Mischform deutet auf eine Struktur hin, in der lokale Teamautonomie in der Umsetzung von Delivery-Logik mit zentralen Integrations- und Governanceanforderungen koexistiert, ohne dass daraus zwingend ein durchgängig einheitlicher Standardprozess entsteht. 
+
+Die technische Landschaft erscheint ebenfalls nicht homogen. In den Angaben zur Anwendungsarchitektur werden Mischformen häufiger genannt als reine Monolithen; Microservices werden in diesem Antwortfeld nicht als dominierende Architekturform sichtbar.  Parallel verweisen die Angaben zu Workload-Standorten auf eine **hybride Infrastrukturrealität** (Cloud und On-Premise bzw. Mischformen), die im Alltag als Normalzustand vorkommt und damit zusätzliche Anforderungen an Toolzugriffe, Agenten/Runner, Konnektivität und Berechtigungsmodelle nahelegt. 
+
+### 1.3 Zentrale Probleme im Ist-Zustand
+
+Im Interviewkorpus verdichten sich drei Problemachsen, die wiederholt und mit erkennbarer Relevanz für den Arbeitsalltag auftreten.
+
+Erstens zeigt sich eine **erhebliche Prozess- und Koordinationslast**. Der Korpus enthält explizite Hinweise auf langwierige Abläufe, Bürokratie sowie auf unklar spezifizierte Arbeitsaufträge, die zusätzliche Rückfragen und Nacharbeit nach sich ziehen.  Diese Reibung wirkt nicht nur als „organisationales“ Problem, sondern unmittelbar als Produktivitätsverlust: Kontextwechsel, Wartezeiten und erhöhte Fehleranfälligkeit begleiten den Übergang von Anforderung zu Umsetzung.
+
+Zweitens wird **CI/CD-Konfiguration** als kognitiv anspruchsvoll und fehleranfällig sichtbar, insbesondere in Bezug auf YAML-basierte Pipeline-Definitionen und deren Fehleranalyse.  Zusätzlich wird die Abhängigkeitssteuerung zwischen Pipelines als Herausforderung benannt, was auf eine wachsende Komplexität in der Delivery-Topologie hinweist (mehrere Pipelines, Kopplungen, Integrationspfade). 
+
+Drittens treten **governance-nahe Routinetätigkeiten** als Belastung hervor. Dazu zählen insbesondere Berechtigungs- und Zugriffsverwaltung sowie damit verbundene Wartungs- und Pflegeanforderungen.  Ergänzend wird unzureichende Nachvollziehbarkeit von Änderungen („wer hat was wann geändert“) als relevantes Problemfeld sichtbar, insbesondere dort, wo Änderungen nicht konsistent über standardisierte Automationspfade abgebildet werden. 
+
+### 1.4 Dev- und Deployment-bezogene Reibungspunkte
+
+Die operativen Reibungspunkte konzentrieren sich im Material auf wiederkehrende Schwierigkeiten entlang der Toolchain und des Release-/Deployment-Alltags. Besonders deutlich werden Herausforderungen in der **Fehleranalyse von Pipelines**, in der **korrekten Nutzung** von Werkzeugen ohne verbindliche Leitlinien sowie in compliance- und qualitätsbezogenen Prozessschritten (z. B. Scans, Quality Gates).
+
+Die Werkzeugnennungen zeigen eine stark toolchain-orientierte Praxis: Als regelmäßig genutzte Plattformen und Werkzeuge werden insbesondere Azure DevOps/Azure Pipelines sowie ergänzende Komponenten wie Artifactory/JFrog Platform und Code- bzw. Compliance-Checks (z. B. Black Duck) genannt.  In einzelnen Aussagen werden konkrete Reibungspunkte wie Probleme mit artefaktbezogenen Schlüssel-/Zugriffsdateien und deren Berechtigungskontext sichtbar, was das Zusammenspiel aus Toolzugriffen, Credential-Management und Build/Release-Prozessen als wiederkehrende Fehlerquelle nahelegt. 
+
+Auffällig ist ferner, dass Kubernetes als Plattformtechnologie im Alltag nicht durchgängig als direktes Arbeitsmittel erscheint. In einem Antwortfeld geben 6 von 15 Personen „keine Rolle“ bzw. „keine Nutzung“ an; gleichzeitig finden sich vereinzelte Hinweise auf indirekte Berührungspunkte (z. B. Orchestrierung als Hintergrundkonzept).  Diese Verteilung legt nahe, dass ein Teil der Entwicklungsarbeit Plattformkapazitäten eher **indirekt** (über Pipelines, standardisierte Umgebungen, bereitgestellte Services) konsumiert als über unmittelbare Interaktion mit Clusterobjekten. 
+
+### 1.5 Herausforderungen in Tooling, Infrastruktur und Zusammenarbeit
+
+Im Bereich Tooling zeigt der Korpus eine funktional breite Landschaft, in der mehrere Systeme parallel im Einsatz sind (CI-Systeme, Build-Tooling, Artefaktmanagement, Qualitäts-/Compliance-Checks, Infrastrukturwerkzeuge).  Gleichzeitig wird wiederholt sichtbar, dass die Nutzung dieser Werkzeuge nicht überall durch verbindliche Standards oder klare Guidelines gerahmt ist; einzelne Aussagen benennen explizit den Umstand, dass Tools „ohne Guideline“ genutzt werden, und verknüpfen dies mit wiederkehrenden Problemen.  Die Folge ist eine erhöhte Varianz in Konfigurationen, die sich in der Praxis als erhöhter Debugging-Aufwand, inkonsistente Qualität und zusätzlicher Abstimmungsbedarf niederschlägt. 
+
+Infrastrukturbezogen tritt die hybride Betriebsrealität als struktureller Komplexitätsverstärker hervor. Hinweise auf „on-premise“, Cloud sowie Mischformen sind wiederkehrend; zudem werden Agenten/Scale Sets und unterschiedliche CI-Setups genannt, was auf verteilte Ausführungsumgebungen und damit verbundene Zugriffs- und Integrationsabhängigkeiten schließen lässt.  Solche Abhängigkeiten wirken im Alltag häufig als „unsichtbare“ Verzögerer, etwa wenn Konnektivität, Credentials oder Berechtigungen über Systemgrenzen hinweg konsistent funktionieren müssen, aber nicht standardisiert sind. 
+
+Hinsichtlich Zusammenarbeit und Verantwortlichkeiten stützt der Korpus das Bild einer dezentralisierten Delivery-Praxis: CI/CD wird vielfach teamspezifisch organisiert, während einzelne Integrations-/Release-Aspekte zentral gebündelt werden.  In einer solchen Mischform entstehen typischerweise Schnittstellenkosten, die im Material indirekt sichtbar werden: divergierende Pipeline-Logiken, unterschiedliche Toolnutzung, variierende Standards und damit erhöhte kognitive Last beim Wechsel zwischen Projekten. 
+
+Die Transparenz über den Betriebszustand (Health, Logs, Deployment-Status) wird im Korpus nicht einheitlich als ausgereift beschrieben. Während einzelne Aussagen grundlegende Monitoring-Möglichkeiten (z. B. über Plattformfeatures) als vorhanden beschreiben, werden zugleich Hinweise auf begrenzte Tiefe, „Basisfunktionalität“ und Datenqualitätsprobleme („junk data“) sichtbar.  Diese Spannbreite deutet auf uneinheitliche Observability-Reifegrade und auf fehlende Standardisierung in der Operationalisierung von Monitoring- und Statusinformationen hin. 
+
+### 1.6 Verdichtung der zentralen Beobachtungen
+
+In der Gesamtverdichtung beschreibt der Interviewkorpus einen Status quo, der durch eine **hybride Infrastrukturrealität**, eine **breite, aber heterogene Toolchain** sowie eine **dezentral geprägte Delivery-Praxis** gekennzeichnet ist.  Die dominanten Belastungen entstehen weniger aus einem Mangel an Technologien als aus fehlender Durchgängigkeit: Standards, Guidelines und wiederverwendbare Vorgehensweisen sind nicht flächendeckend etabliert, wodurch sich die tägliche Praxis zwischen Teams und Projekten merklich unterscheidet.
+
+Als besonders prägende Strukturprobleme lassen sich (i) Prozess- und Koordinationslast (inklusive unklarer Arbeitsaufträge), (ii) Komplexität und Debugging-Aufwand in CI/CD-Konfigurationen sowie (iii) governance-nahe Routinetätigkeiten wie Berechtigungsverwaltung und die Nachvollziehbarkeit von Änderungen identifizieren.  Wiederverwendbarkeit (Templates/Skripte) ist im Korpus zwar sichtbar, erscheint jedoch nicht als durchgängiger Standard, sondern als fragmentiertes Element, das in Teilen vorhanden ist und in anderen Teilen fehlt oder stark variiert.
+
+Insgesamt kennzeichnet der Status quo ein Spannungsfeld aus vorhandener Tool- und Plattformlandschaft einerseits und fehlender Standardisierung, Transparenzkonsistenz sowie hoher manueller Governance-Last andererseits.  Diese Konstellation führt im Alltag zu erhöhter kognitiver Belastung (insbesondere in Troubleshooting- und Integrationssituationen), zu variablen Prozessqualitäten zwischen Teams und zu wiederkehrenden, administrativ geprägten Tätigkeiten, die als zeitintensiv und wenig wertschöpfend beschrieben werden.
