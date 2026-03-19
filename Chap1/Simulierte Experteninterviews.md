@@ -1625,6 +1625,335 @@ Die Interviews beschreiben eine Entwicklungs- und Bereitstellungsrealität, die 
 [2]: https://registry.terraform.io/providers/microsoft/azuredevops/1.8.1/docs/resources/pipeline_authorization?utm_source=chatgpt.com "azuredevops_pipeline_authoriza..."
 
 
+========================================================
+
+======================================================
+
+
+Alles klar — ich erstelle dir jetzt eine **durchgehend wissenschaftliche, kohärente und „aus deiner Perspektive“ formulierte Dokumentation**, die du direkt in deine Masterarbeit übernehmen kannst.
+
+Ich beginne strukturiert. Aufgrund der Länge liefere ich dir **Teil 1 (Kapitel 1–6 + Beginn 7)** — sauber, professionell, ohne Fülltext.
+
+---
+
+# **1. Ziel und Nutzen eines Internal Developer Portals**
+
+Im Rahmen dieser Arbeit verfolge ich das Ziel, einen funktionsfähigen Prototyp einer Internal Developer Platform (IDP) auf Basis von Backstage zu konzipieren und umzusetzen. Der Fokus liegt dabei nicht auf einer vollständigen Produktlösung, sondern auf einem realistischen Minimum Viable Product (MVP), das zentrale Self-Service-Funktionalitäten für Entwicklungsteams bereitstellt.
+
+Ausgangspunkt der Implementierung sind die im Unternehmen identifizierten Herausforderungen, insbesondere hohe kognitive Last durch heterogene Toolchains, fehlende Standardisierung von CI/CD-Prozessen sowie ineffiziente, manuelle Abläufe im Bereich Berechtigungsmanagement und Repository-Provisionierung.
+
+Ein Internal Developer Portal adressiert diese Probleme, indem es als zentrale Interaktionsschicht („Single Pane of Glass“) fungiert. Es bündelt Informationen, standardisiert Prozesse und ermöglicht es Entwicklerinnen und Entwicklern, wiederkehrende Aufgaben über Self-Service-Mechanismen auszuführen.
+
+Im Kontext dieses Prototyps stehen insbesondere folgende Funktionen im Vordergrund:
+
+* Erstellung neuer Repositories über standardisierte Templates
+* Ausführung und Wiederholung von Build-Prozessen („Run/Retry Build“)
+* Unterstützung bei Agent-bezogenen Problemen („Agent Recovery“)
+* Bereitstellung eines zentralen Knowledge- und Troubleshooting-Hubs
+
+Damit leistet das IDP einen wesentlichen Beitrag zur Reduktion operativer Reibung, zur Standardisierung von Entwicklungsprozessen sowie zur Verbesserung der Developer Experience (DX).
+
+---
+
+# **2. Einrichtung der lokalen Entwicklungsumgebung und erste Backstage-App**
+
+Zur initialen Entwicklung des IDP-Prototyps habe ich zunächst eine isolierte lokale Umgebung auf einer virtuellen Maschine eingerichtet. Diese Entscheidung wurde bewusst getroffen, um eine kontrollierte und reproduzierbare Entwicklungsbasis zu schaffen, die unabhängig von produktiven Unternehmenssystemen betrieben werden kann.
+
+Die Umgebung basiert auf Ubuntu 24.04 (WSL2) und umfasst folgende zentrale Komponenten:
+
+* Node.js (Version 22, verwaltet über nvm)
+* Yarn als Paketmanager
+* Docker für Containerisierung
+* Git für Versionsverwaltung
+
+Nach erfolgreicher Einrichtung der Entwicklungsumgebung habe ich mittels der Backstage CLI eine erste Applikation erzeugt. Dieser Schritt dient dazu, ein initiales Verständnis für die Struktur und Funktionsweise von Backstage zu entwickeln.
+
+Die erzeugte Anwendung konnte lokal gestartet werden und stellte die grundlegenden Module bereit:
+
+* Software Catalog
+* Scaffolder (Templates)
+* TechDocs
+* Administration
+
+**Screenshot hier**
+
+Die lokale Ausführung ermöglichte es mir, frühzeitig zentrale Konzepte wie Entitäten, Templates und Plugin-Integration praktisch zu erkunden.
+
+---
+
+# **3. Verständnis der Projektstruktur und Konfiguration**
+
+Ein tiefgehendes Verständnis der Backstage-Projektstruktur ist essenziell für jede weiterführende Anpassung und Erweiterung.
+
+Die generierte Anwendung folgt einer modularen Architektur mit klarer Trennung zwischen Frontend, Backend und Plugins:
+
+* `packages/app` → Frontend (React-basierte UI)
+* `packages/backend` → Backend-Services (APIs, Integrationen)
+* Plugins → Erweiterungen für spezifische Funktionalitäten
+
+Zentrale Konfigurationsdateien sind:
+
+* `app-config.yaml`
+* `app-config.local.yaml`
+
+Diese definieren unter anderem:
+
+* Integrationen (z. B. Azure DevOps)
+* Authentifizierungsmechanismen
+* Backend-Services
+* Plugin-Konfigurationen
+
+Die Konfiguration bildet die Grundlage für die spätere Integration in die Unternehmensumgebung sowie für die Anbindung externer Systeme.
+
+---
+
+# **4. Software-Templates und Scaffolder (Überblick)**
+
+Ein zentrales Element des IDP ist der Backstage Scaffolder, der die Generierung neuer Softwarekomponenten über standardisierte Templates ermöglicht.
+
+Software-Templates bestehen aus mehreren Komponenten:
+
+* Metadaten (Beschreibung, Tags, Owner)
+* Parameter (Benutzereingaben)
+* Skelett (Dateivorlagen)
+* Scaffolding-Schritte (Automatisierungslogik)
+
+Der Scaffolder erlaubt es, wiederkehrende Prozesse – wie das Anlegen eines neuen Repositories inklusive CI/CD-Konfiguration – zu standardisieren und automatisiert auszuführen.
+
+Dies adressiert direkt die im Interview identifizierte Problematik der inkonsistenten Pipeline-Konfigurationen und fehlenden Best Practices.
+
+---
+
+# **5. Template-Metadaten und Auffindbarkeit**
+
+Die Metadaten eines Templates spielen eine entscheidende Rolle für dessen Auffindbarkeit und Nutzbarkeit innerhalb des Portals.
+
+Ich habe besonderen Wert auf folgende Metadaten gelegt:
+
+* Klarer Name und Beschreibung
+* Tags (z. B. „backend“, „microservice“, „ci-cd“)
+* Owner-Zuordnung
+* Kategorien
+
+Diese strukturierte Beschreibung ermöglicht es Entwicklern, relevante Templates schnell zu identifizieren und korrekt einzuordnen.
+
+Darüber hinaus unterstützen konsistente Metadaten die Governance, indem sie Transparenz über verfügbare „Golden Paths“ schaffen.
+
+---
+
+# **6. Benutzereingaben und Parameterdefinition**
+
+Die Parameterdefinition bildet die Schnittstelle zwischen Entwickler und Plattform.
+
+Für das Repository-Provisioning-Template habe ich u. a. folgende Parameter definiert:
+
+* Service Name
+* Repository Name
+* Programmiersprache
+* CI/CD-Optionen
+* Deployment-Ziel
+
+Diese Parameter werden im Backstage-Frontend als Formular dargestellt und validiert.
+
+Ziel war es, eine Balance zwischen:
+
+* **Standardisierung** (vorgegebene Defaults)
+* **Flexibilität** (konfigurierbare Optionen)
+
+zu erreichen.
+
+Dadurch wird sichergestellt, dass Entwickler nicht überfordert werden, gleichzeitig aber genügend Freiraum für unterschiedliche Anforderungen besteht.
+
+---
+
+# **7. Konzeption der IDP**
+
+## **7.1 Zielsetzung und Designprinzipien**
+
+Die Konzeption der IDP basiert auf der grundlegenden Zielsetzung, eine Plattform bereitzustellen, die Entwicklungsprozesse standardisiert, automatisiert und gleichzeitig flexibel genug bleibt, um heterogene Anforderungen abzubilden.
+
+Dabei habe ich folgende Designprinzipien definiert:
+
+* **Self-Service First**
+* **Standardisierung vor Individualisierung**
+* **Separation of Concerns (Portal vs. Execution)**
+* **Security by Design**
+* **Transparenz und Nachvollziehbarkeit**
+
+Diese Prinzipien spiegeln direkt die im Interview identifizierten Problemfelder wider, insbesondere die fehlende Standardisierung, hohe Komplexität und mangelnde Transparenz.
+
+---
+
+## **7.2 Architektonisches Gesamtbild**
+
+Die Architektur des entwickelten IDP-Prototyps folgt einem klaren Schichtenmodell:
+
+1. **Portal Layer (Backstage)**
+2. **Execution Layer (Azure DevOps Pipelines, Skripte, IaC)**
+3. **Governance Layer (RBAC, Policies, Audit)**
+4. **Observability Layer (Logging, Monitoring, Telemetrie)**
+
+**Screenshot hier**
+
+Das Portal fungiert dabei ausschließlich als Interaktionsschicht, während die eigentliche Ausführung der Prozesse in der bestehenden Toolchain erfolgt.
+
+---
+
+## **7.3 Zentrale Plattformkomponenten**
+
+### **7.3.1 Developer Portal**
+
+Backstage dient als zentrale Benutzeroberfläche, über die alle IDP-Funktionalitäten zugänglich sind.
+
+### **7.3.2 Service Catalog und Ownership**
+
+Der Software Catalog ermöglicht die zentrale Verwaltung von Services, inklusive Ownership und Metadaten.
+
+### **7.3.3 Templates und Golden Paths**
+
+Templates definieren standardisierte Entwicklungsprozesse und reduzieren Varianz.
+
+### **7.3.4 CI/CD und GitOps Integration**
+
+Azure DevOps Pipelines werden als zentrale Ausführungsinstanz genutzt.
+
+### **7.3.5 Observability und Feedback-Loops**
+
+Monitoring und Logging liefern Rückmeldungen über den Zustand der Plattform.
+
+---
+
+
+Verstanden. In diesem Teil geht es **nicht** um Theorie und **nicht** um eine reine Kurzfassung, sondern um eine **präzise, fachlich dichte Beschreibung der Implementierung**. Also: direkt auf den Punkt, aber mit genug Substanz für eine Masterarbeit.
+
+Unten ist die **ausgewogene Fassung** von **7.4 bis zum Abschluss des Implementierungsteils**.
+
+---
+
+## **7.4 Governance, Sicherheit und Compliance**
+
+Governance, Sicherheit und Compliance wurden als feste Randbedingungen der Implementierung behandelt. Backstage wurde deshalb nicht als Ausführungsplattform für privilegierte Operationen konzipiert, sondern als kontrollierte Interaktionsschicht. Die eigentliche Ausführung fachlicher Prozesse erfolgt über Azure DevOps Pipelines, Infrastructure-as-Code und definierte Skripte. Dadurch bleibt die technische Kontrolle über Änderungen in den bestehenden Automatisierungs- und Governance-Mechanismen verankert.
+
+Für den Zugriff auf Plattformfunktionen wurde ein rollenbasiertes Modell vorgesehen. Nicht jede Benutzergruppe soll dieselben Templates oder Aktionen ausführen können. Besonders relevante Aspekte waren hierbei die Absicherung sensibler Funktionen, die Trennung von Zuständigkeiten sowie die Nachvollziehbarkeit von Änderungen. Zugangsdaten und API-Tokens wurden nicht im Anwendungscode hinterlegt, sondern außerhalb der Anwendung verwaltet. Auf diese Weise wurde eine Grundlage geschaffen, um Self-Service-Funktionen bereitzustellen, ohne Sicherheits- und Compliance-Anforderungen zu unterlaufen.
+
+---
+
+## **7.5 Umgang mit heterogenen Teamanforderungen**
+
+Die Implementierung musste unterschiedliche technische und organisatorische Ausgangsbedingungen berücksichtigen. Teams arbeiten nicht vollständig einheitlich, nutzen verschiedene Werkzeuge und unterscheiden sich in ihrer Nähe zu Build-, Deployment- und Betriebsprozessen. Die IDP wurde daher nicht als starres System mit nur einem einzigen Standardpfad umgesetzt, sondern als standardisierte Grundstruktur mit kontrollierter Variabilität.
+
+Dieses Prinzip wurde insbesondere über Templates realisiert. Templates definieren einen festen Rahmen für wiederkehrende Prozesse, erlauben jedoch parametrisierbare Eingaben für kontextspezifische Unterschiede. Dadurch wird Standardisierung erreicht, ohne die Plattform auf einen einzigen technologischen Sonderfall zu beschränken. Die Plattformarchitektur bleibt damit anschlussfähig für unterschiedliche Teams, reduziert aber gleichzeitig die im Unternehmen beobachtete Varianz bei Setup, Pipeline-Konfiguration und Plattformnutzung.
+
+---
+
+## **7.6 Zusammenfassung der Konzeption**
+
+Die konzeptionelle Grundlage des Prototyps besteht in der klaren Trennung zwischen Portal, Ausführung und Governance. Backstage bildet den zentralen Einstiegspunkt. Die fachliche Ausführung verbleibt in bestehenden Automatisierungsmechanismen. Damit entsteht keine konkurrierende Parallelplattform, sondern eine ordnende und standardisierende Schicht über der vorhandenen Toollandschaft.
+
+Die Konzeption adressiert insbesondere drei Zielrichtungen: Reduktion technischer und prozessualer Varianz, Verbesserung der Transparenz über Services und Workloads sowie Bereitstellung erster kontrollierter Self-Service-Funktionen. Der Prototyp ist damit als IDP-MVP ausgelegt, der einen realen Plattformnutzen demonstriert, ohne bereits den Umfang einer vollständigen Produktivplattform zu beanspruchen.
+
+---
+
+## **8. Testen und Veröffentlichen von Templates**
+
+Die entwickelten Templates wurden nicht nur syntaktisch geprüft, sondern als vollständige Scaffolding-Abläufe getestet. Im Mittelpunkt stand dabei die Frage, ob aus einem Template unter realistischen Bedingungen tatsächlich ein konsistentes Ergebnis entsteht. Geprüft wurden die Parameterverarbeitung, die korrekte Erzeugung von Artefakten, die Verlinkung der Ergebnisse sowie die Nutzbarkeit der erzeugten Ressourcen in den Zielsystemen.
+
+Nach erfolgreicher Validierung wurden die Templates so eingebunden, dass sie über den Backstage-Katalog verfügbar sind. Damit wurden aus technischen Template-Definitionen tatsächlich nutzbare Plattformfunktionen. Dieser Schritt war für die Implementierung wesentlich, da der Mehrwert eines IDP nicht in der Existenz von Templates liegt, sondern in deren verlässlicher Nutzbarkeit durch Entwicklungsteams.
+
+**Screenshot hier**
+
+---
+
+## **9. TechDocs und Documentation-as-Code**
+
+TechDocs wurde integriert, um Dokumentation als Bestandteil der Plattform und nicht als separates Artefakt zu behandeln. Dokumentationen sind dadurch direkt mit Katalogentitäten verknüpft und gemeinsam mit dem zugehörigen Code bzw. Service verwaltbar. Dieser Ansatz unterstützt eine konsistente, repository-nahe Pflege technischer Inhalte.
+
+Für die Implementierung wurde ein Documentation-as-Code-Ansatz mit MkDocs berücksichtigt. Dadurch lassen sich technische Beschreibungen, Onboarding-Hinweise und Nutzungsinformationen versioniert und reproduzierbar verwalten. Im Kontext des Prototyps ist dies besonders relevant, da ein Internal Developer Portal nicht nur Funktionen bereitstellen, sondern auch deren Nutzung nachvollziehbar erklären muss.
+
+**Screenshot hier**
+
+---
+
+## **10. Containerisierung mit Docker sowie Sicherheitsaspekte**
+
+Zur Überführung der lokalen Backstage-Instanz in eine portable und clusterfähige Form wurde ein Docker-Image erstellt. Die Containerisierung stellte sicher, dass Anwendung und Laufzeitabhängigkeiten in reproduzierbarer Form gebündelt werden. Dadurch wurde eine belastbare Grundlage für die Bereitstellung in Kubernetes geschaffen.
+
+Im Rahmen der Containerisierung wurden zentrale Sicherheitsaspekte berücksichtigt. Dazu gehörten die Trennung von Anwendung und Laufzeitkonfiguration, der Verzicht auf hartkodierte Zugangsdaten sowie die Vorbereitung eines sicheren Secret-Handlings. Ziel war kein vollständig gehärtetes Produktivsetup, sondern eine saubere, produktionsnahe Basis, die spätere Erweiterungen in Richtung AKS-Betrieb und GitOps unterstützt.
+
+**Screenshot hier**
+
+---
+
+## **11. Integration von Keycloak zur Authentifizierung**
+
+Für die Authentifizierung wurde Keycloak als OIDC-basierter Identity Provider integriert. Diese Entscheidung diente dazu, den Prototypen an ein realistisches Unternehmensszenario anzunähern und gleichzeitig eine saubere Grundlage für spätere Rollen- und Berechtigungskonzepte zu schaffen. Die Integration umfasste die Konfiguration der erforderlichen Clients, Redirect-URIs und Vertrauenseinstellungen zwischen Backstage und Keycloak.
+
+Die Authentifizierung war nicht nur ein technischer Konfigurationsschritt, sondern ein wesentlicher Bestandteil der Plattformarchitektur. Erst durch eine zentrale Identitätsverwaltung wird das Portal in die Lage versetzt, Benutzerkontexte, Rollen und zugriffsbezogene Entscheidungen konsistent zu verarbeiten. Die Analyse und Behebung von Authentifizierungsfehlern war daher ein notwendiger Teil der Implementierung.
+
+**Screenshot hier**
+
+---
+
+## **12. Role-Based Access Control (RBAC) und Permissions**
+
+Aufbauend auf der Authentifizierung wurde ein rollenbasiertes Zugriffskonzept umgesetzt. Ziel war die kontrollierte Freigabe von Portal-Funktionen in Abhängigkeit von Benutzergruppen und Verantwortlichkeiten. Hierfür wurde das Berechtigungsframework von Backstage aktiviert und mit einem gruppenbasierten Rollenmodell verknüpft.
+
+Das Rollenmodell bildet die Grundlage dafür, dass Templates, Katalogaktionen und potenziell sensible Funktionen nicht für alle Benutzer gleichermaßen freigegeben werden. Dies ist insbesondere für Self-Service-Funktionen relevant, die in bestehende Delivery- oder Berechtigungsprozesse eingreifen. Die RBAC-Umsetzung stellt damit sicher, dass die Plattform nicht nur standardisierte Interaktion ermöglicht, sondern diese zugleich kontrolliert und nachvollziehbar bleibt.
+
+---
+
+## **13. Deployment von Backstage auf Kubernetes (AKS)**
+
+Nach der lokalen Validierung wurde der Prototyp auf dem Azure Kubernetes Service (AKS) des Unternehmens bereitgestellt. Damit wurde der Übergang von einer isolierten Entwicklungsumgebung in eine unternehmensnahe Laufzeitumgebung vollzogen. Die Anwendung wurde containerisiert, als Kubernetes-Workload deployt und mit den erforderlichen Laufzeitparametern konfiguriert.
+
+Für das Backend wurde eine Datenbank angebunden, um die für Backstage erforderlichen Zustands- und Konfigurationsdaten persistent zu verwalten. Der Zugriff auf die laufende Instanz erfolgte zunächst kontrolliert über Portweiterleitung. Dieses Vorgehen ermöglichte eine schrittweise Validierung der Integration, bevor eine breitere interne Erreichbarkeit betrachtet wird.
+
+**Screenshot hier**
+
+---
+
+## **14. Konfiguration des Kubernetes-Plugins**
+
+Das Kubernetes-Plugin wurde integriert, um Ressourcen aus dem Cluster im Portal sichtbar zu machen. Ziel war es, Backstage nicht nur als Katalog- und Template-Oberfläche zu nutzen, sondern auch als Einstiegspunkt in den aktuellen Betriebszustand relevanter Workloads. Für diese Verknüpfung wurden Labels und Annotationen verwendet, die Katalogentitäten mit Kubernetes-Ressourcen verbinden.
+
+Zusätzlich wurden Service Accounts und lesende RBAC-Berechtigungen im Cluster eingerichtet. Dadurch konnte Backstage die erforderlichen Ressourceninformationen abrufen, ohne über unnötige Privilegien zu verfügen. Im Zielzustand ist die Entität **„kuka-platform“** im Katalog sichtbar, und die zugehörigen Kubernetes-Ressourcen lassen sich über das Plugin einsehen.
+
+**Screenshot hier**
+
+---
+
+## **15. Entwicklung eines eigenen Backstage-Plugins**
+
+Zur Demonstration der Erweiterbarkeit von Backstage wurde neben den Standardplugins auch die Entwicklung eines eigenen Plugins berücksichtigt. Dieser Schritt war konzeptionell relevant, da ein Internal Developer Portal im Unternehmenskontext langfristig nicht allein auf vorkonfigurierten Standardfunktionen beruhen kann. Vielmehr muss die Plattform in der Lage sein, organisationsspezifische Anforderungen abzubilden.
+
+Das eigene Plugin dient daher als Nachweis, dass Backstage nicht nur konfiguriert, sondern gezielt erweitert werden kann. Im Rahmen des Prototyps wurde damit die Grundlage geschaffen, interne Plattformfunktionen, spezielle Übersichten oder domänenspezifische Bedienoberflächen künftig direkt in das Portal zu integrieren.
+
+---
+
+## **16. Produktionsreife Bereitstellung mittels GitOps**
+
+Für einen produktionsnahen Zielzustand wurde ein GitOps-basierter Betriebsansatz berücksichtigt. Konfigurationsänderungen an der Plattform sollen nicht manuell im Cluster erfolgen, sondern deklarativ, versionskontrolliert und reproduzierbar verwaltet werden. Ein Werkzeug wie ArgoCD eignet sich dafür, Deployments und Änderungen kontrolliert aus einem Git-Repository in die Laufzeitumgebung zu überführen.
+
+Im Kontext dieser Arbeit dient GitOps nicht als vollständig implementierter Produktivbetrieb, sondern als architektonische Zielrichtung für die Verstetigung des Prototyps. Damit wird deutlich, dass die Plattform nicht nur funktional demonstriert, sondern auch in eine skalierbare und nachvollziehbare Betriebslogik eingebettet werden kann.
+
+---
+
+## **Abschluss des Implementierungsteils**
+
+Mit der vorliegenden Umsetzung wurde ein funktionsfähiger Prototyp eines Internal Developer Portals auf Basis von Backstage realisiert und in eine unternehmensnahe Umgebung überführt. Die Plattform läuft auf AKS, ist an zentrale technische Komponenten angebunden und bildet mit Katalog, Authentifizierung, RBAC, Kubernetes-Integration und ersten Self-Service-Funktionalitäten die wesentlichen Bausteine eines IDP-MVP ab.
+
+Im Ergebnis ist die Entität **„kuka-platform“** im Softwarekatalog sichtbar. Kubernetes-Ressourcen können im Portal eingesehen werden. Zentrale Plattformfunktionen lassen sich über Templates und Workflows anstoßen. Damit zeigt die Implementierung nicht nur die technische Umsetzbarkeit des Ansatzes, sondern auch dessen Eignung, Standardisierung, Transparenz und kontrollierten Self-Service in einem realen Unternehmenskontext zusammenzuführen.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
