@@ -1329,5 +1329,68 @@ Damit du es sauber in Kapitel 4/5 verankern kannst, hier das Mapping von Blocker
 
 ---
 
-Wenn du möchtest, mache ich als nächsten Schritt **eine saubere Codiertabelle nach Mayring** *pro Persona* (P1–P6) und zeige dir in 1–2 Seiten, **welche Aussagen welche Codes** tragen (Audit Trail).
 
+### 1. Analyse des Status quo
+
+#### 1.1 Methodischer Zugriff und Datenbasis
+
+Die Status-quo-Analyse basiert auf **20 Interviewteilnahmen** aus dem Unternehmen: **17 englischsprachige** Rückläufe im Interviewframework „Platform engineering and developer experience“ sowie **3 deutschsprachige** Rückläufe im „Fachinterview-Framework“.  Beide Instrumente adressieren denselben Themenkomplex (Entwicklungsalltag, CI/CD, Tooling, Workloads, Templates, Self-Service, Observability) und wurden als **gemeinsamer Korpus** ausgewertet; englischsprachige Inhalte werden dabei sinngemäß in deutscher Sprache in die Analyse integriert. Die Auswertung folgt einer **qualitativen Inhaltsanalyse mit thematischer Verdichtung**: Aussagen wurden entlang wiederkehrender Beobachtungsfelder gebündelt (Praxis → Probleme → Ursachen → Folgen) und durch die im Material enthaltenen **deskriptiven Häufigkeiten/Anteile** ergänzt (z. B. Anzahl Nennungen pro Antwortfeld). 
+
+#### 1.2 Aktuelle Entwicklungspraxis und Arbeitsrealität
+
+Die Stichprobe ist stark entwicklungsnah geprägt: Im englischsprachigen Korpus ordnen sich **15 von 17** Befragten der **Softwareentwicklung** zu; zusätzlich werden Tätigkeitsfelder wie **CI/CD (6/17)**, **DevOps (4/17)** und **Platform Engineering (2/17)** genannt (Mehrfachnennungen).  Im deutschsprachigen Korpus dominieren **DevOps-Rollen (3/3)**, ergänzt um CI/CD-Anteile.  Inhaltlich zeigt sich eine Arbeitsrealität, in der ein relevanter Teil der Befragten zumindest teilweise mit Build/Deploy/Operations-Themen befasst ist, jedoch nicht zwingend als „Kernaufgabe“ (z. B. „not part of daily work, but…“, „~20% daily work“). 
+
+Die Organisation der Delivery-Prozesse erscheint **heterogen**: CI/CD und Releases werden häufig als **team-spezifisch** beschrieben (im englischsprachigen Korpus sind **7 von 15 (47%)** explizit „team specific“ in diesem Antwortfeld).  Im deutschsprachigen Korpus wird CI/CD ebenfalls als „sehr team-spezifisch“ beschrieben, teils mit Rollen wie Release Manager.  Parallel existieren Hinweise auf **zentrale Elemente** (z. B. „release bundle“, „centrally organized“, „integration“), was auf ein **hybrides Organisationsmodell** schließen lässt: Teams verantworten Teile der Pipeline-Logik, während bestimmte Integrations-/Release-Schritte zentral gebündelt werden. 
+
+Auch die Anwendungslandschaft ist nicht monolithisch einheitlich: Im englischsprachigen Korpus werden **hybride Architekturformen (9 Nennungen)** häufiger genannt als reine Monolithen (**4**) oder „Other“ (**3**); Microservices werden in dieser Frage nicht genannt.  Der deutschsprachige Korpus weist ebenfalls eine „Mischform“ aus. 
+
+#### 1.3 Zentrale Probleme im Ist-Zustand
+
+Über beide Korpora hinweg werden vor allem drei Problemachsen sichtbar:
+
+**(1) Prozess- und Koordinationslast:** Im deutschsprachigen Korpus werden „langwierige Prozesse“ und „viel Bürokratie“ explizit als kognitiv belastend beschrieben; zudem werden „ungenau spezifizierte Tickets“ als Zeittreiber genannt.  Diese Beobachtungen deuten auf Reibung durch Abstimmung, unklare Eingaben und Nacharbeit hin. Im englischsprachigen Korpus erscheint ein analoger Befund indirekt über Hinweise auf fehlende „inputs“, wiederkehrende „common issues“ und den Bedarf nach best practices/guidelines in Toolnutzung und Pipelines. 
+
+**(2) Komplexität und Fehleranfälligkeit in CI/CD-Konfigurationen:** Mehrere englische Antworten verweisen auf Schwierigkeiten beim Verständnis und Debugging von **Azure DevOps YAML-Pipelines** („tricky“, „understanding details…“, „error analysis“), und „pipeline“ ist in Wortwolken/Nennungen stark präsent.  Auch die Abhängigkeiten zwischen Pipelines werden als Herausforderung genannt („managing dependencies between pipelines…“). 
+
+**(3) Governance-/Betriebsaufgaben als Belastung (insb. Berechtigungen):** In den deutschsprachigen Antworten werden Permission-Themen explizit als Self-Service-Wunsch und als Automatisierungsziel benannt („Permission Management (Setzen von Berechtigungen)“; „gute Pflege- und Wartbarkeit Permission Management“).  Im englischen Korpus tauchen „Permission settings“ und „rights management“ ebenfalls als wiederkehrende Punkte auf, wenn auch nicht bei allen Fragen dominierend. 
+
+#### 1.4 Dev- und Deployment-bezogene Reibungspunkte
+
+Als operative Reibungspunkte treten insbesondere **Toolkonfiguration, Pipeline-Fehleranalyse und Artefakt-/Compliance-Themen** hervor. In den Toolnennungen werden regelmäßig **Azure DevOps/Azure Pipelines**, **Artifactory**, **Black Duck** sowie Build-Werkzeuge (cmake/gcc/msbuild etc.) genannt.  In den Aussagen zu „time-consuming/cognitively demanding“ werden u. a. Probleme mit „key files“ aus Artifactory (inkl. Bezug zu Berechtigungen), Pipeline-Debugging sowie Code-Scan/Compliance-Kontexte sichtbar. 
+
+Zusätzlich zeigt sich eine **hybride Infrastrukturrealität** bei den Workloads: Im englischsprachigen Korpus wird „cloud“ stark genannt (**10/15 = 67%** im entsprechenden Antwortfeld), zugleich erscheinen Hinweise auf „on-prem“ bzw. hybride Konstellationen; im deutschsprachigen Korpus werden Workloads explizit als „On-Prem, Cloud“ bzw. „Hybrid“ beschrieben.  Diese Hybridität verstärkt typischerweise Integrations- und Betriebsanforderungen (z. B. unterschiedliche Laufzeitumgebungen, Agenten, Netzwerkpfade), was sich in den Antworten zumindest indirekt durch Themen wie Agents/Scale Sets und unterschiedliche CI-Systeme (z. B. TeamCity on-prem + Azure Pipelines) widerspiegelt. 
+
+#### 1.5 Herausforderungen in Tooling, Infrastruktur und Zusammenarbeit
+
+**Tooling/Integrationen:** Die Toollandschaft ist funktional breit (ADO/Pipelines, Artifactory/JFrog Platform, Black Duck, TeamCity, Azure Portal, IaC/Ansible).  Gleichzeitig deuten mehrere Antworten auf fehlende oder inkonsistente Leitlinien hin („tools without guideline“, „pipelines guidelines“), was auf **Variabilität** in der Umsetzung und damit auf einen erhöhten Abstimmungs- und Supportbedarf schließen lässt. 
+
+**Templates/Self-Service:** Wiederverwendbarkeit ist vorhanden, aber nicht flächendeckend: Im englischen Korpus geben **5 von 16 (31%)** „templates“ als wiederkehrendes Stichwort im Template-Kontext an; gleichzeitig wird in deutschsprachigen Antworten „sehr wenig bis gar nichts“ erwähnt, neben punktuellen IaC-/Terraform-/Ansible-Skripten.  Zudem ist bemerkenswert, dass bei der Frage nach der Rolle von Kubernetes im Alltag **6 von 15 (40%)** „none/no role“ angeben, was nahelegt, dass Kubernetes (als Plattformabstraktion) in Teilen der Entwicklerrealität nicht zentral ist oder nicht direkt konsumiert wird. 
+
+**Observability/Transparenz:** Die Einschätzung der Monitoring-Möglichkeiten ist gemischt. Im englischen Korpus wird Monitoring teilweise nur als „basic Azure features“ beschrieben; gleichzeitig wird auf „junk data“ und Verbesserungspotenziale verwiesen.  Im deutschsprachigen Korpus wird der Betriebszustand als „verbesserungswürdig“ bzw. mit „Verbesserungspotenzial“ eingeschätzt, neben einzelnen positiven Einschätzungen.  Insgesamt deutet das Material auf **uneinheitliche Transparenz** und unterschiedlich reife Monitoring-Praktiken hin.
+
+**Zusammenarbeit/Verantwortlichkeiten:** Der Befund „team-spezifische CI/CD“ (englisch) und „sehr team-spezifisch“ (deutsch) spricht für eine stark dezentralisierte Verantwortungsstruktur in der Delivery-Praxis, ergänzt durch zentrale Elemente (z. B. Release Manager/Integration).  Typische Folgen einer solchen Mischform (die in den Aussagen sichtbar werden) sind divergierende Pipeline-Logiken, variable Standards und erhöhte kognitive Last beim Wechsel zwischen Projekten/Teams.
+
+#### 1.6 Verdichtung der zentralen Beobachtungen
+
+Zusammenfassend zeigt der Status quo eine Organisation mit **hybrider Infrastrukturrealität (Cloud + On-Prem)**, **heterogener Toolchain** und einem **überwiegend team-spezifischen CI/CD-Zuschnitt**.  Die dominanten Reibungen entstehen weniger aus fehlenden Tools, sondern aus **inkonsistenter Standardisierung und Prozesslast** (u. a. Bürokratie, unklare Tickets), aus **Komplexität in Pipeline-Konfiguration und Fehleranalyse** (insbesondere YAML-basierte ADO-Pipelines) sowie aus **governance-nahen Routineaufgaben** wie Berechtigungsmanagement.  Wiederverwendbare Templates und Automationen existieren punktuell, sind aber nicht einheitlich etabliert, was die Varianz in der täglichen Praxis verstärkt.  Observability wird teils als ausreichend, teils als verbesserungswürdig beschrieben; in der Gesamtschau deutet dies auf eine inkonsistente Transparenz- und Datenqualität hin. 
+
+---
+
+### Kompakte analytische Verdichtung (Befunde des Ist-Zustands)
+
+Der aktuelle Entwicklungs- und Bereitstellungsalltag ist durch **dezentral organisierte Delivery-Verantwortung**, **Tool- und Prozessheterogenität** sowie **hohe kognitive Last bei CI/CD-Konfiguration und Troubleshooting** geprägt.  Besonders sichtbar sind Reibungen durch **fehlende bzw. uneinheitliche Leitlinien/Standards** (Toolnutzung, Pipelines), durch **Koordinations- und Ticketlast** (inkl. unklarer Spezifikationen) sowie durch **governance-bezogene Routineaufgaben** (insb. Berechtigungen).  Der Status quo weist zugleich auf vorhandene, aber fragmentierte Wiederverwendbarkeit (Templates/Skripte/IaC) hin, während Kubernetes als Plattformkonzept in Teilen der täglichen Entwicklerpraxis keine direkte Rolle spielt. 
+
+---
+
+### Optionale Übersichtstabelle (Status-quo-Felder)
+
+| Beobachtungsfeld     | Beschreibung des Status quo                                                   | Häufigkeit/Verbreitung (aus dem Material)                                           | Relevanz    |
+| -------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------- |
+| Rollen/Betroffenheit | Stark entwicklungsnah; CI/CD/DevOps relevant                                  | Softwareentwicklung 15/17 (engl.); DevOps 3/3 (dt.)                                 | Hoch        |
+| CI/CD-Organisation   | Mischform; häufig team-spezifisch                                             | team specific 7/15 (47%) (engl. Fragefeld)                                          | Hoch        |
+| Workloads            | Hybrid (Cloud + On-Prem)                                                      | „cloud“ 10/15 (67%); dt.: Hybrid/On-Prem+Cloud                                      | Hoch        |
+| Wiederverwendbarkeit | Templates/Skripte punktuell, nicht flächig                                    | templates 5/16 (31%); dt.: „sehr wenig bis gar nichts“                              | Mittel–hoch |
+| Pain Points          | Pipeline-Komplexität, Tool-/Guideline-Lücken, Tickets/Bürokratie, Permissions | wiederkehrend in Wortwolken/Antworten (pipeline, guidelines, tickets, permissions)  | Hoch        |
+| Observability        | Uneinheitlich; teils nur basic, teils Verbesserungsbedarf                     | dt.: „verbesserungswürdig“; engl.: „basic Azure features“, „junk data“              | Mittel      |
+
+Wenn Sie möchten, kann ich den Abschnitt noch stärker „masterarbeitstypisch“ glätten (z. B. mit einheitlichen Übergängen, weniger Tool-Nennung im Fließtext) – ohne in Richtung Requirements oder Lösungsteil abzurutschen.
